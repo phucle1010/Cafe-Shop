@@ -55,6 +55,14 @@ namespace QL_QuanCafe.View
         {
             this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
         }
-     }
+
+        private void btnSignOut_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Đăng xuất thành công");
+            LoginView loginLayout = new LoginView();
+            this.Visibility = Visibility.Hidden;
+            loginLayout.Show();
+        }
+    }
         
 }

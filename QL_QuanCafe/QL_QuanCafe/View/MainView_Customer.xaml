@@ -6,7 +6,7 @@
          xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
         xmlns:local="clr-namespace:QL_QuanCafe.View"
         mc:Ignorable="d"
-        Title="MainView_Customer" Height="550" Width="800"
+        Title="MainView_Customer" Height="650" Width="800"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         Background="Transparent"
@@ -76,41 +76,50 @@
                                  Tag="{StaticResource color3}"
                                  Command="{Binding ShowCustomerViewCommand}">
                         <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Icon="TableCellsLarge" Style="{StaticResource menuButtonIcon}"/>
+                            <TextBlock Text="Đặt bàn" Style="{StaticResource menuButtonText}"/>
+                        </StackPanel>
+                    </RadioButton> 
+                    
+                    <RadioButton Style="{StaticResource menuButton}"
+                                 Tag="{StaticResource color4}"
+                                 Command="{Binding ShowCustomerViewCommand}">
+                        <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Burger" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Đặt món" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
 
                     <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="{StaticResource color4}"
-                                 Command="{Binding ShowCustomerViewCommand}">
-                        <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="MoneyBillAlt" Style="{StaticResource menuButtonIcon}"/>
-                            <TextBlock Text="Hóa đơn" Style="{StaticResource menuButtonText}"/>
-                        </StackPanel>
-                    </RadioButton>
-
-
-                    <RadioButton Style="{StaticResource menuButton}"
                                  Tag="{StaticResource color5}"
                                  Command="{Binding ShowCustomerViewCommand}">
                         <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="UserGear" Style="{StaticResource menuButtonIcon}"/>
-                            <TextBlock Text="Cài đặt" Style="{StaticResource menuButtonText}"/>
+                            <fa:IconImage Icon="SquarePlus" Style="{StaticResource menuButtonIcon}"/>
+                            <TextBlock Text="Dịch vụ phụ kèm" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
+
 
                     <RadioButton Style="{StaticResource menuButton}"
                                  Tag="{StaticResource color6}"
                                  Command="{Binding ShowCustomerViewCommand}">
                         <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="HeadphonesSimple" Style="{StaticResource menuButtonIcon}"/>
-                            <TextBlock Text="Hỗ trợ" Style="{StaticResource menuButtonText}"/>
+                            <fa:IconImage Icon="Commenting" Style="{StaticResource menuButtonIcon}"/>
+                            <TextBlock Text="Đánh giá" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
 
                     <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="{StaticResource color11}"
+                                 Tag="{StaticResource color7}"
+                                 Command="{Binding ShowCustomerViewCommand}">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Icon="Message" Style="{StaticResource menuButtonIcon}"/>
+                            <TextBlock Text="Phản hồi" Style="{StaticResource menuButtonText}"/>
+                        </StackPanel>
+                    </RadioButton>
+
+                    <RadioButton Style="{StaticResource menuButton}"
+                                 Tag="{StaticResource color8}"
                                  Command="{Binding ShowCustomerViewCommand}">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Key" Style="{StaticResource menuButtonIcon}"/>
@@ -119,7 +128,7 @@
                     </RadioButton>
 
                     <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="{StaticResource color12}"
+                                 Tag="{StaticResource color9}"
                                  Command="{Binding ShowCustomerViewCommand}" Click="btnSignOut_Click">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="SignOut" Style="{StaticResource menuButtonIcon}"/>
