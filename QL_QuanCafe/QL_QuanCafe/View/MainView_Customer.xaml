@@ -6,7 +6,7 @@
          xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
         xmlns:local="clr-namespace:QL_QuanCafe.View"
         mc:Ignorable="d"
-        Title="MainView_Customer" Height="650" Width="800"
+        Title="MainView_Customer" Height="650" Width="1000"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         Background="Transparent"
@@ -23,7 +23,7 @@
         <Grid>
             <Grid.ColumnDefinitions>
                 <!--Navigation menu-->
-                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="300"/>
                 <!--Content section-->
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
@@ -233,7 +233,7 @@
                                     Tag="{StaticResource color1}">
                                 <fa:IconImage Icon="AngleDown" Style="{StaticResource iconButtonIcon}"/>
                             </Button>
-                            <TextBlock Text="Hi Tuấn"
+                            <TextBlock x:Name="tbUserName" Text="Hi Tuấn"
                                        Foreground="{StaticResource titleColor3}"
                                        FontFamily="Montserrat"
                                        FontSize="12"

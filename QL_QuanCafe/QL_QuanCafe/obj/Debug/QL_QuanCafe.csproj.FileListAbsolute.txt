@@ -47,10 +47,8 @@ E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_Quan
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\Styles\ButtonStyles.baml
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\Styles\UIColors.baml
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\LoginView.baml
-E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\MainView.baml
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\HomeView.g.cs
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\LoginView.g.cs
-E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\MainView.g.cs
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\MainView_Customer.g.cs
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\ProductView.g.cs
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\RegisterAccount.g.cs

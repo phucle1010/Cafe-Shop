@@ -23,13 +23,13 @@
         <Grid>
             <Grid.ColumnDefinitions>
                 <!--Navigation menu-->
-                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="300"/>
                 <!--Content section-->
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <!--Navigation Menu-->
             <Border CornerRadius="10,0,0,10"
-                    Grid.Column="0">
+                    Grid.Column="0" RenderTransformOrigin="0.333,0.886">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,0.7">
                         <GradientStop Color="{StaticResource secondaryBackColor1}" Offset="0"/>
@@ -82,12 +82,22 @@
                         </StackPanel>
                     </RadioButton>
 
+
                     <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="{StaticResource color4}"
+                                 Tag="{StaticResource color9}"
                                  Command="{Binding ShowCustomerViewCommand}">
                         <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="Cubes" Style="{StaticResource menuButtonIcon}"/>
-                            <TextBlock Text="Sản phẩm hot" Style="{StaticResource menuButtonText}"/>
+                            <fa:IconImage Icon="BowlFood" Style="{StaticResource menuButtonIcon}"/>
+                            <TextBlock Text="Món ăn " Style="{StaticResource menuButtonText}"/>
+                        </StackPanel>
+                    </RadioButton>
+
+                    <RadioButton Style="{StaticResource menuButton}"
+                                 Tag="{StaticResource color8}"
+                                 Command="{Binding ShowCustomerViewCommand}">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Icon="PieChart"  Style="{StaticResource menuButtonIcon}"/>
+                            <TextBlock Text="Nguyên liệu" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
 
@@ -115,25 +125,6 @@
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="MoneyBills" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Thanh toán" Style="{StaticResource menuButtonText}"/>
-                        </StackPanel>
-                    </RadioButton>
-
-
-                    <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="{StaticResource color8}"
-                                 Command="{Binding ShowCustomerViewCommand}">
-                        <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="PieChart"  Style="{StaticResource menuButtonIcon}"/>
-                            <TextBlock Text="Nguyên liệu" Style="{StaticResource menuButtonText}"/>
-                        </StackPanel>
-                    </RadioButton>
-
-                    <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="{StaticResource color9}"
-                                 Command="{Binding ShowCustomerViewCommand}">
-                        <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="GlassCheers" Style="{StaticResource menuButtonIcon}"/>
-                            <TextBlock Text="Món ăn " Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
 
@@ -246,7 +237,7 @@
                                     Tag="{StaticResource color1}">
                                 <fa:IconImage Icon="AngleDown" Style="{StaticResource iconButtonIcon}"/>
                             </Button>
-                            <TextBlock Text="Hi Tuấn"
+                            <TextBlock x:Name="tbUserName" Text="Hi Tuấn"
                                        Foreground="{StaticResource titleColor3}"
                                        FontFamily="Montserrat"
                                        FontSize="12"
