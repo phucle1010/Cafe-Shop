@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,7 +23,7 @@ namespace QL_QuanCafe.ViewModel
             string currentIPAddress = getIPAddress();
             try
             {
-                DataProvider.Ins.DB.TAIKHOANDANGSUDUNGs.SqlQuery($"INSERT INTO TAIKHOANDANGSUDUNG VALUES('{user}', '{currentIPAddress}', {role})");
+                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"INSERT INTO TAIKHOANDANGSUDUNG VALUES ('{user}', '{currentIPAddress}', {role})");
             }
             catch (Exception e)
             {
@@ -33,7 +34,7 @@ namespace QL_QuanCafe.ViewModel
         {
             try
             {
-                DataProvider.Ins.DB.TAIKHOANDANGSUDUNGs.SqlQuery("DELETE FROM TAIKHOANDANGSUDUNG");
+                DataProvider.Ins.DB.Database.ExecuteSqlCommand("DELETE FROM TAIKHOANDANGSUDUNG");
             }
             catch ( Exception e )
             {
@@ -53,12 +54,12 @@ namespace QL_QuanCafe.ViewModel
             }
             return nDataRows > 0;
         }
-        public int userRole()
+        public bool isAdmin()
         {
-            int role = 0;
+            bool role = false;
             try
             {
-                role = Int32.Parse( DataProvider.Ins.DB.TAIKHOANDANGSUDUNGs.SqlQuery("SELECT PhanQuyen FROM TAIKHOANDANGSUDUNG").ToList()[0].PhanQuyen.ToString() );
+                role = Boolean.Parse( DataProvider.Ins.DB.TAIKHOANDANGSUDUNGs.SqlQuery("SELECT * FROM TAIKHOANDANGSUDUNG").ElementAt(0).PhanQuyen.ToString() );
             }
             catch ( Exception e )
             {
@@ -71,13 +72,30 @@ namespace QL_QuanCafe.ViewModel
             string userName = "";
             try
             {
-                userName = DataProvider.Ins.DB.TAIKHOANDANGSUDUNGs.SqlQuery("SELECT TaiKhoan FROM TAIKHOANDANGSUDUNG").ToList() [0].TaiKhoan.ToString();
+                userName = DataProvider.Ins.DB.TAIKHOANDANGSUDUNGs.SqlQuery("SELECT * FROM TAIKHOANDANGSUDUNG").ElementAt(0).TaiKhoan.ToString();
             }
             catch ( Exception e )
             {
                 MessageBox.Show(e.ToString());
             }
             return userName;
+        }
+        public string ComputeSha256Hash( string rawData )
+        {
+            // Create a SHA256   
+            using ( SHA256 sha256Hash = SHA256.Create() )
+            {
+                // ComputeHash - returns byte array  
+                byte [] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
+
+                // Convert byte array to a string   
+                StringBuilder builder = new StringBuilder();
+                for ( int i = 0; i < bytes.Length; i++ )
+                {
+                    builder.Append(bytes [i].ToString("x2"));
+                }
+                return builder.ToString();
+            }
         }
     }
 }

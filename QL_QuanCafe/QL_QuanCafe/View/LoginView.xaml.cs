@@ -32,33 +32,32 @@ namespace QL_QuanCafe.View
         }
         void HanleInitData()
         {
-            MessageBox.Show(DataProvider.Ins.DB.TAIKHOANDANGSUDUNGs.("SELECT TaiKhoan FROM TAIKHOANDANGSUDUNG").ToString()) ;
-            //LoginViewModel login = new LoginViewModel();
-            //if ( login.haveUserIsUsing() )
-            //{
-            //    switch (login.userRole())
-            //    {
-            //        case 0:
-            //            Properties.Settings.Default ["user"] = login.getUserNameOfUser();
-            //            Properties.Settings.Default ["role"] = 0;
-            //            Properties.Settings.Default.Save();
-            //            MainView_Customer customerLayout = new MainView_Customer();
-            //            this.Visibility = Visibility.Hidden;
-            //            customerLayout.Show();
-            //            break;
-            //        case 1:
-            //            Properties.Settings.Default ["user"] = login.getUserNameOfUser();
-            //            Properties.Settings.Default ["role"] = 1;
-            //            Properties.Settings.Default.Save();
-            //            MainView_Admin adminLayout = new MainView_Admin();
-            //            this.Visibility = Visibility.Hidden;
-            //            adminLayout.Show();
-            //            break;
-            //        default:
-            //            break;
+            LoginViewModel login = new LoginViewModel();
+            if ( login.haveUserIsUsing() )
+            {
+                switch ( login.isAdmin() )
+                {
+                    case false:
+                        Properties.Settings.Default ["user"] = login.getUserNameOfUser();
+                        Properties.Settings.Default ["role"] = 0;
+                        Properties.Settings.Default.Save();
+                        MainView_Customer customerLayout = new MainView_Customer();
+                        this.Hide();
+                        customerLayout.Show();
+                        break;
+                    case true:
+                        Properties.Settings.Default ["user"] = login.getUserNameOfUser();
+                        Properties.Settings.Default ["role"] = 1;
+                        Properties.Settings.Default.Save();
+                        MainView_Admin adminLayout = new MainView_Admin();
+                        this.Hide();
+                        adminLayout.Show();
+                        break;
+                    default:
+                        break;
 
-            //    }
-            //}
+                }
+            }
         }
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -102,14 +101,14 @@ namespace QL_QuanCafe.View
                 {
                     SaveAccount(user, 1);
                     MainView_Admin adminLayout = new MainView_Admin();
-                    this.Visibility = Visibility.Hidden;
+                    this.Hide();
                     adminLayout.Show();
                 }
                 else if ( customer.isLoginWithCustomerRole(user, pass) )
                 {
                     SaveAccount(user, 0);
                     MainView_Customer customerLayout = new MainView_Customer();
-                    this.Visibility = Visibility.Hidden;
+                    this.Hide();
                     customerLayout.Show();
                 }
                 else
@@ -117,6 +116,13 @@ namespace QL_QuanCafe.View
                     MessageBox.Show("Thông tin nhập không chính xác!!!", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
             }
+        }
+
+        private void tbCreateNewAccount_PreviewMouseDown( object sender, MouseButtonEventArgs e )
+        {
+            RegisterAccount registerLayout = new RegisterAccount();
+            this.Visibility = Visibility.Hidden;
+            registerLayout.Show();
         }
     }
 }

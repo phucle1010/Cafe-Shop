@@ -12,10 +12,11 @@ namespace QL_QuanCafe.ViewModel
     {
         public bool isLoginWithCustomerRole( string user, string pass )
         {
+            LoginViewModel login = new LoginViewModel();
             int successDataRows = 0;
             try
             {
-                successDataRows = DataProvider.Ins.DB.KHACHHANGs.SqlQuery($"SELECT * FROM KHACHHANG WHERE TenDN = '{user}' AND MatKhau ='{pass}'").Count();
+                successDataRows = DataProvider.Ins.DB.KHACHHANGs.SqlQuery($"SELECT * FROM KHACHHANG WHERE TenDN = '{user}' AND MatKhau = '{login.ComputeSha256Hash(pass)}'").Count();
             }
             catch ( Exception e )
             {
@@ -28,7 +29,7 @@ namespace QL_QuanCafe.ViewModel
             string name = "";
             try
             {
-                name = DataProvider.Ins.DB.KHACHHANGs.SqlQuery($"SELECT * FROM KHACHHANG WHERE TenDN = '{user}'").ToList() [0].TenKH.ToString();
+                name = DataProvider.Ins.DB.KHACHHANGs.SqlQuery($"SELECT * FROM KHACHHANG WHERE TenDN = '{user}'").ElementAt(0).TenKH.ToString();
             }
             catch (Exception e )
             {

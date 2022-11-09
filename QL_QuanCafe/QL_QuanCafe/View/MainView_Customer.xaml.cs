@@ -67,7 +67,9 @@ namespace QL_QuanCafe.View
 
         private void btnSignOut_Click( object sender, RoutedEventArgs e )
         {
-            MessageBox.Show("Đăng xuất thành công");
+            LoginViewModel login = new LoginViewModel();
+            login.removeUserIsUsing();
+            MessageBox.Show("Đăng xuất thành công!!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
             LoginView loginLayout = new LoginView();
             this.Visibility = Visibility.Hidden;
             loginLayout.Show();

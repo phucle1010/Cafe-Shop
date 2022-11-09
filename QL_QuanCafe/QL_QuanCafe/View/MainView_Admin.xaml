@@ -147,7 +147,7 @@
 
                     <RadioButton Style="{StaticResource menuButton}"
                                  Tag="{StaticResource color12}"
-                                 Command="{Binding ShowCustomerViewCommand}" Click="btnSignOut_Click">
+                                 Command="{Binding ShowCustomerViewCommand}" Click="btnSignOut_Click" >
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="SignOut" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Đăng xuất" Style="{StaticResource menuButtonText}"/>
