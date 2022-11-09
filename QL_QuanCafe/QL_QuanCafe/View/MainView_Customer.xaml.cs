@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QL_QuanCafe.LocalStore;
+using QL_QuanCafe.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -24,6 +26,13 @@ namespace QL_QuanCafe.View
         public MainView_Customer()
         {
             InitializeComponent();
+            LoadData();
+        }
+        void LoadData()
+        {
+            CustomerViewModel customer = new CustomerViewModel();
+            string userName = Properties.Settings.Default ["user"].ToString();
+            tbUserName.Text = customer.getCustomerName(userName);
         }
 
         [DllImport("user32.dll")]

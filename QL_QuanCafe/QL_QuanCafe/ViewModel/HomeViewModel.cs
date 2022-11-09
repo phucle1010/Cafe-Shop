@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QL_QuanCafe.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace QL_QuanCafe.ViewModel
 {
     public class HomeViewModel: ViewModelBase {
     
-    }
 
     }
+}

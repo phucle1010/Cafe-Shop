@@ -33,7 +33,6 @@ namespace QL_QuanCafe.Model
         public string ChucVu { get; set; }
         public Nullable<System.DateTime> NgayVaoLam { get; set; }
         public Nullable<bool> GioiTinh { get; set; }
-        public Nullable<bool> PhanQuyen { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DIEMDANHNGAYLAM> DIEMDANHNGAYLAMs { get; set; }

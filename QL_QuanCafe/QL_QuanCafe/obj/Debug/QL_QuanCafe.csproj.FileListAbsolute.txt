@@ -105,3 +105,8 @@ D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug
 D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.csproj.CopyComplete
 D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.exe
 D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.pdb
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\bin\Debug\EntityFramework.dll
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\bin\Debug\EntityFramework.SqlServer.dll
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\bin\Debug\EntityFramework.xml
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\bin\Debug\EntityFramework.SqlServer.xml
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe_Content.g.cs

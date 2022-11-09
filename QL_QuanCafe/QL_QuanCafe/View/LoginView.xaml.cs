@@ -13,6 +13,10 @@ using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using QL_QuanCafe.ViewModel;
+using QL_QuanCafe.LocalStore;
+using System.Net;
+using QL_QuanCafe.Model;
 
 namespace QL_QuanCafe.View
 {
@@ -24,8 +28,38 @@ namespace QL_QuanCafe.View
         public LoginView()
         {
             InitializeComponent();
+            HanleInitData();
         }
+        void HanleInitData()
+        {
+            MessageBox.Show(DataProvider.Ins.DB.TAIKHOANDANGSUDUNGs.("SELECT TaiKhoan FROM TAIKHOANDANGSUDUNG").ToString()) ;
+            //LoginViewModel login = new LoginViewModel();
+            //if ( login.haveUserIsUsing() )
+            //{
+            //    switch (login.userRole())
+            //    {
+            //        case 0:
+            //            Properties.Settings.Default ["user"] = login.getUserNameOfUser();
+            //            Properties.Settings.Default ["role"] = 0;
+            //            Properties.Settings.Default.Save();
+            //            MainView_Customer customerLayout = new MainView_Customer();
+            //            this.Visibility = Visibility.Hidden;
+            //            customerLayout.Show();
+            //            break;
+            //        case 1:
+            //            Properties.Settings.Default ["user"] = login.getUserNameOfUser();
+            //            Properties.Settings.Default ["role"] = 1;
+            //            Properties.Settings.Default.Save();
+            //            MainView_Admin adminLayout = new MainView_Admin();
+            //            this.Visibility = Visibility.Hidden;
+            //            adminLayout.Show();
+            //            break;
+            //        default:
+            //            break;
 
+            //    }
+            //}
+        }
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
@@ -41,28 +75,47 @@ namespace QL_QuanCafe.View
         {
             Application.Current.Shutdown();
         }
+        private void SaveAccount(string user, int role)
+        {
+            LoginViewModel login = new LoginViewModel();
+            login.insertUserIsUsing(user, role);
+            MessageBox.Show("Đăng nhập thành công!!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+            Properties.Settings.Default ["user"] = user;
+            Properties.Settings.Default ["role"] = role;
+            Properties.Settings.Default.Save();
+        }
 
+        
         private void btnLogin_Click( object sender, RoutedEventArgs e )
         {
-            string userText = txtUser.Text;
-            string passText = txtPass.Password.ToString();
-            if ( userText == "annoy" && passText == "123456" )
+            string user = txtUser.Text;
+            string pass = txtPass.Password.ToString();
+            if ( String.IsNullOrEmpty(user) || String.IsNullOrEmpty(pass) )
             {
-                MessageBox.Show("Đăng nhập thành công với quyền khách hàng");
-                MainView_Customer customerLayout = new MainView_Customer();
-                this.Visibility = Visibility.Hidden;
-                customerLayout.Show();
-            } 
-            else if ( userText == "admin" && passText == "123456" )
-            {
-                MessageBox.Show("Đăng nhập thành công với quyền quản trị viên");
-                MainView_Admin adminLayout = new MainView_Admin();
-                this.Visibility = Visibility.Hidden;
-                adminLayout.Show();
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
             else
             {
-                MessageBox.Show("Tài khoản không đúng");
+                AdminViewModel admin = new AdminViewModel();
+                CustomerViewModel customer = new CustomerViewModel();
+                if ( admin.isLoginWithAdminRole(user, pass) )
+                {
+                    SaveAccount(user, 1);
+                    MainView_Admin adminLayout = new MainView_Admin();
+                    this.Visibility = Visibility.Hidden;
+                    adminLayout.Show();
+                }
+                else if ( customer.isLoginWithCustomerRole(user, pass) )
+                {
+                    SaveAccount(user, 0);
+                    MainView_Customer customerLayout = new MainView_Customer();
+                    this.Visibility = Visibility.Hidden;
+                    customerLayout.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Thông tin nhập không chính xác!!!", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
             }
         }
     }

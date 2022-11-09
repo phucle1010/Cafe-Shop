@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QL_QuanCafe.LocalStore;
+using QL_QuanCafe.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -24,6 +26,13 @@ namespace QL_QuanCafe.View
         public MainView_Admin()
         {
             InitializeComponent();
+            LoadData();
+        }
+        void LoadData()
+        {
+            AdminViewModel admin = new AdminViewModel();
+            string userName = Properties.Settings.Default ["user"].ToString();
+            tbUserName.Text = admin.getAdminName(userName);
         }
         [DllImport("user32.dll")]
         public static extern IntPtr SendMessage( IntPtr hWnd, int wMsg, int wParam, int lParam );

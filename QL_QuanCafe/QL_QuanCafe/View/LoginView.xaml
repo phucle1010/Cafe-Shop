@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="LoginView" Height="550" Width="800"
+        Title="LoginView" Height="550" Width="500"
         WindowStyle="none"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
@@ -23,7 +23,7 @@
 
         <Border CornerRadius="10"   
                 BorderThickness="1"
-                Opacity="0.85" HorizontalAlignment="Center" Width="800">
+                Opacity="0.85" HorizontalAlignment="Center" Width="500">
 
             <Border.BorderBrush>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">

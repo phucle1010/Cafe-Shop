@@ -49,5 +49,6 @@ namespace QL_QuanCafe.Model
         public virtual DbSet<NHAPHANG> NHAPHANGs { get; set; }
         public virtual DbSet<SANPHAM> SANPHAMs { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<TAIKHOANDANGSUDUNG> TAIKHOANDANGSUDUNGs { get; set; }
     }
 }

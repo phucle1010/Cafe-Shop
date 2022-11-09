@@ -6,7 +6,7 @@
         xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
         xmlns:local="clr-namespace:QL_QuanCafe.View"
         mc:Ignorable="d"
-        Title="MainView_Admin" Height="800" Width="1000"
+        Title="MainView_Admin" Height="800" Width="1400"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         Background="Transparent"
