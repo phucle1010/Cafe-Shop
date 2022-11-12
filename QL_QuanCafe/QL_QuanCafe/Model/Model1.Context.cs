@@ -13,10 +13,10 @@ namespace QL_QuanCafe.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class CafeShopEntities : DbContext
+    public partial class CafeShopEntities1 : DbContext
     {
-        public CafeShopEntities()
-            : base("name=CafeShopEntities")
+        public CafeShopEntities1()
+            : base("name=CafeShopEntities1")
         {
         }
     
@@ -48,7 +48,7 @@ namespace QL_QuanCafe.Model
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
         public virtual DbSet<NHAPHANG> NHAPHANGs { get; set; }
         public virtual DbSet<SANPHAM> SANPHAMs { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TAIKHOANDANGSUDUNG> TAIKHOANDANGSUDUNGs { get; set; }
+        public virtual DbSet<THETICHDIEM> THETICHDIEMs { get; set; }
     }
 }

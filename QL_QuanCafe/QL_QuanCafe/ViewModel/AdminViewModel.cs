@@ -16,7 +16,7 @@ namespace QL_QuanCafe.ViewModel
             int successDataRows = 0;
             try
             {
-                successDataRows = DataProvider.Ins.DB.NHANVIENs.SqlQuery($"SELECT * FROM NHANVIEN WHERE MaNV ='{user}' AND MatKhau = '{login.ComputeSha256Hash(pass)}'").Count();
+                successDataRows = DataProvider.Ins.DB.NHANVIENs.SqlQuery($"SELECT * FROM NHANVIEN WHERE MaNV ='{user}' AND MatKhau = '{pass}'").Count();
             }
             catch ( Exception e )
             {

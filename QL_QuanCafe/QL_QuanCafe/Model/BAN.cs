@@ -23,6 +23,7 @@ namespace QL_QuanCafe.Model
         public string MaBan { get; set; }
         public string TenBan { get; set; }
         public string MaKV { get; set; }
+        public Nullable<bool> TrangThai { get; set; }
     
         public virtual KHUVUC KHUVUC { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

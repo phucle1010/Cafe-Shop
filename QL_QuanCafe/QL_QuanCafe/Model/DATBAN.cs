@@ -22,9 +22,12 @@ namespace QL_QuanCafe.Model
     
         public string MaDatBan { get; set; }
         public string MaBan { get; set; }
-        public Nullable<bool> TrangThai { get; set; }
+        public string MaKH { get; set; }
+        public Nullable<System.DateTime> GioDat { get; set; }
+        public string GhiChu { get; set; }
     
         public virtual BAN BAN { get; set; }
+        public virtual KHACHHANG KHACHHANG { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DATMON> DATMONs { get; set; }
     }

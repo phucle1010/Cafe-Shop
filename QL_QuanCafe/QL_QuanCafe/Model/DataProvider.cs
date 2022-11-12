@@ -13,7 +13,7 @@ namespace QL_QuanCafe.Model
         {
             get
             {
-                if ( _ins == null )
+                if (_ins == null)
                     _ins = new DataProvider();
                 return _ins;
             }
@@ -22,10 +22,10 @@ namespace QL_QuanCafe.Model
                 _ins = value;
             }
         }
-        public CafeShopEntities DB { get; set; }
+        public CafeShopEntities1 DB { get; set; }
         private DataProvider()
         {
-            DB = new CafeShopEntities();
+            DB = new CafeShopEntities1();
         }
     }
 }

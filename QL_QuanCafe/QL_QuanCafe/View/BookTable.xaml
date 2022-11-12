@@ -1,0 +1,218 @@
+﻿<Window x:Class="QL_QuanCafe.View.BookTable"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QL_QuanCafe.View"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="BookTable" Height="670" Width="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <materialDesign:Card
+            Grid.Row="0"
+            Background="{DynamicResource PrimaryHueLightBrush}"
+            Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
+            Width="auto"
+            Padding="10">
+            <TextBlock
+                FontSize="16">
+                Thêm mới đặt bàn
+            </TextBlock>
+        </materialDesign:Card>
+        <materialDesign:Card
+            Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   FontSize="14"
+                                   Margin="20 0 0 0"
+                                   Grid.Column="0">Khách hàng</TextBlock>
+                        <TextBox x:Name="txt_khachhang"
+                            Grid.Column="1" 
+                                Width="200" 
+                                 Height="28">
+                        </TextBox>
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   FontSize="14"
+                                   Margin="20 0 0 0"
+                                   Grid.Column="0">Mã đặt bàn</TextBlock>
+                        <TextBox x:Name="txt_madatban"
+                            Grid.Column="1" 
+                                Width="200" 
+                                 Height="28">
+                        </TextBox>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   FontSize="14"
+                                   Margin="20 0 0 0"
+                                   Grid.Column="0">Giờ đến</TextBlock>
+                        <TextBox Grid.Column="1" 
+                                Width="200" 
+                                 Height="28">
+                        </TextBox>
+                    </Grid>
+                    <Grid Grid.Row="3" VerticalAlignment="Top" Margin="0 50 0 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   FontSize="14"
+                                   Margin="20 0 0 0"
+                                   Grid.Column="0">Số khách</TextBlock>
+                        <TextBox Grid.Column="1" 
+                                Width="200" 
+                                 Height="28">
+                        </TextBox>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   FontSize="14"
+                                   Margin="20 0 0 0"
+                                   Grid.Column="0">SDT khách hàng</TextBlock>
+                        <TextBox x:Name="txt_Sdt"
+                            Grid.Column="1" 
+                                Width="200" 
+                                 Height="28">
+                        </TextBox>
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   FontSize="14"
+                                   Margin="20 0 0 0"
+                                   Grid.Column="0">Bàn</TextBlock>
+                        <TextBox Grid.Column="1" 
+                                Width="200" 
+                                 Height="28">
+                        </TextBox>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   FontSize="14"
+                                   Margin="20 0 0 0"
+                                   Grid.Column="0">NV nhận đặt</TextBlock>
+                        <TextBox Grid.Column="1" 
+                                Width="200" 
+                                 Height="28">
+                        </TextBox>
+                    </Grid>
+                    <Grid Grid.Row="3" VerticalAlignment="Top" Margin="0 50 0 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   FontSize="14"
+                                   Margin="20 0 0 0"
+                                   Grid.Column="0">Ghi chú</TextBlock>
+                        <TextBox x:Name="txt_GhiChu"
+                            Grid.Column="1" 
+                                Width="200" 
+                                 Height="28">
+                        </TextBox>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </materialDesign:Card>
+        <Grid Grid.Row="2">
+            <StackPanel 
+                Orientation="Horizontal"
+                HorizontalAlignment="Right"
+                Margin="15">
+                <Grid Margin="10 0">
+                    <Button x:Name="btn_Luu"
+                        Style="{StaticResource MaterialDesignRaisedButton}"
+                        Width="100"
+                        ToolTip="Resource name: MaterialDesignRaisedButton" Click="btn_Luu_Click">
+                        Lưu 
+                    </Button>
+                </Grid>
+                <Grid Margin="10 0">
+                    <Button x:Name="btn_HuyBo"
+                        Style="{StaticResource MaterialDesignRaisedLightButton}"
+                        Width="100"
+                        ToolTip="Resource name: MaterialDesignRaisedLightButton" Click="btn_HuyBo_Click">
+                        Hủy bỏ
+                    </Button>
+                </Grid>
+                <!--<Grid Margin="10 0">
+                    <Button
+                        Style="{StaticResource MaterialDesignRaisedButton}"
+                        Width="100"
+                        ToolTip="Resource name: MaterialDesignRaisedButton">
+                        _MID
+                    </Button>
+                </Grid>-->
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

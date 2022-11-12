@@ -17,7 +17,9 @@ namespace QL_QuanCafe.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public KHACHHANG()
         {
+            this.DATBANs = new HashSet<DATBAN>();
             this.HOADONs = new HashSet<HOADON>();
+            this.THETICHDIEMs = new HashSet<THETICHDIEM>();
         }
     
         public string MaKH { get; set; }
@@ -29,9 +31,14 @@ namespace QL_QuanCafe.Model
         public Nullable<short> DiemTichLuy { get; set; }
         public string TenDN { get; set; }
         public string MatKhau { get; set; }
+        public Nullable<System.DateTime> NgaySinh { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DATBAN> DATBANs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOADON> HOADONs { get; set; }
         public virtual LOAIKHACHHANG LOAIKHACHHANG { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<THETICHDIEM> THETICHDIEMs { get; set; }
     }
 }

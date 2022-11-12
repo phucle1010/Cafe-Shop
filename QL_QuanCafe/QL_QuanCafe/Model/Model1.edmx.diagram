@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="dd29daa1f9434656ab66263816fd2563" Name="Diagram1">
+        <EntityTypeShape EntityType="CafeShopModel.BAN" Width="1.5" PointX="11" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeShopModel.BAOCAODOANHTHU" Width="1.5" PointX="3.75" PointY="24.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeShopModel.CALAMVIEC" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeShopModel.CT_BAOCAODOANHTHU" Width="1.5" PointX="6" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeShopModel.CT_DATMON" Width="1.5" PointX="17.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeShopModel.CT_HOADON" Width="1.5" PointX="8.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeShopModel.CT_NHAPHANG" Width="1.5" PointX="5.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeShopModel.CT_SANPHAM" Width="1.5" PointX="8.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeShopModel.DATBAN" Width="1.5" PointX="13.25" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeShopModel.DATMON" Width="1.5" PointX="15.5" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeShopModel.DIEMDANHNGAYLAM" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeShopModel.HANGHOA" Width="1.5" PointX="3" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeShopModel.HOADON" Width="1.5" PointX="6" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeShopModel.KHACHHANG" Width="1.5" PointX="3.75" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeShopModel.KHUVUC" Width="1.5" PointX="8.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeShopModel.LOAIHANGHOA" Width="1.5" PointX="0.75" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeShopModel.LOAIKHACHHANG" Width="1.5" PointX="1.5" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeShopModel.LOAISANPHAM" Width="1.5" PointX="3.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeShopModel.LUONG" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeShopModel.NHACUNGCAP" Width="1.5" PointX="0.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeShopModel.NHANVIEN" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeShopModel.NHAPHANG" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeShopModel.SANPHAM" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeShopModel.TAIKHOANDANGSUDUNG" Width="1.5" PointX="10.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CafeShopModel.THETICHDIEM" Width="1.5" PointX="6" PointY="17.25" IsExpanded="true" />
+        <AssociationConnector Association="CafeShopModel.FK__BAN__MaKV__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="CafeShopModel.FK__DATBAN__MaBan__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="CafeShopModel.FK__CT_BAOCAOD__MaBC__787EE5A0" ManuallyRouted="false" />
+        <AssociationConnector Association="CafeShopModel.FK__LUONG__MaCaLV__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="CafeShopModel.FK__CT_BAOCAO__MaLSP__797309D9" ManuallyRouted="false" />
+        <AssociationConnector Association="CafeShopModel.FK__CT_DATMON__MaDM__7F2BE32F" ManuallyRouted="false" />
+        <AssociationConnector Association="CafeShopModel.FK__CT_DATMON__MaHH__00200768" ManuallyRouted="false" />
+        <AssociationConnector Association="CafeShopModel.FK__CT_HOADON__MaHD__72C60C4A" ManuallyRouted="false" />
+        <AssociationConnector Association="CafeShopModel.FK__CT_HOADON__MaSP__73BA3083" ManuallyRouted="false" />
+        <AssociationConnector Association="CafeShopModel.FK__CT_NHAPHAN__MaHH__6C190EBB" ManuallyRouted="false" />
+        <AssociationConnector Association="CafeShopModel.FK__CT_NHAPHAN__MANH__6B24EA82" ManuallyRouted="false" />
+        <AssociationConnector Association="CafeShopModel.FK__CT_SANPHAM__MaHH__03F0984C" ManuallyRouted="false" />
+        <AssociationConnector Association="CafeShopModel.FK__CT_SANPHAM__MaSP__02FC7413" ManuallyRouted="false" />
+        <AssociationConnector Association="CafeShopModel.FK__DATBAN__MaKH__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="CafeShopModel.FK__DATMON__MaDatBan__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="CafeShopModel.FK__DIEMDANHNG__MaNV__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="CafeShopModel.FK__HANGHOA__MaLoaiH__6477ECF3" ManuallyRouted="false" />
+        <AssociationConnector Association="CafeShopModel.FK__HOADON__MaKH__6EF57B66" ManuallyRouted="false" />
+        <AssociationConnector Association="CafeShopModel.FK__HOADON__MaNV__6FE99F9F" ManuallyRouted="false" />
+        <AssociationConnector Association="CafeShopModel.FK__KHACHHANG__MaLoa__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="CafeShopModel.FK__THETICHDIE__MaKH__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="CafeShopModel.FK__SANPHAM__MaLoaiS__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="CafeShopModel.FK__LUONG__MaNV__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="CafeShopModel.FK__NHAPHANG__MaNCC__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="CafeShopModel.FK__NHAPHANG__MaNV__6754599E" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\
+C:\Users\asus\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\
 QL_QuanCafe
 none
 false
 DEBUG;TRACE
-E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\App.xaml
-8836757839
-2948482949
-481478963204
-22829345229
-Styles\ButtonStyles.xaml;Styles\UIColors.xaml;View\HomeView.xaml;View\LoginView.xaml;View\MainView_Admin.xaml;View\MainView_Customer.xaml;View\ProductView.xaml;View\RegisterAccount.xaml;
+C:\Users\asus\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\App.xaml
+14628090853
+2-1556844510
+56-1868171374
+221059828110
+Styles\ButtonStyles.xaml;Styles\UIColors.xaml;View\BookTable.xaml;View\CreateNewPasswork.xaml;View\EnterOTP.xaml;View\ForgotPasswork.xaml;View\HomeView.xaml;View\InformationPersonal_Admin.xaml;View\InformationPersonal_Customer.xaml;View\LoginView.xaml;View\MainView_Admin.xaml;View\MainView_Customer.xaml;View\ProductView.xaml;View\RegisterAccount.xaml;
 
-False
+True
 

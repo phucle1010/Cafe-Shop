@@ -1,0 +1,206 @@
+﻿<Window x:Class="QL_QuanCafe.View.InformationPersonal_Customer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QL_QuanCafe.View"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="InformationPersonal_Customer" Height="670" Width="1000" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <materialDesign:Card
+            Grid.Row="0"
+            Background="{DynamicResource PrimaryHueLightBrush}"
+            Foreground="{DynamicResource PrimaryHueLightForegroundBrush}"
+            Width="auto"
+            Padding="8">
+            <TextBlock
+                FontSize="16">
+                Thông tin cá nhân
+            </TextBlock>
+        </materialDesign:Card>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="600"/>
+                
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <materialDesign:Card Grid.Column="0"  Margin="0,0,0,0.333">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0">
+                            <materialDesign:PackIcon Kind="AccountCircleOutline" Height="auto" Width="auto"/>
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0">
+                                    <TextBlock HorizontalAlignment="Center" 
+                                           VerticalAlignment="Center" 
+                                           FontSize="16">Họ và tên</TextBlock>
+                                </Grid>
+                                <Grid Grid.Column="1">
+                                    <TextBox x:Name="txt_HoTen"
+                                         Width="200" 
+                                         Height="28">
+                                    </TextBox>
+                                </Grid>
+                            </Grid>
+                            <Grid Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0">
+                                    <TextBlock HorizontalAlignment="Center" 
+                                           VerticalAlignment="Center" 
+                                           FontSize="16">Email</TextBlock>
+                                </Grid>
+                                <Grid Grid.Column="1">
+                                    <TextBox x:Name="txt_Email" 
+                                             Width="200" 
+                                         Height="28">
+                                    </TextBox>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <DatePicker x:Name="date_picker"
+                            HorizontalAlignment="Left"
+                            Margin="100 0"
+                            Width="250"
+                            materialDesign:HintAssist.Hint="Date of birth"
+                            Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock 
+                            Grid.Column="0"
+                            VerticalAlignment="Center"
+                            FontSize="16"
+                            Padding="20"  
+                            Margin="10">
+                                Số điện thoại
+                            </TextBlock>
+                            <Grid Grid.Column="1">
+                                <TextBox x:Name="txt_Sdt" Width="200" 
+                                 Height="28"
+                                 Margin="30 10"
+                                 HorizontalAlignment="Left">
+                                </TextBox>
+                            </Grid>
+
+                        </Grid>
+                        <Grid Grid.Row="2">
+                            <Button
+                            x:Name="btn_SaveChange"
+                            Style="{StaticResource MaterialDesignRaisedLightButton}"
+                            Width="150"
+                            ToolTip="Resource name: MaterialDesignRaisedLightButton" Click="btn_SaveChange_Click">
+                                _Lưu thay đổi
+                            </Button>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </materialDesign:Card>
+            <materialDesign:Card Grid.Column="1" Margin="0,0,0.333,0.333">
+                <Grid>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="160"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock 
+                                Grid.Column="0"
+                                VerticalAlignment="Center"
+                                FontSize="16"
+                                Padding="20"  
+                                Margin="10">
+                                    Điểm tích lũy
+                            </TextBlock>
+                            <Grid Grid.Column="1">
+                                <TextBox x:Name="txt_DiemTichLuy" Width="200" 
+                                     Height="28"
+                                     Margin="30 10"
+                                     HorizontalAlignment="Left" IsReadOnly="True">
+                                </TextBox>
+                            </Grid>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="160"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock 
+                                Grid.Column="0"
+                                VerticalAlignment="Center"
+                                FontSize="16"
+                                Padding="20"  
+                                Margin="10">
+                                    Loại khách hàng
+                            </TextBlock>
+                            <Grid Grid.Column="1">
+                                <TextBox x:Name="txt_LoaiKhachHang" Width="200" 
+                                     Height="28"
+                                     Margin="30 10"
+                                     HorizontalAlignment="Left" IsReadOnly="True">
+                                </TextBox>
+                            </Grid>
+                        </Grid>
+                        <Button Grid.Row="2"
+                                Width="150"
+                                Margin="30 50"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top">
+                            Đổi mật khẩu
+                        </Button>
+                    </Grid>
+                </Grid>
+            </materialDesign:Card>
+
+        </Grid>
+    </Grid>
+</Window>
