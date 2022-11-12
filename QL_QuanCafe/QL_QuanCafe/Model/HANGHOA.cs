@@ -25,7 +25,9 @@ namespace QL_QuanCafe.Model
         public string MaHH { get; set; }
         public string TenHH { get; set; }
         public string MaLoaiHH { get; set; }
-        public Nullable<short> SoLuongConSan { get; set; }
+        public Nullable<decimal> SoLuongConSan { get; set; }
+        public string DonVi { get; set; }
+        public Nullable<decimal> DonGia { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_DATMON> CT_DATMON { get; set; }

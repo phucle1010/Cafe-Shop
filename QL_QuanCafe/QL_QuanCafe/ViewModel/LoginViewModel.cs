@@ -10,7 +10,7 @@ using System.Windows;
 
 namespace QL_QuanCafe.ViewModel
 {
-    class LoginViewModel
+    public class LoginViewModel : ViewModelBase
     {
         public string getIPAddress()
         {

@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace QL_QuanCafe.ViewModel
 {
-    public abstract class ViewModelBase
+    public abstract class ViewModelBase : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;   
+        public event PropertyChangedEventHandler PropertyChanged;
 
-        public void OnPropertychanged(String propertyName)
+        public void OnPropertyChanged(String propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

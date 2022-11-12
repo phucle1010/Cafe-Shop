@@ -69,7 +69,6 @@
           <Property Name="MaCTNH" Type="char" MaxLength="6" Nullable="false" />
           <Property Name="MANH" Type="char" MaxLength="6" />
           <Property Name="MaHH" Type="char" MaxLength="6" />
-          <Property Name="DonGiaNhap" Type="decimal" Precision="18" Scale="0" />
           <Property Name="SoLuong" Type="smallint" />
         </EntityType>
         <EntityType Name="CT_SANPHAM">
@@ -112,7 +111,9 @@
           <Property Name="MaHH" Type="char" MaxLength="6" Nullable="false" />
           <Property Name="TenHH" Type="nvarchar" MaxLength="50" />
           <Property Name="MaLoaiHH" Type="char" MaxLength="2" />
-          <Property Name="SoLuongConSan" Type="smallint" />
+          <Property Name="SoLuongConSan" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="DonVi" Type="nvarchar" MaxLength="5" />
+          <Property Name="DonGia" Type="money" />
         </EntityType>
         <EntityType Name="HOADON">
           <Key>
@@ -156,7 +157,6 @@
           </Key>
           <Property Name="MaLoaiHH" Type="char" MaxLength="2" Nullable="false" />
           <Property Name="TenLoaiHH" Type="nvarchar" MaxLength="50" />
-          <Property Name="DonVi" Type="decimal" Precision="18" Scale="0" />
         </EntityType>
         <EntityType Name="LOAIKHACHHANG">
           <Key>
@@ -241,8 +241,8 @@
             <PropertyRef Name="TaiKhoan" />
           </Key>
           <Property Name="TaiKhoan" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="PhanQuyen" Type="bit" />
           <Property Name="DiaChiIP" Type="varchar" MaxLength="40" />
+          <Property Name="PhanQuyen" Type="bit" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6013: The table/view 'CafeShop.dbo.THAMSO' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
@@ -843,7 +843,6 @@ warning 6013: The table/view 'CafeShop.dbo.THAMSO' does not have a primary key d
           <Property Name="MaCTNH" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
           <Property Name="MANH" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
           <Property Name="MaHH" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
-          <Property Name="DonGiaNhap" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="SoLuong" Type="Int16" />
           <NavigationProperty Name="HANGHOA" Relationship="CafeShopModel.FK__CT_NHAPHAN__MaHH__6754599E" FromRole="CT_NHAPHANG" ToRole="HANGHOA" />
           <NavigationProperty Name="NHAPHANG" Relationship="CafeShopModel.FK__CT_NHAPHAN__MANH__66603565" FromRole="CT_NHAPHANG" ToRole="NHAPHANG" />
@@ -895,7 +894,9 @@ warning 6013: The table/view 'CafeShop.dbo.THAMSO' does not have a primary key d
           <Property Name="MaHH" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
           <Property Name="TenHH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="MaLoaiHH" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
-          <Property Name="SoLuongConSan" Type="Int16" />
+          <Property Name="SoLuongConSan" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="DonVi" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="DonGia" Type="Decimal" Precision="19" Scale="4" />
           <NavigationProperty Name="CT_DATMON" Relationship="CafeShopModel.FK__CT_DATMON__MaHH__18EBB532" FromRole="HANGHOA" ToRole="CT_DATMON" />
           <NavigationProperty Name="CT_NHAPHANG" Relationship="CafeShopModel.FK__CT_NHAPHAN__MaHH__6754599E" FromRole="HANGHOA" ToRole="CT_NHAPHANG" />
           <NavigationProperty Name="CT_SANPHAM" Relationship="CafeShopModel.FK__CT_SANPHAM__MaHH__6EF57B66" FromRole="HANGHOA" ToRole="CT_SANPHAM" />
@@ -949,7 +950,6 @@ warning 6013: The table/view 'CafeShop.dbo.THAMSO' does not have a primary key d
           </Key>
           <Property Name="MaLoaiHH" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
           <Property Name="TenLoaiHH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="DonVi" Type="Decimal" Precision="18" Scale="0" />
           <NavigationProperty Name="HANGHOAs" Relationship="CafeShopModel.FK__HANGHOA__MaLoaiH__4F7CD00D" FromRole="LOAIHANGHOA" ToRole="HANGHOA" />
         </EntityType>
         <EntityType Name="LOAIKHACHHANG">
@@ -1051,8 +1051,8 @@ warning 6013: The table/view 'CafeShop.dbo.THAMSO' does not have a primary key d
             <PropertyRef Name="TaiKhoan" />
           </Key>
           <Property Name="TaiKhoan" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="PhanQuyen" Type="Boolean" />
           <Property Name="DiaChiIP" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="PhanQuyen" Type="Boolean" />
         </EntityType>
         <Association Name="FK__BAN__MaKV__571DF1D5">
           <End Type="CafeShopModel.KHUVUC" Role="KHUVUC" Multiplicity="0..1" />
@@ -1403,7 +1403,6 @@ warning 6013: The table/view 'CafeShop.dbo.THAMSO' does not have a primary key d
             <EntityTypeMapping TypeName="CafeShopModel.CT_NHAPHANG">
               <MappingFragment StoreEntitySet="CT_NHAPHANG">
                 <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
-                <ScalarProperty Name="DonGiaNhap" ColumnName="DonGiaNhap" />
                 <ScalarProperty Name="MaHH" ColumnName="MaHH" />
                 <ScalarProperty Name="MANH" ColumnName="MANH" />
                 <ScalarProperty Name="MaCTNH" ColumnName="MaCTNH" />
@@ -1450,6 +1449,8 @@ warning 6013: The table/view 'CafeShop.dbo.THAMSO' does not have a primary key d
           <EntitySetMapping Name="HANGHOAs">
             <EntityTypeMapping TypeName="CafeShopModel.HANGHOA">
               <MappingFragment StoreEntitySet="HANGHOA">
+                <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+                <ScalarProperty Name="DonVi" ColumnName="DonVi" />
                 <ScalarProperty Name="SoLuongConSan" ColumnName="SoLuongConSan" />
                 <ScalarProperty Name="MaLoaiHH" ColumnName="MaLoaiHH" />
                 <ScalarProperty Name="TenHH" ColumnName="TenHH" />
@@ -1499,7 +1500,6 @@ warning 6013: The table/view 'CafeShop.dbo.THAMSO' does not have a primary key d
           <EntitySetMapping Name="LOAIHANGHOAs">
             <EntityTypeMapping TypeName="CafeShopModel.LOAIHANGHOA">
               <MappingFragment StoreEntitySet="LOAIHANGHOA">
-                <ScalarProperty Name="DonVi" ColumnName="DonVi" />
                 <ScalarProperty Name="TenLoaiHH" ColumnName="TenLoaiHH" />
                 <ScalarProperty Name="MaLoaiHH" ColumnName="MaLoaiHH" />
               </MappingFragment>
@@ -1593,8 +1593,8 @@ warning 6013: The table/view 'CafeShop.dbo.THAMSO' does not have a primary key d
           <EntitySetMapping Name="TAIKHOANDANGSUDUNGs">
             <EntityTypeMapping TypeName="CafeShopModel.TAIKHOANDANGSUDUNG">
               <MappingFragment StoreEntitySet="TAIKHOANDANGSUDUNG">
-                <ScalarProperty Name="DiaChiIP" ColumnName="DiaChiIP" />
                 <ScalarProperty Name="PhanQuyen" ColumnName="PhanQuyen" />
+                <ScalarProperty Name="DiaChiIP" ColumnName="DiaChiIP" />
                 <ScalarProperty Name="TaiKhoan" ColumnName="TaiKhoan" />
               </MappingFragment>
             </EntityTypeMapping>

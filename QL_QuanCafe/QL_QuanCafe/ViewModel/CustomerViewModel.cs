@@ -8,7 +8,7 @@ using System.Windows;
 
 namespace QL_QuanCafe.ViewModel
 {
-    class CustomerViewModel
+    public class CustomerViewModel : ViewModelBase
     {
         public bool isLoginWithCustomerRole( string user, string pass )
         {

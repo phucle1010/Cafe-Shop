@@ -8,8 +8,9 @@ using System.Windows;
 
 namespace QL_QuanCafe.ViewModel
 {
-    class AdminViewModel
+    public class AdminViewModel : ViewModelBase
     {
+        
         public bool isLoginWithAdminRole( string user, string pass )
         {
             LoginViewModel login = new LoginViewModel();

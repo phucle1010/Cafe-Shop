@@ -17,7 +17,6 @@ namespace QL_QuanCafe.Model
         public string MaCTNH { get; set; }
         public string MANH { get; set; }
         public string MaHH { get; set; }
-        public Nullable<decimal> DonGiaNhap { get; set; }
         public Nullable<short> SoLuong { get; set; }
     
         public virtual HANGHOA HANGHOA { get; set; }

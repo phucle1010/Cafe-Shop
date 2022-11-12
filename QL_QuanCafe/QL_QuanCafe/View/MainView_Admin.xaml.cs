@@ -26,13 +26,8 @@ namespace QL_QuanCafe.View
         public MainView_Admin()
         {
             InitializeComponent();
-            LoadData();
-        }
-        void LoadData()
-        {
-            AdminViewModel admin = new AdminViewModel();
-            string userName = Properties.Settings.Default ["user"].ToString();
-            tbUserName.Text = admin.getAdminName(userName);
+            //DataContext = new MainViewModel();
+            MainContent.Content = new HomeAdminView();
         }
         [DllImport("user32.dll")]
         public static extern IntPtr SendMessage( IntPtr hWnd, int wMsg, int wParam, int lParam );
@@ -47,7 +42,6 @@ namespace QL_QuanCafe.View
         {
             this.WindowState = WindowState.Minimized;
         }
-
 
         private void btnClose_Click( object sender, RoutedEventArgs e )
         {
@@ -65,7 +59,57 @@ namespace QL_QuanCafe.View
             this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
         }
 
-        private void btnSignOut_Click(object sender, RoutedEventArgs e)
+        private void btnHome_Click( object sender, RoutedEventArgs e )
+        {
+            MainContent.Content = new HomeAdminView();
+        }
+
+        private void btnCustomer_Click( object sender, RoutedEventArgs e )
+        {
+            MainContent.Content = new CustomerView();
+        }
+
+        private void btnEmployee_Click( object sender, RoutedEventArgs e )
+        {
+            MainContent.Content = new EmployeeView();
+        }
+
+        private void btnFood_Click( object sender, RoutedEventArgs e )
+        {
+            MainContent.Content = new FoodView();
+        }
+
+        private void btnMaterial_Click( object sender, RoutedEventArgs e )
+        {
+            MainContent.Content = new ImportMaterialView();
+        }
+
+        private void btnManageOrderTable_Click( object sender, RoutedEventArgs e )
+        {
+            MainContent.Content = new ManageOrderTableView();
+        }
+
+        private void btnManageOrderFood_Click( object sender, RoutedEventArgs e )
+        {
+            MainContent.Content = new ManageOrderFoodView();
+        }
+
+        private void btnPayment_Click( object sender, RoutedEventArgs e )
+        {
+            MainContent.Content = new PaymentView();
+        }
+
+        private void btnReport_Click( object sender, RoutedEventArgs e )
+        {
+            MainContent.Content = new ReportView();
+        }
+
+        private void btnSecurity_Click( object sender, RoutedEventArgs e )
+        {
+            MainContent.Content = new SecurityView();
+        }
+
+        private void btnSignOut_Click( object sender, RoutedEventArgs e )
         {
             LoginViewModel login = new LoginViewModel();
             login.removeUserIsUsing();
@@ -75,5 +119,4 @@ namespace QL_QuanCafe.View
             loginLayout.Show();
         }
     }
-        
 }

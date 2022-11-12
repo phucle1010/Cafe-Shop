@@ -68,7 +68,6 @@
       <EntityTypeMapping TypeName="CafeShopModel.CT_NHAPHANG">
         <MappingFragment StoreEntitySet="CT_NHAPHANG">
           <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
-          <ScalarProperty Name="DonGiaNhap" ColumnName="DonGiaNhap" />
           <ScalarProperty Name="MaHH" ColumnName="MaHH" />
           <ScalarProperty Name="MANH" ColumnName="MANH" />
           <ScalarProperty Name="MaCTNH" ColumnName="MaCTNH" />
@@ -115,6 +114,8 @@
     <EntitySetMapping Name="HANGHOAs">
       <EntityTypeMapping TypeName="CafeShopModel.HANGHOA">
         <MappingFragment StoreEntitySet="HANGHOA">
+          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
+          <ScalarProperty Name="DonVi" ColumnName="DonVi" />
           <ScalarProperty Name="SoLuongConSan" ColumnName="SoLuongConSan" />
           <ScalarProperty Name="MaLoaiHH" ColumnName="MaLoaiHH" />
           <ScalarProperty Name="TenHH" ColumnName="TenHH" />
@@ -164,7 +165,6 @@
     <EntitySetMapping Name="LOAIHANGHOAs">
       <EntityTypeMapping TypeName="CafeShopModel.LOAIHANGHOA">
         <MappingFragment StoreEntitySet="LOAIHANGHOA">
-          <ScalarProperty Name="DonVi" ColumnName="DonVi" />
           <ScalarProperty Name="TenLoaiHH" ColumnName="TenLoaiHH" />
           <ScalarProperty Name="MaLoaiHH" ColumnName="MaLoaiHH" />
         </MappingFragment>
@@ -258,8 +258,8 @@
     <EntitySetMapping Name="TAIKHOANDANGSUDUNGs">
       <EntityTypeMapping TypeName="CafeShopModel.TAIKHOANDANGSUDUNG">
         <MappingFragment StoreEntitySet="TAIKHOANDANGSUDUNG">
-          <ScalarProperty Name="DiaChiIP" ColumnName="DiaChiIP" />
           <ScalarProperty Name="PhanQuyen" ColumnName="PhanQuyen" />
+          <ScalarProperty Name="DiaChiIP" ColumnName="DiaChiIP" />
           <ScalarProperty Name="TaiKhoan" ColumnName="TaiKhoan" />
         </MappingFragment>
       </EntityTypeMapping>

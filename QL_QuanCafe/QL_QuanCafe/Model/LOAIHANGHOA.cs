@@ -22,7 +22,6 @@ namespace QL_QuanCafe.Model
     
         public string MaLoaiHH { get; set; }
         public string TenLoaiHH { get; set; }
-        public Nullable<decimal> DonVi { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HANGHOA> HANGHOAs { get; set; }

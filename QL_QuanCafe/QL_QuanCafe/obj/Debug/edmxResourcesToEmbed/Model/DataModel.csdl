@@ -193,7 +193,6 @@
     <Property Name="MaCTNH" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
     <Property Name="MANH" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
     <Property Name="MaHH" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
-    <Property Name="DonGiaNhap" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="SoLuong" Type="Int16" />
     <NavigationProperty Name="HANGHOA" Relationship="CafeShopModel.FK__CT_NHAPHAN__MaHH__6754599E" FromRole="CT_NHAPHANG" ToRole="HANGHOA" />
     <NavigationProperty Name="NHAPHANG" Relationship="CafeShopModel.FK__CT_NHAPHAN__MANH__66603565" FromRole="CT_NHAPHANG" ToRole="NHAPHANG" />
@@ -245,7 +244,9 @@
     <Property Name="MaHH" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
     <Property Name="TenHH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="MaLoaiHH" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
-    <Property Name="SoLuongConSan" Type="Int16" />
+    <Property Name="SoLuongConSan" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="DonVi" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="DonGia" Type="Decimal" Precision="19" Scale="4" />
     <NavigationProperty Name="CT_DATMON" Relationship="CafeShopModel.FK__CT_DATMON__MaHH__18EBB532" FromRole="HANGHOA" ToRole="CT_DATMON" />
     <NavigationProperty Name="CT_NHAPHANG" Relationship="CafeShopModel.FK__CT_NHAPHAN__MaHH__6754599E" FromRole="HANGHOA" ToRole="CT_NHAPHANG" />
     <NavigationProperty Name="CT_SANPHAM" Relationship="CafeShopModel.FK__CT_SANPHAM__MaHH__6EF57B66" FromRole="HANGHOA" ToRole="CT_SANPHAM" />
@@ -299,7 +300,6 @@
     </Key>
     <Property Name="MaLoaiHH" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
     <Property Name="TenLoaiHH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="DonVi" Type="Decimal" Precision="18" Scale="0" />
     <NavigationProperty Name="HANGHOAs" Relationship="CafeShopModel.FK__HANGHOA__MaLoaiH__4F7CD00D" FromRole="LOAIHANGHOA" ToRole="HANGHOA" />
   </EntityType>
   <EntityType Name="LOAIKHACHHANG">
@@ -401,8 +401,8 @@
       <PropertyRef Name="TaiKhoan" />
     </Key>
     <Property Name="TaiKhoan" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="PhanQuyen" Type="Boolean" />
     <Property Name="DiaChiIP" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="PhanQuyen" Type="Boolean" />
   </EntityType>
   <Association Name="FK__BAN__MaKV__571DF1D5">
     <End Type="CafeShopModel.KHUVUC" Role="KHUVUC" Multiplicity="0..1" />

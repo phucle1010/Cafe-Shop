@@ -40,5 +40,23 @@ namespace QL_QuanCafe.Properties {
                 return ((int)(this["role"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string materialType {
+            get {
+                return ((string)(this["materialType"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string importId {
+            get {
+                return ((string)(this["importId"]));
+            }
+        }
     }
 }
