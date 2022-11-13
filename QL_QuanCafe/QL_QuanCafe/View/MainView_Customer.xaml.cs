@@ -74,5 +74,12 @@ namespace QL_QuanCafe.View
             this.Visibility = Visibility.Hidden;
             loginLayout.Show();
         }
+
+        private void RadioButton_Click(object sender, RoutedEventArgs e)
+        {
+            BookTable book = new BookTable();
+            this.Hide();
+            book.ShowDialog();
+        }
     }
 }

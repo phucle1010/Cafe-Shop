@@ -74,7 +74,7 @@
 
                     <RadioButton Style="{StaticResource menuButton}"
                                  Tag="{StaticResource color3}"
-                                 Command="{Binding ShowCustomerViewCommand}">
+                                 Command="{Binding ShowCustomerViewCommand}" Click="RadioButton_Click">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="TableCellsLarge" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Đặt bàn" Style="{StaticResource menuButtonText}"/>
