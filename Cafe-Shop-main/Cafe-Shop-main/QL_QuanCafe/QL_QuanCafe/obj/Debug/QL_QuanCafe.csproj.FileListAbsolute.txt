@@ -1,0 +1,159 @@
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\bin\Debug\QL_QuanCafe.exe.config
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\bin\Debug\QL_QuanCafe.exe
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\bin\Debug\QL_QuanCafe.pdb
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\bin\Debug\MaterialDesignColors.dll
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\bin\Debug\MaterialDesignColors.pdb
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.csproj.AssemblyReference.cache
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.csproj.SuggestedBindingRedirects.cache
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\LoginView.g.cs
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\obj\Debug\App.g.cs
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe_MarkupCompile.cache
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe_MarkupCompile.lref
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\LoginView.baml
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.g.resources
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.Properties.Resources.resources
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.csproj.GenerateResource.cache
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.csproj.CoreCompileInputs.cache
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.csproj.CopyComplete
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.exe
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.pdb
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\obj\Debug\Styles\UIColors.baml
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\MainView.g.cs
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\obj\Debug\App.baml
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\MainView.baml
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\obj\Debug\Styles\ButtonStyles.baml
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\bin\Debug\FontAwesome.Sharp.dll
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\HomeView.g.cs
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\ProductView.g.cs
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\RegisterAccount.g.cs
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\HomeView.baml
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\ProductView.baml
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\RegisterAccount.baml
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\MainView_Customer.g.cs
+D:\Năm 3\web\Đồ án\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\MainView_Customer.baml
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\bin\Debug\QL_QuanCafe.exe.config
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\bin\Debug\QL_QuanCafe.exe
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\bin\Debug\QL_QuanCafe.pdb
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\bin\Debug\FontAwesome.Sharp.dll
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\bin\Debug\MaterialDesignColors.dll
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\bin\Debug\MaterialDesignThemes.Wpf.dll
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\bin\Debug\MaterialDesignColors.pdb
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\bin\Debug\MaterialDesignThemes.Wpf.pdb
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\bin\Debug\MaterialDesignThemes.Wpf.xml
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.csproj.AssemblyReference.cache
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\Styles\ButtonStyles.baml
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\Styles\UIColors.baml
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\LoginView.baml
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\HomeView.g.cs
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\LoginView.g.cs
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\MainView_Customer.g.cs
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\ProductView.g.cs
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\RegisterAccount.g.cs
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\App.g.cs
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe_MarkupCompile.cache
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe_MarkupCompile.lref
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\App.baml
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\HomeView.baml
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\MainView_Customer.baml
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\ProductView.baml
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\RegisterAccount.baml
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.g.resources
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.Properties.Resources.resources
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.csproj.GenerateResource.cache
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.csproj.CoreCompileInputs.cache
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.csproj.CopyComplete
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.exe
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.pdb
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\MainView_Admin.g.cs
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\MainView_Admin.baml
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\bin\Debug\QL_QuanCafe.exe.config
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\bin\Debug\QL_QuanCafe.exe
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\bin\Debug\QL_QuanCafe.pdb
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\bin\Debug\FontAwesome.Sharp.dll
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\bin\Debug\MaterialDesignColors.dll
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\bin\Debug\MaterialDesignColors.pdb
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.csproj.AssemblyReference.cache
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.csproj.SuggestedBindingRedirects.cache
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\Styles\ButtonStyles.baml
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\Styles\UIColors.baml
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\LoginView.baml
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\HomeView.g.cs
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\LoginView.g.cs
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\MainView_Admin.g.cs
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\MainView_Customer.g.cs
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\ProductView.g.cs
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\RegisterAccount.g.cs
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\App.g.cs
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe_MarkupCompile.cache
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe_MarkupCompile.lref
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\App.baml
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\HomeView.baml
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\MainView_Admin.baml
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\MainView_Customer.baml
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\ProductView.baml
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\RegisterAccount.baml
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.g.resources
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.Properties.Resources.resources
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.csproj.GenerateResource.cache
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.csproj.CoreCompileInputs.cache
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.csproj.CopyComplete
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.exe
+D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.pdb
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\bin\Debug\EntityFramework.dll
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\bin\Debug\EntityFramework.SqlServer.dll
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\bin\Debug\EntityFramework.xml
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\bin\Debug\EntityFramework.SqlServer.xml
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe_Content.g.cs
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\bin\Debug\QL_QuanCafe.exe.config
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\bin\Debug\QL_QuanCafe.exe
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\bin\Debug\QL_QuanCafe.pdb
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\bin\Debug\EntityFramework.dll
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\bin\Debug\MaterialDesignColors.dll
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\bin\Debug\EntityFramework.xml
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\bin\Debug\MaterialDesignColors.pdb
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.csproj.AssemblyReference.cache
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.csproj.SuggestedBindingRedirects.cache
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\obj\Debug\Styles\ButtonStyles.baml
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\obj\Debug\Styles\UIColors.baml
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\LoginView.baml
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\HomeView.g.cs
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\LoginView.g.cs
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\MainView_Admin.g.cs
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\MainView_Customer.g.cs
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\ProductView.g.cs
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\RegisterAccount.g.cs
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\obj\Debug\App.g.cs
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe_Content.g.cs
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe_MarkupCompile.cache
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe_MarkupCompile.lref
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\obj\Debug\App.baml
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\HomeView.baml
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\MainView_Admin.baml
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\MainView_Customer.baml
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\ProductView.baml
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\RegisterAccount.baml
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.g.resources
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.Properties.Resources.resources
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.csproj.GenerateResource.cache
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.csproj.CoreCompileInputs.cache
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.csproj.CopyComplete
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.exe
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.pdb
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\ResetPassword_Admin.g.cs
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\ResetPassword_Customer.g.cs
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\ResetPassword_Admin.baml
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\ResetPassword_Customer.baml
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\AddStaffView.g.cs
+C:\Users\NK\Downloads\Cafe-Shop-main\Cafe-Shop-main\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\AddStaffView.baml

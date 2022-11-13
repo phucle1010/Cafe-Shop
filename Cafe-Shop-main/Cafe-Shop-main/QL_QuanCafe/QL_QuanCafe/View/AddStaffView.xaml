@@ -1,0 +1,307 @@
+﻿<Page x:Class="QL_QuanCafe.View.AddStaffView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:QL_QuanCafe.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="750"
+      d:DesignWidth="800"
+      Title="AddStaffView">
+
+    <Border CornerRadius="0,10,10,0">
+        <Border.Background>
+            <LinearGradientBrush StartPoint="1,1" EndPoint="0,0">
+                <GradientStop Color="{StaticResource primaryBackColor1}" Offset="0"/>
+                <GradientStop Color="{StaticResource primaryBackColor2}" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height ="80"/>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid>
+                <TextBlock Text="NHẬP THÔNG TIN NHÂN VIÊN"
+                               Foreground="White"
+                               FontSize="16"
+                               FontFamily="Montserrat"
+                               Grid.Column="0"
+                               VerticalAlignment="Center"
+                               HorizontalAlignment="Center"
+                               Margin="10,0,0,0"/>
+            </Grid>
+
+            <StackPanel Width="400"
+                            Grid.Row="1"
+                            Orientation="Vertical"
+                            Margin="200,20,200,0">
+
+                <TextBlock Text="Họ và tên"
+                               Foreground="DarkGray"
+                               FontSize="12"
+                               FontFamily="Montserrat"
+                               Margin="0,0,0,0"/>
+
+                <TextBox x:Name="txtName"
+                               FontSize="13"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"                               
+                               Foreground="White"                            
+                               CaretBrush="LightGray"
+                               BorderBrush="White"
+                               BorderThickness="0,0,0,1" 
+                               Height="25"
+                               VerticalContentAlignment="Center"
+                               Margin="0,5,0,0"
+                               Padding="30,0,0,0">
+
+                    <TextBox.Background>
+                        <ImageBrush ImageSource="/Image/name.png"                               
+                                        Stretch="Uniform"
+                                        AlignmentX="Left"/>
+                    </TextBox.Background>
+                </TextBox>
+
+
+
+                <TextBlock Text="Giới tính:"
+                               Foreground="DarkGray"
+                               FontSize="12"
+                               FontWeight="Medium"                           
+                               FontFamily="Montserrat"
+                               Margin="0,20,0,0"/>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <RadioButton x:Name="rdNam"
+                                Foreground="DarkGray"
+                                 FontSize="12"
+                               FontWeight="Medium"                           
+                               FontFamily="Montserrat"
+                               Margin="0,15,0,0">Nam</RadioButton>
+
+                    <RadioButton x:Name="rdNu"
+                               Foreground="DarkGray"
+                               FontSize="12"
+                               FontWeight="Medium"                           
+                               FontFamily="Montserrat"
+                               Padding="20,0,0,0"
+                               Margin="90,15,0,0">Nữ</RadioButton>
+                </Grid>
+
+
+
+
+
+
+                <TextBlock Text="Địa chỉ"
+                               Foreground="DarkGray"
+                               FontSize="12"
+                               FontFamily="Montserrat"
+                               Margin="0,20,0,0"/>
+
+                <TextBox x:Name="txtAddress"
+                               FontSize="13"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"                               
+                               Foreground="White"
+                            
+                               CaretBrush="LightGray"
+                               BorderBrush="White"
+                               BorderThickness="0,0,0,1" 
+                               Height="25"
+                               VerticalContentAlignment="Center"
+                               Margin="0,5,0,0"
+                               Padding="30,0,0,0">
+
+                    <TextBox.Background>
+                        <ImageBrush ImageSource="/Image/address.png"                               
+                                        Stretch="Uniform"
+                                        AlignmentX="Left"/>
+                    </TextBox.Background>
+
+                </TextBox>
+
+                <TextBlock Text="Email"
+                               Foreground="DarkGray"
+                               FontSize="12"
+                               FontFamily="Montserrat"
+                               Margin="0,20,0,0"/>
+
+                <TextBox x:Name="txtEmail"
+                               FontSize="13"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"                               
+                               Foreground="White"
+                            
+                               CaretBrush="LightGray"
+                               BorderBrush="White"
+                               BorderThickness="0,0,0,1" 
+                               Height="25"
+                               VerticalContentAlignment="Center"
+                               Margin="0,5,0,0"
+                               Padding="30,0,0,0">
+
+                    <TextBox.Background>
+                        <ImageBrush ImageSource="/Image/email.png"                               
+                                        Stretch="Uniform"
+                                        AlignmentX="Left"/>
+                    </TextBox.Background>
+                </TextBox>
+
+                <TextBlock Text="SĐT"
+                               Foreground="DarkGray"
+                               FontSize="12"
+                               FontFamily="Montserrat"
+                               Margin="0,20,0,0"/>
+
+                <TextBox x:Name="txtPhonenumber"
+                               FontSize="13"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"                               
+                               Foreground="White"
+                            
+                               CaretBrush="LightGray"
+                               BorderBrush="White"
+                               BorderThickness="0,0,0,1" 
+                               Height="25"
+                               VerticalContentAlignment="Center"
+                               Margin="0,5,0,0"
+                               Padding="30,0,0,0">
+
+                    <TextBox.Background>
+                        <ImageBrush ImageSource="/Image/phone.png"                               
+                                        Stretch="Uniform"
+                                        AlignmentX="Left"/>
+                    </TextBox.Background>
+
+                </TextBox>
+
+                <TextBlock Text="Lương"
+                               Foreground="DarkGray"
+                               FontSize="12"
+                               FontFamily="Montserrat"
+                               Margin="0,20,0,0"/>
+
+                <TextBox x:Name="txtSalary"
+                               FontSize="13"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"                               
+                               Foreground="White"
+                            
+                               CaretBrush="LightGray"
+                               BorderBrush="White"
+                               BorderThickness="0,0,0,1" 
+                               Height="28"
+                               VerticalContentAlignment="Center"
+                               Margin="0,5,0,0"
+                               Padding="30,0,0,0">
+
+                    <TextBox.Background>
+                        <ImageBrush ImageSource="/Image/salary.png"                               
+                                        Stretch="Uniform"
+                                        AlignmentX="Left"/>
+                    </TextBox.Background>
+                </TextBox>
+
+                <TextBlock Text="Chức vụ"
+                               Foreground="DarkGray"
+                               FontSize="12"
+                               FontFamily="Montserrat"
+                               Margin="0,20,0,0"/>
+                <StackPanel Margin="0,10,0,0">
+                    <ComboBox x:Name="cbPosition">
+                        <ComboBoxItem>N</ComboBoxItem>
+                        <ComboBoxItem>T</ComboBoxItem>
+                        <ComboBoxItem>V</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+                
+                <TextBlock Text="Ngày vào làm"
+                               Foreground="DarkGray"
+                               FontSize="12"
+                               FontFamily="Montserrat"                           
+                               Margin="0,20,0,0"/>
+                <StackPanel Margin="0,10,0,0">
+                    <DatePicker x:Name="DPdatework"
+                                FontSize="12"
+                                FontFamily="Montserrat"
+                                Foreground="DarkGray"
+                              >
+
+                    </DatePicker>
+                </StackPanel>
+
+
+                <TextBlock Text="Mật khẩu"
+                               Foreground="DarkGray"
+                               FontSize="12"
+                               FontFamily="Montserrat"
+                               Margin="0,20,0,0"/>
+
+                <PasswordBox x:Name="txtPass"
+                               FontSize="13"
+                               FontWeight="Medium"
+                               FontFamily="Montserrat"                               
+                               Foreground="White"
+                            
+                               CaretBrush="LightGray"
+                               BorderBrush="White"
+                               BorderThickness="0,0,0,1" 
+                               Height="25"
+                               VerticalContentAlignment="Center"
+                               Margin="0,5,0,0"
+                               Padding="30,0,0,0">
+
+                    <PasswordBox.Background>
+                        <ImageBrush ImageSource="/Image/pass.png"                               
+                                        Stretch="Uniform"
+                                        AlignmentX="Left"/>
+                    </PasswordBox.Background>
+                </PasswordBox>
+
+
+
+
+                <Button x:Name="btnAdd"
+                             BorderThickness="0"
+                             Content="Thêm"
+                             Foreground="White"
+                             FontSize="14"
+                             FontFamily="Montserrat"
+                             Cursor="Hand"
+                             Grid.Column="2"
+                            Margin="0,40,0,0"
+                            Click="btnAdd_Click">
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="#462AD8"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#28AEED"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Width="150" Height="40"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                </Button>
+
+            </StackPanel>
+
+        </Grid>
+    </Border>
+</Page>
