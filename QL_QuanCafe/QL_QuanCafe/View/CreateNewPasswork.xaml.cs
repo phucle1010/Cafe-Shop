@@ -32,12 +32,14 @@ namespace QL_QuanCafe.View
 
         private void btn_CapNhat_Click(object sender, RoutedEventArgs e)
         {
+            EmailResetPass.Instance.SetEmail("nguyen@gmail.com");
             string pass = txt_Pass.Text.ToString();
             if (pass.Length>= 6)
             {
                 try
                 {
                     DataProvider.Ins.DB.Database.ExecuteSqlCommand($"update khachhang set matkhau = '{pass}' where email = '{EmailResetPass.Instance.GetEmail()}'");
+                    DataProvider.Ins.DB.Database.ExecuteSqlCommand($"update NhanVien set matkhau = '{pass}' where email = '{EmailResetPass.Instance.GetEmail()}'");
                 }
                 catch
                 {

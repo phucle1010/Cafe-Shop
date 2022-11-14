@@ -61,6 +61,7 @@ namespace QL_QuanCafe.View
             try
             {
                 successDataRows = DataProvider.Ins.DB.KHACHHANGs.SqlQuery($"SELECT * FROM KHACHHANG WHERE email = '{_email}'").Count();
+                successDataRows += DataProvider.Ins.DB.KHACHHANGs.SqlQuery($"SELECT * FROM  WHERE NhanVien email = '{_email}'").Count();
             }
             catch (Exception e)
             {
