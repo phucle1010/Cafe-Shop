@@ -20,7 +20,7 @@ namespace QL_QuanCafe.Model
             this.CT_BAOCAODOANHTHU = new HashSet<CT_BAOCAODOANHTHU>();
         }
     
-        public string MaBC { get; set; }
+        public int MaBC { get; set; }
         public string TenBC { get; set; }
         public Nullable<System.DateTime> NgayBC { get; set; }
         public Nullable<decimal> TongDoanhThu { get; set; }

@@ -15,7 +15,7 @@ namespace QL_QuanCafe.Model
     public partial class TAIKHOANDANGSUDUNG
     {
         public string TaiKhoan { get; set; }
-        public string DiaChiIP { get; set; }
         public Nullable<bool> PhanQuyen { get; set; }
+        public string DiaChiIP { get; set; }
     }
 }

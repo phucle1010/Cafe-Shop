@@ -38,5 +38,31 @@ namespace QL_QuanCafe.ViewModel
 
             return name;
         }
+
+        public string getCustomerId( string user )
+        {
+            string id = "";
+            try
+            {
+                id = DataProvider.Ins.DB.KHACHHANGs.SqlQuery($"SELECT * FROM KHACHHANG WHERE TenDN = '{user}'").ElementAt(0).MaKH.ToString();
+            }
+            catch ( Exception e )
+            {
+                MessageBox.Show(e.ToString(), "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            return id;
+        }
+
+        public int getTheNumberOfCustomer()
+        {
+            return DataProvider.Ins.DB.KHACHHANGs.Count();
+        }
+
+        public List<KHACHHANG> getCustomerList()
+        {
+            var customerList = DataProvider.Ins.DB.KHACHHANGs.SqlQuery("SELECT * FROM KHACHHANG").ToList<KHACHHANG>();
+            return customerList;
+        }
     }
 }

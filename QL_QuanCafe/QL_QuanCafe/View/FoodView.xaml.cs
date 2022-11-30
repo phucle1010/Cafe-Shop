@@ -28,9 +28,20 @@ namespace QL_QuanCafe.View
         }
         void LoadData()
         {
-            AdminViewModel admin = new AdminViewModel();
+            AdminViewModel customer = new AdminViewModel();
             string userName = Properties.Settings.Default ["user"].ToString();
-            tbUserName.Text = admin.getAdminName(userName);
+            tbUserName.Text = customer.getAdminName(userName);
+        }
+
+        private void btnAddFood_Click( object sender, RoutedEventArgs e )
+        {
+            AddNewFoodView addNewFood = new AddNewFoodView();
+            addNewFood.Show();
+        }
+
+        private void btnUpdateFood_Click( object sender, RoutedEventArgs e )
+        {
+
         }
     }
 }

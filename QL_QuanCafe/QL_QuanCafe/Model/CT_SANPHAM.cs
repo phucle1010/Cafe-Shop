@@ -14,10 +14,10 @@ namespace QL_QuanCafe.Model
     
     public partial class CT_SANPHAM
     {
-        public string MaCTSP { get; set; }
-        public string MaSP { get; set; }
-        public string MaHH { get; set; }
-        public Nullable<short> KhoiLuong { get; set; }
+        public int MaCTSP { get; set; }
+        public Nullable<int> MaSP { get; set; }
+        public Nullable<int> MaHH { get; set; }
+        public Nullable<short> SoLuong { get; set; }
     
         public virtual HANGHOA HANGHOA { get; set; }
         public virtual SANPHAM SANPHAM { get; set; }

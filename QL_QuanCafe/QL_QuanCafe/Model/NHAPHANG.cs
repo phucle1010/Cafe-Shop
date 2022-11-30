@@ -20,11 +20,11 @@ namespace QL_QuanCafe.Model
             this.CT_NHAPHANG = new HashSet<CT_NHAPHANG>();
         }
     
-        public string MaNH { get; set; }
-        public string MaNV { get; set; }
+        public int MaNH { get; set; }
+        public Nullable<int> MaNV { get; set; }
+        public Nullable<int> MaNCC { get; set; }
         public Nullable<System.DateTime> NgayNH { get; set; }
         public Nullable<decimal> TongTienNH { get; set; }
-        public string MaNCC { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_NHAPHANG> CT_NHAPHANG { get; set; }

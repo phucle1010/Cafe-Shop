@@ -67,7 +67,7 @@ namespace QL_QuanCafe.View
 
         private void btnMinimize_Click(object sender, RoutedEventArgs e)
         {
-            WindowState = WindowState.Maximized;
+            WindowState = WindowState.Minimized;
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
@@ -95,21 +95,21 @@ namespace QL_QuanCafe.View
             }
             else
             {
-                AdminViewModel admin = new AdminViewModel();
                 CustomerViewModel customer = new CustomerViewModel();
-                if ( admin.isLoginWithAdminRole(user, pass) )
-                {
-                    SaveAccount(user, 1);
-                    MainView_Admin adminLayout = new MainView_Admin();
-                    this.Hide();
-                    adminLayout.Show();
-                }
-                else if ( customer.isLoginWithCustomerRole(user, pass) )
+                AdminViewModel admin = new AdminViewModel();
+                if ( customer.isLoginWithCustomerRole(user, pass) )
                 {
                     SaveAccount(user, 0);
                     MainView_Customer customerLayout = new MainView_Customer();
                     this.Hide();
                     customerLayout.Show();
+                } else if ( admin.isLoginWithAdminRole(user, pass) )
+                {
+
+                    SaveAccount(user, 1);
+                    MainView_Admin adminLayout = new MainView_Admin();
+                    this.Hide();
+                    adminLayout.Show();
                 }
                 else
                 {
@@ -120,9 +120,16 @@ namespace QL_QuanCafe.View
 
         private void tbCreateNewAccount_PreviewMouseDown( object sender, MouseButtonEventArgs e )
         {
-            RegisterAccount registerLayout = new RegisterAccount();
+            RegisterAccountView registerLayout = new RegisterAccountView();
             this.Visibility = Visibility.Hidden;
             registerLayout.Show();
+        }
+
+        private void tbForgotPassword_PreviewMouseDown( object sender, MouseButtonEventArgs e )
+        {
+            ForgotPasswordView forgotPassLayout = new ForgotPasswordView();
+            this.Visibility = Visibility.Hidden;
+            forgotPassLayout.Show();
         }
     }
 }

@@ -12,7 +12,6 @@
         AllowsTransparency="true"
         MouseDown="Window_MouseDown">
 
-
     <Border CornerRadius="12">
 
         <Border.Background>
@@ -248,19 +247,23 @@
                                 HorizontalAlignment="Center"
                                 Margin="0,15,0,0">
 
-                        <TextBlock Text="Quên mật khẩu?"
+                        <TextBlock x:Name="tbForgotPassword"
+                               Text="Quên mật khẩu?"
                                Foreground="DarkGray"
                                FontSize="12"
                                FontWeight="Medium"
                                FontFamily="Montserrat"
-                               Cursor="Hand"/>
-                        <TextBlock x:Name="tbCreateNewAccount" Text="Tạo tài khoản mới"
+                               Cursor="Hand" 
+                               PreviewMouseDown="tbForgotPassword_PreviewMouseDown"/>
+                        <TextBlock x:Name="tbCreateNewAccount" 
+                               Text="Tạo tài khoản mới"
                                Foreground="White"
                                FontSize="12"
                                FontWeight="Medium"
                                FontFamily="Montserrat"
                                Cursor="Hand"
-                               Margin="16,0,0,0" PreviewMouseDown="tbCreateNewAccount_PreviewMouseDown"/>
+                               Margin="16,0,0,0" 
+                               PreviewMouseDown="tbCreateNewAccount_PreviewMouseDown"/>
 
                     </StackPanel>
                 </StackPanel>

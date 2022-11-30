@@ -4,6 +4,7 @@
     <EntitySetMapping Name="BANs">
       <EntityTypeMapping TypeName="CafeShopModel.BAN">
         <MappingFragment StoreEntitySet="BAN">
+          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
           <ScalarProperty Name="MaKV" ColumnName="MaKV" />
           <ScalarProperty Name="TenBan" ColumnName="TenBan" />
           <ScalarProperty Name="MaBan" ColumnName="MaBan" />
@@ -24,7 +25,7 @@
     <EntitySetMapping Name="CALAMVIECs">
       <EntityTypeMapping TypeName="CafeShopModel.CALAMVIEC">
         <MappingFragment StoreEntitySet="CALAMVIEC">
-          <ScalarProperty Name="NgayLV" ColumnName="NgayLV" />
+          <ScalarProperty Name="Luong" ColumnName="Luong" />
           <ScalarProperty Name="GioKT" ColumnName="GioKT" />
           <ScalarProperty Name="GioBD" ColumnName="GioBD" />
           <ScalarProperty Name="TenCaLV" ColumnName="TenCaLV" />
@@ -46,7 +47,7 @@
       <EntityTypeMapping TypeName="CafeShopModel.CT_DATMON">
         <MappingFragment StoreEntitySet="CT_DATMON">
           <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
-          <ScalarProperty Name="MaHH" ColumnName="MaHH" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
           <ScalarProperty Name="MaDM" ColumnName="MaDM" />
           <ScalarProperty Name="MaCTDM" ColumnName="MaCTDM" />
         </MappingFragment>
@@ -77,7 +78,7 @@
     <EntitySetMapping Name="CT_SANPHAM">
       <EntityTypeMapping TypeName="CafeShopModel.CT_SANPHAM">
         <MappingFragment StoreEntitySet="CT_SANPHAM">
-          <ScalarProperty Name="KhoiLuong" ColumnName="KhoiLuong" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
           <ScalarProperty Name="MaHH" ColumnName="MaHH" />
           <ScalarProperty Name="MaSP" ColumnName="MaSP" />
           <ScalarProperty Name="MaCTSP" ColumnName="MaCTSP" />
@@ -87,6 +88,9 @@
     <EntitySetMapping Name="DATBANs">
       <EntityTypeMapping TypeName="CafeShopModel.DATBAN">
         <MappingFragment StoreEntitySet="DATBAN">
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+          <ScalarProperty Name="GioDat" ColumnName="GioDat" />
+          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
           <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
           <ScalarProperty Name="MaBan" ColumnName="MaBan" />
           <ScalarProperty Name="MaDatBan" ColumnName="MaDatBan" />
@@ -96,6 +100,7 @@
     <EntitySetMapping Name="DATMONs">
       <EntityTypeMapping TypeName="CafeShopModel.DATMON">
         <MappingFragment StoreEntitySet="DATMON">
+          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
           <ScalarProperty Name="MaDatBan" ColumnName="MaDatBan" />
           <ScalarProperty Name="MaKH" ColumnName="MaKH" />
           <ScalarProperty Name="MaDM" ColumnName="MaDM" />
@@ -141,6 +146,7 @@
     <EntitySetMapping Name="KHACHHANGs">
       <EntityTypeMapping TypeName="CafeShopModel.KHACHHANG">
         <MappingFragment StoreEntitySet="KHACHHANG">
+          <ScalarProperty Name="AnhDaiDien" ColumnName="AnhDaiDien" />
           <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
           <ScalarProperty Name="TenDN" ColumnName="TenDN" />
           <ScalarProperty Name="DiemTichLuy" ColumnName="DiemTichLuy" />
@@ -187,15 +193,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="LUONGs">
-      <EntityTypeMapping TypeName="CafeShopModel.LUONG">
-        <MappingFragment StoreEntitySet="LUONG">
-          <ScalarProperty Name="Luong1" ColumnName="Luong" />
-          <ScalarProperty Name="MaNV" ColumnName="MaNV" />
-          <ScalarProperty Name="MaCaLV" ColumnName="MaCaLV" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="NHACUNGCAPs">
       <EntityTypeMapping TypeName="CafeShopModel.NHACUNGCAP">
         <MappingFragment StoreEntitySet="NHACUNGCAP">
@@ -208,10 +205,11 @@
     <EntitySetMapping Name="NHANVIENs">
       <EntityTypeMapping TypeName="CafeShopModel.NHANVIEN">
         <MappingFragment StoreEntitySet="NHANVIEN">
+          <ScalarProperty Name="AnhDaiDien" ColumnName="AnhDaiDien" />
+          <ScalarProperty Name="MaCaLV" ColumnName="MaCaLV" />
           <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
           <ScalarProperty Name="NgayVaoLam" ColumnName="NgayVaoLam" />
           <ScalarProperty Name="ChucVu" ColumnName="ChucVu" />
-          <ScalarProperty Name="Luong" ColumnName="Luong" />
           <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="SDT" ColumnName="SDT" />
@@ -224,9 +222,9 @@
     <EntitySetMapping Name="NHAPHANGs">
       <EntityTypeMapping TypeName="CafeShopModel.NHAPHANG">
         <MappingFragment StoreEntitySet="NHAPHANG">
-          <ScalarProperty Name="MaNCC" ColumnName="MaNCC" />
           <ScalarProperty Name="TongTienNH" ColumnName="TongTienNH" />
           <ScalarProperty Name="NgayNH" ColumnName="NgayNH" />
+          <ScalarProperty Name="MaNCC" ColumnName="MaNCC" />
           <ScalarProperty Name="MaNV" ColumnName="MaNV" />
           <ScalarProperty Name="MaNH" ColumnName="MaNH" />
         </MappingFragment>
@@ -235,6 +233,7 @@
     <EntitySetMapping Name="SANPHAMs">
       <EntityTypeMapping TypeName="CafeShopModel.SANPHAM">
         <MappingFragment StoreEntitySet="SANPHAM">
+          <ScalarProperty Name="AnhSanPham" ColumnName="AnhSanPham" />
           <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
           <ScalarProperty Name="GiaSP" ColumnName="GiaSP" />
           <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
@@ -244,23 +243,31 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="sysdiagrams">
-      <EntityTypeMapping TypeName="CafeShopModel.sysdiagram">
-        <MappingFragment StoreEntitySet="sysdiagrams">
-          <ScalarProperty Name="definition" ColumnName="definition" />
-          <ScalarProperty Name="version" ColumnName="version" />
-          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-          <ScalarProperty Name="name" ColumnName="name" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="TAIKHOANDANGSUDUNGs">
       <EntityTypeMapping TypeName="CafeShopModel.TAIKHOANDANGSUDUNG">
         <MappingFragment StoreEntitySet="TAIKHOANDANGSUDUNG">
-          <ScalarProperty Name="PhanQuyen" ColumnName="PhanQuyen" />
           <ScalarProperty Name="DiaChiIP" ColumnName="DiaChiIP" />
+          <ScalarProperty Name="PhanQuyen" ColumnName="PhanQuyen" />
           <ScalarProperty Name="TaiKhoan" ColumnName="TaiKhoan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="THAMSOes">
+      <EntityTypeMapping TypeName="CafeShopModel.THAMSO">
+        <MappingFragment StoreEntitySet="THAMSO">
+          <ScalarProperty Name="DiemToiThieuCoQua" ColumnName="DiemToiThieuCoQua" />
+          <ScalarProperty Name="DiemTichLuyDatMon" ColumnName="DiemTichLuyDatMon" />
+          <ScalarProperty Name="LuongTheoGio" ColumnName="LuongTheoGio" />
+          <ScalarProperty Name="TS" ColumnName="TS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="THETICHDIEMs">
+      <EntityTypeMapping TypeName="CafeShopModel.THETICHDIEM">
+        <MappingFragment StoreEntitySet="THETICHDIEM">
+          <ScalarProperty Name="DiemTichLuy" ColumnName="DiemTichLuy" />
+          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+          <ScalarProperty Name="MaThe" ColumnName="MaThe" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

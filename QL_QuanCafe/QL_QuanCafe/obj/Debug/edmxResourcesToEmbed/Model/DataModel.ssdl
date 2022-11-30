@@ -7,12 +7,13 @@
     <Property Name="MaBan" Type="char" MaxLength="2" Nullable="false" />
     <Property Name="TenBan" Type="nvarchar" MaxLength="20" />
     <Property Name="MaKV" Type="char" MaxLength="1" />
+    <Property Name="TrangThai" Type="bit" />
   </EntityType>
   <EntityType Name="BAOCAODOANHTHU">
     <Key>
       <PropertyRef Name="MaBC" />
     </Key>
-    <Property Name="MaBC" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="MaBC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenBC" Type="nvarchar" MaxLength="50" />
     <Property Name="NgayBC" Type="date" />
     <Property Name="TongDoanhThu" Type="money" />
@@ -22,18 +23,18 @@
     <Key>
       <PropertyRef Name="MaCaLV" />
     </Key>
-    <Property Name="MaCaLV" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="MaCaLV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenCaLV" Type="nvarchar" MaxLength="20" />
     <Property Name="GioBD" Type="time" Precision="7" />
     <Property Name="GioKT" Type="time" Precision="7" />
-    <Property Name="NgayLV" Type="date" />
+    <Property Name="Luong" Type="money" />
   </EntityType>
   <EntityType Name="CT_BAOCAODOANHTHU">
     <Key>
       <PropertyRef Name="MaCTBC" />
     </Key>
-    <Property Name="MaCTBC" Type="char" MaxLength="6" Nullable="false" />
-    <Property Name="MaBC" Type="char" MaxLength="6" />
+    <Property Name="MaCTBC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaBC" Type="int" />
     <Property Name="MaLSP" Type="char" MaxLength="1" />
     <Property Name="DoanhThu" Type="money" />
   </EntityType>
@@ -41,18 +42,18 @@
     <Key>
       <PropertyRef Name="MaCTDM" />
     </Key>
-    <Property Name="MaCTDM" Type="char" MaxLength="6" Nullable="false" />
-    <Property Name="MaDM" Type="char" MaxLength="6" />
-    <Property Name="MaHH" Type="char" MaxLength="6" />
+    <Property Name="MaCTDM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaDM" Type="int" />
+    <Property Name="MaSP" Type="int" />
     <Property Name="SoLuong" Type="smallint" />
   </EntityType>
   <EntityType Name="CT_HOADON">
     <Key>
       <PropertyRef Name="MaCTHD" />
     </Key>
-    <Property Name="MaCTHD" Type="char" MaxLength="6" Nullable="false" />
-    <Property Name="MaHD" Type="char" MaxLength="6" />
-    <Property Name="MaSP" Type="char" MaxLength="6" />
+    <Property Name="MaCTHD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaHD" Type="int" />
+    <Property Name="MaSP" Type="int" />
     <Property Name="DonGia" Type="money" />
     <Property Name="SoLuong" Type="smallint" />
     <Property Name="ThanhTien" Type="money" />
@@ -61,49 +62,53 @@
     <Key>
       <PropertyRef Name="MaCTNH" />
     </Key>
-    <Property Name="MaCTNH" Type="char" MaxLength="6" Nullable="false" />
-    <Property Name="MANH" Type="char" MaxLength="6" />
-    <Property Name="MaHH" Type="char" MaxLength="6" />
+    <Property Name="MaCTNH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MANH" Type="int" />
+    <Property Name="MaHH" Type="int" />
     <Property Name="SoLuong" Type="smallint" />
   </EntityType>
   <EntityType Name="CT_SANPHAM">
     <Key>
       <PropertyRef Name="MaCTSP" />
     </Key>
-    <Property Name="MaCTSP" Type="char" MaxLength="6" Nullable="false" />
-    <Property Name="MaSP" Type="char" MaxLength="6" />
-    <Property Name="MaHH" Type="char" MaxLength="6" />
-    <Property Name="KhoiLuong" Type="smallint" />
+    <Property Name="MaCTSP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaSP" Type="int" />
+    <Property Name="MaHH" Type="int" />
+    <Property Name="SoLuong" Type="smallint" />
   </EntityType>
   <EntityType Name="DATBAN">
     <Key>
       <PropertyRef Name="MaDatBan" />
     </Key>
-    <Property Name="MaDatBan" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="MaDatBan" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="MaBan" Type="char" MaxLength="2" />
     <Property Name="TrangThai" Type="bit" />
+    <Property Name="MaKH" Type="int" />
+    <Property Name="GioDat" Type="datetime" />
+    <Property Name="GhiChu" Type="text" />
   </EntityType>
   <EntityType Name="DATMON">
     <Key>
       <PropertyRef Name="MaDM" />
     </Key>
-    <Property Name="MaDM" Type="char" MaxLength="6" Nullable="false" />
-    <Property Name="MaKH" Type="char" MaxLength="6" />
-    <Property Name="MaDatBan" Type="char" MaxLength="6" />
+    <Property Name="MaDM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaKH" Type="int" />
+    <Property Name="MaDatBan" Type="int" />
+    <Property Name="TongTien" Type="money" />
   </EntityType>
   <EntityType Name="DIEMDANHNGAYLAM">
     <Key>
       <PropertyRef Name="MaDD" />
     </Key>
-    <Property Name="MaDD" Type="char" MaxLength="6" Nullable="false" />
-    <Property Name="MaNV" Type="char" MaxLength="6" />
+    <Property Name="MaDD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaNV" Type="int" />
     <Property Name="NgayDiemDanh" Type="date" />
   </EntityType>
   <EntityType Name="HANGHOA">
     <Key>
       <PropertyRef Name="MaHH" />
     </Key>
-    <Property Name="MaHH" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="MaHH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenHH" Type="nvarchar" MaxLength="50" />
     <Property Name="MaLoaiHH" Type="char" MaxLength="2" />
     <Property Name="SoLuongConSan" Type="decimal" Precision="10" Scale="2" />
@@ -114,21 +119,21 @@
     <Key>
       <PropertyRef Name="MaHD" />
     </Key>
-    <Property Name="MaHD" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="MaHD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NgayHD" Type="date" />
     <Property Name="TongTien" Type="money" />
     <Property Name="GiamGia" Type="smallint" />
     <Property Name="DiemTichLuy" Type="smallint" />
     <Property Name="ChiPhiKhac" Type="money" />
     <Property Name="SoTienThanhToan" Type="money" />
-    <Property Name="MaKH" Type="char" MaxLength="6" />
-    <Property Name="MaNV" Type="char" MaxLength="6" />
+    <Property Name="MaKH" Type="int" />
+    <Property Name="MaNV" Type="int" />
   </EntityType>
   <EntityType Name="KHACHHANG">
     <Key>
       <PropertyRef Name="MaKH" />
     </Key>
-    <Property Name="MaKH" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="MaKH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenKH" Type="nvarchar" MaxLength="100" />
     <Property Name="MaLoaiKH" Type="char" MaxLength="1" />
     <Property Name="SDT" Type="char" MaxLength="10" />
@@ -137,6 +142,7 @@
     <Property Name="DiemTichLuy" Type="smallint" />
     <Property Name="TenDN" Type="varchar" MaxLength="30" />
     <Property Name="MatKhau" Type="varchar" MaxLength="64" />
+    <Property Name="AnhDaiDien" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="KHUVUC">
     <Key>
@@ -168,20 +174,11 @@
     <Property Name="MaLoaiSP" Type="char" MaxLength="1" Nullable="false" />
     <Property Name="TenLoaiSP" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <EntityType Name="LUONG">
-    <Key>
-      <PropertyRef Name="MaCaLV" />
-      <PropertyRef Name="MaNV" />
-    </Key>
-    <Property Name="MaCaLV" Type="char" MaxLength="1" Nullable="false" />
-    <Property Name="MaNV" Type="char" MaxLength="6" Nullable="false" />
-    <Property Name="Luong" Type="money" />
-  </EntityType>
   <EntityType Name="NHACUNGCAP">
     <Key>
       <PropertyRef Name="MaNCC" />
     </Key>
-    <Property Name="MaNCC" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="MaNCC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenNCC" Type="varchar" MaxLength="50" />
     <Property Name="SDT" Type="char" MaxLength="10" />
   </EntityType>
@@ -189,64 +186,66 @@
     <Key>
       <PropertyRef Name="MaNV" />
     </Key>
-    <Property Name="MaNV" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="MaNV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="MatKhau" Type="varchar" MaxLength="64" />
     <Property Name="TenNV" Type="nvarchar" MaxLength="60" />
     <Property Name="SDT" Type="char" MaxLength="10" />
     <Property Name="Email" Type="varchar" MaxLength="50" />
     <Property Name="DiaChi" Type="varchar" MaxLength="100" />
-    <Property Name="Luong" Type="money" />
     <Property Name="ChucVu" Type="char" MaxLength="1" />
     <Property Name="NgayVaoLam" Type="date" />
     <Property Name="GioiTinh" Type="bit" />
+    <Property Name="MaCaLV" Type="int" />
+    <Property Name="AnhDaiDien" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="NHAPHANG">
     <Key>
       <PropertyRef Name="MaNH" />
     </Key>
-    <Property Name="MaNH" Type="char" MaxLength="6" Nullable="false" />
-    <Property Name="MaNV" Type="char" MaxLength="6" />
+    <Property Name="MaNH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaNV" Type="int" />
+    <Property Name="MaNCC" Type="int" />
     <Property Name="NgayNH" Type="date" />
     <Property Name="TongTienNH" Type="money" />
-    <Property Name="MaNCC" Type="char" MaxLength="4" />
   </EntityType>
   <EntityType Name="SANPHAM">
     <Key>
       <PropertyRef Name="MaSP" />
     </Key>
-    <Property Name="MaSP" Type="char" MaxLength="6" Nullable="false" />
+    <Property Name="MaSP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenSP" Type="nvarchar" MaxLength="100" />
     <Property Name="MaLoaiSP" Type="char" MaxLength="1" />
-    <Property Name="HinhAnh" Type="varbinary" MaxLength="1" />
+    <Property Name="HinhAnh" Type="varbinary(max)" />
     <Property Name="GiaSP" Type="money" />
     <Property Name="TrangThai" Type="bit" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
+    <Property Name="AnhSanPham" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="TAIKHOANDANGSUDUNG">
     <Key>
       <PropertyRef Name="TaiKhoan" />
     </Key>
     <Property Name="TaiKhoan" Type="varchar" MaxLength="30" Nullable="false" />
-    <Property Name="DiaChiIP" Type="varchar" MaxLength="40" />
     <Property Name="PhanQuyen" Type="bit" />
+    <Property Name="DiaChiIP" Type="varchar" MaxLength="40" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'CafeShop.dbo.THAMSO' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="THAMSO">
-          <Property Name="LuongTheoGio" Type="money" />
-          <Property Name="DiemTichLuyDatMon" Type="smallint" />
-          <Property Name="DiemToiThieuCoQua" Type="smallint" />
-        </EntityType>-->
-  <Association Name="FK__BAN__MaKV__571DF1D5">
+  <EntityType Name="THAMSO">
+    <Key>
+      <PropertyRef Name="TS" />
+    </Key>
+    <Property Name="TS" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="LuongTheoGio" Type="money" />
+    <Property Name="DiemTichLuyDatMon" Type="smallint" />
+    <Property Name="DiemToiThieuCoQua" Type="smallint" />
+  </EntityType>
+  <EntityType Name="THETICHDIEM">
+    <Key>
+      <PropertyRef Name="MaThe" />
+    </Key>
+    <Property Name="MaThe" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaKH" Type="int" />
+    <Property Name="DiemTichLuy" Type="smallint" />
+  </EntityType>
+  <Association Name="FK__BAN__MaKV__5AEE82B9">
     <End Role="KHUVUC" Type="Self.KHUVUC" Multiplicity="0..1" />
     <End Role="BAN" Type="Self.BAN" Multiplicity="*" />
     <ReferentialConstraint>
@@ -258,7 +257,7 @@ warning 6013: The table/view 'CafeShop.dbo.THAMSO' does not have a primary key d
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CT_BAOCAO__MaLSP__7F2BE32F">
+  <Association Name="FK__CT_BAOCAO__MaLSP__02FC7413">
     <End Role="LOAISANPHAM" Type="Self.LOAISANPHAM" Multiplicity="0..1" />
     <End Role="CT_BAOCAODOANHTHU" Type="Self.CT_BAOCAODOANHTHU" Multiplicity="*" />
     <ReferentialConstraint>
@@ -270,7 +269,7 @@ warning 6013: The table/view 'CafeShop.dbo.THAMSO' does not have a primary key d
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CT_BAOCAOD__MaBC__7E37BEF6">
+  <Association Name="FK__CT_BAOCAOD__MaBC__02084FDA">
     <End Role="BAOCAODOANHTHU" Type="Self.BAOCAODOANHTHU" Multiplicity="0..1" />
     <End Role="CT_BAOCAODOANHTHU" Type="Self.CT_BAOCAODOANHTHU" Multiplicity="*" />
     <ReferentialConstraint>
@@ -282,7 +281,7 @@ warning 6013: The table/view 'CafeShop.dbo.THAMSO' does not have a primary key d
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CT_DATMON__MaDM__17F790F9">
+  <Association Name="FK__CT_DATMON__MaDM__656C112C">
     <End Role="DATMON" Type="Self.DATMON" Multiplicity="0..1" />
     <End Role="CT_DATMON" Type="Self.CT_DATMON" Multiplicity="*" />
     <ReferentialConstraint>
@@ -294,19 +293,19 @@ warning 6013: The table/view 'CafeShop.dbo.THAMSO' does not have a primary key d
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CT_DATMON__MaHH__18EBB532">
-    <End Role="HANGHOA" Type="Self.HANGHOA" Multiplicity="0..1" />
+  <Association Name="FK__CT_DATMON__MaSP__66603565">
+    <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="0..1" />
     <End Role="CT_DATMON" Type="Self.CT_DATMON" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="HANGHOA">
-        <PropertyRef Name="MaHH" />
+      <Principal Role="SANPHAM">
+        <PropertyRef Name="MaSP" />
       </Principal>
       <Dependent Role="CT_DATMON">
-        <PropertyRef Name="MaHH" />
+        <PropertyRef Name="MaSP" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CT_HOADON__MaHD__787EE5A0">
+  <Association Name="FK__CT_HOADON__MaHD__7C4F7684">
     <End Role="HOADON" Type="Self.HOADON" Multiplicity="0..1" />
     <End Role="CT_HOADON" Type="Self.CT_HOADON" Multiplicity="*" />
     <ReferentialConstraint>
@@ -318,7 +317,7 @@ warning 6013: The table/view 'CafeShop.dbo.THAMSO' does not have a primary key d
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CT_HOADON__MaSP__797309D9">
+  <Association Name="FK__CT_HOADON__MaSP__7D439ABD">
     <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="0..1" />
     <End Role="CT_HOADON" Type="Self.CT_HOADON" Multiplicity="*" />
     <ReferentialConstraint>
@@ -330,7 +329,7 @@ warning 6013: The table/view 'CafeShop.dbo.THAMSO' does not have a primary key d
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CT_NHAPHAN__MaHH__6754599E">
+  <Association Name="FK__CT_NHAPHAN__MaHH__75A278F5">
     <End Role="HANGHOA" Type="Self.HANGHOA" Multiplicity="0..1" />
     <End Role="CT_NHAPHANG" Type="Self.CT_NHAPHANG" Multiplicity="*" />
     <ReferentialConstraint>
@@ -342,7 +341,7 @@ warning 6013: The table/view 'CafeShop.dbo.THAMSO' does not have a primary key d
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CT_NHAPHAN__MANH__66603565">
+  <Association Name="FK__CT_NHAPHAN__MANH__74AE54BC">
     <End Role="NHAPHANG" Type="Self.NHAPHANG" Multiplicity="0..1" />
     <End Role="CT_NHAPHANG" Type="Self.CT_NHAPHANG" Multiplicity="*" />
     <ReferentialConstraint>
@@ -354,7 +353,7 @@ warning 6013: The table/view 'CafeShop.dbo.THAMSO' does not have a primary key d
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CT_SANPHAM__MaHH__6EF57B66">
+  <Association Name="FK__CT_SANPHAM__MaHH__0A9D95DB">
     <End Role="HANGHOA" Type="Self.HANGHOA" Multiplicity="0..1" />
     <End Role="CT_SANPHAM" Type="Self.CT_SANPHAM" Multiplicity="*" />
     <ReferentialConstraint>
@@ -366,7 +365,7 @@ warning 6013: The table/view 'CafeShop.dbo.THAMSO' does not have a primary key d
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CT_SANPHAM__MaSP__6E01572D">
+  <Association Name="FK__CT_SANPHAM__MaSP__09A971A2">
     <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="0..1" />
     <End Role="CT_SANPHAM" Type="Self.CT_SANPHAM" Multiplicity="*" />
     <ReferentialConstraint>
@@ -378,7 +377,7 @@ warning 6013: The table/view 'CafeShop.dbo.THAMSO' does not have a primary key d
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__DATBAN__MaBan__123EB7A3">
+  <Association Name="FK__DATBAN__MaBan__5DCAEF64">
     <End Role="BAN" Type="Self.BAN" Multiplicity="0..1" />
     <End Role="DATBAN" Type="Self.DATBAN" Multiplicity="*" />
     <ReferentialConstraint>
@@ -390,7 +389,19 @@ warning 6013: The table/view 'CafeShop.dbo.THAMSO' does not have a primary key d
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__DATMON__MaDatBan__151B244E">
+  <Association Name="FK__DATBAN__MaKH__5EBF139D">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
+    <End Role="DATBAN" Type="Self.DATBAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="MaKH" />
+      </Principal>
+      <Dependent Role="DATBAN">
+        <PropertyRef Name="MaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DATMON__MaDatBan__628FA481">
     <End Role="DATBAN" Type="Self.DATBAN" Multiplicity="0..1" />
     <End Role="DATMON" Type="Self.DATMON" Multiplicity="*" />
     <ReferentialConstraint>
@@ -402,7 +413,19 @@ warning 6013: The table/view 'CafeShop.dbo.THAMSO' does not have a primary key d
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__DIEMDANHNG__MaNV__3E52440B">
+  <Association Name="FK__DATMON__MaKH__619B8048">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
+    <End Role="DATMON" Type="Self.DATMON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="MaKH" />
+      </Principal>
+      <Dependent Role="DATMON">
+        <PropertyRef Name="MaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DIEMDANHNG__MaNV__403A8C7D">
     <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
     <End Role="DIEMDANHNGAYLAM" Type="Self.DIEMDANHNGAYLAM" Multiplicity="*" />
     <ReferentialConstraint>
@@ -414,7 +437,7 @@ warning 6013: The table/view 'CafeShop.dbo.THAMSO' does not have a primary key d
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__HANGHOA__MaLoaiH__4F7CD00D">
+  <Association Name="FK__HANGHOA__MaLoaiH__6E01572D">
     <End Role="LOAIHANGHOA" Type="Self.LOAIHANGHOA" Multiplicity="0..1" />
     <End Role="HANGHOA" Type="Self.HANGHOA" Multiplicity="*" />
     <ReferentialConstraint>
@@ -426,7 +449,7 @@ warning 6013: The table/view 'CafeShop.dbo.THAMSO' does not have a primary key d
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__HOADON__MaKH__73BA3083">
+  <Association Name="FK__HOADON__MaKH__787EE5A0">
     <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
     <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
     <ReferentialConstraint>
@@ -438,7 +461,7 @@ warning 6013: The table/view 'CafeShop.dbo.THAMSO' does not have a primary key d
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__HOADON__MaNV__74AE54BC">
+  <Association Name="FK__HOADON__MaNV__797309D9">
     <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
     <End Role="HOADON" Type="Self.HOADON" Multiplicity="*" />
     <ReferentialConstraint>
@@ -450,7 +473,7 @@ warning 6013: The table/view 'CafeShop.dbo.THAMSO' does not have a primary key d
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__KHACHHANG__MaLoa__4316F928">
+  <Association Name="FK__KHACHHANG__MaLoa__47DBAE45">
     <End Role="LOAIKHACHHANG" Type="Self.LOAIKHACHHANG" Multiplicity="0..1" />
     <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="*" />
     <ReferentialConstraint>
@@ -462,31 +485,19 @@ warning 6013: The table/view 'CafeShop.dbo.THAMSO' does not have a primary key d
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__LUONG__MaCaLV__0D7A0286">
-    <End Role="CALAMVIEC" Type="Self.CALAMVIEC" Multiplicity="1" />
-    <End Role="LUONG" Type="Self.LUONG" Multiplicity="*" />
+  <Association Name="FK__NHANVIEN__MaCaLV__3D5E1FD2">
+    <End Role="CALAMVIEC" Type="Self.CALAMVIEC" Multiplicity="0..1" />
+    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="CALAMVIEC">
         <PropertyRef Name="MaCaLV" />
       </Principal>
-      <Dependent Role="LUONG">
+      <Dependent Role="NHANVIEN">
         <PropertyRef Name="MaCaLV" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__LUONG__MaNV__0E6E26BF">
-    <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
-    <End Role="LUONG" Type="Self.LUONG" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="NHANVIEN">
-        <PropertyRef Name="MaNV" />
-      </Principal>
-      <Dependent Role="LUONG">
-        <PropertyRef Name="MaNV" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__NHAPHANG__MaNCC__6383C8BA">
+  <Association Name="FK__NHAPHANG__MaNCC__71D1E811">
     <End Role="NHACUNGCAP" Type="Self.NHACUNGCAP" Multiplicity="0..1" />
     <End Role="NHAPHANG" Type="Self.NHAPHANG" Multiplicity="*" />
     <ReferentialConstraint>
@@ -498,7 +509,7 @@ warning 6013: The table/view 'CafeShop.dbo.THAMSO' does not have a primary key d
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__NHAPHANG__MaNV__628FA481">
+  <Association Name="FK__NHAPHANG__MaNV__70DDC3D8">
     <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
     <End Role="NHAPHANG" Type="Self.NHAPHANG" Multiplicity="*" />
     <ReferentialConstraint>
@@ -510,7 +521,7 @@ warning 6013: The table/view 'CafeShop.dbo.THAMSO' does not have a primary key d
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__SANPHAM__MaLoaiS__47DBAE45">
+  <Association Name="FK__SANPHAM__MaLoaiS__52593CB8">
     <End Role="LOAISANPHAM" Type="Self.LOAISANPHAM" Multiplicity="0..1" />
     <End Role="SANPHAM" Type="Self.SANPHAM" Multiplicity="*" />
     <ReferentialConstraint>
@@ -519,6 +530,18 @@ warning 6013: The table/view 'CafeShop.dbo.THAMSO' does not have a primary key d
       </Principal>
       <Dependent Role="SANPHAM">
         <PropertyRef Name="MaLoaiSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__THETICHDIE__MaKH__4AB81AF0">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
+    <End Role="THETICHDIEM" Type="Self.THETICHDIEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="MaKH" />
+      </Principal>
+      <Dependent Role="THETICHDIEM">
+        <PropertyRef Name="MaKH" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -541,104 +564,112 @@ warning 6013: The table/view 'CafeShop.dbo.THAMSO' does not have a primary key d
     <EntitySet Name="LOAIHANGHOA" EntityType="Self.LOAIHANGHOA" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LOAIKHACHHANG" EntityType="Self.LOAIKHACHHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="LOAISANPHAM" EntityType="Self.LOAISANPHAM" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="LUONG" EntityType="Self.LUONG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NHACUNGCAP" EntityType="Self.NHACUNGCAP" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="NHAPHANG" EntityType="Self.NHAPHANG" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SANPHAM" EntityType="Self.SANPHAM" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TAIKHOANDANGSUDUNG" EntityType="Self.TAIKHOANDANGSUDUNG" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__BAN__MaKV__571DF1D5" Association="Self.FK__BAN__MaKV__571DF1D5">
+    <EntitySet Name="THAMSO" EntityType="Self.THAMSO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="THETICHDIEM" EntityType="Self.THETICHDIEM" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__BAN__MaKV__5AEE82B9" Association="Self.FK__BAN__MaKV__5AEE82B9">
       <End Role="KHUVUC" EntitySet="KHUVUC" />
       <End Role="BAN" EntitySet="BAN" />
     </AssociationSet>
-    <AssociationSet Name="FK__CT_BAOCAO__MaLSP__7F2BE32F" Association="Self.FK__CT_BAOCAO__MaLSP__7F2BE32F">
+    <AssociationSet Name="FK__CT_BAOCAO__MaLSP__02FC7413" Association="Self.FK__CT_BAOCAO__MaLSP__02FC7413">
       <End Role="LOAISANPHAM" EntitySet="LOAISANPHAM" />
       <End Role="CT_BAOCAODOANHTHU" EntitySet="CT_BAOCAODOANHTHU" />
     </AssociationSet>
-    <AssociationSet Name="FK__CT_BAOCAOD__MaBC__7E37BEF6" Association="Self.FK__CT_BAOCAOD__MaBC__7E37BEF6">
+    <AssociationSet Name="FK__CT_BAOCAOD__MaBC__02084FDA" Association="Self.FK__CT_BAOCAOD__MaBC__02084FDA">
       <End Role="BAOCAODOANHTHU" EntitySet="BAOCAODOANHTHU" />
       <End Role="CT_BAOCAODOANHTHU" EntitySet="CT_BAOCAODOANHTHU" />
     </AssociationSet>
-    <AssociationSet Name="FK__CT_DATMON__MaDM__17F790F9" Association="Self.FK__CT_DATMON__MaDM__17F790F9">
+    <AssociationSet Name="FK__CT_DATMON__MaDM__656C112C" Association="Self.FK__CT_DATMON__MaDM__656C112C">
       <End Role="DATMON" EntitySet="DATMON" />
       <End Role="CT_DATMON" EntitySet="CT_DATMON" />
     </AssociationSet>
-    <AssociationSet Name="FK__CT_DATMON__MaHH__18EBB532" Association="Self.FK__CT_DATMON__MaHH__18EBB532">
-      <End Role="HANGHOA" EntitySet="HANGHOA" />
+    <AssociationSet Name="FK__CT_DATMON__MaSP__66603565" Association="Self.FK__CT_DATMON__MaSP__66603565">
+      <End Role="SANPHAM" EntitySet="SANPHAM" />
       <End Role="CT_DATMON" EntitySet="CT_DATMON" />
     </AssociationSet>
-    <AssociationSet Name="FK__CT_HOADON__MaHD__787EE5A0" Association="Self.FK__CT_HOADON__MaHD__787EE5A0">
+    <AssociationSet Name="FK__CT_HOADON__MaHD__7C4F7684" Association="Self.FK__CT_HOADON__MaHD__7C4F7684">
       <End Role="HOADON" EntitySet="HOADON" />
       <End Role="CT_HOADON" EntitySet="CT_HOADON" />
     </AssociationSet>
-    <AssociationSet Name="FK__CT_HOADON__MaSP__797309D9" Association="Self.FK__CT_HOADON__MaSP__797309D9">
+    <AssociationSet Name="FK__CT_HOADON__MaSP__7D439ABD" Association="Self.FK__CT_HOADON__MaSP__7D439ABD">
       <End Role="SANPHAM" EntitySet="SANPHAM" />
       <End Role="CT_HOADON" EntitySet="CT_HOADON" />
     </AssociationSet>
-    <AssociationSet Name="FK__CT_NHAPHAN__MaHH__6754599E" Association="Self.FK__CT_NHAPHAN__MaHH__6754599E">
+    <AssociationSet Name="FK__CT_NHAPHAN__MaHH__75A278F5" Association="Self.FK__CT_NHAPHAN__MaHH__75A278F5">
       <End Role="HANGHOA" EntitySet="HANGHOA" />
       <End Role="CT_NHAPHANG" EntitySet="CT_NHAPHANG" />
     </AssociationSet>
-    <AssociationSet Name="FK__CT_NHAPHAN__MANH__66603565" Association="Self.FK__CT_NHAPHAN__MANH__66603565">
+    <AssociationSet Name="FK__CT_NHAPHAN__MANH__74AE54BC" Association="Self.FK__CT_NHAPHAN__MANH__74AE54BC">
       <End Role="NHAPHANG" EntitySet="NHAPHANG" />
       <End Role="CT_NHAPHANG" EntitySet="CT_NHAPHANG" />
     </AssociationSet>
-    <AssociationSet Name="FK__CT_SANPHAM__MaHH__6EF57B66" Association="Self.FK__CT_SANPHAM__MaHH__6EF57B66">
+    <AssociationSet Name="FK__CT_SANPHAM__MaHH__0A9D95DB" Association="Self.FK__CT_SANPHAM__MaHH__0A9D95DB">
       <End Role="HANGHOA" EntitySet="HANGHOA" />
       <End Role="CT_SANPHAM" EntitySet="CT_SANPHAM" />
     </AssociationSet>
-    <AssociationSet Name="FK__CT_SANPHAM__MaSP__6E01572D" Association="Self.FK__CT_SANPHAM__MaSP__6E01572D">
+    <AssociationSet Name="FK__CT_SANPHAM__MaSP__09A971A2" Association="Self.FK__CT_SANPHAM__MaSP__09A971A2">
       <End Role="SANPHAM" EntitySet="SANPHAM" />
       <End Role="CT_SANPHAM" EntitySet="CT_SANPHAM" />
     </AssociationSet>
-    <AssociationSet Name="FK__DATBAN__MaBan__123EB7A3" Association="Self.FK__DATBAN__MaBan__123EB7A3">
+    <AssociationSet Name="FK__DATBAN__MaBan__5DCAEF64" Association="Self.FK__DATBAN__MaBan__5DCAEF64">
       <End Role="BAN" EntitySet="BAN" />
       <End Role="DATBAN" EntitySet="DATBAN" />
     </AssociationSet>
-    <AssociationSet Name="FK__DATMON__MaDatBan__151B244E" Association="Self.FK__DATMON__MaDatBan__151B244E">
+    <AssociationSet Name="FK__DATBAN__MaKH__5EBF139D" Association="Self.FK__DATBAN__MaKH__5EBF139D">
+      <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+      <End Role="DATBAN" EntitySet="DATBAN" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DATMON__MaDatBan__628FA481" Association="Self.FK__DATMON__MaDatBan__628FA481">
       <End Role="DATBAN" EntitySet="DATBAN" />
       <End Role="DATMON" EntitySet="DATMON" />
     </AssociationSet>
-    <AssociationSet Name="FK__DIEMDANHNG__MaNV__3E52440B" Association="Self.FK__DIEMDANHNG__MaNV__3E52440B">
+    <AssociationSet Name="FK__DATMON__MaKH__619B8048" Association="Self.FK__DATMON__MaKH__619B8048">
+      <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+      <End Role="DATMON" EntitySet="DATMON" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DIEMDANHNG__MaNV__403A8C7D" Association="Self.FK__DIEMDANHNG__MaNV__403A8C7D">
       <End Role="NHANVIEN" EntitySet="NHANVIEN" />
       <End Role="DIEMDANHNGAYLAM" EntitySet="DIEMDANHNGAYLAM" />
     </AssociationSet>
-    <AssociationSet Name="FK__HANGHOA__MaLoaiH__4F7CD00D" Association="Self.FK__HANGHOA__MaLoaiH__4F7CD00D">
+    <AssociationSet Name="FK__HANGHOA__MaLoaiH__6E01572D" Association="Self.FK__HANGHOA__MaLoaiH__6E01572D">
       <End Role="LOAIHANGHOA" EntitySet="LOAIHANGHOA" />
       <End Role="HANGHOA" EntitySet="HANGHOA" />
     </AssociationSet>
-    <AssociationSet Name="FK__HOADON__MaKH__73BA3083" Association="Self.FK__HOADON__MaKH__73BA3083">
+    <AssociationSet Name="FK__HOADON__MaKH__787EE5A0" Association="Self.FK__HOADON__MaKH__787EE5A0">
       <End Role="KHACHHANG" EntitySet="KHACHHANG" />
       <End Role="HOADON" EntitySet="HOADON" />
     </AssociationSet>
-    <AssociationSet Name="FK__HOADON__MaNV__74AE54BC" Association="Self.FK__HOADON__MaNV__74AE54BC">
+    <AssociationSet Name="FK__HOADON__MaNV__797309D9" Association="Self.FK__HOADON__MaNV__797309D9">
       <End Role="NHANVIEN" EntitySet="NHANVIEN" />
       <End Role="HOADON" EntitySet="HOADON" />
     </AssociationSet>
-    <AssociationSet Name="FK__KHACHHANG__MaLoa__4316F928" Association="Self.FK__KHACHHANG__MaLoa__4316F928">
+    <AssociationSet Name="FK__KHACHHANG__MaLoa__47DBAE45" Association="Self.FK__KHACHHANG__MaLoa__47DBAE45">
       <End Role="LOAIKHACHHANG" EntitySet="LOAIKHACHHANG" />
       <End Role="KHACHHANG" EntitySet="KHACHHANG" />
     </AssociationSet>
-    <AssociationSet Name="FK__LUONG__MaCaLV__0D7A0286" Association="Self.FK__LUONG__MaCaLV__0D7A0286">
+    <AssociationSet Name="FK__NHANVIEN__MaCaLV__3D5E1FD2" Association="Self.FK__NHANVIEN__MaCaLV__3D5E1FD2">
       <End Role="CALAMVIEC" EntitySet="CALAMVIEC" />
-      <End Role="LUONG" EntitySet="LUONG" />
-    </AssociationSet>
-    <AssociationSet Name="FK__LUONG__MaNV__0E6E26BF" Association="Self.FK__LUONG__MaNV__0E6E26BF">
       <End Role="NHANVIEN" EntitySet="NHANVIEN" />
-      <End Role="LUONG" EntitySet="LUONG" />
     </AssociationSet>
-    <AssociationSet Name="FK__NHAPHANG__MaNCC__6383C8BA" Association="Self.FK__NHAPHANG__MaNCC__6383C8BA">
+    <AssociationSet Name="FK__NHAPHANG__MaNCC__71D1E811" Association="Self.FK__NHAPHANG__MaNCC__71D1E811">
       <End Role="NHACUNGCAP" EntitySet="NHACUNGCAP" />
       <End Role="NHAPHANG" EntitySet="NHAPHANG" />
     </AssociationSet>
-    <AssociationSet Name="FK__NHAPHANG__MaNV__628FA481" Association="Self.FK__NHAPHANG__MaNV__628FA481">
+    <AssociationSet Name="FK__NHAPHANG__MaNV__70DDC3D8" Association="Self.FK__NHAPHANG__MaNV__70DDC3D8">
       <End Role="NHANVIEN" EntitySet="NHANVIEN" />
       <End Role="NHAPHANG" EntitySet="NHAPHANG" />
     </AssociationSet>
-    <AssociationSet Name="FK__SANPHAM__MaLoaiS__47DBAE45" Association="Self.FK__SANPHAM__MaLoaiS__47DBAE45">
+    <AssociationSet Name="FK__SANPHAM__MaLoaiS__52593CB8" Association="Self.FK__SANPHAM__MaLoaiS__52593CB8">
       <End Role="LOAISANPHAM" EntitySet="LOAISANPHAM" />
       <End Role="SANPHAM" EntitySet="SANPHAM" />
+    </AssociationSet>
+    <AssociationSet Name="FK__THETICHDIE__MaKH__4AB81AF0" Association="Self.FK__THETICHDIE__MaKH__4AB81AF0">
+      <End Role="KHACHHANG" EntitySet="KHACHHANG" />
+      <End Role="THETICHDIEM" EntitySet="THETICHDIEM" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

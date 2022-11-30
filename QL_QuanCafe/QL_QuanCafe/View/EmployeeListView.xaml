@@ -1,0 +1,44 @@
+﻿<Page x:Class="QL_QuanCafe.View.EmployeeListView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:QL_QuanCafe.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1000"
+      Title="EmployeeListView">
+
+     
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="650"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <DataGrid Grid.Row="0"
+                  x:Name="employeeList"
+                  Margin="0 30 0 0" CanUserResizeRows="False" ColumnWidth="*">
+        </DataGrid>
+
+        <Grid Grid.Row="1" Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0"
+                    x:Name="btnAddEmplyee"
+                    Content="Thêm nhân viên"
+                    Width="150"
+                    Click="btnAddEmplyee_Click"/>
+
+
+            <Button Grid.Column="2"
+                    x:Name="btnUpdateEmplyee"
+                    Content="Cập nhật nhân viên"
+                    Width="170"
+                    Click="btnUpdateEmplyee_Click"/>
+        </Grid>
+    </Grid>
+</Page>

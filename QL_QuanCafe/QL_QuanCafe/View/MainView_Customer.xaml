@@ -29,13 +29,9 @@
             </Grid.ColumnDefinitions>
             <!--Navigation Menu-->
             <Border CornerRadius="10,0,0,10"
-                    Grid.Column="0">
-                <Border.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0.7">
-                        <GradientStop Color="{StaticResource secondaryBackColor1}" Offset="0"/>
-                        <GradientStop Color="{StaticResource secondaryBackColor2}" Offset="1"/>
-                    </LinearGradientBrush>
-                </Border.Background>
+                    Grid.Column="0"
+                    Background="{StaticResource whiteColor}">
+               
                 <StackPanel>
 
                     <!--Logo-->
@@ -45,7 +41,7 @@
 
                         <Image Source="/Image/logo.png" Height="38"/>
                         <TextBlock Text="Dream Coffee"
-                                   Foreground="{StaticResource titleColor2}"
+                                   Foreground="{StaticResource primaryTextColor}"
                                    FontSize="18"
                                    FontFamily="Arial Rounded MT Bold"
                                    FontWeight="Medium"
@@ -56,7 +52,7 @@
                     <RadioButton Style="{StaticResource menuButton}"
                                  Tag="{StaticResource color1}"
                                  IsChecked="True"
-                                 Command="{Binding ShowHomeViewCommand}">
+                                 Command="{Binding ShowHomeViewCommand}" Click="btnPersonal_Click">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Home" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Tổng quan" Style="{StaticResource menuButtonText}"/>
@@ -65,7 +61,7 @@
 
                     <RadioButton Style="{StaticResource menuButton}"
                                  Tag="{StaticResource color2}"
-                                 Command="{Binding ShowCustomerViewCommand}">
+                                 Command="{Binding ShowCustomerViewCommand}" Click="btnHotFood_Click">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Cubes" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Sản phẩm hot" Style="{StaticResource menuButtonText}"/>
@@ -74,7 +70,7 @@
 
                     <RadioButton Style="{StaticResource menuButton}"
                                  Tag="{StaticResource color3}"
-                                 Command="{Binding ShowCustomerViewCommand}">
+                                 Command="{Binding ShowCustomerViewCommand}" Click="btnOrderTable_Click">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="TableCellsLarge" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Đặt bàn" Style="{StaticResource menuButtonText}"/>
@@ -83,7 +79,7 @@
                     
                     <RadioButton Style="{StaticResource menuButton}"
                                  Tag="{StaticResource color4}"
-                                 Command="{Binding ShowCustomerViewCommand}">
+                                 Command="{Binding ShowCustomerViewCommand}" Click="btnOrderFood_Click">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Burger" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Đặt món" Style="{StaticResource menuButtonText}"/>
@@ -92,17 +88,17 @@
 
                     <RadioButton Style="{StaticResource menuButton}"
                                  Tag="{StaticResource color5}"
-                                 Command="{Binding ShowCustomerViewCommand}">
+                                 Command="{Binding ShowCustomerViewCommand}" Click="btnAccPoint_Click">
                         <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="SquarePlus" Style="{StaticResource menuButtonIcon}"/>
-                            <TextBlock Text="Dịch vụ phụ kèm" Style="{StaticResource menuButtonText}"/>
+                            <fa:IconImage Icon="Coins" Style="{StaticResource menuButtonIcon}"/>
+                            <TextBlock Text="Điểm tích lũy" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
 
 
                     <RadioButton Style="{StaticResource menuButton}"
                                  Tag="{StaticResource color6}"
-                                 Command="{Binding ShowCustomerViewCommand}">
+                                 Command="{Binding ShowCustomerViewCommand}" Click="btnEvaluate_Click">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Commenting" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Đánh giá" Style="{StaticResource menuButtonText}"/>
@@ -111,7 +107,7 @@
 
                     <RadioButton Style="{StaticResource menuButton}"
                                  Tag="{StaticResource color7}"
-                                 Command="{Binding ShowCustomerViewCommand}">
+                                 Command="{Binding ShowCustomerViewCommand}" Click="btnRespone_Click">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Message" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Phản hồi" Style="{StaticResource menuButtonText}"/>
@@ -120,7 +116,7 @@
 
                     <RadioButton Style="{StaticResource menuButton}"
                                  Tag="{StaticResource color8}"
-                                 Command="{Binding ShowCustomerViewCommand}">
+                                 Command="{Binding ShowCustomerViewCommand}" Click="btnSecurity_Click">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Key" Style="{StaticResource menuButtonIcon}"/>
                             <TextBlock Text="Bảo mật" Style="{StaticResource menuButtonText}"/>
@@ -150,19 +146,13 @@
             </Border>
             <!--Main Section-->
             <Border CornerRadius="0,10,10,0"
-                    Grid.Column="1">
-                <Border.Background>
-                    <LinearGradientBrush StartPoint="1,1" EndPoint="0,0">
-                        <GradientStop Color="{StaticResource primaryBackColor1}" Offset="0"/>
-                        <GradientStop Color="{StaticResource primaryBackColor2}" Offset="1"/>
-                    </LinearGradientBrush>
-                </Border.Background>
+                    Grid.Column="1"
+                    Background="{StaticResource whiteColor}">
                 <Grid>
                     <Grid.RowDefinitions>
                         <!--Control bar-->
                         <RowDefinition Height="25"/>
-                        <!--Header / Caption-->
-                        <RowDefinition Height="35"/>
+                        
                         <!--Content section / Child views-->
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
@@ -200,61 +190,15 @@
                     </StackPanel>
 
                     <!--Header / Caption-->
-                    <Grid Grid.Row="1">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        <!--CAPTION-->
-                        <StackPanel Grid.Column="0"
-                                    Orientation="Horizontal"
-                                    VerticalAlignment="Center">
-                            <fa:IconImage Icon="Home"
-                                          Height="20"
-                                          Width="20"
-                                           Foreground="{StaticResource titleColor2}"
-                                          Margin="35,0,10,0"/>
-                            <TextBlock Text="Tổng quan"
-                                       Foreground="{StaticResource titleColor2}"
-                                       FontFamily="Montserrat"
-                                       FontSize="16"
-                                       FontWeight="Medium"
-                                       VerticalAlignment="Center"/>
+                    <Frame x:Name="MainContent"
+                        Grid.Row="1"
+                        NavigationUIVisibility="Hidden"/>
 
-                        </StackPanel>
-
-                        <!--StackPanel-->
-                        <StackPanel Grid.Column="1"
-                                    Orientation="Horizontal"
-                                    FlowDirection="RightToLeft"
-                                    VerticalAlignment="Center"
-                                    Margin="0,0,10,0">
-                            <Button Style="{StaticResource iconButton}"
-                                    Tag="{StaticResource color1}">
-                                <fa:IconImage Icon="AngleDown" Style="{StaticResource iconButtonIcon}"/>
-                            </Button>
-                            <TextBlock x:Name="tbUserName" Text="Hi Tuấn"
-                                       Foreground="{StaticResource titleColor3}"
-                                       FontFamily="Montserrat"
-                                       FontSize="12"
-                                       VerticalAlignment="Center"/>
-                            <Ellipse Height="35" Width="35"
-                                     Stroke="{StaticResource color2}"
-                                     StrokeThickness="2"
-                                     Margin="10,0,10,0">
-                                <Ellipse.Fill>
-                                    <ImageBrush ImageSource="/Image/user.png"/>
-                                </Ellipse.Fill>
-                            </Ellipse>
-
-
-                        </StackPanel>
-                    </Grid>
 
                     <!--Content section/ Child views-->
-                    <ContentControl Content=""
-                                    Grid.Row="2"
-                                    Margin="25"/>
+                    <!--<Frame x:Name="MainContent"
+                            Grid.Row="2"
+                            Margin="25"/>-->
                 </Grid>
             </Border>
         </Grid>

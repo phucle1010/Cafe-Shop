@@ -14,8 +14,8 @@ namespace QL_QuanCafe.Model
     
     public partial class CT_BAOCAODOANHTHU
     {
-        public string MaCTBC { get; set; }
-        public string MaBC { get; set; }
+        public int MaCTBC { get; set; }
+        public Nullable<int> MaBC { get; set; }
         public string MaLSP { get; set; }
         public Nullable<decimal> DoanhThu { get; set; }
     

@@ -1,14 +1,15 @@
-﻿<Page x:Class="QL_QuanCafe.View.MaterialTypeItemView"
+﻿<Page
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:QL_QuanCafe.View" xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="QL_QuanCafe.View.MaterialTypeItemView"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="1000"
       Title="MaterialTypeItemView">
 
-    <Grid>
+    <Grid Background="White">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -24,51 +25,58 @@
         </Grid>
 
         <Grid Grid.Row="1"
-              Margin="20 30 20 0">
+              Margin="0 30 0 0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
+                <ColumnDefinition Width="400"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Grid Grid.Column="0" 
-                  Margin="0 80 0 0"
-                  HorizontalAlignment="Center">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="160"></RowDefinition>
-                    <RowDefinition Height="40"></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                </Grid.RowDefinitions>
+            <Border Grid.Column="0"
+                    CornerRadius="10"
+                    Margin="0 80 0 0">
 
-                <Grid Grid.Row="0">
-                    <Border  CornerRadius="6" Width="160">
-                        <Border.Background>
-                            <ImageBrush x:Name="materialTypeImg" Stretch="Fill"/>
-                        </Border.Background>
-                    </Border>
-                </Grid>
-                <Grid Grid.Row="1"
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <Border  CornerRadius="6" 
+                                 Width="200">
+                            <Border.Background>
+                                <ImageBrush x:Name="materialTypeImg" Stretch="Fill"/>
+                            </Border.Background>
+                        </Border>
+                    </Grid>
+                    <Grid Grid.Row="1"
                       HorizontalAlignment="Center"
                       VerticalAlignment="Center">
-                    <TextBlock x:Name="materialTypeId" 
+                        <TextBlock x:Name="materialTypeId" 
                            Text="Mã loại nguyên liệu: 05"
-                           Foreground="White"
                            FontSize="16"/>
-                </Grid>
-                <Grid Grid.Row="2" 
+                    </Grid>
+                    <Grid Grid.Row="2" 
                       HorizontalAlignment="Center">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="27*"/>
-                        <ColumnDefinition Width="2*"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock x:Name="materialTypeName" 
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="27*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock x:Name="materialTypeName" 
                            Margin="0, 0, 0, 0"
                            Text="Tên loại nguyên liệu: Cà phê máy"
-                           Foreground="White"
-                           FontSize="16" Grid.ColumnSpan="2"/>
+                           FontSize="16" 
+                           Grid.ColumnSpan="2"/>
+                    </Grid>
                 </Grid>
-            </Grid>
+            </Border>
+            <Grid Grid.Column="0" 
+                  Margin="0 80 0 0"
+                  HorizontalAlignment="Center"/>
 
-            <Grid Grid.Column="1">
+            <Grid Grid.Column="1"
+                  Margin="40 0 0 0">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
@@ -80,7 +88,7 @@
 
                 <Grid Grid.Row="0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="200"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
@@ -88,16 +96,17 @@
                                x:Name="materialName" 
                                Text="Tên nguyên liệu:"
                                FontSize="16"
-                               Foreground="White"
                                VerticalAlignment="Center" />
                     <ComboBox Grid.Column="1" 
                               x:Name="materialItemOfTypeList"
                               Height="30"
+                              Width="400"
+                              HorizontalAlignment="Left"
                               FontSize="16" SelectionChanged="cbMaterialItem_Change"/>
                 </Grid>
                 <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="200"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
@@ -105,18 +114,16 @@
                                x:Name="materialId" 
                                Text="Mã nguyên liệu:"
                                FontSize="16"
-                               Foreground="White"
                                VerticalAlignment="Center" />
                     <TextBlock Grid.Column="1" 
                                x:Name="materialIdValue" 
                                Text=""
                                FontSize="16"
-                               Foreground="White"
                                VerticalAlignment="Center" />
                 </Grid>
                 <Grid Grid.Row="2">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="200"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
@@ -124,18 +131,16 @@
                                x:Name="availableMaterialQuantity" 
                                Text="Số lượng còn sẵn:"
                                FontSize="16"
-                               Foreground="White"
                                VerticalAlignment="Center" />
                     <TextBlock Grid.Column="1" 
                                x:Name="availableMaterialQuantityValue" 
                                Text=""
                                FontSize="16"
-                               Foreground="White"
                                VerticalAlignment="Center" />
                 </Grid>
                 <Grid Grid.Row="3">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="200"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
@@ -143,19 +148,17 @@
                                x:Name="materialPrice" 
                                Text="Đơn giá:"
                                FontSize="16"
-                               Foreground="White"
                                VerticalAlignment="Center" />
                     <TextBlock Grid.Column="1" 
                                x:Name="materialPriceValue" 
                                Text=""
                                FontSize="16"
-                               Foreground="White"
                                VerticalAlignment="Center" />
                 </Grid>
 
                 <Grid Grid.Row="4">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="200"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
@@ -163,13 +166,14 @@
                                x:Name="quantityInput" 
                                Text="Nhập số lượng nhập:"
                                FontSize="16"
-                               Foreground="White"
                                VerticalAlignment="Center" />
                     <TextBox Grid.Column="1" 
-                               x:Name="quantityInputValue" 
-                               Text=""
-                               FontSize="16"
-                               VerticalAlignment="Center" />
+                             x:Name="quantityInputValue" 
+                             Text=""
+                             FontSize="16"
+                             Width="400"
+                             HorizontalAlignment="Left"
+                             VerticalAlignment="Center" />
                 </Grid>
 
                 <Button 

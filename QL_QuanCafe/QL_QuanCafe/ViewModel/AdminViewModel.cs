@@ -17,11 +17,11 @@ namespace QL_QuanCafe.ViewModel
             int successDataRows = 0;
             try
             {
-                successDataRows = DataProvider.Ins.DB.NHANVIENs.SqlQuery($"SELECT * FROM NHANVIEN WHERE MaNV ='{user}' AND MatKhau = '{login.ComputeSha256Hash(pass)}'").Count();
+                successDataRows = DataProvider.Ins.DB.NHANVIENs.SqlQuery($"SELECT * FROM NHANVIEN WHERE MaNV = {user} AND MatKhau = '{login.ComputeSha256Hash(pass)}'").Count();
             }
             catch ( Exception e )
             {
-                throw (e);
+                MessageBox.Show(e.ToString());
             }
             return successDataRows > 0;
         }
@@ -30,13 +30,18 @@ namespace QL_QuanCafe.ViewModel
             string name = "";
             try
             {
-                name = DataProvider.Ins.DB.NHANVIENs.SqlQuery($"SELECT * FROM NHANVIEN WHERE MaNV = '{user}'").ElementAt(0).TenNV.ToString();
+                name = DataProvider.Ins.DB.NHANVIENs.SqlQuery($"SELECT * FROM NHANVIEN WHERE MaNV = {user}").ElementAt(0).TenNV.ToString();
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.ToString(), "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             return name;
+        }
+
+        public int getTheNumberOfEmployee()
+        {
+            return DataProvider.Ins.DB.NHANVIENs.Count();
         }
     }
 }

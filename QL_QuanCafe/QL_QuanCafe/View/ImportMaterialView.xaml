@@ -27,10 +27,10 @@
                 <fa:IconImage Icon="PieChart"
                                           Height="20"
                                           Width="20"
-                                           Foreground="{StaticResource titleColor2}"
+                                           Foreground="{StaticResource primaryTextColor}"
                                           Margin="35,0,10,0"/>
                 <TextBlock Text="Nguyên liệu"
-                                       Foreground="{StaticResource titleColor2}"
+                                       Foreground="{StaticResource primaryTextColor}"
                                        FontFamily="Montserrat"
                                        FontSize="16"
                                        FontWeight="Medium"

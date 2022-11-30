@@ -23,7 +23,7 @@ namespace QL_QuanCafe.ViewModel
             string currentIPAddress = getIPAddress();
             try
             {
-                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"INSERT INTO TAIKHOANDANGSUDUNG VALUES ('{user}', '{currentIPAddress}', {role})");
+                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"INSERT INTO TAIKHOANDANGSUDUNG VALUES ('{user}', {role}, '{currentIPAddress}')");
             }
             catch (Exception e)
             {
@@ -82,13 +82,10 @@ namespace QL_QuanCafe.ViewModel
         }
         public string ComputeSha256Hash( string rawData )
         {
-            // Create a SHA256   
             using ( SHA256 sha256Hash = SHA256.Create() )
             {
-                // ComputeHash - returns byte array  
                 byte [] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(rawData));
 
-                // Convert byte array to a string   
                 StringBuilder builder = new StringBuilder();
                 for ( int i = 0; i < bytes.Length; i++ )
                 {

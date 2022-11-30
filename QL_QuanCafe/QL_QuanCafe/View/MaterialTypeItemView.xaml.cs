@@ -116,7 +116,6 @@ namespace QL_QuanCafe.View
                     int importQuantity = Convert.ToInt32(quantityInputValue.Text);
                     double materialPrice = Convert.ToDouble(materialTypeItem.getPricePerMaterial(materialIdValue.Text));
                     int total = importQuantity * (int)materialPrice;
-                    MessageBox.Show(importId + " " + total.ToString());
                     int detailImportId = 0;
                     do
                     {

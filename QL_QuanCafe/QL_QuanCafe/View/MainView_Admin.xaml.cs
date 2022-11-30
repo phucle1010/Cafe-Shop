@@ -26,7 +26,6 @@ namespace QL_QuanCafe.View
         public MainView_Admin()
         {
             InitializeComponent();
-            //DataContext = new MainViewModel();
             MainContent.Content = new HomeAdminView();
         }
         [DllImport("user32.dll")]

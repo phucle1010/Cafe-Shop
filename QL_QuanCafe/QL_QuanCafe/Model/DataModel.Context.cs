@@ -43,12 +43,12 @@ namespace QL_QuanCafe.Model
         public virtual DbSet<LOAIHANGHOA> LOAIHANGHOAs { get; set; }
         public virtual DbSet<LOAIKHACHHANG> LOAIKHACHHANGs { get; set; }
         public virtual DbSet<LOAISANPHAM> LOAISANPHAMs { get; set; }
-        public virtual DbSet<LUONG> LUONGs { get; set; }
         public virtual DbSet<NHACUNGCAP> NHACUNGCAPs { get; set; }
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
         public virtual DbSet<NHAPHANG> NHAPHANGs { get; set; }
         public virtual DbSet<SANPHAM> SANPHAMs { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TAIKHOANDANGSUDUNG> TAIKHOANDANGSUDUNGs { get; set; }
+        public virtual DbSet<THAMSO> THAMSOes { get; set; }
+        public virtual DbSet<THETICHDIEM> THETICHDIEMs { get; set; }
     }
 }

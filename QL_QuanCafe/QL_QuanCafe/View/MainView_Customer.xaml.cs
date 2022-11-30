@@ -32,7 +32,7 @@ namespace QL_QuanCafe.View
         {
             CustomerViewModel customer = new CustomerViewModel();
             string userName = Properties.Settings.Default ["user"].ToString();
-            tbUserName.Text = customer.getCustomerName(userName);
+            MainContent.Content = new HomeCustomerView();
         }
 
         [DllImport("user32.dll")]
@@ -73,6 +73,46 @@ namespace QL_QuanCafe.View
             LoginView loginLayout = new LoginView();
             this.Visibility = Visibility.Hidden;
             loginLayout.Show();
+        }
+
+        private void btnPersonal_Click( object sender, RoutedEventArgs e )
+        {
+            MainContent.Content = new HomeCustomerView();
+        }
+
+        private void btnHotFood_Click( object sender, RoutedEventArgs e )
+        {
+            MainContent.Content = new HotFoodView();
+        }
+
+        private void btnOrderTable_Click( object sender, RoutedEventArgs e )
+        {
+            MainContent.Content = new OrderTableView();
+        }
+
+        private void btnOrderFood_Click( object sender, RoutedEventArgs e )
+        {
+            MainContent.Content = new OrderFoodView();
+        }
+
+        private void btnAccPoint_Click( object sender, RoutedEventArgs e )
+        {
+            MainContent.Content = new AccumlatorPointView();
+        }
+
+        private void btnEvaluate_Click( object sender, RoutedEventArgs e )
+        {
+            MainContent.Content = new EvaluateView();
+        }
+
+        private void btnRespone_Click( object sender, RoutedEventArgs e )
+        {
+            MainContent.Content = new ResponseView();
+        }
+
+        private void btnSecurity_Click( object sender, RoutedEventArgs e )
+        {
+            MainContent.Content = new SecurityView();
         }
     }
 }

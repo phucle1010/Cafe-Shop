@@ -26,10 +26,10 @@
                 <fa:IconImage Icon="UserGroup"
                                           Height="20"
                                           Width="20"
-                                           Foreground="{StaticResource titleColor2}"
+                                           Foreground="{StaticResource primaryTextColor}"
                                           Margin="35,0,10,0"/>
                 <TextBlock Text="Khách hàng"
-                                       Foreground="{StaticResource titleColor2}"
+                                       Foreground="{StaticResource primaryTextColor}"
                                        FontFamily="Montserrat"
                                        FontSize="16"
                                        FontWeight="Medium"
@@ -65,6 +65,18 @@
             </StackPanel>
         </Grid>
 
+        <Grid Grid.Row="1">
+            <DataGrid x:Name="dtCustomer" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Mã khách hàng" Foreground="{StaticResource primaryTextColor}" Width="*"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Tên khách hàng" Foreground="{StaticResource primaryTextColor}" Width="*"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Số điện thoại" Foreground="{StaticResource primaryTextColor}" Width="*"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Email" Foreground="{StaticResource primaryTextColor}" Width="*"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Địa chỉ" Foreground="{StaticResource primaryTextColor}" Width="*"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Điểm tích lũy" Foreground="{StaticResource primaryTextColor}" Width="*"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
     </Grid>
 
 </Page>

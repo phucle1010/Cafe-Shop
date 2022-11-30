@@ -19,27 +19,26 @@ namespace QL_QuanCafe.Model
         {
             this.DIEMDANHNGAYLAMs = new HashSet<DIEMDANHNGAYLAM>();
             this.HOADONs = new HashSet<HOADON>();
-            this.LUONGs = new HashSet<LUONG>();
             this.NHAPHANGs = new HashSet<NHAPHANG>();
         }
     
-        public string MaNV { get; set; }
+        public int MaNV { get; set; }
         public string MatKhau { get; set; }
         public string TenNV { get; set; }
         public string SDT { get; set; }
         public string Email { get; set; }
         public string DiaChi { get; set; }
-        public Nullable<decimal> Luong { get; set; }
         public string ChucVu { get; set; }
         public Nullable<System.DateTime> NgayVaoLam { get; set; }
         public Nullable<bool> GioiTinh { get; set; }
+        public Nullable<int> MaCaLV { get; set; }
+        public byte[] AnhDaiDien { get; set; }
     
+        public virtual CALAMVIEC CALAMVIEC { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DIEMDANHNGAYLAM> DIEMDANHNGAYLAMs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOADON> HOADONs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LUONG> LUONGs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NHAPHANG> NHAPHANGs { get; set; }
     }

@@ -20,12 +20,14 @@ namespace QL_QuanCafe.Model
             this.CT_DATMON = new HashSet<CT_DATMON>();
         }
     
-        public string MaDM { get; set; }
-        public string MaKH { get; set; }
-        public string MaDatBan { get; set; }
+        public int MaDM { get; set; }
+        public Nullable<int> MaKH { get; set; }
+        public Nullable<int> MaDatBan { get; set; }
+        public Nullable<decimal> TongTien { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_DATMON> CT_DATMON { get; set; }
         public virtual DATBAN DATBAN { get; set; }
+        public virtual KHACHHANG KHACHHANG { get; set; }
     }
 }

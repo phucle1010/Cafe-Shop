@@ -17,16 +17,16 @@ namespace QL_QuanCafe.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CALAMVIEC()
         {
-            this.LUONGs = new HashSet<LUONG>();
+            this.NHANVIENs = new HashSet<NHANVIEN>();
         }
     
-        public string MaCaLV { get; set; }
+        public int MaCaLV { get; set; }
         public string TenCaLV { get; set; }
         public Nullable<System.TimeSpan> GioBD { get; set; }
         public Nullable<System.TimeSpan> GioKT { get; set; }
-        public Nullable<System.DateTime> NgayLV { get; set; }
+        public Nullable<decimal> Luong { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LUONG> LUONGs { get; set; }
+        public virtual ICollection<NHANVIEN> NHANVIENs { get; set; }
     }
 }

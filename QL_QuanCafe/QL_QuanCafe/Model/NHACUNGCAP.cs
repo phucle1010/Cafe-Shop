@@ -20,7 +20,7 @@ namespace QL_QuanCafe.Model
             this.NHAPHANGs = new HashSet<NHAPHANG>();
         }
     
-        public string MaNCC { get; set; }
+        public int MaNCC { get; set; }
         public string TenNCC { get; set; }
         public string SDT { get; set; }
     

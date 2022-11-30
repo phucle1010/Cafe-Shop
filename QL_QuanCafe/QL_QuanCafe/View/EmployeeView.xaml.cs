@@ -31,6 +31,7 @@ namespace QL_QuanCafe.View
             AdminViewModel admin = new AdminViewModel();
             string userName = Properties.Settings.Default ["user"].ToString();
             tbUserName.Text = admin.getAdminName(userName);
+            MainContent.Content = new EmployeeListView(MainContent);
         }
     }
 }

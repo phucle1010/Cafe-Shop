@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:QL_QuanCafe.View" xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="670" d:DesignWidth="1000"
       Title="SecurityView">
     
     <Grid>
@@ -26,10 +26,10 @@
                 <fa:IconImage Icon="Key"
                                           Height="20"
                                           Width="20"
-                                           Foreground="{StaticResource titleColor2}"
+                                           Foreground="{StaticResource primaryTextColor}"
                                           Margin="35,0,10,0"/>
                 <TextBlock Text="Bảo mật"
-                                       Foreground="{StaticResource titleColor2}"
+                                       Foreground="{StaticResource primaryTextColor}"
                                        FontFamily="Montserrat"
                                        FontSize="16"
                                        FontWeight="Medium"
@@ -64,6 +64,132 @@
 
             </StackPanel>
         </Grid>
+
+        <StackPanel Width="350"
+                    Grid.Row="2"
+                    Orientation="Vertical"
+                    Margin="0,35,0,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+
+            <TextBlock Text="Mật khẩu hiện tại"
+                       Foreground="DarkGray"
+                       FontSize="12"
+                       FontFamily="Montserrat"
+                       Margin="0,35,0,0"/>
+
+            <PasswordBox x:Name="txtpass"
+                        FontSize="13"
+                        FontWeight="Medium"
+                        FontFamily="Montserrat"                               
+                        Foreground="White"
+                            
+                        CaretBrush="LightGray"
+                        BorderBrush="White"
+                        BorderThickness="0,0,0,1" 
+                        Height="28"
+                        VerticalContentAlignment="Center"
+                        Margin="0,10,0,0"
+                        Padding="30,0,0,0">
+
+                <PasswordBox.Background>
+                    <ImageBrush ImageSource="/Image/pass.png"                               
+                                        Stretch="Uniform"
+                                        AlignmentX="Left"/>
+                </PasswordBox.Background>
+
+            </PasswordBox>
+
+            <TextBlock Text="Mật khẩu mới"
+                       Foreground="DarkGray"
+                       FontSize="12"
+                       FontFamily="Montserrat"
+                       Margin="0,40,0,0"/>
+
+            <PasswordBox x:Name="txtnewpass"
+                        FontSize="13"
+                        FontWeight="Medium"
+                        FontFamily="Montserrat"                               
+                        Foreground="White"
+                            
+                        CaretBrush="LightGray"
+                        BorderBrush="White"
+                        BorderThickness="0,0,0,1" 
+                        Height="28"
+                        VerticalContentAlignment="Center"
+                        Margin="0,10,0,0"
+                        Padding="30,0,0,0">
+
+                <PasswordBox.Background>
+                    <ImageBrush ImageSource="/Image/pass.png"                               
+                                        Stretch="Uniform"
+                                        AlignmentX="Left"/>
+                </PasswordBox.Background>
+            </PasswordBox>
+
+
+            <TextBlock Text="Nhập lại mật khẩu mới "
+                       Foreground="DarkGray"
+                       FontSize="12"
+                       FontFamily="Montserrat"
+                       Margin="0,40,0,0"/>
+
+            <PasswordBox x:Name="txtrenewpass"
+                        FontSize="13"
+                        FontWeight="Medium"
+                        FontFamily="Montserrat"                               
+                        Foreground="White"
+                            
+                        CaretBrush="LightGray"
+                        BorderBrush="White"
+                        BorderThickness="0,0,0,1" 
+                        Height="28"
+                        VerticalContentAlignment="Center"
+                        Margin="0,10,0,0"
+                        Padding="30,0,0,0">
+
+                <PasswordBox.Background>
+                    <ImageBrush ImageSource="/Image/pass.png"                               
+                                             Stretch="Uniform"
+                                             AlignmentX="Left"/>
+                </PasswordBox.Background>
+            </PasswordBox>
+
+            <Button x:Name="btnReset"
+                    BorderThickness="0"
+                    Content="Đặt lại mật khẩu"
+                    Foreground="White"
+                    FontSize="14"
+                    FontFamily="Montserrat"
+                    Cursor="Hand"
+                    Grid.Column="2"
+                    Margin="0,50,0,0"
+                    Click="btnReset_Click">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="#462AD8"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#28AEED"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Width="150" Height="40"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+
+        </StackPanel>
 
     </Grid>
 </Page>

@@ -14,12 +14,12 @@ namespace QL_QuanCafe.Model
     
     public partial class CT_DATMON
     {
-        public string MaCTDM { get; set; }
-        public string MaDM { get; set; }
-        public string MaHH { get; set; }
+        public int MaCTDM { get; set; }
+        public Nullable<int> MaDM { get; set; }
+        public Nullable<int> MaSP { get; set; }
         public Nullable<short> SoLuong { get; set; }
     
         public virtual DATMON DATMON { get; set; }
-        public virtual HANGHOA HANGHOA { get; set; }
+        public virtual SANPHAM SANPHAM { get; set; }
     }
 }

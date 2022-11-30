@@ -5,7 +5,14 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:QL_QuanCafe.View"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="700" d:DesignWidth="1000"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal"
+      TextOptions.TextRenderingMode="Auto"
+      FontFamily="{DynamicResource MaterialDesignFont}"
       Title="MaterialTypeListView">
 
     <Grid>
@@ -23,70 +30,93 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <Grid 
-                        Grid.Column="0" 
-                        Margin="0 10 0 10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
+            <Border 
+                  Grid.Column="0" 
+                  Margin="50 10" 
+                  Background="White"
+                  CornerRadius="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
 
-                <Grid Grid.Column="0">
-                    <Border CornerRadius="6" Width="160">
-                        <Border.Background>
-                            <ImageBrush Stretch="Fill" ImageSource="https://bizweb.dktcdn.net/thumb/large/100/405/472/products/cafe-da-3.jpg?v=1602234663170"/>
-                        </Border.Background>
-                    </Border>
-                </Grid>
-                <StackPanel Grid.Column="1" VerticalAlignment="Center">
-                    <TextBlock 
-                                Text="Cafe truyền thống" 
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center" 
-                                Foreground="White"
-                                FontSize="15"/>
-                    <Button 
-                                Margin="20 10 20 0"
-                                Padding="0 4 0 4"
-                                Content="Nhập hàng" 
-                                FontSize="16"
-                                Foreground="White"
-                                Background="{StaticResource color2}" Click="btnTraditionalCf_Click" />
-                </StackPanel>
-            </Grid>
-            <Grid 
-                        Grid.Column="1"
-                        Margin="0 10 0 10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Border CornerRadius="6" Width="160" Margin="10">
+                            <Border.Background>
+                                <ImageBrush Stretch="Fill" ImageSource="https://bizweb.dktcdn.net/thumb/large/100/405/472/products/cafe-da-3.jpg?v=1602234663170"/>
+                            </Border.Background>
+                        </Border>
+                    </Grid>
+                    <StackPanel Grid.Column="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0"
+                                    Text="Cafe truyền thống" 
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center" 
+                                    FontSize="15"/>
 
-                <Grid Grid.Column="0">
-                    <Border CornerRadius="6" Width="160">
-                        <Border.Background>
-                            <ImageBrush Stretch="Fill" ImageSource="https://amazingcoffee.vn/uploads/news/2021_03/qu%C3%A1-tr%C3%ACnh-chi%E1%BA%BFt-xu%E1%BA%A5t-c%C3%A0-ph%C3%AA_1.jpg"/>
-                        </Border.Background>
-                    </Border>
+                            <Button Grid.Row="1"
+                                    Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                                    Width="150"
+                                    ToolTip="Resource name: MaterialDesignRaisedLightDarkButton"
+                                    Click="btnTraditionalCf_Click">
+                                _Nhập hàng
+                            </Button>
+                        </Grid>
+                    </StackPanel>
+
                 </Grid>
-                <StackPanel 
-                            Grid.Column="1"
-                            VerticalAlignment="Center">
-                    <TextBlock 
-                                Text="Cafe máy" 
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center" 
-                                Foreground="White"
-                                FontSize="15"/>
-                    <Button 
-                                Margin="20 10 20 0"
-                                Padding="0 4 0 4"
-                                Content="Nhập hàng"  
-                                FontSize="16"
-                                Foreground="White"
-                                Background="{StaticResource color2}" Click="btnMachineCf_Click" />
-                </StackPanel>
-            </Grid>
+
+            </Border>
+
+            <Border 
+                  Grid.Column="1" 
+                  Margin="50 10" 
+                  Background="White"
+                  CornerRadius="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0">
+                        <Border CornerRadius="6" Width="160" Margin="10">
+                            <Border.Background>
+                                <ImageBrush Stretch="Fill" ImageSource="https://amazingcoffee.vn/uploads/news/2021_03/qu%C3%A1-tr%C3%ACnh-chi%E1%BA%BFt-xu%E1%BA%A5t-c%C3%A0-ph%C3%AA_1.jpg"/>
+                            </Border.Background>
+                        </Border>
+                    </Grid>
+                    <StackPanel 
+                            Grid.Column="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0"
+                                    Text="Cafe máy" 
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center" 
+                                    FontSize="15"/>
+
+                            <Button Grid.Row="1"
+                                    Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                                    Width="150"
+                                    ToolTip="Resource name: MaterialDesignRaisedLightDarkButton"
+                                    Click="btnMachineCf_Click">
+                                _Nhập hàng
+                            </Button>
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+
+            </Border>
         </Grid>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
@@ -94,185 +124,229 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <Grid 
-                        Grid.Column="0"
-                        Margin="0 10 0 10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
+            <Border 
+                  Grid.Column="0" 
+                  Margin="50 10" 
+                  Background="White"
+                  CornerRadius="10">
 
-                <Grid Grid.Column="0">
-                    <Border CornerRadius="6" Width="160">
-                        <Border.Background>
-                            <ImageBrush Stretch="Fill" ImageSource="https://cdn.beptruong.edu.vn/wp-content/uploads/2015/12/matcha-da-xay-600x400.jpg"/>
-                        </Border.Background>
-                    </Border>
-                </Grid>
-                <StackPanel 
-                            Grid.Column="1"
-                            VerticalAlignment="Center">
-                    <TextBlock 
-                                Text="Đồ uống đá xay" 
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center" 
-                                Foreground="White"
-                                FontSize="15"/>
-                    <Button 
-                                Margin="20 10 20 0"
-                                Padding="0 4 0 4"
-                                Content="Nhập hàng" 
-                                FontSize="16"
-                                Foreground="White"
-                                Background="{StaticResource color2}" Click="btnIce_Click" />
-                </StackPanel>
-            </Grid>
-            <Grid 
-                        Grid.Column="1"
-                        Margin="0 10 0 10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
 
-                <Grid Grid.Column="0">
-                    <Border CornerRadius="6" Width="160">
-                        <Border.Background>
-                            <ImageBrush Stretch="Fill" ImageSource="https://photo-cms-tpo.epicdn.me/w890/Uploaded/2022/rkznae/2020_11_11/nuoc_ep_hoa_qua_FKBO.jpg"/>
-                        </Border.Background>
-                    </Border>
+                    <Grid Grid.Column="0">
+                        <Border CornerRadius="6" Width="160" Margin="10">
+                            <Border.Background>
+                                <ImageBrush Stretch="Fill" ImageSource="https://cdn.beptruong.edu.vn/wp-content/uploads/2015/12/matcha-da-xay-600x400.jpg"/>
+                            </Border.Background>
+                        </Border>
+                    </Grid>
+                    <StackPanel 
+                            Grid.Column="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0"
+                                        Text="Đồ uống đá xay" 
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center" 
+                                        FontSize="15"/>
+                            <Button Grid.Row="1"
+                                    Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                                    Width="150"
+                                    ToolTip="Resource name: MaterialDesignRaisedLightDarkButton"
+                                    Click="btnIce_Click">
+                                _Nhập hàng
+                            </Button>
+                        </Grid>
+                    </StackPanel>
                 </Grid>
-                <StackPanel 
-                            Grid.Column="1"
-                            VerticalAlignment="Center">
-                    <TextBlock 
-                                Text="Nước ép trái cây" 
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center" 
-                                Foreground="White"
-                                FontSize="15"/>
-                    <Button 
-                                Margin="20 10 20 0"
-                                Padding="0 4 0 4"
-                                Content="Nhập hàng"  
-                                FontSize="16"
-                                Foreground="White"
-                                Background="{StaticResource color2}" Click="btnJuice_Click" />
-                </StackPanel>
-            </Grid>
+            </Border>
+
+            <Border 
+                  Grid.Column="1" 
+                  Margin="50 10" 
+                  Background="White"
+                  CornerRadius="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0">
+                        <Border CornerRadius="6" Width="160" Margin="10">
+                            <Border.Background>
+                                <ImageBrush Stretch="Fill" ImageSource="https://photo-cms-tpo.epicdn.me/w890/Uploaded/2022/rkznae/2020_11_11/nuoc_ep_hoa_qua_FKBO.jpg"/>
+                            </Border.Background>
+                        </Border>
+                    </Grid>
+                    <StackPanel Grid.Column="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0"
+                                        Text="Nước ép trái cây" 
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center" 
+                                        FontSize="15"/>
+                            <Button Grid.Row="1"
+                                    Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                                    Width="150"
+                                    ToolTip="Resource name: MaterialDesignRaisedLightDarkButton"
+                                    Click="btnJuice_Click">
+                                _Nhập hàng
+                            </Button>
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+            </Border>
         </Grid>
+
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <Grid 
-                        Grid.Column="0"
-                        Margin="0 10 0 10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
+            <Border 
+                  Grid.Column="0" 
+                  Margin="50 10" 
+                  Background="White"
+                  CornerRadius="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
 
-                <Grid Grid.Column="0">
-                    <Border CornerRadius="6" Width="160">
-                        <Border.Background>
-                            <ImageBrush Stretch="Fill" ImageSource="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2020/9/19/837524/Giam-Mo.jpg"/>
-                        </Border.Background>
-                    </Border>
+                    <Grid Grid.Column="0">
+                        <Border CornerRadius="6" Width="160" Margin="10">
+                            <Border.Background>
+                                <ImageBrush Stretch="Fill" ImageSource="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2020/9/19/837524/Giam-Mo.jpg"/>
+                            </Border.Background>
+                        </Border>
+                    </Grid>
+                    <StackPanel 
+                                        Grid.Column="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock  Grid.Row="0"
+                                        Text="Sinh tố hoa quả" 
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center" 
+                                        FontSize="15"/>
+                            <Button Grid.Row="1"
+                                    Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                                    Width="150"
+                                    ToolTip="Resource name: MaterialDesignRaisedLightDarkButton"
+                                    Click="btnSmoothie_Click">
+                                _Nhập hàng
+                            </Button>
+                        </Grid>
+                    </StackPanel>
                 </Grid>
-                <StackPanel 
-                            Grid.Column="1"
-                            VerticalAlignment="Center">
-                    <TextBlock 
-                                Text="Sinh tố hoa quả" 
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center" 
-                                Foreground="White"
-                                FontSize="15"/>
-                    <Button 
-                               Margin="20 10 20 0"
-                                Padding="0 4 0 4"
-                                Content="Nhập hàng"  
-                                FontSize="16"
-                                Foreground="White"
-                                Background="{StaticResource color2}" Click="btnSmoothie_Click" />
-                </StackPanel>
-            </Grid>
-            <Grid 
-                        Grid.Column="1"
-                        Margin="0 10 0 10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
+            </Border>
 
-                <Grid Grid.Column="0">
-                    <Border CornerRadius="6" Width="160">
-                        <Border.Background>
-                            <ImageBrush Stretch="Fill" ImageSource="https://liberico.vn/wp-content/uploads/2021/11/uong-tra-den-tot-cho-suc-khoe.jpg"/>
-                        </Border.Background>
-                    </Border>
+
+            <Border 
+                  Grid.Column="1" 
+                  Margin="50 10" 
+                  Background="White"
+                  CornerRadius="10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0">
+                        <Border CornerRadius="6" Width="160" Margin="10">
+                            <Border.Background>
+                                <ImageBrush Stretch="Fill" ImageSource="https://liberico.vn/wp-content/uploads/2021/11/uong-tra-den-tot-cho-suc-khoe.jpg"/>
+                            </Border.Background>
+                        </Border>
+                    </Grid>
+                    <StackPanel Grid.Column="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0"
+                                        Text="Trà" 
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center" 
+                                        FontSize="15"/>
+                            <Button Grid.Row="1"
+                                    Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                                    Width="150"
+                                    ToolTip="Resource name: MaterialDesignRaisedLightDarkButton"
+                                    Click="btnTea_Click">
+                                _Nhập hàng
+                            </Button>
+                        </Grid>
+                    </StackPanel>
                 </Grid>
-                <StackPanel 
-                            Grid.Column="1"
-                            VerticalAlignment="Center">
-                    <TextBlock 
-                                Text="Trà" 
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center" 
-                                Foreground="White"
-                                FontSize="15"/>
-                    <Button 
-                                Margin="20 10 20 0"
-                                Padding="0 4 0 4"
-                                Content="Nhập hàng"  
-                                FontSize="16"
-                                Foreground="White"
-                                Background="{StaticResource color2}" Click="btnTea_Click" />
-                </StackPanel>
-            </Grid>
+            </Border>
         </Grid>
+
+
         <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <Grid 
-                        Grid.Column="0"
-                        Margin="0 10 0 10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-
+            <Border 
+                  Grid.Column="0" 
+                  Margin="50 10" 
+                  Background="White"
+                  CornerRadius="10">
                 <Grid Grid.Column="0">
-                    <Border CornerRadius="6" Width="160">
-                        <Border.Background>
-                            <ImageBrush Stretch="Fill" ImageSource="https://vnn-imgs-f.vgcloud.vn/2020/05/27/09/cach-lam-5-mon-kem-trai-cay-giai-nhiet-ngay-he.jpg"/>
-                        </Border.Background>
-                    </Border>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0">
+                        <Border CornerRadius="6" Width="160" Margin="10">
+                            <Border.Background>
+                                <ImageBrush Stretch="Fill" ImageSource="https://vnn-imgs-f.vgcloud.vn/2020/05/27/09/cach-lam-5-mon-kem-trai-cay-giai-nhiet-ngay-he.jpg"/>
+                            </Border.Background>
+                        </Border>
+                    </Grid>
+                    <StackPanel Grid.Column="1">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0"
+                                    Text="Kem tươi" 
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Bottom" 
+                                    FontSize="15" Margin="70,0,70,41"/>
+                            <Button Grid.Row="1"
+                                    Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                                    Width="150"
+                                    ToolTip="Resource name: MaterialDesignRaisedLightDarkButton"
+                                    Click="btnIceCream_Click">
+                                _Nhập hàng
+                            </Button>
+                        </Grid>
+                    </StackPanel>
                 </Grid>
-                <StackPanel 
-                            Grid.Column="1"
-                            VerticalAlignment="Center">
-                    <TextBlock 
-                                Text="Kem tươi" 
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center" 
-                                Foreground="White"
-                                FontSize="15"/>
-                    <Button 
-                                Margin="20 10 20 0"
-                                Padding="0 4 0 4"
-                                Content="Nhập hàng"  
-                                FontSize="16"
-                                Foreground="White"
-                                Background="{StaticResource color2}" Click="btnIceCream_Click" />
-                </StackPanel>
-            </Grid>
+            </Border>
             <Grid Grid.Column="1"></Grid>
         </Grid>
     </Grid>

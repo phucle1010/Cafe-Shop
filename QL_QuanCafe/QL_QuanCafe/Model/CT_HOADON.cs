@@ -14,9 +14,9 @@ namespace QL_QuanCafe.Model
     
     public partial class CT_HOADON
     {
-        public string MaCTHD { get; set; }
-        public string MaHD { get; set; }
-        public string MaSP { get; set; }
+        public int MaCTHD { get; set; }
+        public Nullable<int> MaHD { get; set; }
+        public Nullable<int> MaSP { get; set; }
         public Nullable<decimal> DonGia { get; set; }
         public Nullable<short> SoLuong { get; set; }
         public Nullable<decimal> ThanhTien { get; set; }

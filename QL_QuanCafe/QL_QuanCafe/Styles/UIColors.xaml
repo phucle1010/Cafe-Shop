@@ -10,6 +10,9 @@
     <Color x:Key="winBorderColor2">#FB539B</Color>
     <Color x:Key="winBorderColor3">#836EFB</Color>
     <!--Color Palette-->
+    <SolidColorBrush x:Key="primaryTextColor">#333</SolidColorBrush>
+    <SolidColorBrush x:Key="navigationColor">#3e85cc</SolidColorBrush>
+    <SolidColorBrush x:Key="whiteColor">#fff</SolidColorBrush>
     <SolidColorBrush x:Key="color1" Color="#E285DE"/>
     <SolidColorBrush x:Key="color2" Color="#784DFD"/>
     <SolidColorBrush x:Key="color3" Color="#4ADAEC"/>

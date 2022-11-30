@@ -14,8 +14,8 @@ namespace QL_QuanCafe.Model
     
     public partial class DIEMDANHNGAYLAM
     {
-        public string MaDD { get; set; }
-        public string MaNV { get; set; }
+        public int MaDD { get; set; }
+        public Nullable<int> MaNV { get; set; }
         public Nullable<System.DateTime> NgayDiemDanh { get; set; }
     
         public virtual NHANVIEN NHANVIEN { get; set; }

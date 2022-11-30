@@ -41,7 +41,7 @@ namespace QL_QuanCafe.ViewModel
             string providerId = getProviderId();
             try
             {
-                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"INSERT INTO NHAPHANG VALUES ('{importId}', '{employeeId}', '{DateTime.Now.ToString("dd/MM/yyyy")}', {totalPrice} , '{providerId}')");
+                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"INSERT INTO NHAPHANG VALUES ('{importId}', '{employeeId}', '{DateTime.Now.ToString("yyyy/MM/dd")}', {totalPrice} , '{providerId}')");
                 MessageBox.Show("Tạo mã nhập hàng thành công", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
 
             }

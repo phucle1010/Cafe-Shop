@@ -7,7 +7,7 @@
         <Setter Property="Height" Value="50"/>
         <Setter Property="Margin" Value="-5,0,0,5"/>
         <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="Foreground" Value="{StaticResource plainTextColor3}"/>
+        <Setter Property="Foreground" Value="{Binding Path=Tag, RelativeSource={RelativeSource Self}}"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -31,7 +31,7 @@
             <!--Activated button style-->
             <Trigger Property="IsChecked" Value="True">
                 <Setter Property="Margin" Value="0,0,0,5"/>
-                <Setter Property="Background" Value="{StaticResource panelActiveColor}"/>
+                <Setter Property="Background" Value="{StaticResource whiteColor}"/>
                 <Setter Property="Foreground" Value="{Binding Path=Tag, RelativeSource={RelativeSource Self}}"/>
                 <Setter Property="BorderBrush" Value="{Binding Path=Tag, RelativeSource={RelativeSource Self}}"/>
             </Trigger>

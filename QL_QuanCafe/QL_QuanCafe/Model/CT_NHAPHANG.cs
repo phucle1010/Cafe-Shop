@@ -14,9 +14,9 @@ namespace QL_QuanCafe.Model
     
     public partial class CT_NHAPHANG
     {
-        public string MaCTNH { get; set; }
-        public string MANH { get; set; }
-        public string MaHH { get; set; }
+        public int MaCTNH { get; set; }
+        public Nullable<int> MANH { get; set; }
+        public Nullable<int> MaHH { get; set; }
         public Nullable<short> SoLuong { get; set; }
     
         public virtual HANGHOA HANGHOA { get; set; }
