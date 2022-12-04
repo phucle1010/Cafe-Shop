@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QL_QuanCafe.Model;
+using QL_QuanCafe.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -17,6 +19,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace QL_QuanCafe.View
 {
     /// <summary>
@@ -24,20 +27,17 @@ namespace QL_QuanCafe.View
     /// </summary>
     public partial class AddNewFoodView : Window
     {
+        List<CT_SANPHAM> foodDetailLst = new List<CT_SANPHAM>();
+        AddNewFoodViewModel newFoodVM = new AddNewFoodViewModel();
         BitmapImage bitmap;
         public AddNewFoodView()
         {
             InitializeComponent();
             bitmap = new BitmapImage();
+            LoadData();
         }
         [DllImport("user32.dll")]
         public static extern IntPtr SendMessage( IntPtr hWnd, int wMsg, int wParam, int lParam );
-        private void btnMaximize_Click( object sender, RoutedEventArgs e )
-        {
-            if ( this.WindowState == WindowState.Normal )
-                this.WindowState = WindowState.Maximized;
-            else this.WindowState = WindowState.Normal;
-        }
 
         private void btnMinimize_Click( object sender, RoutedEventArgs e )
         {
@@ -58,6 +58,14 @@ namespace QL_QuanCafe.View
         private void pnlControlBar_MouseEnter( object sender, System.Windows.Input.MouseEventArgs e )
         {
             this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
+        }
+
+        public void LoadData()
+        {
+            foreach(var item in newFoodVM.GetAllFoodType())
+            {
+                cbFoodType.Items.Add(item.TenLoaiSP);
+            }
         }
 
         private void btnAddImage_Click( object sender, RoutedEventArgs e )
@@ -82,14 +90,43 @@ namespace QL_QuanCafe.View
             
         //}
 
-        public void StoreImage()
-        {
 
+
+        private void btnAddMaterial_Click( object sender, RoutedEventArgs e )
+        {
+            if ( String.IsNullOrEmpty(tbProductName.Text) || String.IsNullOrEmpty(tbProductPrice.Text) || cbFoodType.SelectedIndex == -1 )
+            {
+                System.Windows.MessageBox.Show("Vui lòng điền đày đủ thông tin món ăn");
+            } else
+            {
+                if (!IsValidNumber(tbProductPrice.Text))
+                {
+                    System.Windows.MessageBox.Show("Giá tiền không hợp lệ. Vui lòng kiểm tra lại", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
+                } else
+                {
+                    string typeName = cbFoodType.SelectedItem.ToString();
+                    string typeId = newFoodVM.GetFoodTypeId(typeName);
+                    newFoodVM.InsertFoodData(tbProductName.Text, typeId, tbProductPrice.Text);
+                    string foodId = newFoodVM.GetTheLatestFoodId();
+                    AddFoodMaterialView addMaterialView = new AddFoodMaterialView(foodId, typeId);
+                    addMaterialView.Show();
+                    this.Close();
+                }
+            }
         }
 
-        private void btnAddSubmit_Click( object sender, RoutedEventArgs e )
+        public bool IsValidNumber(string value)
         {
-            System.Windows.MessageBox.Show(this.bitmap.ToString());
+            string tString = value;
+            if ( tString.Trim() == "" ) return false;
+            for ( int i = 0; i < tString.Length; i++ )
+            {
+                if ( !char.IsNumber(tString [i]) )
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

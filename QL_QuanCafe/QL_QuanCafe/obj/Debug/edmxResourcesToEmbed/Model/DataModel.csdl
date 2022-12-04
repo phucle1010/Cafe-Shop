@@ -390,7 +390,6 @@
     <Property Name="HinhAnh" Type="Binary" MaxLength="Max" FixedLength="false" />
     <Property Name="GiaSP" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="TrangThai" Type="Boolean" />
-    <Property Name="AnhSanPham" Type="Binary" MaxLength="Max" FixedLength="false" />
     <NavigationProperty Name="CT_DATMON" Relationship="CafeShopModel.FK__CT_DATMON__MaSP__66603565" FromRole="SANPHAM" ToRole="CT_DATMON" />
     <NavigationProperty Name="CT_HOADON" Relationship="CafeShopModel.FK__CT_HOADON__MaSP__7D439ABD" FromRole="SANPHAM" ToRole="CT_HOADON" />
     <NavigationProperty Name="CT_SANPHAM" Relationship="CafeShopModel.FK__CT_SANPHAM__MaSP__09A971A2" FromRole="SANPHAM" ToRole="CT_SANPHAM" />

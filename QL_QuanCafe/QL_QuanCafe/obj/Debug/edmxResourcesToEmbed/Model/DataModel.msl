@@ -233,7 +233,6 @@
     <EntitySetMapping Name="SANPHAMs">
       <EntityTypeMapping TypeName="CafeShopModel.SANPHAM">
         <MappingFragment StoreEntitySet="SANPHAM">
-          <ScalarProperty Name="AnhSanPham" ColumnName="AnhSanPham" />
           <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
           <ScalarProperty Name="GiaSP" ColumnName="GiaSP" />
           <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />

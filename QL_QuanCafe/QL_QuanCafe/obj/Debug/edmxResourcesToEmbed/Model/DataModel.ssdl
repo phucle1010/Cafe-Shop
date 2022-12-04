@@ -218,7 +218,6 @@
     <Property Name="HinhAnh" Type="varbinary(max)" />
     <Property Name="GiaSP" Type="money" />
     <Property Name="TrangThai" Type="bit" />
-    <Property Name="AnhSanPham" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="TAIKHOANDANGSUDUNG">
     <Key>

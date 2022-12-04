@@ -177,6 +177,8 @@
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\AddEmployeeViewModel.cs" />
+    <Compile Include="ViewModel\AddFoodMaterialViewModel.cs" />
+    <Compile Include="ViewModel\AddNewFoodViewModel.cs" />
     <Compile Include="ViewModel\AdminProfileViewModel.cs" />
     <Compile Include="ViewModel\AdminViewModel.cs" />
     <Compile Include="ViewModel\CreateNewPasswordViewModel.cs" />
@@ -200,12 +202,17 @@
     <Compile Include="ViewModel\RegisterAccountViewModel.cs" />
     <Compile Include="ViewModel\ReportViewModel.cs" />
     <Compile Include="ViewModel\SecurityViewModel.cs" />
+    <Compile Include="ViewModel\UpdateEmployeeViewModel.cs" />
+    <Compile Include="ViewModel\UpdateFoodViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="View\AccumlatorPointView.xaml.cs">
       <DependentUpon>AccumlatorPointView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\AddEmployeeView.xaml.cs">
-      <DependentUpon>AddEmployeeView.xaml</DependentUpon>
+    <Compile Include="View\AddFoodMaterialView.xaml.cs">
+      <DependentUpon>AddFoodMaterialView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddNewEmployeeView.xaml.cs">
+      <DependentUpon>AddNewEmployeeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\AddNewFoodView.xaml.cs">
       <DependentUpon>AddNewFoodView.xaml</DependentUpon>
@@ -307,6 +314,12 @@
     <Compile Include="View\SecurityView.xaml.cs">
       <DependentUpon>SecurityView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\UpdateEmployeeView.xaml.cs">
+      <DependentUpon>UpdateEmployeeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UpdateFoodView.xaml.cs">
+      <DependentUpon>UpdateFoodView.xaml</DependentUpon>
+    </Compile>
     <Page Include="Styles\ButtonStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -319,7 +332,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\AddEmployeeView.xaml">
+    <Page Include="View\AddFoodMaterialView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AddNewEmployeeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -448,6 +465,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\SecurityView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UpdateEmployeeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UpdateFoodView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

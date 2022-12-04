@@ -26,7 +26,8 @@ namespace QL_QuanCafe.View
 
         private void txtProfile_Click( object sender, System.Windows.Input.MouseButtonEventArgs e )
         {
-            MainContent.Content = new AdminProfileView();
+            AdminProfileView profileView = new AdminProfileView();
+            profileView.Show();
         }
     }
 }

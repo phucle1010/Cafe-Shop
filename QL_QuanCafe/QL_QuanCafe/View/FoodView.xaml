@@ -71,7 +71,20 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <DataGrid Grid.Row="0"></DataGrid>
+            <Border Grid.Row="0" 
+                Margin="10"
+                BorderThickness="1" 
+                BorderBrush="{StaticResource primaryTextColor}">
+                
+                <DataGrid x:Name="dtFood"
+                          Padding="0 0 0 30"
+                          CanUserResizeRows="False" 
+                          ColumnWidth="*"
+                          CanUserAddRows="False" 
+                          CanUserDeleteRows="False" 
+                          IsReadOnly="True" 
+                          Background="White" MouseDoubleClick="dtFood_MouseDoubleClick"></DataGrid>
+            </Border>
             
             <Grid Grid.Row="1" Background="{StaticResource whiteColor}">
                 <Grid.ColumnDefinitions>

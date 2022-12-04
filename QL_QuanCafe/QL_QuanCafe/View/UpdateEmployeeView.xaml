@@ -1,0 +1,173 @@
+﻿<Window x:Class="QL_QuanCafe.View.UpdateEmployeeView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QL_QuanCafe.View"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        Title="UpdateEmployeeView" Height="500" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <!--Control bar-->
+            <RowDefinition Height="25"/>
+            <!--Content section / Child views-->
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!--Control bar-->
+        <StackPanel x:Name="pnlControlBar"
+                                Grid.Row="0"
+                                Orientation="Horizontal"
+                                FlowDirection="RightToLeft"
+                                Background="Transparent"
+                                Margin="0,0,5,0" MouseLeftButtonDown="pnlControlBar_MouseLeftButtonDown" MouseEnter="pnlControlBar_MouseEnter">
+
+            <Button x:Name="btnClose"
+                                Style="{StaticResource controlButton}"
+                                Tag="{StaticResource color4}" Click="btnClose_Click">
+                <fa:IconImage Icon="Xmark" Style="{StaticResource controlButtonIcon}"/>
+            </Button>
+
+            <Button x:Name="btnMinimize"
+                                Style="{StaticResource controlButton}"
+                                Tag="{StaticResource color6}" Click="btnMinimize_Click">
+                <fa:IconImage Icon="WindowMinimize" Width="12" Style="{StaticResource controlButtonIcon}"/>
+            </Button>
+
+        </StackPanel>
+
+
+        <Grid Grid.Row="1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="80"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Text="THÔNG TIN NHÂN VIÊN" 
+                           Foreground="{StaticResource primaryTextColor}"
+                           FontSize="20"
+                           FontWeight="Bold"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"/>
+
+                <Grid Grid.Row="1">
+                    <TextBox Margin="20 15"
+                             x:Name="tbEmployeeId"
+                             materialDesign:HintAssist.Hint="Mã nhân viên"
+                             IsReadOnly="True">
+                        <TextBox.Text>
+                            <Binding
+                                  Path="Mã nhân viên"
+                                  UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+                </Grid>
+                <Grid Grid.Row="2" >
+                    <TextBox Margin="20 15"
+                             x:Name="tbName"
+                             materialDesign:HintAssist.Hint="Tên nhân viên">
+                        <TextBox.Text>
+                            <Binding
+                                  Path="Tên nhân viên"
+                                  UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <TextBox Margin="20 15"
+                             x:Name="tbPhonenumber"
+                             materialDesign:HintAssist.Hint="Số điện thoại">
+                        <TextBox.Text>
+                            <Binding
+                                  Path="Số điện thoại"
+                                  UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <TextBox Margin="20 15"
+                             x:Name="tbEmail"
+                             materialDesign:HintAssist.Hint="Email">
+                        <TextBox.Text>
+                            <Binding
+                                  Path="Email"
+                                  UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+                </Grid>
+                <Grid Grid.Row="5">
+                    <TextBox Margin="20 15"
+                             x:Name="tbAddress"
+                             materialDesign:HintAssist.Hint="Địa chỉ">
+                        <TextBox.Text>
+                            <Binding
+                                  Path="Địa chỉ"
+                                  UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+                </Grid>
+                <Grid Grid.Row="6">
+                    <ComboBox x:Name="cbPosition"
+                              Margin="20 8"
+                              materialDesign:HintAssist.Hint="Chức vụ"
+                              IsEditable="True"
+                              Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                        <ComboBoxItem>
+                            Quản lý
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            Nhân viên
+                        </ComboBoxItem>
+                    </ComboBox>
+                </Grid>
+                <Grid Grid.Row="7">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Column="0"
+                            x:Name="btnUpdate"
+                            Content="Cập nhật"
+                            Width="150"
+                            VerticalAlignment="Center" Click="btnUpdate_Click" />
+
+                </Grid>
+            </Grid>
+        </Grid>
+
+
+    </Grid>
+</Window>

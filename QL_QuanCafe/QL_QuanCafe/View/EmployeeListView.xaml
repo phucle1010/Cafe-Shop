@@ -15,10 +15,23 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <DataGrid Grid.Row="0"
-                  x:Name="employeeList"
-                  Margin="0 30 0 0" CanUserResizeRows="False" ColumnWidth="*">
-        </DataGrid>
+        <Border Grid.Row="0" 
+                Margin="10"
+                BorderThickness="1" 
+                BorderBrush="{StaticResource primaryTextColor}">
+
+            <DataGrid
+                  x:Name="dtEmployee"
+                  Padding="0 0 0 30"
+                  CanUserResizeRows="False" 
+                  ColumnWidth="*"
+                  CanUserAddRows="False" 
+                  CanUserDeleteRows="False" 
+                  IsReadOnly="True" 
+                  Background="White" MouseDoubleClick="dtEmployee_MouseDoubleClick">
+            </DataGrid>
+        </Border>
+        
 
         <Grid Grid.Row="1" Background="White">
             <Grid.ColumnDefinitions>
@@ -34,9 +47,15 @@
                     Click="btnAddEmplyee_Click"/>
 
 
-            <Button Grid.Column="2"
+            <Button Grid.Column="1"
                     x:Name="btnUpdateEmplyee"
                     Content="Cập nhật nhân viên"
+                    Width="170"
+                    Click="btnUpdateEmplyee_Click"/>
+
+            <Button Grid.Column="2"
+                    x:Name="btnUpdateWorkShift"
+                    Content="Chuyển ca làm"
                     Width="170"
                     Click="btnUpdateEmplyee_Click"/>
         </Grid>

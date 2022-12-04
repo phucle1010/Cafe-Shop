@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -9,21 +10,45 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace QL_QuanCafe.View
 {
     /// <summary>
-    /// Interaction logic for AddEmployeeView.xaml
+    /// Interaction logic for AddNewEmployeeView.xaml
     /// </summary>
-    public partial class AddEmployeeView : Page
+    public partial class AddNewEmployeeView : Window
     {
-        public AddEmployeeView()
+        public AddNewEmployeeView()
         {
             InitializeComponent();
+        }
+
+        [DllImport("user32.dll")]
+        public static extern IntPtr SendMessage( IntPtr hWnd, int wMsg, int wParam, int lParam );
+
+        private void btnMinimize_Click( object sender, RoutedEventArgs e )
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        private void btnClose_Click( object sender, RoutedEventArgs e )
+        {
+            this.Close();
+        }
+
+        private void pnlControlBar_MouseLeftButtonDown( object sender, MouseButtonEventArgs e )
+        {
+            WindowInteropHelper helper = new WindowInteropHelper(this);
+            SendMessage(helper.Handle, 161, 2, 0);
+        }
+
+        private void pnlControlBar_MouseEnter( object sender, System.Windows.Input.MouseEventArgs e )
+        {
+            this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
         }
 
         private void btnAdd_Click( object sender, RoutedEventArgs e )
@@ -59,7 +84,7 @@ namespace QL_QuanCafe.View
             if ( rdNu.IsChecked == true ) { sex = 1; }
             return sex;
         }
-        bool IsNullData( string name, string sex, string address, string email, string phone, string workShift, string position)
+        bool IsNullData( string name, string sex, string address, string email, string phone, string workShift, string position )
         {
             if ( string.IsNullOrEmpty(name) || string.IsNullOrEmpty(sex) || string.IsNullOrEmpty(address) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(phone) || string.IsNullOrEmpty(workShift) || string.IsNullOrEmpty(position) )
                 return true;
@@ -91,6 +116,5 @@ namespace QL_QuanCafe.View
             }
             return true;
         }
-
     }
 }

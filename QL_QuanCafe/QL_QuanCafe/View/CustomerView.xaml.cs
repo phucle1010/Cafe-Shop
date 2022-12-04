@@ -41,28 +41,25 @@ namespace QL_QuanCafe.View
             DataTable dt = new DataTable();
 
             DataColumn dc;
-            dc = new DataColumn("id");
+            dc = new DataColumn("Mã khách hàng");
             dt.Columns.Add(dc);
-            dc = new DataColumn("name");
+            dc = new DataColumn("Tên khách hàng");
             dt.Columns.Add(dc);
-            dc = new DataColumn("phone");
+            dc = new DataColumn("Số điện thoại");
             dt.Columns.Add(dc);
-            dc = new DataColumn("email");
+            dc = new DataColumn("Email");
             dt.Columns.Add(dc);
-            dc = new DataColumn("address");
+            dc = new DataColumn("Địa chỉ");
             dt.Columns.Add(dc);
-            dc = new DataColumn("accPoint");
+            dc = new DataColumn("Điểm tích lũy");
             dt.Columns.Add(dc);
+         
+            foreach ( var item in customerVM.getCustomerList() )
+            {
+                dt.Rows.Add(item.MaKH, item.TenKH, item.SDT, item.Email, item.DiaChi, item.DiemTichLuy);
+            }
 
-            //int nRows = customerVM.getCustomerList().Count;
-            //var customerDataList = customerVM.getCustomerList();
-            //foreach (var item in customerVM.getCustomerList() )
-            //{
-
-            //}
-
-            MessageBox.Show(dt.Rows.Count.ToString());
-            //dtCustomer.ItemsSource = customerVM.getCustomerList();
+            dtCustomer.ItemsSource = dt.DefaultView;
         }
     }
 }

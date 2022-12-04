@@ -30,12 +30,6 @@
                 <fa:IconImage Icon="Xmark" Style="{StaticResource controlButtonIcon}"/>
             </Button>
 
-            <Button x:Name="btnMaximize"
-                                Style="{StaticResource controlButton}"
-                                Tag="{StaticResource color6}" Click="btnMaximize_Click">
-                <fa:IconImage Icon="Square" Style="{StaticResource controlButtonIcon}"/>
-            </Button>
-
             <Button x:Name="btnMinimize"
                                 Style="{StaticResource controlButton}"
                                 Tag="{StaticResource color6}" Click="btnMinimize_Click">
@@ -93,36 +87,24 @@
                 <Grid Grid.Row="1" >
                     <TextBox Margin="20 15"
                              x:Name="tbProductName"
-                             materialDesign:HintAssist.Hint="Tên sản phẩm">
+                             materialDesign:HintAssist.Hint="Tên món ăn">
                         <TextBox.Text>
                             <Binding
-                                  Path="Tên sản phẩm"
+                                  Path="Tên món ăn"
                                   UpdateSourceTrigger="PropertyChanged">
                                 <Binding.ValidationRules>
-                                    
+
                                 </Binding.ValidationRules>
                             </Binding>
                         </TextBox.Text>
                     </TextBox>
                 </Grid>
                 <Grid Grid.Row="2">
-                    <ComboBox Margin="20 8"
-                              materialDesign:HintAssist.Hint="Loại sản phẩm"
+                    <ComboBox x:Name="cbFoodType"
+                              Margin="20 8"
+                              materialDesign:HintAssist.Hint="Loại món ăn"
                               IsEditable="True"
                               Style="{StaticResource MaterialDesignFloatingHintComboBox}">
-                        <ComboBoxItem
-                            IsSelected="True">
-                            Apple
-                        </ComboBoxItem>
-                        <ComboBoxItem>
-                            Banana
-                        </ComboBoxItem>
-                        <ComboBoxItem>
-                            Pear
-                        </ComboBoxItem>
-                        <ComboBoxItem>
-                            Orange
-                        </ComboBoxItem>
                     </ComboBox>
                 </Grid>
                 <Grid Grid.Row="3">
@@ -141,14 +123,21 @@
                     </TextBox>
                 </Grid>
 
-                <Button Grid.Row="4"
-                    x:Name="btnSubmit"
-                    Content="Xác nhận"
-                    Width="150"
-                    VerticalAlignment="Center" Click="btnAddSubmit_Click"></Button>
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Column="0"
+                            x:Name="btnAddMaterial"
+                            Content="Nhập nguyên liệu"
+                            Width="150"
+                            VerticalAlignment="Center" Click="btnAddMaterial_Click"/>
+
+                </Grid>
             </Grid>
         </Grid>
 
-       
+
     </Grid>
 </Window>

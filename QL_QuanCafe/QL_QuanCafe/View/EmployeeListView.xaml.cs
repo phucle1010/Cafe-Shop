@@ -2,6 +2,7 @@
 using QL_QuanCafe.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,11 +25,12 @@ namespace QL_QuanCafe.View
     {
         Frame MainContent;
         EmployeeListViewModel employeeListVM = new EmployeeListViewModel();
+        int chosedFoodIndex = -1;
+
         public EmployeeListView()
         {
             InitializeComponent();
         }
-
 
         public EmployeeListView(Frame CurrentLayout)
         {
@@ -38,22 +40,61 @@ namespace QL_QuanCafe.View
         }
         void LoadEmployeeListData()
         {
-            //MessageBox.Show(employeeListVM.getEmployeeList().Count.ToString());
-            employeeList.CanUserDeleteRows = false;
-            employeeList.CanUserAddRows = false;
-            //employeeList.ColumnWidth = "*";
-            List<NHANVIEN> employeeDataList = employeeListVM.getEmployeeList();
-            
+            DataTable dt = new DataTable();
+
+            DataColumn dc;
+            dc = new DataColumn("Mã nhân viên");
+            dt.Columns.Add(dc);
+            dc = new DataColumn("Tên nhân viên");
+            dt.Columns.Add(dc);
+            dc = new DataColumn("Số điện thoại");
+            dt.Columns.Add(dc);
+            dc = new DataColumn("Email");
+            dt.Columns.Add(dc);
+            dc = new DataColumn("Địa chỉ");
+            dt.Columns.Add(dc);
+            dc = new DataColumn("Ngày vào làm");
+            dt.Columns.Add(dc);
+            dc = new DataColumn("Mã ca làm");
+            dt.Columns.Add(dc);
+
+            foreach ( var item in employeeListVM.getEmployeeList() )
+            {
+                dt.Rows.Add(item.MaNV, item.TenNV, item.SDT, item.Email, item.DiaChi, item.NgayVaoLam, item.MaCaLV);
+            }
+
+            dtEmployee.ItemsSource = dt.DefaultView;
         }
 
         private void btnUpdateEmplyee_Click( object sender, RoutedEventArgs e )
         {
-
+            if ( chosedFoodIndex == -1 )
+            {
+                MessageBox.Show("Vui lòng chọn nhân viên cần cập nhật");
+            }
+            else
+            {
+                UpdateEmployeeView updEmployee = new UpdateEmployeeView(chosedFoodIndex);
+                updEmployee.Show();
+            }
         }
 
         private void btnAddEmplyee_Click( object sender, RoutedEventArgs e )
         {
-            MainContent.Content = new AddEmployeeView();
+            AddNewEmployeeView newEmployee = new AddNewEmployeeView();
+            newEmployee.Show();
+        }
+
+        private void dtEmployee_MouseDoubleClick( object sender, MouseButtonEventArgs e )
+        {
+            foreach ( DataRowView row in dtEmployee.SelectedItems )
+            {
+                System.Data.DataRow MyRow = row.Row;
+                string id = MyRow ["Mã nhân viên"].ToString();
+                string foodName = MyRow ["Tên nhân viên"].ToString();
+                MessageBox.Show($"Bạn vừa chọn nhân viên {foodName}");
+                chosedFoodIndex = Int32.Parse(id);
+            }
         }
     }
 }

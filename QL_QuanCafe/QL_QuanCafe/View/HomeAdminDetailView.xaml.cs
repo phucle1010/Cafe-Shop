@@ -38,6 +38,8 @@ namespace QL_QuanCafe.View
             standardSeries.Values = new ChartValues<int> { Int32.Parse(home.getTheNumberOfStandardCustomer().ToString()) };
             loyalSeries.Values = new ChartValues<int> { Int32.Parse(home.getTheNumberOfLoyalCustomer().ToString()) };
             vipstandardSeries.Values = new ChartValues<int> { Int32.Parse(home.getTheNumberOfVIPCustomer().ToString()) };
+
+            dpToday.Text = DateTime.Now.ToString();
         }
 
         private void Chart_OnDataClick( object sender, ChartPoint chartpoint )

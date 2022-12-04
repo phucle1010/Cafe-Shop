@@ -12,7 +12,7 @@
         <EntityTypeShape EntityType="CafeShopModel.CT_DATMON" Width="1.5" PointX="12.75" PointY="8.75" />
         <EntityTypeShape EntityType="CafeShopModel.CT_HOADON" Width="1.5" PointX="7.5" PointY="4.5" />
         <EntityTypeShape EntityType="CafeShopModel.CT_NHAPHANG" Width="1.5" PointX="7.5" PointY="0.75" />
-        <EntityTypeShape EntityType="CafeShopModel.CT_SANPHAM" Width="1.5" PointX="12.75" PointY="17.375" />
+        <EntityTypeShape EntityType="CafeShopModel.CT_SANPHAM" Width="1.5" PointX="12.75" PointY="17.5" />
         <EntityTypeShape EntityType="CafeShopModel.DATBAN" Width="1.5" PointX="8.25" PointY="8.5" />
         <EntityTypeShape EntityType="CafeShopModel.DATMON" Width="1.5" PointX="10.5" PointY="8.625" />
         <EntityTypeShape EntityType="CafeShopModel.DIEMDANHNGAYLAM" Width="1.5" PointX="5.25" PointY="5.5" />
@@ -26,7 +26,7 @@
         <EntityTypeShape EntityType="CafeShopModel.NHACUNGCAP" Width="1.5" PointX="3" PointY="19.375" />
         <EntityTypeShape EntityType="CafeShopModel.NHANVIEN" Width="1.5" PointX="3" PointY="2.875" />
         <EntityTypeShape EntityType="CafeShopModel.NHAPHANG" Width="1.5" PointX="5.25" PointY="1.5" />
-        <EntityTypeShape EntityType="CafeShopModel.SANPHAM" Width="1.5" PointX="10.5" PointY="12.25" />
+        <EntityTypeShape EntityType="CafeShopModel.SANPHAM" Width="1.5" PointX="10.5" PointY="12.375" />
         <EntityTypeShape EntityType="CafeShopModel.TAIKHOANDANGSUDUNG" Width="1.5" PointX="0.75" PointY="12.625" />
         <EntityTypeShape EntityType="CafeShopModel.THAMSO" Width="1.5" PointX="0.75" PointY="15.625" />
         <EntityTypeShape EntityType="CafeShopModel.THETICHDIEM" Width="1.5" PointX="5.25" PointY="16.5" />

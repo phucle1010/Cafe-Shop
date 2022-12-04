@@ -1,0 +1,142 @@
+﻿<Window x:Class="QL_QuanCafe.View.UpdateFoodView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QL_QuanCafe.View" xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        Title="UpdateFoodView" Height="400" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <!--Control bar-->
+            <RowDefinition Height="25"/>
+            <!--Content section / Child views-->
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!--Control bar-->
+        <StackPanel x:Name="pnlControlBar"
+                                Grid.Row="0"
+                                Orientation="Horizontal"
+                                FlowDirection="RightToLeft"
+                                Background="Transparent"
+                                Margin="0,0,5,0" MouseLeftButtonDown="pnlControlBar_MouseLeftButtonDown" MouseEnter="pnlControlBar_MouseEnter">
+
+            <Button x:Name="btnClose"
+                                Style="{StaticResource controlButton}"
+                                Tag="{StaticResource color4}" Click="btnClose_Click">
+                <fa:IconImage Icon="Xmark" Style="{StaticResource controlButtonIcon}"/>
+            </Button>
+
+            <Button x:Name="btnMinimize"
+                                Style="{StaticResource controlButton}"
+                                Tag="{StaticResource color6}" Click="btnMinimize_Click">
+                <fa:IconImage Icon="WindowMinimize" Width="12" Style="{StaticResource controlButtonIcon}"/>
+            </Button>
+
+        </StackPanel>
+
+
+        <Grid Grid.Row="1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="80"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Text="THÔNG TIN MÓN ĂN" 
+                           Foreground="{StaticResource primaryTextColor}"
+                           FontSize="20"
+                           FontWeight="Bold"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"/>
+
+                <Grid Grid.Row="1">
+                    <TextBox Margin="20 15"
+                             x:Name="tbFoodId"
+                             materialDesign:HintAssist.Hint="Mã món ăn"
+                             IsReadOnly="True">
+                        <TextBox.Text>
+                            <Binding
+                                  Path="Mã món ăn"
+                                  UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+                </Grid>
+                <Grid Grid.Row="2" >
+                    <TextBox Margin="20 15"
+                             x:Name="tbFoodName"
+                             materialDesign:HintAssist.Hint="Tên món ăn"
+                             IsReadOnly="True">
+                        <TextBox.Text>
+                            <Binding
+                                  Path="Tên món ăn"
+                                  UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <TextBox Margin="20 15"
+                             x:Name="tbFoodPrice"
+                             materialDesign:HintAssist.Hint="Đơn giá">
+                        <TextBox.Text>
+                            <Binding
+                                  Path="Đơn giá"
+                                  UpdateSourceTrigger="PropertyChanged">
+                                <Binding.ValidationRules>
+
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <ComboBox x:Name="cbFoodStatus"
+                              Margin="20 8"
+                              materialDesign:HintAssist.Hint="Trạng thái"
+                              IsEditable="True"
+                              Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                        <ComboBoxItem>
+                            Còn sẵn
+                        </ComboBoxItem>
+                        <ComboBoxItem>
+                            Hết hàng
+                        </ComboBoxItem>
+                    </ComboBox>
+                </Grid>
+                <Grid Grid.Row="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Column="0"
+                            x:Name="btnUpdate"
+                            Content="Cập nhật"
+                            Width="150"
+                            VerticalAlignment="Center" Click="btnUpdate_Click" />
+
+                </Grid>
+            </Grid>
+        </Grid>
+
+
+    </Grid>
+</Window>

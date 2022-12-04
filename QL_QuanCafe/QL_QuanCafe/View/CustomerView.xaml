@@ -65,18 +65,22 @@
             </StackPanel>
         </Grid>
 
-        <Grid Grid.Row="1">
-            <DataGrid x:Name="dtCustomer" >
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="Mã khách hàng" Foreground="{StaticResource primaryTextColor}" Width="*"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Tên khách hàng" Foreground="{StaticResource primaryTextColor}" Width="*"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Số điện thoại" Foreground="{StaticResource primaryTextColor}" Width="*"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Email" Foreground="{StaticResource primaryTextColor}" Width="*"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Địa chỉ" Foreground="{StaticResource primaryTextColor}" Width="*"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Điểm tích lũy" Foreground="{StaticResource primaryTextColor}" Width="*"></DataGridTextColumn>
-                </DataGrid.Columns>
-            </DataGrid>
-        </Grid>
+        <Border Grid.Row="1" 
+                Margin="10"
+                BorderThickness="1" 
+                BorderBrush="{StaticResource primaryTextColor}">
+            
+            <Grid >
+                <DataGrid x:Name="dtCustomer" 
+                          ColumnWidth="*" 
+                          CanUserAddRows="False" 
+                          CanUserDeleteRows="False" 
+                          IsReadOnly="True" 
+                          Background="White"
+                          >
+                </DataGrid>
+            </Grid>
+        </Border>
     </Grid>
 
 </Page>
