@@ -95,16 +95,6 @@
                         </StackPanel>
                     </RadioButton>
 
-
-                    <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="{StaticResource color6}"
-                                 Command="{Binding ShowCustomerViewCommand}" Click="btnEvaluate_Click">
-                        <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="Commenting" Style="{StaticResource menuButtonIcon}"/>
-                            <TextBlock Text="Đánh giá" Style="{StaticResource menuButtonText}"/>
-                        </StackPanel>
-                    </RadioButton>
-
                     <RadioButton Style="{StaticResource menuButton}"
                                  Tag="{StaticResource color7}"
                                  Command="{Binding ShowCustomerViewCommand}" Click="btnRespone_Click">

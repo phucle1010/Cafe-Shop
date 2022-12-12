@@ -10,13 +10,14 @@ namespace QL_QuanCafe.ViewModel
 {
     public class AdminProfileViewModel : ViewModelBase
     {
-        public int UpdateProfile(string name, string email, string phone, string address)
+        public int UpdateProfile(string name, string email, string phone, string address, string path)
         {
+            
             int status = 0;
             string username = Properties.Settings.Default ["user"].ToString();
             try
             {
-                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"UPDATE NHANVIEN SET TenNV = N'{name}', SDT = '{phone}', DiaChi = '{address}', Email = '{email}' WHERE MaNV = {username}");
+                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"UPDATE NHANVIEN SET TenNV = N'{name}', SDT = '{phone}', DiaChi = '{address}', Email = '{email}', AnhDaiDien=N'{path}' WHERE MaNV = {username}");
                 status = 1;
                 MessageBox.Show("Bạn đã cập nhật thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
             }

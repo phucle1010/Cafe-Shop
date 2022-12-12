@@ -20,11 +20,11 @@ namespace QL_QuanCafe.ViewModel
             return DataProvider.Ins.DB.LOAISANPHAMs.SqlQuery($"SELECT * FROM LOAISANPHAM WHERE TenLoaiSP=N'{typeName}'").ElementAt(0).MaLoaiSP.ToString();
         }
 
-        public void InsertFoodData(string name, string typeId, string price)
+        public void InsertFoodData(string name, string typeId, string price, string pathImage)
         {
             try
             {
-                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"INSERT INTO SANPHAM (TenSP, MaLoaiSP, GiaSP, TrangThai) VALUES (N'{name}', '{typeId}', {price}, 1)");
+                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"INSERT INTO SANPHAM (TenSP, MaLoaiSP, GiaSP, TrangThai, HinhAnh) VALUES (N'{name}', '{typeId}', {price}, 1, N'{pathImage}')");
                 MessageBox.Show("Thêm món ăn mới thành công", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             catch (Exception e) 

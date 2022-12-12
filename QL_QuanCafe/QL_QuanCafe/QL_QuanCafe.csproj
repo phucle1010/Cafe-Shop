@@ -181,6 +181,7 @@
     <Compile Include="ViewModel\AddNewFoodViewModel.cs" />
     <Compile Include="ViewModel\AdminProfileViewModel.cs" />
     <Compile Include="ViewModel\AdminViewModel.cs" />
+    <Compile Include="ViewModel\ChangeWorkShiftViewModel.cs" />
     <Compile Include="ViewModel\CreateNewPasswordViewModel.cs" />
     <Compile Include="ViewModel\CustomerProfileViewModel.cs" />
     <Compile Include="ViewModel\CustomerViewModel.cs" />
@@ -193,9 +194,12 @@
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ManageOrderFoodViewModel.cs" />
+    <Compile Include="ViewModel\ManageOrderTableItemViewModel.cs" />
     <Compile Include="ViewModel\ManageOrderTableViewModel.cs" />
     <Compile Include="ViewModel\MaterialTypeItemViewModel.cs" />
     <Compile Include="ViewModel\MaterialTypeListViewModel.cs" />
+    <Compile Include="ViewModel\OrderFoodInfoListViewModel.cs" />
+    <Compile Include="ViewModel\OrderFoodViewModel.cs" />
     <Compile Include="ViewModel\OrderTableViewModel.cs" />
     <Compile Include="ViewModel\PaymentViewModel.cs" />
     <Compile Include="ViewModel\ProductViewModel.cs" />
@@ -220,6 +224,9 @@
     <Compile Include="View\AdminProfileView.xaml.cs">
       <DependentUpon>AdminProfileView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ChangeWorkShiftView.xaml.cs">
+      <DependentUpon>ChangeWorkShiftView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\CreateNewPasswordView.xaml.cs">
       <DependentUpon>CreateNewPasswordView.xaml</DependentUpon>
     </Compile>
@@ -234,9 +241,6 @@
     </Compile>
     <Compile Include="View\EmployeeView.xaml.cs">
       <DependentUpon>EmployeeView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\EvaluateView.xaml.cs">
-      <DependentUpon>EvaluateView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\FoodView.xaml.cs">
       <DependentUpon>FoodView.xaml</DependentUpon>
@@ -278,6 +282,9 @@
     <Compile Include="View\ManageOrderFoodView.xaml.cs">
       <DependentUpon>ManageOrderFoodView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ManageOrderTableItemView.xaml.cs">
+      <DependentUpon>ManageOrderTableItemView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ManageOrderTableView.xaml.cs">
       <DependentUpon>ManageOrderTableView.xaml</DependentUpon>
     </Compile>
@@ -286,6 +293,9 @@
     </Compile>
     <Compile Include="View\MaterialTypeListView.xaml.cs">
       <DependentUpon>MaterialTypeListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OrderFoodInfoListView.xaml.cs">
+      <DependentUpon>OrderFoodInfoListView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\OrderFoodView.xaml.cs">
       <DependentUpon>OrderFoodView.xaml</DependentUpon>
@@ -348,6 +358,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ChangeWorkShiftView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\CreateNewPasswordView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -365,10 +379,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\EmployeeView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\EvaluateView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -420,6 +430,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ManageOrderTableItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ManageOrderTableView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -429,6 +443,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\MaterialTypeListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OrderFoodInfoListView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -544,6 +562,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Image\salary.png" />
+    <Resource Include="Image\area-0.jpg" />
+    <Resource Include="Image\area-1.jpg" />
+    <Resource Include="Image\area-2.jpg" />
     <Content Include="Model\DataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DataModel.Context.cs</LastGenOutput>

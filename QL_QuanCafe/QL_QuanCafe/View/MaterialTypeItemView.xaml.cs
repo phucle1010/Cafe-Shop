@@ -22,10 +22,10 @@ namespace QL_QuanCafe.View
     /// </summary>
     public partial class MaterialTypeItemView : Page
     {
+        MaterialTypeItemViewModel materialTypeItem = new MaterialTypeItemViewModel();
         string _materialTypeName;
         string _materialName;
         string importId = Properties.Settings.Default ["importId"].ToString();
-        MaterialTypeItemViewModel materialTypeItem = new MaterialTypeItemViewModel();
         string _materialTypeId = Properties.Settings.Default ["materialType"].ToString();
         public MaterialTypeItemView()
         {
@@ -84,14 +84,9 @@ namespace QL_QuanCafe.View
         private void cbMaterialItem_Change( object sender, SelectionChangedEventArgs e )
         {
             _materialName = (sender as ComboBox).SelectedItem as string;
-            materialIdValue.Text = materialTypeItem.getMaterialId(_materialTypeId, _materialName);
+            materialIdValue.Text = materialTypeItem.getMaterialId(_materialTypeId, _materialName).ToString();
             availableMaterialQuantityValue.Text = materialTypeItem.getAvailableMaterialQuantity(_materialName) + " " + materialTypeItem.getMaterialUnit(_materialTypeId, _materialName);
             materialPriceValue.Text = materialTypeItem.getMaterialPrice(_materialTypeId, _materialName) + " VNĐ";
-        }
-        private int RandomId()
-        {
-            Random rb = new Random();
-            return rb.Next(100000, 999999);
         }
 
         public bool IsValidQuantity()
@@ -114,16 +109,12 @@ namespace QL_QuanCafe.View
                 else
                 {
                     int importQuantity = Convert.ToInt32(quantityInputValue.Text);
-                    double materialPrice = Convert.ToDouble(materialTypeItem.getPricePerMaterial(materialIdValue.Text));
+                    double materialPrice = Convert.ToDouble(materialTypeItem.getPricePerMaterial(Int32.Parse(materialIdValue.Text)));
                     int total = importQuantity * (int)materialPrice;
-                    int detailImportId = 0;
-                    do
-                    {
-                        detailImportId = RandomId();
-                    } while ( materialTypeItem.insertDetailImportId(detailImportId) > 0 );
-                    materialTypeItem.insertDetailImportMaterialData(detailImportId, importId, materialIdValue.Text, Int32.Parse(quantityInputValue.Text));
+
+                    materialTypeItem.insertDetailImportMaterialData(Int32.Parse(importId), Int32.Parse(materialIdValue.Text), Int32.Parse(quantityInputValue.Text));
                     materialTypeItem.updateAvailableMaterialQuantity(_materialName, Int32.Parse(quantityInputValue.Text));
-                    materialTypeItem.updateCurrentTotalPrice(importId, total);
+                    materialTypeItem.updateCurrentTotalPrice(Int32.Parse(importId), total);
                     quantityInputValue.Text = "";
                 }
             }

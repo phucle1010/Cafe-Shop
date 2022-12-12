@@ -24,14 +24,14 @@ namespace QL_QuanCafe.ViewModel
             return phone;
         }
 
-        public ComboBox LoadTableData(ComboBox combo)
+        public ComboBox LoadTableData(ComboBox combo, int area)
         {
-            int count = DataProvider.Ins.DB.BANs.SqlQuery("SELECT * FROM BAN").Count();
+            int count = DataProvider.Ins.DB.BANs.SqlQuery($"SELECT * FROM BAN WHERE MaKV='{area}'").Count();
             try
             {
                 for ( int i = 0; i < count; i++ )
                 {
-                    string a = DataProvider.Ins.DB.BANs.SqlQuery("SELECT * FROM BAN WHERE TrangThai != 1").ElementAt(i).TenBan.ToString();
+                    string a = DataProvider.Ins.DB.BANs.SqlQuery($"SELECT * FROM BAN WHERE TrangThai = 1 AND MaKV='{area}'").ElementAt(i).TenBan.ToString();
                     combo.Items.Add(a);
                 }
             }
@@ -73,30 +73,11 @@ namespace QL_QuanCafe.ViewModel
             return rd.Next(100000, 999999);
         }
 
-        bool IsExistedOrderTableId(int orderTableId)
-        {
-            int nRowData = 0;
-            try
-            {
-                nRowData = DataProvider.Ins.DB.DATBANs.SqlQuery($"SELECT * FROM DATBAN WHERE MaDatBan = '{orderTableId}'").Count();
-            }
-            catch
-            {
-            }
-            return nRowData > 0;
-        }
-
         public void InsertOrderTableData(string tableId, string customerId, string note, DateTime bookTime)
         {
-            int orderTableId = 0;
-            do
-            {
-                orderTableId = RandomOrderTableId();
-            } while ( IsExistedOrderTableId(orderTableId) );
-
             try
             {
-                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"INSERT INTO DATBAN values ('{orderTableId}' '{tableId}', 0, '{customerId}', '{note}', '{bookTime.ToString("yyyy/MM/dd")}')");
+                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"INSERT INTO DATBAN (MaBan, TrangThai, MaKH, GioDat, GhiChu, TrangThaiDatMon) values ('{tableId}', 0, {customerId}, '{bookTime.ToString("yyyy/MM/dd")}', '{note}', 0)");
                 MessageBox.Show("Bạn đã đặt bàn, vui lòng chờ nhân viên xác nhận đặt bàn!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             catch (Exception e)

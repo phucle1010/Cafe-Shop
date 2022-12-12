@@ -96,5 +96,18 @@ namespace QL_QuanCafe.View
                 chosedFoodIndex = Int32.Parse(id);
             }
         }
+
+        private void btnUpdateWorkShift_Click( object sender, RoutedEventArgs e )
+        {
+            if ( chosedFoodIndex == -1 )
+            {
+                MessageBox.Show("Vui lòng chọn nhân viên cần sửa đổi");
+            }
+            else
+            {
+                ChangeWorkShiftView workShift = new ChangeWorkShiftView(chosedFoodIndex);
+                workShift.Show();
+            }
+        }
     }
 }

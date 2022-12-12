@@ -32,5 +32,22 @@ namespace QL_QuanCafe.View
             string userName = Properties.Settings.Default ["user"].ToString();
             tbUserName.Text = admin.getAdminName(userName);
         }
+
+        private void dtOrderFood_MouseDoubleClick( object sender, MouseButtonEventArgs e )
+        {
+
+        }
+
+        private void btnDetail_Click( object sender, RoutedEventArgs e )
+        {
+
+        }
+
+        private void btnSubmit_Click( object sender, RoutedEventArgs e )
+        {
+
+        }
+
+       
     }
 }

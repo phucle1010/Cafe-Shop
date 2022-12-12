@@ -51,13 +51,23 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
-                <Border Width="150" Height="150" CornerRadius="100" Background="GhostWhite" BorderBrush="Gainsboro" BorderThickness="1" Grid.Row="0">
-
-                    <Rectangle RadiusX="100" RadiusY="100" Width="140" Height="140" >
-                        <Rectangle.Fill>
-                            <ImageBrush x:Name="ImageViewer" />
-                        </Rectangle.Fill>
-                    </Rectangle>
+                <Border Width="150" 
+                        Height="150" 
+                        CornerRadius="100" 
+                        Background="GhostWhite" 
+                        BorderBrush="Gainsboro" 
+                        BorderThickness="1" 
+                        Grid.Row="0">
+                    <Image  x:Name="ImageViewer"
+                            VerticalAlignment="Center" 
+                            HorizontalAlignment="Center" 
+                            Stretch="Fill" >
+                        <Image.Clip>
+                            <RectangleGeometry RadiusX="100"
+                                           RadiusY="100"
+                                           Rect="0,0,148,148"/>
+                        </Image.Clip>
+                    </Image>
 
                 </Border>
 

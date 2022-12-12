@@ -36,18 +36,9 @@ namespace QL_QuanCafe.ViewModel
             }
             return count;
         }
-        public string getMaterialId(string id, string name)
+        public int getMaterialId(string id, string name)
         {
-            string materialId = "";
-            try
-            {
-                materialId = DataProvider.Ins.DB.HANGHOAs.SqlQuery($"SELECT * FROM HANGHOA WHERE MaLoaiHH = '{id}' AND TenHH = N'{name}'").ElementAt(0).MaHH.ToString();
-            }
-            catch ( Exception e )
-            {
-                MessageBox.Show(e.ToString(), "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            return materialId;
+            return DataProvider.Ins.DB.HANGHOAs.SqlQuery($"SELECT * FROM HANGHOA WHERE MaLoaiHH = '{id}' AND TenHH = N'{name}'").ElementAt(0).MaHH;
         }
         public string getMaterialUnit( string id, string name )
         {
@@ -88,29 +79,17 @@ namespace QL_QuanCafe.ViewModel
             }
             return price;
         }
-        public int insertDetailImportId( int detailImportId )
-        {
-            int nRows = 0;
-            try
-            {
-                nRows = DataProvider.Ins.DB.NHAPHANGs.SqlQuery($"SELECT * FROM CT_NHAPHANG WHERE MaCTNH = '{detailImportId}'").Count();
-            }
-            catch
-            {
-
-            }
-            return nRows;
-        }
-        public void insertDetailImportMaterialData( int detailImportId, string importId, string materialId, int quantity)
+        
+        public void insertDetailImportMaterialData(int importId, int materialId, int quantity)
         {
             try
             {
-                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"INSERT INTO CT_NHAPHANG VALUES ('{detailImportId}', '{importId}', '{materialId}', {quantity})");
+                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"INSERT INTO CT_NHAPHANG (MaNH, MaHH, SoLuong) VALUES ({importId}, {materialId}, {quantity})");
                 MessageBox.Show("Nhập nguyên liệu thành công !!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-            catch 
+            catch (Exception e)
             {
-                MessageBox.Show("Lỗi nhập nguyên liệu", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Lỗi nhập nguyên liệu: {e}", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
         public void updateAvailableMaterialQuantity(string materialName, int importQuantity)
@@ -124,12 +103,12 @@ namespace QL_QuanCafe.ViewModel
                 MessageBox.Show("Lỗi cập nhật hàng hóa", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-        public string getPricePerMaterial(string materialId)
+        public string getPricePerMaterial(int materialId)
         {
             string price = "";
             try
             {
-                price = DataProvider.Ins.DB.HANGHOAs.SqlQuery($"SELECT * FROM HANGHOA WHERE MaHH = '{materialId}'").ElementAt(0).DonGia.ToString();
+                price = DataProvider.Ins.DB.HANGHOAs.SqlQuery($"SELECT * FROM HANGHOA WHERE MaHH = {materialId}").ElementAt(0).DonGia.ToString();
             }
             catch 
             {
@@ -137,11 +116,11 @@ namespace QL_QuanCafe.ViewModel
             }
             return price;
         }
-        public void updateCurrentTotalPrice(string importId, int totalImportPrice)
+        public void updateCurrentTotalPrice(int importId, int totalImportPrice)
         {
             try
             {
-                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"UPDATE NHAPHANG SET TongTienNH = TongTienNH + {totalImportPrice} WHERE MaNH = '{importId}'");
+                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"UPDATE NHAPHANG SET TongTienNH = TongTienNH + {totalImportPrice} WHERE MaNH = {importId}");
             }
             catch
             {

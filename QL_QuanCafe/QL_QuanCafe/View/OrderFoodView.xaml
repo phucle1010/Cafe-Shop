@@ -2,16 +2,18 @@
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:QL_QuanCafe.View" xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="800" d:DesignWidth="1200"
       Title="OrderFoodView">
 
-    <Grid>
+    <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="35"/>
+            <RowDefinition Height="45"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
@@ -65,5 +67,72 @@
 
             </StackPanel>
         </Grid>
+
+        <Grid Grid.Row="1"
+              Margin="40 0 20 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0"
+                       Text="Hình ảnh"
+                       FontSize="18"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"/>
+            <TextBlock Grid.Column="1"
+                       Text="Tên món ăn"
+                       FontSize="18"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"/>
+            <TextBlock Grid.Column="2"
+                       Text="Giá tiền"
+                       FontSize="18"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"/>
+            <TextBlock Grid.Column="3"
+                       Text="Số lượng"
+                       FontSize="18"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"/>
+            <TextBlock Grid.Column="4"
+                       Text="Lựa chọn"
+                       FontSize="18"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"/>
+            
+        </Grid>
+        
+        <Grid x:Name="foodList" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <ScrollViewer Grid.Column="0" >
+
+                <WrapPanel x:Name="navigationFoodList"
+                           ItemWidth="1080">
+                    <!--<PageContent x:Name="mainContent"/>-->
+                </WrapPanel>
+
+
+            </ScrollViewer>
+        </Grid>
+
+        <Border Grid.Row="3"
+                BorderBrush="{StaticResource color12}"
+                BorderThickness="0 5 0 0">
+            <Grid >
+                <Button x:Name="btnSubmit"
+                        Content="Xác nhận đặt món"
+                        FontSize="16"
+                        Width="200"
+                        Height="35"
+                        HorizontalAlignment="Right"
+                        Margin="0 0 60 0" Click="btnSubmit_Click"/>
+            </Grid>
+        </Border>
     </Grid>
 </Page>

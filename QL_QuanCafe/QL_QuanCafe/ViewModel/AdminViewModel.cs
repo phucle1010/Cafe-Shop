@@ -14,16 +14,16 @@ namespace QL_QuanCafe.ViewModel
         public bool isLoginWithAdminRole( string user, string pass )
         {
             LoginViewModel login = new LoginViewModel();
-            int successDataRows = 0;
+            
             try
             {
-                successDataRows = DataProvider.Ins.DB.NHANVIENs.SqlQuery($"SELECT * FROM NHANVIEN WHERE MaNV = {user} AND MatKhau = '{login.ComputeSha256Hash(pass)}'").Count();
+                return DataProvider.Ins.DB.NHANVIENs.SqlQuery($"SELECT * FROM NHANVIEN WHERE MaNV = {user} AND MatKhau = '{login.ComputeSha256Hash(pass)}'").Count() > 0;
             }
             catch ( Exception e )
             {
                 MessageBox.Show(e.ToString());
             }
-            return successDataRows > 0;
+            return false;
         }
         public string getAdminName( string user )
         {

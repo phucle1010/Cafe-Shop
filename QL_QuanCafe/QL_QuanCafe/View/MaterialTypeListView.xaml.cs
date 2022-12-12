@@ -21,7 +21,9 @@ namespace QL_QuanCafe.View
     /// </summary>
     public partial class MaterialTypeListView : Page
     {
+        MaterialTypeListViewModel materialList = new MaterialTypeListViewModel();
         Frame CurrentContent;
+        string employeeId = Properties.Settings.Default ["user"].ToString();
         public MaterialTypeListView()
         {
             InitializeComponent();
@@ -33,23 +35,11 @@ namespace QL_QuanCafe.View
             this.CurrentContent = MaterialContent;
         }
 
-        private int RandomId()
-        {
-            Random rb = new Random();
-            return rb.Next(100000, 999999);
-        }
-
         private void InsertMaterialImportData()
         {
-            int importId = 0;
-            string employeeId = Properties.Settings.Default ["user"].ToString();
-            MaterialTypeListViewModel materialList = new MaterialTypeListViewModel();
-            do
-            {
-                importId = RandomId();
-            } while ( materialList.insertImportId(importId) > 0 );
+            materialList.insertImportMaterialData(employeeId, 0);
+            int importId = materialList.GetImportId();
             Properties.Settings.Default ["importId"] = importId.ToString();
-            materialList.insertImportMaterialData(importId, employeeId, 0);
         }
 
         private void btnTraditionalCf_Click( object sender, RoutedEventArgs e )

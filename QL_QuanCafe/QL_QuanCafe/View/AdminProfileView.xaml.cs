@@ -2,6 +2,7 @@
 using QL_QuanCafe.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -17,6 +18,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace QL_QuanCafe.View
 {
     /// <summary>
@@ -26,11 +28,10 @@ namespace QL_QuanCafe.View
     {
         AdminProfileViewModel adminProfile = new AdminProfileViewModel();
         string username = Properties.Settings.Default ["user"].ToString();
-        BitmapImage bitmap;
+        string selectedFileName;
         public AdminProfileView()
         {
             InitializeComponent();
-            bitmap = new BitmapImage();
             LoadData();
         }
         [DllImport("user32.dll")]
@@ -63,6 +64,25 @@ namespace QL_QuanCafe.View
             this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
         }
 
+        private byte [] converImgToByte()
+        {
+            FileStream fs;
+            fs = new FileStream(selectedFileName, FileMode.Open, FileAccess.Read);
+            byte [] picbyte = new byte [fs.Length];
+            fs.Read(picbyte, 0, System.Convert.ToInt32(fs.Length));
+            fs.Close();
+            return picbyte;
+        }
+
+        private Image ByteToImg( string byteString )
+        {
+            byte [] imgBytes = Convert.FromBase64String(byteString);
+            MemoryStream ms = new MemoryStream(imgBytes, 0, imgBytes.Length);
+            ms.Write(imgBytes, 0, imgBytes.Length);
+            //Image image = Image.FromStream(ms, true);
+            return new Image();
+        }
+
         private void btnAddImage_Click( object sender, RoutedEventArgs e )
         {
             OpenFileDialog dlg = new OpenFileDialog();
@@ -72,17 +92,15 @@ namespace QL_QuanCafe.View
 
             if ( dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK )
             {
-                string selectedFileName = dlg.FileName;
-                this.bitmap.BeginInit();
-                this.bitmap.UriSource = new Uri(selectedFileName);
-                this.bitmap.EndInit();
-                ImageViewer.ImageSource = this.bitmap;
+                selectedFileName = dlg.FileName;
+                ImageSource imageSource = new BitmapImage(new Uri(selectedFileName));
+                ImageViewer.Source = imageSource;
             }
         }
 
         private void btnSubmit_Click( object sender, RoutedEventArgs e )
         {
-            if ( adminProfile.UpdateProfile(txtName.Text, txtEmail.Text, txtPhone.Text, txtAddress.Text) == 1 )
+            if ( adminProfile.UpdateProfile(txtName.Text, txtEmail.Text, txtPhone.Text, txtAddress.Text, selectedFileName) == 1 )
             {
                 this.Close();
                 System.Windows.Forms.Application.Restart();
@@ -102,6 +120,12 @@ namespace QL_QuanCafe.View
             txtAddress.Text = e.DiaChi.ToString();
             txtEntryDay.Text = e.NgayVaoLam.ToString();
             txtWorkshift.Text = e.MaCaLV.ToString();
+
+            if (e.AnhDaiDien != "")
+            {
+                ImageSource imageSource = new BitmapImage(new Uri(e.AnhDaiDien));
+                ImageViewer.Source = imageSource;
+            }
         }
 
         

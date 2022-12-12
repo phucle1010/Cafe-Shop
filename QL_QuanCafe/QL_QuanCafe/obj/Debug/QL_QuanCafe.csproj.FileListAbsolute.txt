@@ -80,7 +80,6 @@ E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_Quan
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\CustomerView.g.cs
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\EmployeeListView.g.cs
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\EmployeeView.g.cs
-E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\EvaluateView.g.cs
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\FoodView.g.cs
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\ForgotPasswordView.g.cs
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\HomeAdminDetailView.g.cs
@@ -136,7 +135,6 @@ E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_Quan
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\CustomerView.baml
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\EmployeeListView.baml
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\EmployeeView.baml
-E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\EvaluateView.baml
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\FoodView.baml
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\ForgotPasswordView.baml
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\HomeAdminDetailView.baml
@@ -179,3 +177,9 @@ E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_Quan
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\AddNewEmployeeView.baml
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\UpdateEmployeeView.g.cs
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\UpdateEmployeeView.baml
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\ChangeWorkShiftView.g.cs
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\ChangeWorkShiftView.baml
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\OrderFoodInfoListView.g.cs
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\OrderFoodInfoListView.baml
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\ManageOrderTableItemView.g.cs
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\ManageOrderTableItemView.baml

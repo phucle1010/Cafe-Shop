@@ -34,7 +34,7 @@
       <End Role="BAN" EntitySet="BANs" />
       <End Role="DATBAN" EntitySet="DATBANs" />
     </AssociationSet>
-    <AssociationSet Name="FK__CT_BAOCAOD__MaBC__02084FDA" Association="CafeShopModel.FK__CT_BAOCAOD__MaBC__02084FDA">
+    <AssociationSet Name="FK__CT_BAOCAOD__MaBC__2A164134" Association="CafeShopModel.FK__CT_BAOCAOD__MaBC__2A164134">
       <End Role="BAOCAODOANHTHU" EntitySet="BAOCAODOANHTHUs" />
       <End Role="CT_BAOCAODOANHTHU" EntitySet="CT_BAOCAODOANHTHU" />
     </AssociationSet>
@@ -42,24 +42,24 @@
       <End Role="CALAMVIEC" EntitySet="CALAMVIECs" />
       <End Role="NHANVIEN" EntitySet="NHANVIENs" />
     </AssociationSet>
-    <AssociationSet Name="FK__CT_BAOCAO__MaLSP__02FC7413" Association="CafeShopModel.FK__CT_BAOCAO__MaLSP__02FC7413">
+    <AssociationSet Name="FK__CT_BAOCAO__MaLoa__2B0A656D" Association="CafeShopModel.FK__CT_BAOCAO__MaLoa__2B0A656D">
       <End Role="LOAISANPHAM" EntitySet="LOAISANPHAMs" />
       <End Role="CT_BAOCAODOANHTHU" EntitySet="CT_BAOCAODOANHTHU" />
     </AssociationSet>
-    <AssociationSet Name="FK__CT_DATMON__MaDM__656C112C" Association="CafeShopModel.FK__CT_DATMON__MaDM__656C112C">
+    <AssociationSet Name="FK__CT_DATMON__MaDM__1EA48E88" Association="CafeShopModel.FK__CT_DATMON__MaDM__1EA48E88">
       <End Role="DATMON" EntitySet="DATMONs" />
       <End Role="CT_DATMON" EntitySet="CT_DATMON" />
     </AssociationSet>
-    <AssociationSet Name="FK__CT_DATMON__MaSP__66603565" Association="CafeShopModel.FK__CT_DATMON__MaSP__66603565">
+    <AssociationSet Name="FK__CT_DATMON__MaSP__1F98B2C1" Association="CafeShopModel.FK__CT_DATMON__MaSP__1F98B2C1">
       <End Role="SANPHAM" EntitySet="SANPHAMs" />
       <End Role="CT_DATMON" EntitySet="CT_DATMON" />
     </AssociationSet>
-    <AssociationSet Name="FK__CT_HOADON__MaHD__7C4F7684" Association="CafeShopModel.FK__CT_HOADON__MaHD__7C4F7684">
-      <End Role="HOADON" EntitySet="HOADONs" />
+    <AssociationSet Name="FK__CT_HOADON__MaDM__3A4CA8FD" Association="CafeShopModel.FK__CT_HOADON__MaDM__3A4CA8FD">
+      <End Role="DATMON" EntitySet="DATMONs" />
       <End Role="CT_HOADON" EntitySet="CT_HOADON" />
     </AssociationSet>
-    <AssociationSet Name="FK__CT_HOADON__MaSP__7D439ABD" Association="CafeShopModel.FK__CT_HOADON__MaSP__7D439ABD">
-      <End Role="SANPHAM" EntitySet="SANPHAMs" />
+    <AssociationSet Name="FK__CT_HOADON__MaHD__22751F6C" Association="CafeShopModel.FK__CT_HOADON__MaHD__22751F6C">
+      <End Role="HOADON" EntitySet="HOADONs" />
       <End Role="CT_HOADON" EntitySet="CT_HOADON" />
     </AssociationSet>
     <AssociationSet Name="FK__CT_NHAPHAN__MaHH__75A278F5" Association="CafeShopModel.FK__CT_NHAPHAN__MaHH__75A278F5">
@@ -70,11 +70,11 @@
       <End Role="NHAPHANG" EntitySet="NHAPHANGs" />
       <End Role="CT_NHAPHANG" EntitySet="CT_NHAPHANG" />
     </AssociationSet>
-    <AssociationSet Name="FK__CT_SANPHAM__MaHH__0A9D95DB" Association="CafeShopModel.FK__CT_SANPHAM__MaHH__0A9D95DB">
+    <AssociationSet Name="FK__CT_SANPHAM__MaHH__1BC821DD" Association="CafeShopModel.FK__CT_SANPHAM__MaHH__1BC821DD">
       <End Role="HANGHOA" EntitySet="HANGHOAs" />
       <End Role="CT_SANPHAM" EntitySet="CT_SANPHAM" />
     </AssociationSet>
-    <AssociationSet Name="FK__CT_SANPHAM__MaSP__09A971A2" Association="CafeShopModel.FK__CT_SANPHAM__MaSP__09A971A2">
+    <AssociationSet Name="FK__CT_SANPHAM__MaSP__1AD3FDA4" Association="CafeShopModel.FK__CT_SANPHAM__MaSP__1AD3FDA4">
       <End Role="SANPHAM" EntitySet="SANPHAMs" />
       <End Role="CT_SANPHAM" EntitySet="CT_SANPHAM" />
     </AssociationSet>
@@ -114,7 +114,7 @@
       <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
       <End Role="THETICHDIEM" EntitySet="THETICHDIEMs" />
     </AssociationSet>
-    <AssociationSet Name="FK__SANPHAM__MaLoaiS__52593CB8" Association="CafeShopModel.FK__SANPHAM__MaLoaiS__52593CB8">
+    <AssociationSet Name="FK__SANPHAM__MaLoaiS__17F790F9" Association="CafeShopModel.FK__SANPHAM__MaLoaiS__17F790F9">
       <End Role="LOAISANPHAM" EntitySet="LOAISANPHAMs" />
       <End Role="SANPHAM" EntitySet="SANPHAMs" />
     </AssociationSet>
@@ -147,7 +147,7 @@
     <Property Name="NgayBC" Type="DateTime" Precision="0" />
     <Property Name="TongDoanhThu" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="LoiNhuan" Type="Decimal" Precision="19" Scale="4" />
-    <NavigationProperty Name="CT_BAOCAODOANHTHU" Relationship="CafeShopModel.FK__CT_BAOCAOD__MaBC__02084FDA" FromRole="BAOCAODOANHTHU" ToRole="CT_BAOCAODOANHTHU" />
+    <NavigationProperty Name="CT_BAOCAODOANHTHU" Relationship="CafeShopModel.FK__CT_BAOCAOD__MaBC__2A164134" FromRole="BAOCAODOANHTHU" ToRole="CT_BAOCAODOANHTHU" />
   </EntityType>
   <EntityType Name="CALAMVIEC">
     <Key>
@@ -166,10 +166,10 @@
     </Key>
     <Property Name="MaCTBC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="MaBC" Type="Int32" />
-    <Property Name="MaLSP" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MaLoaiSP" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
     <Property Name="DoanhThu" Type="Decimal" Precision="19" Scale="4" />
-    <NavigationProperty Name="BAOCAODOANHTHU" Relationship="CafeShopModel.FK__CT_BAOCAOD__MaBC__02084FDA" FromRole="CT_BAOCAODOANHTHU" ToRole="BAOCAODOANHTHU" />
-    <NavigationProperty Name="LOAISANPHAM" Relationship="CafeShopModel.FK__CT_BAOCAO__MaLSP__02FC7413" FromRole="CT_BAOCAODOANHTHU" ToRole="LOAISANPHAM" />
+    <NavigationProperty Name="BAOCAODOANHTHU" Relationship="CafeShopModel.FK__CT_BAOCAOD__MaBC__2A164134" FromRole="CT_BAOCAODOANHTHU" ToRole="BAOCAODOANHTHU" />
+    <NavigationProperty Name="LOAISANPHAM" Relationship="CafeShopModel.FK__CT_BAOCAO__MaLoa__2B0A656D" FromRole="CT_BAOCAODOANHTHU" ToRole="LOAISANPHAM" />
   </EntityType>
   <EntityType Name="CT_DATMON">
     <Key>
@@ -179,8 +179,8 @@
     <Property Name="MaDM" Type="Int32" />
     <Property Name="MaSP" Type="Int32" />
     <Property Name="SoLuong" Type="Int16" />
-    <NavigationProperty Name="DATMON" Relationship="CafeShopModel.FK__CT_DATMON__MaDM__656C112C" FromRole="CT_DATMON" ToRole="DATMON" />
-    <NavigationProperty Name="SANPHAM" Relationship="CafeShopModel.FK__CT_DATMON__MaSP__66603565" FromRole="CT_DATMON" ToRole="SANPHAM" />
+    <NavigationProperty Name="DATMON" Relationship="CafeShopModel.FK__CT_DATMON__MaDM__1EA48E88" FromRole="CT_DATMON" ToRole="DATMON" />
+    <NavigationProperty Name="SANPHAM" Relationship="CafeShopModel.FK__CT_DATMON__MaSP__1F98B2C1" FromRole="CT_DATMON" ToRole="SANPHAM" />
   </EntityType>
   <EntityType Name="CT_HOADON">
     <Key>
@@ -188,12 +188,9 @@
     </Key>
     <Property Name="MaCTHD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="MaHD" Type="Int32" />
-    <Property Name="MaSP" Type="Int32" />
-    <Property Name="DonGia" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="SoLuong" Type="Int16" />
-    <Property Name="ThanhTien" Type="Decimal" Precision="19" Scale="4" />
-    <NavigationProperty Name="HOADON" Relationship="CafeShopModel.FK__CT_HOADON__MaHD__7C4F7684" FromRole="CT_HOADON" ToRole="HOADON" />
-    <NavigationProperty Name="SANPHAM" Relationship="CafeShopModel.FK__CT_HOADON__MaSP__7D439ABD" FromRole="CT_HOADON" ToRole="SANPHAM" />
+    <Property Name="MaDM" Type="Int32" />
+    <NavigationProperty Name="DATMON" Relationship="CafeShopModel.FK__CT_HOADON__MaDM__3A4CA8FD" FromRole="CT_HOADON" ToRole="DATMON" />
+    <NavigationProperty Name="HOADON" Relationship="CafeShopModel.FK__CT_HOADON__MaHD__22751F6C" FromRole="CT_HOADON" ToRole="HOADON" />
   </EntityType>
   <EntityType Name="CT_NHAPHANG">
     <Key>
@@ -214,8 +211,8 @@
     <Property Name="MaSP" Type="Int32" />
     <Property Name="MaHH" Type="Int32" />
     <Property Name="SoLuong" Type="Int16" />
-    <NavigationProperty Name="HANGHOA" Relationship="CafeShopModel.FK__CT_SANPHAM__MaHH__0A9D95DB" FromRole="CT_SANPHAM" ToRole="HANGHOA" />
-    <NavigationProperty Name="SANPHAM" Relationship="CafeShopModel.FK__CT_SANPHAM__MaSP__09A971A2" FromRole="CT_SANPHAM" ToRole="SANPHAM" />
+    <NavigationProperty Name="HANGHOA" Relationship="CafeShopModel.FK__CT_SANPHAM__MaHH__1BC821DD" FromRole="CT_SANPHAM" ToRole="HANGHOA" />
+    <NavigationProperty Name="SANPHAM" Relationship="CafeShopModel.FK__CT_SANPHAM__MaSP__1AD3FDA4" FromRole="CT_SANPHAM" ToRole="SANPHAM" />
   </EntityType>
   <EntityType Name="DATBAN">
     <Key>
@@ -227,6 +224,7 @@
     <Property Name="MaKH" Type="Int32" />
     <Property Name="GioDat" Type="DateTime" Precision="3" />
     <Property Name="GhiChu" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="TrangThaiDatMon" Type="Boolean" />
     <NavigationProperty Name="BAN" Relationship="CafeShopModel.FK__DATBAN__MaBan__5DCAEF64" FromRole="DATBAN" ToRole="BAN" />
     <NavigationProperty Name="KHACHHANG" Relationship="CafeShopModel.FK__DATBAN__MaKH__5EBF139D" FromRole="DATBAN" ToRole="KHACHHANG" />
     <NavigationProperty Name="DATMONs" Relationship="CafeShopModel.FK__DATMON__MaDatBan__628FA481" FromRole="DATBAN" ToRole="DATMON" />
@@ -239,7 +237,8 @@
     <Property Name="MaKH" Type="Int32" />
     <Property Name="MaDatBan" Type="Int32" />
     <Property Name="TongTien" Type="Decimal" Precision="19" Scale="4" />
-    <NavigationProperty Name="CT_DATMON" Relationship="CafeShopModel.FK__CT_DATMON__MaDM__656C112C" FromRole="DATMON" ToRole="CT_DATMON" />
+    <NavigationProperty Name="CT_DATMON" Relationship="CafeShopModel.FK__CT_DATMON__MaDM__1EA48E88" FromRole="DATMON" ToRole="CT_DATMON" />
+    <NavigationProperty Name="CT_HOADON" Relationship="CafeShopModel.FK__CT_HOADON__MaDM__3A4CA8FD" FromRole="DATMON" ToRole="CT_HOADON" />
     <NavigationProperty Name="DATBAN" Relationship="CafeShopModel.FK__DATMON__MaDatBan__628FA481" FromRole="DATMON" ToRole="DATBAN" />
     <NavigationProperty Name="KHACHHANG" Relationship="CafeShopModel.FK__DATMON__MaKH__619B8048" FromRole="DATMON" ToRole="KHACHHANG" />
   </EntityType>
@@ -263,7 +262,7 @@
     <Property Name="DonVi" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
     <Property Name="DonGia" Type="Decimal" Precision="19" Scale="4" />
     <NavigationProperty Name="CT_NHAPHANG" Relationship="CafeShopModel.FK__CT_NHAPHAN__MaHH__75A278F5" FromRole="HANGHOA" ToRole="CT_NHAPHANG" />
-    <NavigationProperty Name="CT_SANPHAM" Relationship="CafeShopModel.FK__CT_SANPHAM__MaHH__0A9D95DB" FromRole="HANGHOA" ToRole="CT_SANPHAM" />
+    <NavigationProperty Name="CT_SANPHAM" Relationship="CafeShopModel.FK__CT_SANPHAM__MaHH__1BC821DD" FromRole="HANGHOA" ToRole="CT_SANPHAM" />
     <NavigationProperty Name="LOAIHANGHOA" Relationship="CafeShopModel.FK__HANGHOA__MaLoaiH__6E01572D" FromRole="HANGHOA" ToRole="LOAIHANGHOA" />
   </EntityType>
   <EntityType Name="HOADON">
@@ -273,13 +272,9 @@
     <Property Name="MaHD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="NgayHD" Type="DateTime" Precision="0" />
     <Property Name="TongTien" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="GiamGia" Type="Int16" />
-    <Property Name="DiemTichLuy" Type="Int16" />
-    <Property Name="ChiPhiKhac" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="SoTienThanhToan" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="MaKH" Type="Int32" />
     <Property Name="MaNV" Type="Int32" />
-    <NavigationProperty Name="CT_HOADON" Relationship="CafeShopModel.FK__CT_HOADON__MaHD__7C4F7684" FromRole="HOADON" ToRole="CT_HOADON" />
+    <NavigationProperty Name="CT_HOADON" Relationship="CafeShopModel.FK__CT_HOADON__MaHD__22751F6C" FromRole="HOADON" ToRole="CT_HOADON" />
     <NavigationProperty Name="KHACHHANG" Relationship="CafeShopModel.FK__HOADON__MaKH__787EE5A0" FromRole="HOADON" ToRole="KHACHHANG" />
     <NavigationProperty Name="NHANVIEN" Relationship="CafeShopModel.FK__HOADON__MaNV__797309D9" FromRole="HOADON" ToRole="NHANVIEN" />
   </EntityType>
@@ -296,7 +291,7 @@
     <Property Name="DiemTichLuy" Type="Int16" />
     <Property Name="TenDN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="MatKhau" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
-    <Property Name="AnhDaiDien" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="AnhDaiDien" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="DATBANs" Relationship="CafeShopModel.FK__DATBAN__MaKH__5EBF139D" FromRole="KHACHHANG" ToRole="DATBAN" />
     <NavigationProperty Name="DATMONs" Relationship="CafeShopModel.FK__DATMON__MaKH__619B8048" FromRole="KHACHHANG" ToRole="DATMON" />
     <NavigationProperty Name="HOADONs" Relationship="CafeShopModel.FK__HOADON__MaKH__787EE5A0" FromRole="KHACHHANG" ToRole="HOADON" />
@@ -333,10 +328,10 @@
     <Key>
       <PropertyRef Name="MaLoaiSP" />
     </Key>
-    <Property Name="MaLoaiSP" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="MaLoaiSP" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
     <Property Name="TenLoaiSP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="CT_BAOCAODOANHTHU" Relationship="CafeShopModel.FK__CT_BAOCAO__MaLSP__02FC7413" FromRole="LOAISANPHAM" ToRole="CT_BAOCAODOANHTHU" />
-    <NavigationProperty Name="SANPHAMs" Relationship="CafeShopModel.FK__SANPHAM__MaLoaiS__52593CB8" FromRole="LOAISANPHAM" ToRole="SANPHAM" />
+    <NavigationProperty Name="CT_BAOCAODOANHTHU" Relationship="CafeShopModel.FK__CT_BAOCAO__MaLoa__2B0A656D" FromRole="LOAISANPHAM" ToRole="CT_BAOCAODOANHTHU" />
+    <NavigationProperty Name="SANPHAMs" Relationship="CafeShopModel.FK__SANPHAM__MaLoaiS__17F790F9" FromRole="LOAISANPHAM" ToRole="SANPHAM" />
   </EntityType>
   <EntityType Name="NHACUNGCAP">
     <Key>
@@ -361,7 +356,7 @@
     <Property Name="NgayVaoLam" Type="DateTime" Precision="0" />
     <Property Name="GioiTinh" Type="Boolean" />
     <Property Name="MaCaLV" Type="Int32" />
-    <Property Name="AnhDaiDien" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="AnhDaiDien" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="CALAMVIEC" Relationship="CafeShopModel.FK__NHANVIEN__MaCaLV__3D5E1FD2" FromRole="NHANVIEN" ToRole="CALAMVIEC" />
     <NavigationProperty Name="DIEMDANHNGAYLAMs" Relationship="CafeShopModel.FK__DIEMDANHNG__MaNV__403A8C7D" FromRole="NHANVIEN" ToRole="DIEMDANHNGAYLAM" />
     <NavigationProperty Name="HOADONs" Relationship="CafeShopModel.FK__HOADON__MaNV__797309D9" FromRole="NHANVIEN" ToRole="HOADON" />
@@ -386,14 +381,13 @@
     </Key>
     <Property Name="MaSP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TenSP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="MaLoaiSP" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-    <Property Name="HinhAnh" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="MaLoaiSP" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="HinhAnh" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
     <Property Name="GiaSP" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="TrangThai" Type="Boolean" />
-    <NavigationProperty Name="CT_DATMON" Relationship="CafeShopModel.FK__CT_DATMON__MaSP__66603565" FromRole="SANPHAM" ToRole="CT_DATMON" />
-    <NavigationProperty Name="CT_HOADON" Relationship="CafeShopModel.FK__CT_HOADON__MaSP__7D439ABD" FromRole="SANPHAM" ToRole="CT_HOADON" />
-    <NavigationProperty Name="CT_SANPHAM" Relationship="CafeShopModel.FK__CT_SANPHAM__MaSP__09A971A2" FromRole="SANPHAM" ToRole="CT_SANPHAM" />
-    <NavigationProperty Name="LOAISANPHAM" Relationship="CafeShopModel.FK__SANPHAM__MaLoaiS__52593CB8" FromRole="SANPHAM" ToRole="LOAISANPHAM" />
+    <NavigationProperty Name="CT_DATMON" Relationship="CafeShopModel.FK__CT_DATMON__MaSP__1F98B2C1" FromRole="SANPHAM" ToRole="CT_DATMON" />
+    <NavigationProperty Name="CT_SANPHAM" Relationship="CafeShopModel.FK__CT_SANPHAM__MaSP__1AD3FDA4" FromRole="SANPHAM" ToRole="CT_SANPHAM" />
+    <NavigationProperty Name="LOAISANPHAM" Relationship="CafeShopModel.FK__SANPHAM__MaLoaiS__17F790F9" FromRole="SANPHAM" ToRole="LOAISANPHAM" />
   </EntityType>
   <EntityType Name="TAIKHOANDANGSUDUNG">
     <Key>
@@ -445,7 +439,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CT_BAOCAOD__MaBC__02084FDA">
+  <Association Name="FK__CT_BAOCAOD__MaBC__2A164134">
     <End Type="CafeShopModel.BAOCAODOANHTHU" Role="BAOCAODOANHTHU" Multiplicity="0..1" />
     <End Type="CafeShopModel.CT_BAOCAODOANHTHU" Role="CT_BAOCAODOANHTHU" Multiplicity="*" />
     <ReferentialConstraint>
@@ -469,7 +463,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CT_BAOCAO__MaLSP__02FC7413">
+  <Association Name="FK__CT_BAOCAO__MaLoa__2B0A656D">
     <End Type="CafeShopModel.LOAISANPHAM" Role="LOAISANPHAM" Multiplicity="0..1" />
     <End Type="CafeShopModel.CT_BAOCAODOANHTHU" Role="CT_BAOCAODOANHTHU" Multiplicity="*" />
     <ReferentialConstraint>
@@ -477,11 +471,11 @@
         <PropertyRef Name="MaLoaiSP" />
       </Principal>
       <Dependent Role="CT_BAOCAODOANHTHU">
-        <PropertyRef Name="MaLSP" />
+        <PropertyRef Name="MaLoaiSP" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CT_DATMON__MaDM__656C112C">
+  <Association Name="FK__CT_DATMON__MaDM__1EA48E88">
     <End Type="CafeShopModel.DATMON" Role="DATMON" Multiplicity="0..1" />
     <End Type="CafeShopModel.CT_DATMON" Role="CT_DATMON" Multiplicity="*" />
     <ReferentialConstraint>
@@ -493,7 +487,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CT_DATMON__MaSP__66603565">
+  <Association Name="FK__CT_DATMON__MaSP__1F98B2C1">
     <End Type="CafeShopModel.SANPHAM" Role="SANPHAM" Multiplicity="0..1" />
     <End Type="CafeShopModel.CT_DATMON" Role="CT_DATMON" Multiplicity="*" />
     <ReferentialConstraint>
@@ -505,7 +499,19 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CT_HOADON__MaHD__7C4F7684">
+  <Association Name="FK__CT_HOADON__MaDM__3A4CA8FD">
+    <End Type="CafeShopModel.DATMON" Role="DATMON" Multiplicity="0..1" />
+    <End Type="CafeShopModel.CT_HOADON" Role="CT_HOADON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DATMON">
+        <PropertyRef Name="MaDM" />
+      </Principal>
+      <Dependent Role="CT_HOADON">
+        <PropertyRef Name="MaDM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CT_HOADON__MaHD__22751F6C">
     <End Type="CafeShopModel.HOADON" Role="HOADON" Multiplicity="0..1" />
     <End Type="CafeShopModel.CT_HOADON" Role="CT_HOADON" Multiplicity="*" />
     <ReferentialConstraint>
@@ -514,18 +520,6 @@
       </Principal>
       <Dependent Role="CT_HOADON">
         <PropertyRef Name="MaHD" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__CT_HOADON__MaSP__7D439ABD">
-    <End Type="CafeShopModel.SANPHAM" Role="SANPHAM" Multiplicity="0..1" />
-    <End Type="CafeShopModel.CT_HOADON" Role="CT_HOADON" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SANPHAM">
-        <PropertyRef Name="MaSP" />
-      </Principal>
-      <Dependent Role="CT_HOADON">
-        <PropertyRef Name="MaSP" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -553,7 +547,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CT_SANPHAM__MaHH__0A9D95DB">
+  <Association Name="FK__CT_SANPHAM__MaHH__1BC821DD">
     <End Type="CafeShopModel.HANGHOA" Role="HANGHOA" Multiplicity="0..1" />
     <End Type="CafeShopModel.CT_SANPHAM" Role="CT_SANPHAM" Multiplicity="*" />
     <ReferentialConstraint>
@@ -565,7 +559,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CT_SANPHAM__MaSP__09A971A2">
+  <Association Name="FK__CT_SANPHAM__MaSP__1AD3FDA4">
     <End Type="CafeShopModel.SANPHAM" Role="SANPHAM" Multiplicity="0..1" />
     <End Type="CafeShopModel.CT_SANPHAM" Role="CT_SANPHAM" Multiplicity="*" />
     <ReferentialConstraint>
@@ -685,7 +679,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__SANPHAM__MaLoaiS__52593CB8">
+  <Association Name="FK__SANPHAM__MaLoaiS__17F790F9">
     <End Type="CafeShopModel.LOAISANPHAM" Role="LOAISANPHAM" Multiplicity="0..1" />
     <End Type="CafeShopModel.SANPHAM" Role="SANPHAM" Multiplicity="*" />
     <ReferentialConstraint>

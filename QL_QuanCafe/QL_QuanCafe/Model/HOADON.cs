@@ -23,10 +23,6 @@ namespace QL_QuanCafe.Model
         public int MaHD { get; set; }
         public Nullable<System.DateTime> NgayHD { get; set; }
         public Nullable<decimal> TongTien { get; set; }
-        public Nullable<short> GiamGia { get; set; }
-        public Nullable<short> DiemTichLuy { get; set; }
-        public Nullable<decimal> ChiPhiKhac { get; set; }
-        public Nullable<decimal> SoTienThanhToan { get; set; }
         public Nullable<int> MaKH { get; set; }
         public Nullable<int> MaNV { get; set; }
     

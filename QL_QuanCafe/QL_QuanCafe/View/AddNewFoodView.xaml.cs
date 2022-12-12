@@ -29,11 +29,10 @@ namespace QL_QuanCafe.View
     {
         List<CT_SANPHAM> foodDetailLst = new List<CT_SANPHAM>();
         AddNewFoodViewModel newFoodVM = new AddNewFoodViewModel();
-        BitmapImage bitmap;
+        string selectedFileName;
         public AddNewFoodView()
         {
             InitializeComponent();
-            bitmap = new BitmapImage();
             LoadData();
         }
         [DllImport("user32.dll")]
@@ -62,6 +61,7 @@ namespace QL_QuanCafe.View
 
         public void LoadData()
         {
+
             foreach(var item in newFoodVM.GetAllFoodType())
             {
                 cbFoodType.Items.Add(item.TenLoaiSP);
@@ -77,20 +77,11 @@ namespace QL_QuanCafe.View
 
             if ( dlg.ShowDialog() == System.Windows.Forms.DialogResult.OK )
             {
-                string selectedFileName = dlg.FileName;
-                this.bitmap.BeginInit();
-                this.bitmap.UriSource = new Uri(selectedFileName);
-                this.bitmap.EndInit();
-                ImageViewer.ImageSource = this.bitmap;
+                selectedFileName = dlg.FileName;
+                ImageSource imageSource = new BitmapImage(new Uri(selectedFileName));
+                ImageViewer.Source = imageSource;
             }
         }
-
-        //public byte [] BufferFromImage( BitmapImage imageSource )
-        //{
-            
-        //}
-
-
 
         private void btnAddMaterial_Click( object sender, RoutedEventArgs e )
         {
@@ -106,7 +97,7 @@ namespace QL_QuanCafe.View
                 {
                     string typeName = cbFoodType.SelectedItem.ToString();
                     string typeId = newFoodVM.GetFoodTypeId(typeName);
-                    newFoodVM.InsertFoodData(tbProductName.Text, typeId, tbProductPrice.Text);
+                    newFoodVM.InsertFoodData(tbProductName.Text, typeId, tbProductPrice.Text, selectedFileName);
                     string foodId = newFoodVM.GetTheLatestFoodId();
                     AddFoodMaterialView addMaterialView = new AddFoodMaterialView(foodId, typeId);
                     addMaterialView.Show();

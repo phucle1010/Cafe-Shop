@@ -32,7 +32,7 @@ namespace QL_QuanCafe.Model
         public Nullable<System.DateTime> NgayVaoLam { get; set; }
         public Nullable<bool> GioiTinh { get; set; }
         public Nullable<int> MaCaLV { get; set; }
-        public byte[] AnhDaiDien { get; set; }
+        public string AnhDaiDien { get; set; }
     
         public virtual CALAMVIEC CALAMVIEC { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

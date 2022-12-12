@@ -18,6 +18,7 @@ namespace QL_QuanCafe.Model
         public DATMON()
         {
             this.CT_DATMON = new HashSet<CT_DATMON>();
+            this.CT_HOADON = new HashSet<CT_HOADON>();
         }
     
         public int MaDM { get; set; }
@@ -27,6 +28,8 @@ namespace QL_QuanCafe.Model
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_DATMON> CT_DATMON { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CT_HOADON> CT_HOADON { get; set; }
         public virtual DATBAN DATBAN { get; set; }
         public virtual KHACHHANG KHACHHANG { get; set; }
     }

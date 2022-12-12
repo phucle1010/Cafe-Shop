@@ -37,7 +37,7 @@
       <EntityTypeMapping TypeName="CafeShopModel.CT_BAOCAODOANHTHU">
         <MappingFragment StoreEntitySet="CT_BAOCAODOANHTHU">
           <ScalarProperty Name="DoanhThu" ColumnName="DoanhThu" />
-          <ScalarProperty Name="MaLSP" ColumnName="MaLSP" />
+          <ScalarProperty Name="MaLoaiSP" ColumnName="MaLoaiSP" />
           <ScalarProperty Name="MaBC" ColumnName="MaBC" />
           <ScalarProperty Name="MaCTBC" ColumnName="MaCTBC" />
         </MappingFragment>
@@ -56,10 +56,7 @@
     <EntitySetMapping Name="CT_HOADON">
       <EntityTypeMapping TypeName="CafeShopModel.CT_HOADON">
         <MappingFragment StoreEntitySet="CT_HOADON">
-          <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
-          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
-          <ScalarProperty Name="DonGia" ColumnName="DonGia" />
-          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="MaDM" ColumnName="MaDM" />
           <ScalarProperty Name="MaHD" ColumnName="MaHD" />
           <ScalarProperty Name="MaCTHD" ColumnName="MaCTHD" />
         </MappingFragment>
@@ -88,6 +85,7 @@
     <EntitySetMapping Name="DATBANs">
       <EntityTypeMapping TypeName="CafeShopModel.DATBAN">
         <MappingFragment StoreEntitySet="DATBAN">
+          <ScalarProperty Name="TrangThaiDatMon" ColumnName="TrangThaiDatMon" />
           <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
           <ScalarProperty Name="GioDat" ColumnName="GioDat" />
           <ScalarProperty Name="MaKH" ColumnName="MaKH" />
@@ -133,10 +131,6 @@
         <MappingFragment StoreEntitySet="HOADON">
           <ScalarProperty Name="MaNV" ColumnName="MaNV" />
           <ScalarProperty Name="MaKH" ColumnName="MaKH" />
-          <ScalarProperty Name="SoTienThanhToan" ColumnName="SoTienThanhToan" />
-          <ScalarProperty Name="ChiPhiKhac" ColumnName="ChiPhiKhac" />
-          <ScalarProperty Name="DiemTichLuy" ColumnName="DiemTichLuy" />
-          <ScalarProperty Name="GiamGia" ColumnName="GiamGia" />
           <ScalarProperty Name="TongTien" ColumnName="TongTien" />
           <ScalarProperty Name="NgayHD" ColumnName="NgayHD" />
           <ScalarProperty Name="MaHD" ColumnName="MaHD" />

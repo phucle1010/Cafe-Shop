@@ -10,18 +10,10 @@ namespace QL_QuanCafe.ViewModel
 {
     public class MaterialTypeListViewModel : ViewModelBase
     {
-        public int insertImportId(int importId)
+        public int GetImportId()
         {
-            int nRows = 0;
-            try
-            {
-                nRows = DataProvider.Ins.DB.NHAPHANGs.SqlQuery($"SELECT * FROM NHAPHANG WHERE MaNH = '{importId}'").Count();
-            }
-            catch
-            {
-
-            }
-            return nRows;
+            int nRows = DataProvider.Ins.DB.NHAPHANGs.SqlQuery($"SELECT * FROM NHAPHANG").Count();
+            return DataProvider.Ins.DB.NHAPHANGs.SqlQuery($"SELECT * FROM NHAPHANG").ElementAt(nRows - 1).MaNH;
         }
         public string getProviderId()
         {
@@ -36,12 +28,12 @@ namespace QL_QuanCafe.ViewModel
             }
             return id;
         }
-        public void insertImportMaterialData( int importId, string employeeId, int totalPrice )
+        public void insertImportMaterialData( string employeeId, int totalPrice )
         {
             string providerId = getProviderId();
             try
             {
-                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"INSERT INTO NHAPHANG VALUES ('{importId}', '{employeeId}', '{DateTime.Now.ToString("yyyy/MM/dd")}', {totalPrice} , '{providerId}')");
+                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"INSERT INTO NHAPHANG (MaNV, NgayNH, TongTienNH, MaNCC) VALUES ({employeeId}, '{DateTime.Now.ToString("yyyy/MM/dd")}', {totalPrice} , '{providerId}')");
                 MessageBox.Show("Tạo mã nhập hàng thành công", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
 
             }

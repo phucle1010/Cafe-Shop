@@ -24,6 +24,7 @@ namespace QL_QuanCafe.View
         string userName = Properties.Settings.Default ["user"].ToString();
         string tableId;
         string customerId;
+        int area = 0;
         CustomerViewModel customer = new CustomerViewModel();
         OrderTableViewModel table = new OrderTableViewModel();
         public OrderTableView()
@@ -37,13 +38,16 @@ namespace QL_QuanCafe.View
             tbUserName.Text = customer.getCustomerName(this.userName);
             txtCusomerName.Text = customer.getCustomerName(this.userName);
             txtPhone.Text = table.GetPhoneNumber(this.userName);
-            customerId = customer.getCustomerId(this.userName);
+            this.customerId = customer.getCustomerId(this.userName);
             LoadTable();
         }
 
         private void LoadTable()
         {
-            cbbTable = table.LoadTableData(cbbTable);
+            if (area != 0)
+            {
+                cbbTable = table.LoadTableData(cbbTable, area);
+            } 
         }
 
         private void btnCancel_Click( object sender, RoutedEventArgs e )
@@ -73,7 +77,27 @@ namespace QL_QuanCafe.View
         private void cbbTable_Change( object sender, SelectionChangedEventArgs e )
         {
             this.tableId = table.GetTableId(cbbTable.SelectedItem.ToString());
-            MessageBox.Show(tableId);
+        }
+
+        private void btnShowArea1_Click( object sender, RoutedEventArgs e )
+        {
+            this.area = 1;
+            cbbTable.Items.Clear();
+            cbbTable = table.LoadTableData(cbbTable, area);
+        }
+
+        private void btnShowArea2_Click( object sender, RoutedEventArgs e )
+        {
+            this.area = 2;
+            cbbTable.Items.Clear();
+            cbbTable = table.LoadTableData(cbbTable, area);
+        }
+
+        private void btnShowArea3_Click( object sender, RoutedEventArgs e )
+        {
+            this.area = 3;
+            cbbTable.Items.Clear();
+            cbbTable = table.LoadTableData(cbbTable, area);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace QL_QuanCafe.Model
     {
         public int MaCTBC { get; set; }
         public Nullable<int> MaBC { get; set; }
-        public string MaLSP { get; set; }
+        public string MaLoaiSP { get; set; }
         public Nullable<decimal> DoanhThu { get; set; }
     
         public virtual BAOCAODOANHTHU BAOCAODOANHTHU { get; set; }

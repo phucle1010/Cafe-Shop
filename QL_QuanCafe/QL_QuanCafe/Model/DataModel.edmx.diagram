@@ -5,44 +5,44 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="addf8327a29e42dcb875019e6986e6f1" Name="Diagram1" ZoomLevel="74">
-        <EntityTypeShape EntityType="CafeShopModel.BAN" Width="1.5" PointX="6" PointY="12.75" />
-        <EntityTypeShape EntityType="CafeShopModel.BAOCAODOANHTHU" Width="1.5" PointX="11.25" PointY="4.75" />
-        <EntityTypeShape EntityType="CafeShopModel.CALAMVIEC" Width="1.5" PointX="0.75" PointY="5.75" />
-        <EntityTypeShape EntityType="CafeShopModel.CT_BAOCAODOANHTHU" Width="1.5" PointX="13.5" PointY="12.75" />
-        <EntityTypeShape EntityType="CafeShopModel.CT_DATMON" Width="1.5" PointX="12.75" PointY="8.75" />
-        <EntityTypeShape EntityType="CafeShopModel.CT_HOADON" Width="1.5" PointX="7.5" PointY="4.5" />
-        <EntityTypeShape EntityType="CafeShopModel.CT_NHAPHANG" Width="1.5" PointX="7.5" PointY="0.75" />
-        <EntityTypeShape EntityType="CafeShopModel.CT_SANPHAM" Width="1.5" PointX="12.75" PointY="17.5" />
-        <EntityTypeShape EntityType="CafeShopModel.DATBAN" Width="1.5" PointX="8.25" PointY="8.5" />
-        <EntityTypeShape EntityType="CafeShopModel.DATMON" Width="1.5" PointX="10.5" PointY="8.625" />
-        <EntityTypeShape EntityType="CafeShopModel.DIEMDANHNGAYLAM" Width="1.5" PointX="5.25" PointY="5.5" />
-        <EntityTypeShape EntityType="CafeShopModel.HANGHOA" Width="1.5" PointX="5.25" PointY="22" />
-        <EntityTypeShape EntityType="CafeShopModel.HOADON" Width="1.5" PointX="5.25" PointY="8.125" />
-        <EntityTypeShape EntityType="CafeShopModel.KHACHHANG" Width="1.5" PointX="3" PointY="7.875" />
-        <EntityTypeShape EntityType="CafeShopModel.KHUVUC" Width="1.5" PointX="3.75" PointY="13" />
-        <EntityTypeShape EntityType="CafeShopModel.LOAIHANGHOA" Width="1.5" PointX="3" PointY="22.625" />
-        <EntityTypeShape EntityType="CafeShopModel.LOAIKHACHHANG" Width="1.5" PointX="0.75" PointY="9" />
-        <EntityTypeShape EntityType="CafeShopModel.LOAISANPHAM" Width="1.5" PointX="8.25" PointY="13" />
-        <EntityTypeShape EntityType="CafeShopModel.NHACUNGCAP" Width="1.5" PointX="3" PointY="19.375" />
-        <EntityTypeShape EntityType="CafeShopModel.NHANVIEN" Width="1.5" PointX="3" PointY="2.875" />
-        <EntityTypeShape EntityType="CafeShopModel.NHAPHANG" Width="1.5" PointX="5.25" PointY="1.5" />
-        <EntityTypeShape EntityType="CafeShopModel.SANPHAM" Width="1.5" PointX="10.5" PointY="12.375" />
-        <EntityTypeShape EntityType="CafeShopModel.TAIKHOANDANGSUDUNG" Width="1.5" PointX="0.75" PointY="12.625" />
-        <EntityTypeShape EntityType="CafeShopModel.THAMSO" Width="1.5" PointX="0.75" PointY="15.625" />
-        <EntityTypeShape EntityType="CafeShopModel.THETICHDIEM" Width="1.5" PointX="5.25" PointY="16.5" />
+        <EntityTypeShape EntityType="CafeShopModel.BAN" Width="1.5" PointX="6" PointY="2.75" />
+        <EntityTypeShape EntityType="CafeShopModel.BAOCAODOANHTHU" Width="1.5" PointX="11.25" PointY="14.75" />
+        <EntityTypeShape EntityType="CafeShopModel.CALAMVIEC" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="CafeShopModel.CT_BAOCAODOANHTHU" Width="1.5" PointX="13.5" PointY="0.75" />
+        <EntityTypeShape EntityType="CafeShopModel.CT_DATMON" Width="1.5" PointX="12.75" PointY="6.75" />
+        <EntityTypeShape EntityType="CafeShopModel.CT_HOADON" Width="1.5" PointX="12.75" PointY="3.875" />
+        <EntityTypeShape EntityType="CafeShopModel.CT_NHAPHANG" Width="1.5" PointX="7.5" PointY="10.75" />
+        <EntityTypeShape EntityType="CafeShopModel.CT_SANPHAM" Width="1.5" PointX="12.75" PointY="11.75" />
+        <EntityTypeShape EntityType="CafeShopModel.DATBAN" Width="1.5" PointX="8.25" PointY="6.375" />
+        <EntityTypeShape EntityType="CafeShopModel.DATMON" Width="1.5" PointX="10.5" PointY="6.5" />
+        <EntityTypeShape EntityType="CafeShopModel.DIEMDANHNGAYLAM" Width="1.5" PointX="5.25" PointY="17.25" />
+        <EntityTypeShape EntityType="CafeShopModel.HANGHOA" Width="1.5" PointX="5.25" PointY="20.5" />
+        <EntityTypeShape EntityType="CafeShopModel.HOADON" Width="1.5" PointX="5.25" PointY="6.5" />
+        <EntityTypeShape EntityType="CafeShopModel.KHACHHANG" Width="1.5" PointX="3" PointY="5.875" />
+        <EntityTypeShape EntityType="CafeShopModel.KHUVUC" Width="1.5" PointX="3.75" PointY="3" />
+        <EntityTypeShape EntityType="CafeShopModel.LOAIHANGHOA" Width="1.5" PointX="3" PointY="21" />
+        <EntityTypeShape EntityType="CafeShopModel.LOAIKHACHHANG" Width="1.5" PointX="0.75" PointY="7" />
+        <EntityTypeShape EntityType="CafeShopModel.LOAISANPHAM" Width="1.5" PointX="8.25" PointY="3" />
+        <EntityTypeShape EntityType="CafeShopModel.NHACUNGCAP" Width="1.5" PointX="3" PointY="17" />
+        <EntityTypeShape EntityType="CafeShopModel.NHANVIEN" Width="1.5" PointX="3" PointY="10.875" />
+        <EntityTypeShape EntityType="CafeShopModel.NHAPHANG" Width="1.5" PointX="5.25" PointY="10.5" />
+        <EntityTypeShape EntityType="CafeShopModel.SANPHAM" Width="1.5" PointX="10.5" PointY="2.5" />
+        <EntityTypeShape EntityType="CafeShopModel.TAIKHOANDANGSUDUNG" Width="1.5" PointX="0.75" PointY="1.875" />
+        <EntityTypeShape EntityType="CafeShopModel.THAMSO" Width="1.5" PointX="9.75" PointY="10.875" />
+        <EntityTypeShape EntityType="CafeShopModel.THETICHDIEM" Width="1.5" PointX="5.25" PointY="14" />
         <AssociationConnector Association="CafeShopModel.FK__BAN__MaKV__5AEE82B9" />
         <AssociationConnector Association="CafeShopModel.FK__DATBAN__MaBan__5DCAEF64" />
-        <AssociationConnector Association="CafeShopModel.FK__CT_BAOCAOD__MaBC__02084FDA" />
+        <AssociationConnector Association="CafeShopModel.FK__CT_BAOCAOD__MaBC__2A164134" />
         <AssociationConnector Association="CafeShopModel.FK__NHANVIEN__MaCaLV__3D5E1FD2" />
-        <AssociationConnector Association="CafeShopModel.FK__CT_BAOCAO__MaLSP__02FC7413" />
-        <AssociationConnector Association="CafeShopModel.FK__CT_DATMON__MaDM__656C112C" />
-        <AssociationConnector Association="CafeShopModel.FK__CT_DATMON__MaSP__66603565" />
-        <AssociationConnector Association="CafeShopModel.FK__CT_HOADON__MaHD__7C4F7684" />
-        <AssociationConnector Association="CafeShopModel.FK__CT_HOADON__MaSP__7D439ABD" />
+        <AssociationConnector Association="CafeShopModel.FK__CT_BAOCAO__MaLoa__2B0A656D" />
+        <AssociationConnector Association="CafeShopModel.FK__CT_DATMON__MaDM__1EA48E88" />
+        <AssociationConnector Association="CafeShopModel.FK__CT_DATMON__MaSP__1F98B2C1" />
+        <AssociationConnector Association="CafeShopModel.FK__CT_HOADON__MaDM__3A4CA8FD" />
+        <AssociationConnector Association="CafeShopModel.FK__CT_HOADON__MaHD__22751F6C" />
         <AssociationConnector Association="CafeShopModel.FK__CT_NHAPHAN__MaHH__75A278F5" />
         <AssociationConnector Association="CafeShopModel.FK__CT_NHAPHAN__MANH__74AE54BC" />
-        <AssociationConnector Association="CafeShopModel.FK__CT_SANPHAM__MaHH__0A9D95DB" />
-        <AssociationConnector Association="CafeShopModel.FK__CT_SANPHAM__MaSP__09A971A2" />
+        <AssociationConnector Association="CafeShopModel.FK__CT_SANPHAM__MaHH__1BC821DD" />
+        <AssociationConnector Association="CafeShopModel.FK__CT_SANPHAM__MaSP__1AD3FDA4" />
         <AssociationConnector Association="CafeShopModel.FK__DATBAN__MaKH__5EBF139D" />
         <AssociationConnector Association="CafeShopModel.FK__DATMON__MaDatBan__628FA481" />
         <AssociationConnector Association="CafeShopModel.FK__DATMON__MaKH__619B8048" />
@@ -52,7 +52,7 @@
         <AssociationConnector Association="CafeShopModel.FK__HOADON__MaNV__797309D9" />
         <AssociationConnector Association="CafeShopModel.FK__KHACHHANG__MaLoa__47DBAE45" />
         <AssociationConnector Association="CafeShopModel.FK__THETICHDIE__MaKH__4AB81AF0" />
-        <AssociationConnector Association="CafeShopModel.FK__SANPHAM__MaLoaiS__52593CB8" />
+        <AssociationConnector Association="CafeShopModel.FK__SANPHAM__MaLoaiS__17F790F9" />
         <AssociationConnector Association="CafeShopModel.FK__NHAPHANG__MaNCC__71D1E811" />
         <AssociationConnector Association="CafeShopModel.FK__NHAPHANG__MaNV__70DDC3D8" />
       </Diagram>

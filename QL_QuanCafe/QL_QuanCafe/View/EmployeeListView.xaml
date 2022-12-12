@@ -56,8 +56,8 @@
             <Button Grid.Column="2"
                     x:Name="btnUpdateWorkShift"
                     Content="Chuyển ca làm"
-                    Width="170"
-                    Click="btnUpdateEmplyee_Click"/>
+                    Width="170" Click="btnUpdateWorkShift_Click"
+                    />
         </Grid>
     </Grid>
 </Page>

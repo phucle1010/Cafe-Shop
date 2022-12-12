@@ -1,6 +1,7 @@
 ﻿using QL_QuanCafe.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,16 +22,28 @@ namespace QL_QuanCafe.View
     /// </summary>
     public partial class ManageOrderTableView : Page
     {
+        ManageOrderTableViewModel mnOrderTbVM = new ManageOrderTableViewModel();
+        string tableId; 
         public ManageOrderTableView()
         {
             InitializeComponent();
             LoadData();
+            LoadOrderTableListData();
         }
         void LoadData()
         {
             AdminViewModel admin = new AdminViewModel();
             string userName = Properties.Settings.Default ["user"].ToString();
             tbUserName.Text = admin.getAdminName(userName);
+        }
+
+        void LoadOrderTableListData()
+        {
+            foreach ( var item in mnOrderTbVM.GetOrderTableList() )
+            {
+                ManageOrderTableItemView tbItem = new ManageOrderTableItemView(item.MaDatBan, item.MaBan, (int) item.MaKH,(bool) item.TrangThai);
+                orderTableList.Children.Add(tbItem);
+            }
         }
     }
 }

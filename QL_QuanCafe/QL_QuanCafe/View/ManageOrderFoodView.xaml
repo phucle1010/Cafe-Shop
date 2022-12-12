@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ManageOrderFoodView">
 
-    <Grid>
+    <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="35"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
@@ -65,5 +65,48 @@
             </StackPanel>
         </Grid>
 
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0"
+                       Text="DANH SÁCH CÁC ĐƠN ĐẶT MÓN"
+                       VerticalAlignment="Center"
+                       Margin="40 0 0 0"
+                       FontWeight="SemiBold"/>
+
+            <DataGrid x:Name="dtOrderFood"
+                      Grid.Row="1"
+                      Padding="0 0 0 30"
+                      CanUserResizeRows="False" 
+                      ColumnWidth="*"
+                      CanUserAddRows="False" 
+                      CanUserDeleteRows="False" 
+                      IsReadOnly="True" 
+                      Background="White" MouseDoubleClick="dtOrderFood_MouseDoubleClick"/>
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="1"
+                        x:Name="btnDetail"
+                        Content="Xem chi tiết"
+                        Width="150"
+                        VerticalAlignment="Center" Click="btnDetail_Click" />
+
+                <Button Grid.Column="2"
+                        x:Name="btnSubmit"
+                        Content="Xác nhận"
+                        Width="150"
+                        VerticalAlignment="Center" Click="btnSubmit_Click" />
+            </Grid>
+        </Grid>
     </Grid>
 </Page>

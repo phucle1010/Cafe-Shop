@@ -26,6 +26,7 @@ namespace QL_QuanCafe.Model
         public Nullable<int> MaKH { get; set; }
         public Nullable<System.DateTime> GioDat { get; set; }
         public string GhiChu { get; set; }
+        public Nullable<bool> TrangThaiDatMon { get; set; }
     
         public virtual BAN BAN { get; set; }
         public virtual KHACHHANG KHACHHANG { get; set; }
