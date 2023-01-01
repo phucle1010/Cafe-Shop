@@ -15,7 +15,7 @@ namespace QL_QuanCafe.View
     public partial class OrderFoodView : Page
     {
         OrderFoodViewModel orderFoodVM = new OrderFoodViewModel();
-        List<CT_DATMON> orderDetailList = new List<CT_DATMON>();
+        List<CT_HOADON> orderDetailList = new List<CT_HOADON>();
         string userName = Properties.Settings.Default ["user"].ToString();
         int customerId;
         public OrderFoodView()
@@ -51,12 +51,12 @@ namespace QL_QuanCafe.View
             }
         }
 
-        public bool InsertOrderDetail( int orderFoodId )
+        public bool InsertBillDetail( int billId )
         {
             foreach(var item in orderDetailList )
             {
                 int price = orderFoodVM.GetFoodPrice((int) item.MaSP);
-                if (orderFoodVM.InsertDataToOrderFoodDetail(orderFoodId, (int) item.MaSP, (int) item.SoLuong, price) == 0)
+                if (orderFoodVM.InsertDataToBillDetail(billId, (int) item.MaSP, (int) item.SoLuong, price) == 0)
                 {
                     return false;
                 }
@@ -75,10 +75,10 @@ namespace QL_QuanCafe.View
             {
                 DATBAN orderTable = orderFoodVM.GetOrderTabeleInfo(customerId);
                 int orderTableId = orderTable.MaDatBan;
-                orderFoodVM.InsertDataToOrderFood(customerId, orderTableId);
+                orderFoodVM.InsertDataToBill(customerId, orderTableId);
 
-                int orderFoodId = orderFoodVM.GetOrderFoodId(customerId);
-                if (InsertOrderDetail(orderFoodId) == true)
+                int billId = orderFoodVM.GetBillId(customerId);
+                if (InsertBillDetail(billId) == true)
                 {
                     MessageBox.Show("Đặt món thành công!!!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
                 } 

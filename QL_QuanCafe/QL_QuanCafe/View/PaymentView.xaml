@@ -65,5 +65,28 @@
             </StackPanel>
         </Grid>
 
+        <Grid Grid.Row="1"
+              Margin="0 20 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="300"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Label Content="ĐƠN HÀNG CHƯA THANH TOÁN"
+                       Margin="20 0 0 0"/>
+                <ScrollViewer x:Name="unPayedList" Margin="0 30 0 0">
+
+                </ScrollViewer>
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <Label Content="ĐƠN HÀNG ĐÃ THANH TOÁN"
+                       HorizontalAlignment="Center"/>
+                <ScrollViewer x:Name="payedList" Margin="0 30 0 0">
+                    
+                </ScrollViewer>
+            </Grid>
+        </Grid>
     </Grid>
 </Page>

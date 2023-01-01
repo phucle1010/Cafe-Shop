@@ -17,7 +17,7 @@ namespace QL_QuanCafe.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SANPHAM()
         {
-            this.CT_DATMON = new HashSet<CT_DATMON>();
+            this.CT_HOADON = new HashSet<CT_HOADON>();
             this.CT_SANPHAM = new HashSet<CT_SANPHAM>();
         }
     
@@ -29,7 +29,7 @@ namespace QL_QuanCafe.Model
         public Nullable<bool> TrangThai { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CT_DATMON> CT_DATMON { get; set; }
+        public virtual ICollection<CT_HOADON> CT_HOADON { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_SANPHAM> CT_SANPHAM { get; set; }
         public virtual LOAISANPHAM LOAISANPHAM { get; set; }

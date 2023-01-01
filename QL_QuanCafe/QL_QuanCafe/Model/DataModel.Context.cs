@@ -29,12 +29,10 @@ namespace QL_QuanCafe.Model
         public virtual DbSet<BAOCAODOANHTHU> BAOCAODOANHTHUs { get; set; }
         public virtual DbSet<CALAMVIEC> CALAMVIECs { get; set; }
         public virtual DbSet<CT_BAOCAODOANHTHU> CT_BAOCAODOANHTHU { get; set; }
-        public virtual DbSet<CT_DATMON> CT_DATMON { get; set; }
         public virtual DbSet<CT_HOADON> CT_HOADON { get; set; }
         public virtual DbSet<CT_NHAPHANG> CT_NHAPHANG { get; set; }
         public virtual DbSet<CT_SANPHAM> CT_SANPHAM { get; set; }
         public virtual DbSet<DATBAN> DATBANs { get; set; }
-        public virtual DbSet<DATMON> DATMONs { get; set; }
         public virtual DbSet<DIEMDANHNGAYLAM> DIEMDANHNGAYLAMs { get; set; }
         public virtual DbSet<HANGHOA> HANGHOAs { get; set; }
         public virtual DbSet<HOADON> HOADONs { get; set; }

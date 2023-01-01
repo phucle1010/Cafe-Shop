@@ -17,8 +17,10 @@ namespace QL_QuanCafe.Model
         public int MaCTHD { get; set; }
         public Nullable<int> MaHD { get; set; }
         public Nullable<int> MaDM { get; set; }
+        public Nullable<int> MaSP { get; set; }
+        public Nullable<short> SoLuong { get; set; }
     
-        public virtual DATMON DATMON { get; set; }
         public virtual HOADON HOADON { get; set; }
+        public virtual SANPHAM SANPHAM { get; set; }
     }
 }

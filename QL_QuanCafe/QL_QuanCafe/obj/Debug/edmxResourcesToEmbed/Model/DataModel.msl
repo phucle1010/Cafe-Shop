@@ -43,19 +43,11 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="CT_DATMON">
-      <EntityTypeMapping TypeName="CafeShopModel.CT_DATMON">
-        <MappingFragment StoreEntitySet="CT_DATMON">
-          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
-          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
-          <ScalarProperty Name="MaDM" ColumnName="MaDM" />
-          <ScalarProperty Name="MaCTDM" ColumnName="MaCTDM" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="CT_HOADON">
       <EntityTypeMapping TypeName="CafeShopModel.CT_HOADON">
         <MappingFragment StoreEntitySet="CT_HOADON">
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
           <ScalarProperty Name="MaDM" ColumnName="MaDM" />
           <ScalarProperty Name="MaHD" ColumnName="MaHD" />
           <ScalarProperty Name="MaCTHD" ColumnName="MaCTHD" />
@@ -95,16 +87,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="DATMONs">
-      <EntityTypeMapping TypeName="CafeShopModel.DATMON">
-        <MappingFragment StoreEntitySet="DATMON">
-          <ScalarProperty Name="TongTien" ColumnName="TongTien" />
-          <ScalarProperty Name="MaDatBan" ColumnName="MaDatBan" />
-          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
-          <ScalarProperty Name="MaDM" ColumnName="MaDM" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="DIEMDANHNGAYLAMs">
       <EntityTypeMapping TypeName="CafeShopModel.DIEMDANHNGAYLAM">
         <MappingFragment StoreEntitySet="DIEMDANHNGAYLAM">
@@ -129,6 +111,8 @@
     <EntitySetMapping Name="HOADONs">
       <EntityTypeMapping TypeName="CafeShopModel.HOADON">
         <MappingFragment StoreEntitySet="HOADON">
+          <ScalarProperty Name="MaDatBan" ColumnName="MaDatBan" />
+          <ScalarProperty Name="TrangThaiThanhToan" ColumnName="TrangThaiThanhToan" />
           <ScalarProperty Name="MaNV" ColumnName="MaNV" />
           <ScalarProperty Name="MaKH" ColumnName="MaKH" />
           <ScalarProperty Name="TongTien" ColumnName="TongTien" />

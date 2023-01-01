@@ -25,9 +25,12 @@ namespace QL_QuanCafe.Model
         public Nullable<decimal> TongTien { get; set; }
         public Nullable<int> MaKH { get; set; }
         public Nullable<int> MaNV { get; set; }
+        public Nullable<bool> TrangThaiThanhToan { get; set; }
+        public Nullable<int> MaDatBan { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_HOADON> CT_HOADON { get; set; }
+        public virtual DATBAN DATBAN { get; set; }
         public virtual KHACHHANG KHACHHANG { get; set; }
         public virtual NHANVIEN NHANVIEN { get; set; }
     }

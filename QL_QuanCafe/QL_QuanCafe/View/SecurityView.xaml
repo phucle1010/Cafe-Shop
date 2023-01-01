@@ -68,13 +68,14 @@
 
             <Button x:Name="btnReset"
                     BorderThickness="0"
-                    Content="Đặt lại mật khẩu"
+                    Content="Xác nhận"
                     Foreground="White"
                     FontSize="14"
                     FontFamily="Montserrat"
                     Cursor="Hand"
                     Grid.Column="2"
-                    Margin="0,20,0,30"
+                    Margin="0,20,0,0"
+                    HorizontalAlignment="Right"
                     Click="btnReset_Click">
                 <Button.Style>
                     <Style TargetType="{x:Type Button}">

@@ -18,7 +18,6 @@ namespace QL_QuanCafe.Model
         public KHACHHANG()
         {
             this.DATBANs = new HashSet<DATBAN>();
-            this.DATMONs = new HashSet<DATMON>();
             this.HOADONs = new HashSet<HOADON>();
             this.THETICHDIEMs = new HashSet<THETICHDIEM>();
         }
@@ -36,8 +35,6 @@ namespace QL_QuanCafe.Model
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DATBAN> DATBANs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DATMON> DATMONs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOADON> HOADONs { get; set; }
         public virtual LOAIKHACHHANG LOAIKHACHHANG { get; set; }

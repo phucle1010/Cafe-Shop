@@ -30,14 +30,14 @@ namespace QL_QuanCafe.View
         string name;
         int price;
         int currentValue;
-        List<CT_DATMON> orderDetailList;
+        List<CT_HOADON> orderDetailList;
         public OrderFoodInfoListView()
         {
             InitializeComponent();
             currentValue = 0;
         }
 
-        public OrderFoodInfoListView(List<CT_DATMON> orderDetailList, int foodId, string imagePath, string name, int price)
+        public OrderFoodInfoListView(List<CT_HOADON> orderDetailList, int foodId, string imagePath, string name, int price)
         {
             InitializeComponent();
             customerId = orderFoodInfoListVM.GetCustomerId(userName);
@@ -75,7 +75,7 @@ namespace QL_QuanCafe.View
 
         public void AddOrderDetail()
         {
-            CT_DATMON sp = new CT_DATMON();
+            CT_HOADON sp = new CT_HOADON();
             sp.MaSP = this.foodId;
             sp.SoLuong = (short?) this.currentValue;
             this.orderDetailList.Add(sp);

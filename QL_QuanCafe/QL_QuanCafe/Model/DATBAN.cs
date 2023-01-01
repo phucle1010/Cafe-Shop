@@ -17,7 +17,7 @@ namespace QL_QuanCafe.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DATBAN()
         {
-            this.DATMONs = new HashSet<DATMON>();
+            this.HOADONs = new HashSet<HOADON>();
         }
     
         public int MaDatBan { get; set; }
@@ -31,6 +31,6 @@ namespace QL_QuanCafe.Model
         public virtual BAN BAN { get; set; }
         public virtual KHACHHANG KHACHHANG { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DATMON> DATMONs { get; set; }
+        public virtual ICollection<HOADON> HOADONs { get; set; }
     }
 }

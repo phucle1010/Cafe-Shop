@@ -108,15 +108,6 @@
                     </RadioButton>
 
                     <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="{StaticResource color6}"
-                                 Click="btnManageOrderFood_Click">
-                        <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="Bucket" Style="{StaticResource menuButtonIcon}"/>
-                            <TextBlock Text="Quản lý đặt món" Style="{StaticResource menuButtonText}"/>
-                        </StackPanel>
-                    </RadioButton>
-
-                    <RadioButton Style="{StaticResource menuButton}"
                                  Tag="{StaticResource color7}"
                                  Click="btnPayment_Click">
                         <StackPanel Orientation="Horizontal">

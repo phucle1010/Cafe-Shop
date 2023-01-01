@@ -25,11 +25,11 @@ namespace QL_QuanCafe.ViewModel
             return DataProvider.Ins.DB.SANPHAMs.SqlQuery("SELECT * FROM SANPHAM").ToList<SANPHAM>();
         }
 
-        public void InsertDataToOrderFood(int customerId, int orderTableId)
+        public void InsertDataToBill(int customerId, int orderTableId)
         {
             try
             {
-                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"INSERT INTO DATMON (MaKH, MaDatBan, TongTien) VALUES ({customerId}, {orderTableId}, 0)");
+                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"INSERT INTO HOADON (MaKH, MaDatBan, TongTien, TrangThaiThanhToan) VALUES ({customerId}, {orderTableId}, 0, 0)");
             }
             catch (Exception e)
             {
@@ -37,9 +37,9 @@ namespace QL_QuanCafe.ViewModel
             }
         }
 
-        public int GetOrderFoodId(int customerId)
+        public int GetBillId(int customerId)
         {
-            return DataProvider.Ins.DB.DATMONs.SqlQuery($"SELECT * FROM DATMON dm, DATBAN db WHERE dm.MaDatBan = db.MaDatBan AND dm.MaKH={customerId} AND db.TrangThaiDatMon=0 AND db.TrangThai=1").ElementAt(0).MaDM;
+            return DataProvider.Ins.DB.HOADONs.SqlQuery($"SELECT * FROM HOADON hd, DATBAN db WHERE hd.MaDatBan = db.MaDatBan AND hd.MaKH={customerId} AND db.TrangThaiDatMon=0 AND db.TrangThai=1").ElementAt(0).MaHD;
         }
 
         public int GetFoodPrice(int foodId)
@@ -47,13 +47,13 @@ namespace QL_QuanCafe.ViewModel
             return (int)DataProvider.Ins.DB.SANPHAMs.SqlQuery($"SELECT * FROM SANPHAM WHERE MaSP={foodId}").ElementAt(0).GiaSP;
         }
 
-        public int InsertDataToOrderFoodDetail(int orderFoodId, int foodId, int quantity, int price) 
+        public int InsertDataToBillDetail(int billId, int foodId, int quantity, int price) 
         {
             try
             {
-                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"INSERT INTO CT_DATMON (MaDM, MaSP, SoLuong) VALUES ({orderFoodId}, {foodId}, {quantity})");
+                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"INSERT INTO CT_HOADON (MaHD, MaSP, SoLuong) VALUES ({billId}, {foodId}, {quantity})");
                 /// UPDATE LẠI SỐ LƯỢNG CÒN SẴN Ở HANGHOA
-                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"UPDATE DATMON SET TongTien = TongTien + {quantity * price} WHERE MaDM={orderFoodId}");
+                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"UPDATE HOADON SET TongTien = TongTien + {quantity * price} WHERE MaHD={billId}");
             }
             catch (Exception e)
             {
