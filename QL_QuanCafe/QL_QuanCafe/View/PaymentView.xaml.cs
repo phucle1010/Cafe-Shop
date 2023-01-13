@@ -1,4 +1,5 @@
-﻿using QL_QuanCafe.ViewModel;
+﻿using QL_QuanCafe.Model;
+using QL_QuanCafe.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,16 +22,39 @@ namespace QL_QuanCafe.View
     /// </summary>
     public partial class PaymentView : Page
     {
+        PaymentViewModel paymentVM = new PaymentViewModel();
+
         public PaymentView()
         {
             InitializeComponent();
             LoadData();
+            LoadPaymentUnCompleteItem();
+            LoadPaymentCompleteItem();
         }
         void LoadData()
         {
             AdminViewModel admin = new AdminViewModel();
             string userName = Properties.Settings.Default ["user"].ToString();
-            tbUserName.Text = admin.getAdminName(userName);
+            tbUserName.Text = admin.getAdminName(userName);          
+        }
+
+        void LoadPaymentUnCompleteItem()
+        {
+            List<HOADON> unPayedBillList = paymentVM.billListNotPayments();
+            foreach(var item in unPayedBillList)
+            {
+                PaymentItemView paymentItem = new PaymentItemView((int) item.MaDatBan, paymentVM.GetCustomerName((int) item.MaKH), (int) item.TongTien, this, (int) item.MaHD);
+                unPayedList.Children.Add(paymentItem);
+            }
+        }
+        void LoadPaymentCompleteItem()
+        {
+            List<HOADON> payedBillList = paymentVM.billListHasPayments();
+            foreach ( var item in payedBillList )
+            {
+                PaymentCompletedView paymentItem = new PaymentCompletedView((int) item.MaHD, paymentVM.GetCustomerName((int) item.MaKH), (int) item.TongTien, this);
+                PayedList.Children.Add(paymentItem);
+            }
         }
     }
 }

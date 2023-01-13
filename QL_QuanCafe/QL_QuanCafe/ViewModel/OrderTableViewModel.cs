@@ -54,6 +54,11 @@ namespace QL_QuanCafe.ViewModel
             return customerId;
         }
 
+        public string GetCustomerName( int customerId )
+        {
+            return DataProvider.Ins.DB.KHACHHANGs.SqlQuery($"SELECT * FROM KHACHHANG WHERE MaKH='{customerId}'").ElementAt(0).TenKH;
+        }
+
         public string GetTableId( string tableName )
         {
             string tableId = "";
@@ -67,10 +72,19 @@ namespace QL_QuanCafe.ViewModel
             return tableId;
         }
 
-        int RandomOrderTableId()
+        public string GetTableName(string tableId)
         {
-            Random rd = new Random();
-            return rd.Next(100000, 999999);
+            return DataProvider.Ins.DB.BANs.SqlQuery($"SELECT * FROM BAN WHERE MaBan='{tableId}'").ElementAt(0).TenBan;
+        }
+
+        public int GetCurrentTotalOfTable(int orderTableId)
+        {
+            return (int) DataProvider.Ins.DB.HOADONs.SqlQuery($"SELECT * FROM HOADON WHERE MaDatBan={orderTableId}").ElementAt(0).TongTien;
+        }
+
+        public string GetTimeOfOrder(int orderTableId)
+        {
+            return DataProvider.Ins.DB.DATBANs.SqlQuery($"SELECT * FROM DATBAN WHERE MaDatBan={orderTableId}").ElementAt(0).GioDat.ToString();
         }
 
         public void InsertOrderTableData(string tableId, string customerId, string note, DateTime bookTime)
@@ -84,6 +98,48 @@ namespace QL_QuanCafe.ViewModel
             {
                 MessageBox.Show(e.ToString(), "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        public List<DATBAN> GetAllOrderTableDataOfUser(int customerId)
+        {
+            return DataProvider.Ins.DB.DATBANs.SqlQuery($"SELECT * FROM DATBAN WHERE MaKH={customerId}").ToList<DATBAN>();
+        }
+
+        public List<BAN> GetAllEmptyTable()
+        {
+            return DataProvider.Ins.DB.BANs.SqlQuery("SELECT * FROM BAN WHERE TrangThai=1").ToList<BAN>();
+        }
+
+        public int GetOrderTableIdByTableName(string tableName, int customerId)
+        {
+            return DataProvider.Ins.DB.DATBANs.SqlQuery($"SELECT * FROM DATBAN DB, BAN B WHERE DB.MaBan = B.MaBan AND DB.MaKH={customerId} AND B.TenBan=N'{tableName}' AND DB.TrangThaiDatMon=0").ElementAt(0).MaDatBan;
+        }
+
+        public void UpdateTotalBillAfterMerging(int orderTableIdOfMergedChosedTable, int total, int orderTableIdOfMergedTable ) 
+        {
+            DataProvider.Ins.DB.Database.ExecuteSqlCommand($"UPDATE HOADON SET TongTien += {total} WHERE MaDatBan={orderTableIdOfMergedChosedTable}");
+        }
+
+        public int GetBillIdOfMergedTable(int orderTableId)
+        {
+            return DataProvider.Ins.DB.HOADONs.SqlQuery($"SELECT * FROM HOADON WHERE MaDatBan={orderTableId}").ElementAt(0).MaHD;
+        }
+
+        public int UpdateAllDataAgainOfMergedTable(int billId, int mergedTableId, string mergedChosedTableName)
+        {
+            try
+            {
+                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"DELETE FROM CT_HOADON WHERE MaHD={billId}");
+                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"DELETE FROM HOADON WHERE MaHD={billId}");
+                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"UPDATE BAN SET TrangThai=1 WHERE TenBan=N'{mergedChosedTableName}'");
+                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"DELETE FROM DATBAN WHERE MaDatBan={mergedTableId}");
+            }
+            catch (Exception e)
+            {
+                return 0;
+                throw e;
+            }
+            return 1;
         }
     }
 }

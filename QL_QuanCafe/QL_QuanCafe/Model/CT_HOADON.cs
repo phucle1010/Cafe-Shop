@@ -16,7 +16,6 @@ namespace QL_QuanCafe.Model
     {
         public int MaCTHD { get; set; }
         public Nullable<int> MaHD { get; set; }
-        public Nullable<int> MaDM { get; set; }
         public Nullable<int> MaSP { get; set; }
         public Nullable<short> SoLuong { get; set; }
     

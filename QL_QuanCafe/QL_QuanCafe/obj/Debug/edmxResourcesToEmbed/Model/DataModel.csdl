@@ -163,7 +163,6 @@
     </Key>
     <Property Name="MaCTHD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="MaHD" Type="Int32" />
-    <Property Name="MaDM" Type="Int32" />
     <Property Name="MaSP" Type="Int32" />
     <Property Name="SoLuong" Type="Int16" />
     <NavigationProperty Name="HOADON" Relationship="CafeShopModel.FK__CT_HOADON__MaHD__22751F6C" FromRole="CT_HOADON" ToRole="HOADON" />
@@ -187,7 +186,7 @@
     <Property Name="MaCTSP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="MaSP" Type="Int32" />
     <Property Name="MaHH" Type="Int32" />
-    <Property Name="SoLuong" Type="Int16" />
+    <Property Name="SoLuong" Type="Decimal" Precision="10" Scale="2" />
     <NavigationProperty Name="HANGHOA" Relationship="CafeShopModel.FK__CT_SANPHAM__MaHH__1BC821DD" FromRole="CT_SANPHAM" ToRole="HANGHOA" />
     <NavigationProperty Name="SANPHAM" Relationship="CafeShopModel.FK__CT_SANPHAM__MaSP__1AD3FDA4" FromRole="CT_SANPHAM" ToRole="SANPHAM" />
   </EntityType>

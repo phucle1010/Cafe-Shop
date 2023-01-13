@@ -33,7 +33,15 @@ namespace QL_QuanCafe.View
             tbOrderTableId.Text = orderTableId.ToString();
             tbTableId.Text = tableId;
             tbCustomerId.Text = customerId.ToString();
-            tbStatus.Text = status == true ? "Đã xác nhận" : "Chưa xác nhận";
+            if (status)
+            {
+                tbStatus.Text = "Đã xác nhận";
+                btnSubmit.Visibility = Visibility.Hidden;
+            } 
+            else
+            {
+                tbStatus.Visibility = Visibility.Hidden;
+            }
         }
 
         private void btnSubmit_Click( object sender, RoutedEventArgs e )

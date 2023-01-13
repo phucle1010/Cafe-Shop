@@ -3,7 +3,8 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:QL_QuanCafe.View" xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+      xmlns:local="clr-namespace:QL_QuanCafe.View" 
+      xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
       mc:Ignorable="d" 
       d:DesignHeight="700" d:DesignWidth="1000"
       Title="FoodView">
@@ -97,7 +98,10 @@
                     x:Name="btnAddFood"
                     Content="Thêm món ăn"
                     Width="150" Click="btnAddFood_Click"/>
-
+                <Button Grid.Column="1"
+                        x:Name="btnUpdateFoodDetail"
+                        Content="Cập nhật công thức"
+                        Width="160" Click="btnUpdateFoodDetail_Click"/>
 
                 <Button Grid.Column="2"
                     x:Name="btnUpdateFood"

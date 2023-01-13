@@ -78,7 +78,6 @@
                     <ColumnDefinition />
                     <ColumnDefinition />
                     <ColumnDefinition />
-                    <ColumnDefinition />
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Grid.Column="0"
@@ -101,17 +100,11 @@
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
                            FontSize="16"/>
-                <TextBlock Grid.Column="4"
-                           Text="Lựa chọn"
-                           HorizontalAlignment="Center"
-                           VerticalAlignment="Center"
-                           FontSize="16"/>
             </Grid>
 
-            <WrapPanel x:Name="orderTableList"
-                       Grid.Row="1"
-                       ItemWidth="1100">
-            </WrapPanel>
+            <StackPanel x:Name="orderTableList"
+                       Grid.Row="1">
+            </StackPanel>
 
         </Grid>
 

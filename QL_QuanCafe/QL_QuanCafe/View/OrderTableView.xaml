@@ -319,10 +319,15 @@
             </materialDesign:Card>
             <Grid Grid.Row="2">
                 <StackPanel 
-                Orientation="Horizontal"
-                HorizontalAlignment="Right"
-                Margin="4">
-                    <Grid Margin="10 0">
+                            Orientation="Horizontal"
+                            Margin="4">
+                    <Button x:Name="btnViewHistory" Background="Transparent" BorderThickness="0" Cursor="Hand" MouseMove="btnViewHistory_MouseMove" MouseLeave="btnViewHistory_MouseLeave" Click="btnViewHistory_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon x:Name="iconHistory" Kind="RestoreClock" Foreground="Gray" />
+                            <TextBlock x:Name="tbHistory" Margin="6 0 0 0" Text="Xem lịch sử đặt bàn" Foreground="Gray"/>
+                        </StackPanel>
+                    </Button>
+                    <Grid Margin="550 0 20 0">
                         <Button x:Name="btnSave"
                         Style="{StaticResource MaterialDesignRaisedButton}"
                         Width="100"

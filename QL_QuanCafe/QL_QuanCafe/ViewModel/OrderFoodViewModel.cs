@@ -25,6 +25,11 @@ namespace QL_QuanCafe.ViewModel
             return DataProvider.Ins.DB.SANPHAMs.SqlQuery("SELECT * FROM SANPHAM").ToList<SANPHAM>();
         }
 
+        public bool IsOrdering(int customerId)
+        {
+            return DataProvider.Ins.DB.HOADONs.SqlQuery($"SELECT * FROM HOADON WHERE MaKH={customerId} AND TrangThaiThanhToan = 0").Count() > 0;
+        }
+
         public void InsertDataToBill(int customerId, int orderTableId)
         {
             try

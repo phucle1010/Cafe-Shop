@@ -66,25 +66,89 @@
         </Grid>
 
         <Grid Grid.Row="1"
-              Margin="0 20 0 0">
+              Margin="10 20 10 0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="300"/>
+                <ColumnDefinition />
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition />
             </Grid.ColumnDefinitions>
 
             <Grid Grid.Column="0">
-                <Label Content="ĐƠN HÀNG CHƯA THANH TOÁN"
-                       Margin="20 0 0 0"/>
-                <ScrollViewer x:Name="unPayedList" Margin="0 30 0 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+               
+                <Label Grid.Row="0" 
+                       Content="ĐƠN HÀNG CHƯA THANH TOÁN"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontSize="16"/>
 
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" Content="Số bàn" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <Label Grid.Column="1" Content="Tên khách hàng" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <Label Grid.Column="2" Content="Tổng tiền hóa đơn" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <Label Grid.Column="3" Content="Lựa chọn" FontWeight="Bold" Margin="25 0 0 0"/>
+                    
+                </Grid>
+                
+                <ScrollViewer Grid.Row="2" 
+                              Margin="0 6">
+                    <WrapPanel x:Name="unPayedList" 
+                               ItemWidth="520">
+                        <!--<PageContent x:Name="mainContent"/>-->
+                    </WrapPanel>
                 </ScrollViewer>
             </Grid>
 
-            <Grid Grid.Column="1">
+            <Grid Grid.Column="1" 
+                  Background="{StaticResource color12}"
+                  Margin="4 0"/>
+
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                
                 <Label Content="ĐƠN HÀNG ĐÃ THANH TOÁN"
-                       HorizontalAlignment="Center"/>
-                <ScrollViewer x:Name="payedList" Margin="0 30 0 0">
-                    
+                       Grid.Row="0"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="16"/>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" Content="Mã hóa đơn" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <Label Grid.Column="1" Content="Tên khách hàng" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <Label Grid.Column="2" Content="Tổng tiền hóa đơn" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <Label Grid.Column="3" Content="Chi tiết" FontWeight="Bold" Margin="25 0 0 0"/>
+
+                </Grid>
+
+                <ScrollViewer x:Name="payedList"
+                              Grid.Row="2"
+                              Margin="0 6">
+                    <WrapPanel x:Name="PayedList" 
+                               ItemWidth="520">
+                        <!--<PageContent x:Name="mainContent"/>-->
+                    </WrapPanel>
                 </ScrollViewer>
             </Grid>
         </Grid>

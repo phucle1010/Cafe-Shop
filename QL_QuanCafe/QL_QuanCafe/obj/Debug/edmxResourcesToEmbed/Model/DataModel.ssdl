@@ -44,7 +44,6 @@
     </Key>
     <Property Name="MaCTHD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="MaHD" Type="int" />
-    <Property Name="MaDM" Type="int" />
     <Property Name="MaSP" Type="int" />
     <Property Name="SoLuong" Type="smallint" />
   </EntityType>
@@ -64,7 +63,7 @@
     <Property Name="MaCTSP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="MaSP" Type="int" />
     <Property Name="MaHH" Type="int" />
-    <Property Name="SoLuong" Type="smallint" />
+    <Property Name="SoLuong" Type="decimal" Precision="10" Scale="2" />
   </EntityType>
   <EntityType Name="DATBAN">
     <Key>

@@ -17,7 +17,7 @@ namespace QL_QuanCafe.Model
         public int MaCTSP { get; set; }
         public Nullable<int> MaSP { get; set; }
         public Nullable<int> MaHH { get; set; }
-        public Nullable<short> SoLuong { get; set; }
+        public Nullable<decimal> SoLuong { get; set; }
     
         public virtual HANGHOA HANGHOA { get; set; }
         public virtual SANPHAM SANPHAM { get; set; }

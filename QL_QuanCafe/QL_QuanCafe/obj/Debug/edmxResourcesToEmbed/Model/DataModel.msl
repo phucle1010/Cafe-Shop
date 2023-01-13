@@ -48,7 +48,6 @@
         <MappingFragment StoreEntitySet="CT_HOADON">
           <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
           <ScalarProperty Name="MaSP" ColumnName="MaSP" />
-          <ScalarProperty Name="MaDM" ColumnName="MaDM" />
           <ScalarProperty Name="MaHD" ColumnName="MaHD" />
           <ScalarProperty Name="MaCTHD" ColumnName="MaCTHD" />
         </MappingFragment>

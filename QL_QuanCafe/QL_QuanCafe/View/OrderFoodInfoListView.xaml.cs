@@ -2,6 +2,7 @@
 using QL_QuanCafe.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -55,7 +56,8 @@ namespace QL_QuanCafe.View
             ImageSource imageSource = new BitmapImage(new Uri(imagePath));
             foodImage.Source = imageSource;
             foodName.Text = name;
-            foodPrice.Text = price.ToString();
+            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
+            foodPrice.Text = double.Parse(price.ToString()).ToString("#,###", cul.NumberFormat);
         }
 
         private void btnDownValue_Click( object sender, RoutedEventArgs e )

@@ -81,6 +81,8 @@ E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_Quan
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\AddNewEmployeeView.g.cs
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\AddNewFoodView.g.cs
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\AdminProfileView.g.cs
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\BillDetailItemView.g.cs
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\BillDetailView.g.cs
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\ChangeWorkShiftView.g.cs
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\CreateNewPasswordView.g.cs
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\CustomerProfileView.g.cs
@@ -104,8 +106,12 @@ E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_Quan
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\MaterialTypeListView.g.cs
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\OrderFoodInfoListView.g.cs
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\OrderFoodView.g.cs
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\OrderTableHistoryItemView.g.cs
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\OrderTableHistoryView.g.cs
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\OrderTableView.g.cs
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\OTPView.g.cs
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\PaymentCompletedView.g.cs
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\PaymentItemView.g.cs
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\PaymentView.g.cs
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\ProductView.g.cs
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\RegisterAccountView.g.cs
@@ -113,6 +119,7 @@ E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_Quan
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\ResponseView.g.cs
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\SecurityView.g.cs
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\UpdateEmployeeView.g.cs
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\UpdateFoodDetailView.g.cs
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\UpdateFoodView.g.cs
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\App.g.cs
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe_Content.g.cs
@@ -143,6 +150,8 @@ E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_Quan
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\AddNewEmployeeView.baml
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\AddNewFoodView.baml
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\AdminProfileView.baml
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\BillDetailItemView.baml
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\BillDetailView.baml
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\ChangeWorkShiftView.baml
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\CreateNewPasswordView.baml
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\CustomerProfileView.baml
@@ -164,8 +173,12 @@ E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_Quan
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\MaterialTypeItemView.baml
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\MaterialTypeListView.baml
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\OrderFoodInfoListView.baml
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\OrderTableHistoryItemView.baml
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\OrderTableHistoryView.baml
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\OrderTableView.baml
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\OTPView.baml
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\PaymentCompletedView.baml
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\PaymentItemView.baml
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\PaymentView.baml
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\ProductView.baml
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\RegisterAccountView.baml
@@ -173,6 +186,7 @@ E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_Quan
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\ResponseView.baml
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\SecurityView.baml
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\UpdateEmployeeView.baml
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\UpdateFoodDetailView.baml
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\View\UpdateFoodView.baml
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.g.resources
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\QL_QuanCafe.Properties.Resources.resources

@@ -75,18 +75,21 @@ namespace QL_QuanCafe.View
             {
                 DATBAN orderTable = orderFoodVM.GetOrderTabeleInfo(customerId);
                 int orderTableId = orderTable.MaDatBan;
-                orderFoodVM.InsertDataToBill(customerId, orderTableId);
+                
+                if ( !orderFoodVM.IsOrdering(customerId) )
+                {
+                    orderFoodVM.InsertDataToBill(customerId, orderTableId);
+                }
 
                 int billId = orderFoodVM.GetBillId(customerId);
-                if (InsertBillDetail(billId) == true)
+                if ( InsertBillDetail(billId) == true )
                 {
                     MessageBox.Show("Đặt món thành công!!!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
-                } 
+                }
                 else
                 {
                     MessageBox.Show("Đặt món thất bại!!!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
-                /// xử lý đặt món trong list CT_DATMON
             }
         }
     }

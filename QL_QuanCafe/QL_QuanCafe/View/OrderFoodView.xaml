@@ -112,10 +112,9 @@
 
             <ScrollViewer Grid.Column="0" >
 
-                <WrapPanel x:Name="navigationFoodList"
-                           ItemWidth="1080">
+                <StackPanel x:Name="navigationFoodList">
                     <!--<PageContent x:Name="mainContent"/>-->
-                </WrapPanel>
+                </StackPanel>
 
 
             </ScrollViewer>

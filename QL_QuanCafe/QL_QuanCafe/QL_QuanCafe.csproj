@@ -58,6 +58,10 @@
     <Reference Include="MaterialDesignThemes.Wpf, Version=4.7.0.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignThemes.4.7.0-ci358\lib\net462\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -175,6 +179,8 @@
     <Compile Include="ViewModel\AddNewFoodViewModel.cs" />
     <Compile Include="ViewModel\AdminProfileViewModel.cs" />
     <Compile Include="ViewModel\AdminViewModel.cs" />
+    <Compile Include="ViewModel\BillDetailItemViewModel.cs" />
+    <Compile Include="ViewModel\BillDetailViewModel.cs" />
     <Compile Include="ViewModel\ChangeWorkShiftViewModel.cs" />
     <Compile Include="ViewModel\CreateNewPasswordViewModel.cs" />
     <Compile Include="ViewModel\CustomerProfileViewModel.cs" />
@@ -216,6 +222,12 @@
     </Compile>
     <Compile Include="View\AdminProfileView.xaml.cs">
       <DependentUpon>AdminProfileView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BillDetailItemView.xaml.cs">
+      <DependentUpon>BillDetailItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BillDetailView.xaml.cs">
+      <DependentUpon>BillDetailView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ChangeWorkShiftView.xaml.cs">
       <DependentUpon>ChangeWorkShiftView.xaml</DependentUpon>
@@ -290,11 +302,23 @@
     <Compile Include="View\OrderFoodView.xaml.cs">
       <DependentUpon>OrderFoodView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\OrderTableHistoryItemView.xaml.cs">
+      <DependentUpon>OrderTableHistoryItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OrderTableHistoryView.xaml.cs">
+      <DependentUpon>OrderTableHistoryView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\OrderTableView.xaml.cs">
       <DependentUpon>OrderTableView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\OTPView.xaml.cs">
       <DependentUpon>OTPView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PaymentCompletedView.xaml.cs">
+      <DependentUpon>PaymentCompletedView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PaymentItemView.xaml.cs">
+      <DependentUpon>PaymentItemView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PaymentView.xaml.cs">
       <DependentUpon>PaymentView.xaml</DependentUpon>
@@ -316,6 +340,9 @@
     </Compile>
     <Compile Include="View\UpdateEmployeeView.xaml.cs">
       <DependentUpon>UpdateEmployeeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UpdateFoodDetailView.xaml.cs">
+      <DependentUpon>UpdateFoodDetailView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\UpdateFoodView.xaml.cs">
       <DependentUpon>UpdateFoodView.xaml</DependentUpon>
@@ -345,6 +372,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\AdminProfileView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BillDetailItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BillDetailView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -440,11 +475,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\OrderTableHistoryItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OrderTableHistoryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\OrderTableView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\OTPView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PaymentCompletedView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PaymentItemView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -473,6 +524,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\UpdateEmployeeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UpdateFoodDetailView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

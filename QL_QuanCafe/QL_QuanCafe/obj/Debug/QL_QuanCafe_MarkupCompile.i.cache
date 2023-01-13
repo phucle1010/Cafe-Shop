@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\App.xaml
-401880306030
+47-1847609832
 2353732275
-104-841852235
-25169782194
-Styles\ButtonStyles.xaml;Styles\UIColors.xaml;View\AccumlatorPointView.xaml;View\AddFoodMaterialView.xaml;View\AddNewEmployeeView.xaml;View\AddNewFoodView.xaml;View\AdminProfileView.xaml;View\ChangeWorkShiftView.xaml;View\CreateNewPasswordView.xaml;View\CustomerProfileView.xaml;View\CustomerView.xaml;View\EmployeeListView.xaml;View\EmployeeView.xaml;View\FoodView.xaml;View\ForgotPasswordView.xaml;View\HomeAdminDetailView.xaml;View\HomeAdminView.xaml;View\HomeCustomerDetailView.xaml;View\HomeCustomerView.xaml;View\HotFoodView.xaml;View\ImportMaterialView.xaml;View\LoginView.xaml;View\MainView_Admin.xaml;View\MainView_Customer.xaml;View\ManageOrderTableItemView.xaml;View\ManageOrderTableView.xaml;View\MaterialTypeItemView.xaml;View\MaterialTypeListView.xaml;View\OrderFoodInfoListView.xaml;View\OrderFoodView.xaml;View\OrderTableView.xaml;View\OTPView.xaml;View\PaymentView.xaml;View\ProductView.xaml;View\RegisterAccountView.xaml;View\ReportView.xaml;View\ResponseView.xaml;View\SecurityView.xaml;View\UpdateEmployeeView.xaml;View\UpdateFoodView.xaml;
+1131762427150
+26-1497077422
+Styles\ButtonStyles.xaml;Styles\UIColors.xaml;View\AccumlatorPointView.xaml;View\AddFoodMaterialView.xaml;View\AddNewEmployeeView.xaml;View\AddNewFoodView.xaml;View\AdminProfileView.xaml;View\BillDetailItemView.xaml;View\BillDetailView.xaml;View\ChangeWorkShiftView.xaml;View\CreateNewPasswordView.xaml;View\CustomerProfileView.xaml;View\CustomerView.xaml;View\EmployeeListView.xaml;View\EmployeeView.xaml;View\FoodView.xaml;View\ForgotPasswordView.xaml;View\HomeAdminDetailView.xaml;View\HomeAdminView.xaml;View\HomeCustomerDetailView.xaml;View\HomeCustomerView.xaml;View\HotFoodView.xaml;View\ImportMaterialView.xaml;View\LoginView.xaml;View\MainView_Admin.xaml;View\MainView_Customer.xaml;View\ManageOrderTableItemView.xaml;View\ManageOrderTableView.xaml;View\MaterialTypeItemView.xaml;View\MaterialTypeListView.xaml;View\OrderFoodInfoListView.xaml;View\OrderFoodView.xaml;View\OrderTableHistoryItemView.xaml;View\OrderTableHistoryView.xaml;View\OrderTableView.xaml;View\OTPView.xaml;View\PaymentCompletedView.xaml;View\PaymentItemView.xaml;View\PaymentView.xaml;View\ProductView.xaml;View\RegisterAccountView.xaml;View\ReportView.xaml;View\ResponseView.xaml;View\SecurityView.xaml;View\UpdateEmployeeView.xaml;View\UpdateFoodDetailView.xaml;View\UpdateFoodView.xaml;
 
-False
+True
 

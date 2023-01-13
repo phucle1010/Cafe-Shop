@@ -26,7 +26,7 @@ namespace QL_QuanCafe.View
         public MainView_Admin()
         {
             InitializeComponent();
-            MainContent.Content = new HomeAdminView();
+            MainContent.Navigate(new HomeAdminView());
         }
         [DllImport("user32.dll")]
         public static extern IntPtr SendMessage( IntPtr hWnd, int wMsg, int wParam, int lParam );
@@ -60,42 +60,42 @@ namespace QL_QuanCafe.View
 
         private void btnHome_Click( object sender, RoutedEventArgs e )
         {
-            MainContent.Content = new HomeAdminView();
+            MainContent.Navigate(new HomeAdminView());
         }
 
         private void btnCustomer_Click( object sender, RoutedEventArgs e )
         {
-            MainContent.Content = new CustomerView();
+            MainContent.Navigate(new CustomerView());
         }
 
         private void btnEmployee_Click( object sender, RoutedEventArgs e )
         {
-            MainContent.Content = new EmployeeView();
+            MainContent.Navigate(new EmployeeView());
         }
 
         private void btnFood_Click( object sender, RoutedEventArgs e )
         {
-            MainContent.Content = new FoodView();
+            MainContent.Navigate(new FoodView());
         }
 
         private void btnMaterial_Click( object sender, RoutedEventArgs e )
         {
-            MainContent.Content = new ImportMaterialView();
+            MainContent.Navigate(new ImportMaterialView());
         }
 
         private void btnManageOrderTable_Click( object sender, RoutedEventArgs e )
         {
-            MainContent.Content = new ManageOrderTableView();
+            MainContent.Navigate(new ManageOrderTableView());
         }
 
         private void btnPayment_Click( object sender, RoutedEventArgs e )
         {
-            MainContent.Content = new PaymentView();
+            MainContent.Navigate(new PaymentView());
         }
 
         private void btnReport_Click( object sender, RoutedEventArgs e )
         {
-            MainContent.Content = new ReportView();
+            MainContent.Navigate(new ReportView());
         }
 
         private void btnSecurity_Click( object sender, RoutedEventArgs e )

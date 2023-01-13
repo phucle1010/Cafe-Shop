@@ -96,5 +96,18 @@ namespace QL_QuanCafe.View
                 chosedFoodIndex = Int32.Parse(id);
             }
         }
+
+        private void btnUpdateFoodDetail_Click( object sender, RoutedEventArgs e )
+        {
+            if ( chosedFoodIndex == -1 )
+            {
+                MessageBox.Show("Vui lòng chọn món ăn cần cập nhật");
+            }
+            else
+            {
+                UpdateFoodDetailView updFoodDetail = new UpdateFoodDetailView(chosedFoodIndex);
+                updFoodDetail.Show();
+            }
+        }
     }
 }

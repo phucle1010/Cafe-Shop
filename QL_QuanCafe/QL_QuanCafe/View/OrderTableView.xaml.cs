@@ -57,7 +57,12 @@ namespace QL_QuanCafe.View
 
         private void btnSave_Click( object sender, RoutedEventArgs e )
         {
-            DateTime time = PresetTimePicker.SelectedTime.Value;
+
+            DateTime time = new DateTime();
+            if ( PresetTimePicker.SelectedTime != null )
+            {
+                time = PresetTimePicker.SelectedTime.Value;
+            }
             string note = txtNote.Text;
             if ( time == null )
             {
@@ -98,6 +103,24 @@ namespace QL_QuanCafe.View
             this.area = 3;
             cbbTable.Items.Clear();
             cbbTable = table.LoadTableData(cbbTable, area);
+        }
+
+        private void btnViewHistory_MouseMove( object sender, MouseEventArgs e )
+        {
+            iconHistory.Foreground = new SolidColorBrush(Colors.LightGray);
+            tbHistory.Foreground = new SolidColorBrush(Colors.LightGray);
+        }
+
+        private void btnViewHistory_MouseLeave( object sender, MouseEventArgs e )
+        {
+            iconHistory.Foreground = new SolidColorBrush(Colors.Gray);
+            tbHistory.Foreground = new SolidColorBrush(Colors.Gray);
+        }
+
+        private void btnViewHistory_Click( object sender, RoutedEventArgs e )
+        {
+            OrderTableHistoryView orderTableHistory = new OrderTableHistoryView();
+            orderTableHistory.Show();
         }
     }
 }

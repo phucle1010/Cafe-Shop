@@ -191,9 +191,7 @@
                     <Frame 
                         x:Name="MainContent"
                         Grid.Row="2"
-                        NavigationUIVisibility="Hidden"
-                        HorizontalContentAlignment="Stretch" 
-                        VerticalContentAlignment="Stretch"/>
+                        NavigationUIVisibility="Hidden"/>
                 </Grid>
             </Border>
         </Grid>
