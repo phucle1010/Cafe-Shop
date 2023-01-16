@@ -5,7 +5,8 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:QL_QuanCafe.View" xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      d:DesignHeight="700" d:DesignWidth="1200"
       Title="ResponseView">
 
     <Grid>
@@ -64,6 +65,89 @@
 
 
             </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1" Margin="30 0 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="75"/>
+                    <RowDefinition Height="75"/>
+                    <RowDefinition Height="75"/>
+                    <RowDefinition Height="75"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="75"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <StackPanel>
+                        <TextBlock>
+                            Name
+                        </TextBlock>
+                        <TextBox x:Name="tb_fullName"></TextBox>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <StackPanel>
+                        <TextBlock>
+                            Email
+                        </TextBlock>
+                        <TextBox x:Name="tb_email"></TextBox>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <StackPanel>
+                        <TextBlock>
+                            Phone
+                        </TextBlock>
+                        <TextBox x:Name="tb_phone"></TextBox>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <StackPanel>
+                        <TextBlock>
+                            Subject
+                        </TextBlock>
+                        <TextBox x:Name="tb_subject"></TextBox>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <StackPanel>
+                        <TextBlock>
+                            Feedback message
+                        </TextBlock>
+                        <TextBox
+                            x:Name="tb_feedBackMessage"
+                            Margin="0,0,0,0"
+                            VerticalAlignment="Top"
+                            Height="150"
+                            AcceptsReturn="True"
+                            TextWrapping="Wrap"
+                            VerticalScrollBarVisibility="Auto"
+                            materialDesign:HintAssist.Hint="Nội dung phản hồi"
+                            IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextFieldTextBoxEnabledComboBox}" />
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="5">
+                    <StackPanel>
+                        <Button
+                            x:Name="btn_Cancel"
+                            Style="{StaticResource MaterialDesignRaisedLightButton}"
+                            Width="150"
+                            ToolTip="Resource name: MaterialDesignRaisedLightButton" Click="btn_Cancel_Click">
+                            Hủy
+                        </Button>
+                        <Button
+                            x:Name="btn_SendFeedBack"
+                            Style="{StaticResource MaterialDesignRaisedLightButton}"
+                            Width="150"
+                            ToolTip="Resource name: MaterialDesignRaisedLightButton" Click="btn_SendFeedBack_Click">
+                            Gữi phản hồi
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Grid>
         </Grid>
     </Grid>
 </Page>

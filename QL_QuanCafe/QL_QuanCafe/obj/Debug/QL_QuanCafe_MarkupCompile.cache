@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\
+C:\Users\asus\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\Source Code\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Debug\
 QL_QuanCafe
 none
 false
 DEBUG;TRACE
-E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\App.xaml
-47-1847609832
-2353732275
-112-450451528
-26-1497077422
+C:\Users\asus\OneDrive - Trường ĐH CNTT - University of Information Technology\Máy tính\Source Code\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\App.xaml
+47-536791043
+2948482949
+112-279287744
+26-432950673
 Styles\ButtonStyles.xaml;Styles\UIColors.xaml;View\AccumlatorPointView.xaml;View\AddFoodMaterialView.xaml;View\AddNewEmployeeView.xaml;View\AddNewFoodView.xaml;View\AdminProfileView.xaml;View\BillDetailItemView.xaml;View\BillDetailView.xaml;View\ChangeWorkShiftView.xaml;View\CreateNewPasswordView.xaml;View\CustomerProfileView.xaml;View\CustomerView.xaml;View\EmployeeListView.xaml;View\EmployeeView.xaml;View\FoodView.xaml;View\ForgotPasswordView.xaml;View\HomeAdminDetailView.xaml;View\HomeAdminView.xaml;View\HomeCustomerDetailView.xaml;View\HomeCustomerView.xaml;View\HotFoodView.xaml;View\ImportMaterialView.xaml;View\LoginView.xaml;View\MainView_Admin.xaml;View\MainView_Customer.xaml;View\ManageOrderTableItemView.xaml;View\ManageOrderTableView.xaml;View\MaterialTypeItemView.xaml;View\MaterialTypeListView.xaml;View\OrderFoodInfoListView.xaml;View\OrderFoodView.xaml;View\OrderTableHistoryItemView.xaml;View\OrderTableHistoryView.xaml;View\OrderTableView.xaml;View\OTPView.xaml;View\PaymentCompletedView.xaml;View\PaymentItemView.xaml;View\PaymentView.xaml;View\ProductView.xaml;View\RegisterAccountView.xaml;View\ReportView.xaml;View\ResponseView.xaml;View\SecurityView.xaml;View\UpdateEmployeeView.xaml;View\UpdateFoodDetailView.xaml;View\UpdateFoodView.xaml;
 
 False

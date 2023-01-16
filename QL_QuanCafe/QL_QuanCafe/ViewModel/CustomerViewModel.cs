@@ -64,5 +64,35 @@ namespace QL_QuanCafe.ViewModel
             var customerList = DataProvider.Ins.DB.KHACHHANGs.SqlQuery("SELECT * FROM KHACHHANG").ToList<KHACHHANG>();
             return customerList;
         }
+
+        public string getCustomerEmail(string user)
+        {
+            string email = "";
+            try
+            {
+                email = DataProvider.Ins.DB.KHACHHANGs.SqlQuery($"SELECT * FROM KHACHHANG WHERE TenDN = '{user}'").ElementAt(0).Email.ToString();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            return email;
+        }
+
+        public string getCustomerSDT(string user)
+        {
+            string sdt = "";
+            try
+            {
+                sdt = DataProvider.Ins.DB.KHACHHANGs.SqlQuery($"SELECT * FROM KHACHHANG WHERE TenDN = '{user}'").ElementAt(0).SDT.ToString();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            return sdt;
+        }
     }
 }
