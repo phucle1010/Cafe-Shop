@@ -33,22 +33,22 @@ namespace QL_QuanCafe.ViewModel
         }
         public string getCustomerName (string user)
         {
-            string name = "";
-            try
-            {
-                name = DataProvider.Ins.DB.KHACHHANGs.SqlQuery($"SELECT * FROM KHACHHANG WHERE TenDN = '{user}'").ElementAt(0).TenKH.ToString();
-            }
-            catch (Exception e )
-            {
-                MessageBox.Show(e.ToString(), "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-
-            return name;
+            return DataProvider.Ins.DB.KHACHHANGs.SqlQuery($"SELECT * FROM KHACHHANG WHERE TenDN = '{user}'").ElementAt(0).TenKH.ToString();
         }
 
         public int getCustomerId( string user )
         {
             return DataProvider.Ins.DB.KHACHHANGs.SqlQuery($"SELECT * FROM KHACHHANG WHERE TenDN = '{user}'").ElementAt(0).MaKH;
+        }
+
+        public string getCustomerEmail( string user )
+        {
+            return DataProvider.Ins.DB.KHACHHANGs.SqlQuery($"SELECT * FROM KHACHHANG WHERE TenDN = '{user}'").ElementAt(0).Email.ToString();
+        }
+
+        public string getCustomerSDT( string user )
+        {
+            return DataProvider.Ins.DB.KHACHHANGs.SqlQuery($"SELECT * FROM KHACHHANG WHERE TenDN = '{user}'").ElementAt(0).SDT.ToString();
         }
 
         public int getTheNumberOfCustomer()

@@ -102,7 +102,8 @@ namespace QL_QuanCafe.View
 
         private void btnRespone_Click( object sender, RoutedEventArgs e )
         {
-            MainContent.Navigate( new ResponseView() );
+            ResponseView response = new ResponseView();
+            response.Show();
         }
 
         private void btnSecurity_Click( object sender, RoutedEventArgs e )

@@ -1,69 +1,124 @@
-﻿<Page x:Class="QL_QuanCafe.View.ResponseView"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:QL_QuanCafe.View" xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="ResponseView">
-
+﻿<Window x:Class="QL_QuanCafe.View.ResponseView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QL_QuanCafe.View" xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="ResponseView" Height="580" Width="550"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="35"/>
+            <!--Control bar-->
+            <RowDefinition Height="25"/>
+            <!--Content section / Child views-->
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <!--Control bar-->
+        <StackPanel x:Name="pnlControlBar"
+                                Grid.Row="0"
+                                Orientation="Horizontal"
+                                FlowDirection="RightToLeft"
+                                Background="Transparent"
+                                Margin="0,0,5,0" MouseLeftButtonDown="pnlControlBar_MouseLeftButtonDown" MouseEnter="pnlControlBar_MouseEnter">
 
-        <Grid Grid.Row="0">
+            <Button x:Name="btnClose"
+                                Style="{StaticResource controlButton}"
+                                Tag="{StaticResource color4}" Click="btnClose_Click">
+                <fa:IconImage Icon="Xmark" Style="{StaticResource controlButtonIcon}"/>
+            </Button>
+
+            <Button x:Name="btnMinimize"
+                                Style="{StaticResource controlButton}"
+                                Tag="{StaticResource color6}" Click="btnMinimize_Click">
+                <fa:IconImage Icon="WindowMinimize" Width="12" Style="{StaticResource controlButtonIcon}"/>
+            </Button>
+
+        </StackPanel>
+
+
+        <Grid Grid.Row="1" Margin="30 0 0 0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <!--CAPTION-->
-            <StackPanel Grid.Column="0"
-                                    Orientation="Horizontal"
-                                    VerticalAlignment="Center">
-                <fa:IconImage Icon="Message"
-                                          Height="20"
-                                          Width="20"
-                                          Foreground="{StaticResource primaryTextColor}"
-                                          Margin="35,0,10,0"/>
-                <TextBlock Text="Phản hồi"
-                                       Foreground="{StaticResource primaryTextColor}"
-                                       FontFamily="Montserrat"
-                                       FontSize="16"
-                                       FontWeight="Medium"
-                                       VerticalAlignment="Center"/>
 
-            </StackPanel>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="75"/>
+                    <RowDefinition Height="75"/>
+                    <RowDefinition Height="75"/>
+                    <RowDefinition Height="75"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <StackPanel>
+                        <TextBlock>
+                            Họ và tên
+                        </TextBlock>
+                        <TextBox x:Name="tb_fullName"></TextBox>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <StackPanel>
+                        <TextBlock>
+                            Email
+                        </TextBlock>
+                        <TextBox x:Name="tb_email"></TextBox>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <StackPanel>
+                        <TextBlock>
+                            Số điện thoại
+                        </TextBlock>
+                        <TextBox x:Name="tb_phone"></TextBox>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="3">
+                    <StackPanel>
+                        <TextBlock>
+                            Chủ đề
+                        </TextBlock>
+                        <TextBox x:Name="tb_subject"></TextBox>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <StackPanel>
+                        
+                        <TextBox
+                            x:Name="tb_feedBackMessage"
+                            Margin="0,0,0,0"
+                            VerticalAlignment="Top"
+                            Height="150"
+                            AcceptsReturn="True"
+                            TextWrapping="Wrap"
+                            VerticalScrollBarVisibility="Auto"
+                            materialDesign:HintAssist.Hint="Nội dung phản hồi"
+                            IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignOutlinedTextFieldTextBoxEnabledComboBox}" />
 
-            <!--StackPanel-->
-            <StackPanel Grid.Column="1"
-                                    Orientation="Horizontal"
-                                    FlowDirection="RightToLeft"
-                                    VerticalAlignment="Center"
-                                    Margin="0,0,10,0">
-                <Button Style="{StaticResource iconButton}"
-                                    Tag="{StaticResource color1}">
-                    <fa:IconImage Icon="AngleDown" Style="{StaticResource iconButtonIcon}"/>
-                </Button>
-                <TextBlock x:Name="tbUserName" Text="Hi Tuấn"
-                                       Foreground="{StaticResource titleColor3}"
-                                       FontFamily="Montserrat"
-                                       FontSize="12"
-                                       VerticalAlignment="Center"
-                                       Cursor="Hand"/>
-                <Ellipse Height="35" Width="35"
-                                     Stroke="{StaticResource color2}"
-                                     StrokeThickness="2"
-                                     Margin="10,0,10,0">
-                    <Ellipse.Fill>
-                        <ImageBrush ImageSource="/Image/user.png"/>
-                    </Ellipse.Fill>
-                </Ellipse>
-
-
-            </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 30 0 0">
+                            <Button
+                                    x:Name="btn_SendFeedBack"
+                                    Style="{StaticResource MaterialDesignRaisedLightButton}"
+                                    Width="150"
+                                    ToolTip="Resource name: MaterialDesignRaisedLightButton" Background="#478778" Foreground="White" BorderBrush="#478778" Click="btn_SendFeedBack_Click">
+                                Gửi phản hồi
+                            </Button>
+                            <Button
+                                    x:Name="btn_Cancel"
+                                    Style="{StaticResource MaterialDesignRaisedLightButton}"
+                                    Width="100"
+                                    Margin="20 0 10 0"
+                                    ToolTip="Resource name: MaterialDesignRaisedLightButton" Click="btn_Cancel_Click">
+                                Hủy
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </Grid>
         </Grid>
     </Grid>
-</Page>
+
+</Window>
