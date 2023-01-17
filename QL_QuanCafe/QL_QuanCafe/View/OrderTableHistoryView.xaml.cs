@@ -108,6 +108,7 @@ namespace QL_QuanCafe.View
             else
             {
                 int orderTableIdOfMergedChosedTable = orderTableVM.GetOrderTableIdByTableName(tbMergedTableName.Text, customerId);
+                int billIdOfMergedChosedTable = orderTableVM.GetBillIdOfMergedTable(orderTableIdOfMergedChosedTable);
                 foreach ( var item in lvMergedChosedTableList.Items)
                 {
                     if (item.ToString() != tbMergedTableName.Text )
@@ -117,8 +118,8 @@ namespace QL_QuanCafe.View
                         int total = orderTableVM.GetCurrentTotalOfTable(orderTableIdOfMergedTable);
                         int billIdOfMergedTable = orderTableVM.GetBillIdOfMergedTable(orderTableIdOfMergedTable);
 
-                        orderTableVM.UpdateTotalBillAfterMerging(orderTableIdOfMergedChosedTable, total, orderTableIdOfMergedTable);
-                        if (orderTableVM.UpdateAllDataAgainOfMergedTable(billIdOfMergedTable, orderTableIdOfMergedTable, item.ToString()) == 1)
+                        orderTableVM.UpdateTotalBillAfterMerging(orderTableIdOfMergedChosedTable, total);
+                        if (orderTableVM.UpdateAllDataAgainOfMergedTable(billIdOfMergedChosedTable, billIdOfMergedTable, orderTableIdOfMergedTable, item.ToString()) == 1)
                         {
                             MessageBoxResult result = MessageBox.Show("Gộp bàn thành công", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
                             if (result == MessageBoxResult.OK )

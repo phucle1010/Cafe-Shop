@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:QL_QuanCafe.View" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="200" d:DesignWidth="1200">
+             d:DesignHeight="190" d:DesignWidth="700">
         <Grid Background="White" >
         <Grid Height="150"
               Margin="40 20 0 20">
@@ -23,14 +23,16 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Border CornerRadius="50"
-                                Width="150"
-                                Grid.Column="0">
-                    <Image x:Name="foodImage"  Source="/Image/area-1.jpg"
-                                   Stretch="Fill">
+                        Width="100"
+                        Grid.Column="0">
+                    <Image x:Name="foodImage" 
+                           Margin="0 10 0 0"
+                           Source="/Image/area-1.jpg"
+                           Stretch="Fill">
                         <Image.Clip>
-                            <RectangleGeometry RadiusX="30"
-                                           RadiusY="30"
-                                           Rect="0,0,148,120"/>
+                            <RectangleGeometry RadiusX="10"
+                                           RadiusY="10"
+                                           Rect="0,0,100,100"/>
                         </Image.Clip>
                     </Image>
                 </Border>
@@ -38,46 +40,46 @@
                 <TextBlock x:Name="foodName"
                        Text="Cà phê pha máy"
                        Grid.Column="1"
-                       FontSize="18"
+                       FontSize="16"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Center"/>
 
                 <TextBlock x:Name="foodPrice" 
                        Text="40,000 VNĐ"
                        Grid.Column="2"
-                       FontSize="20"
+                       FontSize="16"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Center"/>
 
                 <Grid Grid.Column="3"
                               Height="40"
-                              Margin="20 0 20 0">
+                              Margin="10 0 10 0">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
-                    <Button
-                                    Grid.Column="0"
-                                    FontSize="16"
-                                    Content="-" Click="btnDownValue_Click"/>
+                    <Button Padding="0"
+                            Grid.Column="0"
+                            FontSize="16"
+                            Content="-" Click="btnDownValue_Click"/>
 
                     <TextBlock x:Name="txtcurrentValue" Grid.Column="1"
-                                       Text="0"
-                                       VerticalAlignment="Center"
-                                       HorizontalAlignment="Center"
-                                       FontSize="20"/>
-                    <Button 
-                                    Grid.Column="2"
-                                    FontSize="16"
-                                    Content="+" Click="btnUpValue_Click"/>
+                                Text="0"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"
+                                FontSize="16"/>
+                    <Button Padding="0"
+                            Grid.Column="2"
+                            FontSize="16"
+                            Content="+" Click="btnUpValue_Click"/>
                 </Grid>
 
                 <Button Grid.Column="4"
                     x:Name="btnSubmit"
                     Content="Đặt món"
-                    Width="150"
+                    Width="100"
                     VerticalAlignment="Center" Click="btnSubmit_Click"></Button>
             </Grid>
 

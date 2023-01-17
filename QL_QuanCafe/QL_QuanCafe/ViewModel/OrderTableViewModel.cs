@@ -115,7 +115,7 @@ namespace QL_QuanCafe.ViewModel
             return DataProvider.Ins.DB.DATBANs.SqlQuery($"SELECT * FROM DATBAN DB, BAN B WHERE DB.MaBan = B.MaBan AND DB.MaKH={customerId} AND B.TenBan=N'{tableName}' AND DB.TrangThaiDatMon=0").ElementAt(0).MaDatBan;
         }
 
-        public void UpdateTotalBillAfterMerging(int orderTableIdOfMergedChosedTable, int total, int orderTableIdOfMergedTable ) 
+        public void UpdateTotalBillAfterMerging(int orderTableIdOfMergedChosedTable, int total ) 
         {
             DataProvider.Ins.DB.Database.ExecuteSqlCommand($"UPDATE HOADON SET TongTien += {total} WHERE MaDatBan={orderTableIdOfMergedChosedTable}");
         }
@@ -125,12 +125,12 @@ namespace QL_QuanCafe.ViewModel
             return DataProvider.Ins.DB.HOADONs.SqlQuery($"SELECT * FROM HOADON WHERE MaDatBan={orderTableId}").ElementAt(0).MaHD;
         }
 
-        public int UpdateAllDataAgainOfMergedTable(int billId, int mergedTableId, string mergedChosedTableName)
+        public int UpdateAllDataAgainOfMergedTable( int billIdOfMergedChosedTable, int billIdOfMergedTable, int mergedTableId, string mergedChosedTableName )
         {
             try
             {
-                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"DELETE FROM CT_HOADON WHERE MaHD={billId}");
-                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"DELETE FROM HOADON WHERE MaHD={billId}");
+                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"UPDATE CT_HOADON SET MaHD={billIdOfMergedChosedTable} WHERE MaHD={billIdOfMergedTable}");
+                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"DELETE FROM HOADON WHERE MaHD={billIdOfMergedTable}");  /// Cập nhật lại thành mã của hóa đơn được gộp
                 DataProvider.Ins.DB.Database.ExecuteSqlCommand($"UPDATE BAN SET TrangThai=1 WHERE TenBan=N'{mergedChosedTableName}'");
                 DataProvider.Ins.DB.Database.ExecuteSqlCommand($"DELETE FROM DATBAN WHERE MaDatBan={mergedTableId}");
             }

@@ -69,7 +69,7 @@ namespace QL_QuanCafe.View
 
             SANPHAM s = updFoodVM.GetFoodData(foodId);
             tbFoodName.Text = s.TenSP;
-            tbFoodPrice.Text = s.GiaSP.ToString();
+            tbFoodPrice.Text = String.Format("{0:C0}", s.GiaSP); 
             cbFoodStatus.Text = Boolean.Parse(s.TrangThai.Value.ToString()) == true ? "Còn sẵn" : "Hết hàng"; 
         }
 

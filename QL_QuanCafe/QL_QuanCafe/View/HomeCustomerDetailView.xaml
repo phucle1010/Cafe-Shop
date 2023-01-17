@@ -6,7 +6,7 @@
       xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
       xmlns:local="clr-namespace:QL_QuanCafe.View" xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
       mc:Ignorable="d" 
-      d:DesignHeight="700" d:DesignWidth="1000"
+      d:DesignHeight="800" d:DesignWidth="1200"
       Title="HomeCustomerDetailView">
 
     <Grid Margin="20">
@@ -88,19 +88,19 @@
                                 <ColumnDefinition />
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock x:Name="hi"
-                                               Grid.Column="0"
-                                               Text="8"
-                                               FontSize="60"
-                                               Foreground="White"
-                                               HorizontalAlignment="Center"
-                                               Margin="0 -20 0 0"/>
+                            <TextBlock x:Name="tbOrderedQuantity"
+                                        Grid.Column="0"
+                                        Text="8"
+                                        FontSize="60"
+                                        Foreground="White"
+                                        HorizontalAlignment="Center"
+                                        Margin="0 -20 0 0"/>
                             <fa:IconImage Grid.Column="1" 
-                                                  Icon="BowlFood"
-                                                  Foreground="White"
-                                                  Width="100"
-                                                  Height="100"
-                                                  Margin="0 -40 0 0"/>
+                                            Icon="BowlFood"
+                                            Foreground="White"
+                                            Width="100"
+                                            Height="100"
+                                            Margin="0 -40 0 0"/>
                         </Grid>
                     </Grid>
                 </Border>
@@ -113,35 +113,31 @@
                     CornerRadius="10">
                 <Grid>
                     <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="*"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="30"/>
                 </Grid.RowDefinitions>
                     <Label Content="Món ăn yêu thích"
                            FontSize="30"
                            Grid.Row="0"/>
                     <lvc:PieChart LegendLocation="Bottom" 
-                              Hoverable="False" 
-                              DataTooltip="{x:Null}"
-                              Grid.Row="1" 
-                              DataClick="Chart_OnDataClick">
+                                  Hoverable="False" 
+                                  DataTooltip="{x:Null}"
+                                  Grid.Row="1" 
+                                  DataClick="Chart_OnDataClick">
                         <lvc:PieChart.Series>
-                            <lvc:PieSeries x:Name="standardSeries"
-                                           Title="Cà phê sữa"
-                                           Values="4" 
+                            <lvc:PieSeries x:Name="firstFoodSeries"
                                            DataLabels="True"
                                            FontSize="20"/>
-                            <lvc:PieSeries x:Name="loyalSeries"
-                                           Title="Sinh tố dâu" 
-                                           Values="2" 
+                            <lvc:PieSeries x:Name="secondFoodSeries"
                                            DataLabels="True"
                                            FontSize="20"/>
-                            <lvc:PieSeries x:Name="vipstandardSeries"
-                                           Title="Bạc xỉu" 
-                                           Values="1" 
+                            <lvc:PieSeries x:Name="thirdFoodSeries"
                                            DataLabels="True"
                                            FontSize="20"/>
                         </lvc:PieChart.Series>
                     </lvc:PieChart>
+                    <TextBlock Text="Tần suất đặt món" Grid.Row="2" HorizontalAlignment="Center" FontSize="14" FontWeight="Light" Foreground="Gray"/>
                 </Grid>
             </Border>
         </Grid>

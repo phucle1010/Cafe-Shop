@@ -3,7 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+      xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="800" d:DesignWidth="1200"
       Title="OrderFoodView">
@@ -11,7 +11,6 @@
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="35"/>
-            <RowDefinition Height="45"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
@@ -68,70 +67,41 @@
             </StackPanel>
         </Grid>
 
-        <Grid Grid.Row="1"
-              Margin="40 0 20 0">
+        <Grid x:Name="foodList" Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <TextBlock Grid.Column="0"
-                       Text="Hình ảnh"
-                       FontSize="18"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"/>
-            <TextBlock Grid.Column="1"
-                       Text="Tên món ăn"
-                       FontSize="18"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"/>
-            <TextBlock Grid.Column="2"
-                       Text="Giá tiền"
-                       FontSize="18"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"/>
-            <TextBlock Grid.Column="3"
-                       Text="Số lượng"
-                       FontSize="18"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"/>
-            <TextBlock Grid.Column="4"
-                       Text="Lựa chọn"
-                       FontSize="18"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"/>
-            
-        </Grid>
-        
-        <Grid x:Name="foodList" Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="400"/>
             </Grid.ColumnDefinitions>
 
             <ScrollViewer Grid.Column="0" >
-
                 <StackPanel x:Name="navigationFoodList">
                     <!--<PageContent x:Name="mainContent"/>-->
                 </StackPanel>
-
-
             </ScrollViewer>
+
+            <Border Grid.Column="1" BorderThickness="2 0 0 0" BorderBrush="{StaticResource color12}">
+                <StackPanel Grid.Column="1">
+                    <TextBlock Text="Danh sách các món đã chọn" FontSize="16" FontWeight="Bold" Foreground="Gray" Margin="10 0 0 0"/>
+                    <ListView x:Name="lvOrderChosedFood"/>
+                    <Button x:Name="btnSubmit"
+                            Content="Xác nhận đặt món"
+                            FontSize="16"
+                            Width="200"
+                            Height="35"
+                            HorizontalAlignment="Right"
+                            Margin="0 10 20 0" 
+                            Background="#988558"
+                            BorderThickness="0"
+                            Click="btnSubmit_Click"/>
+                </StackPanel>
+            </Border>
         </Grid>
 
-        <Border Grid.Row="3"
-                BorderBrush="{StaticResource color12}"
-                BorderThickness="0 5 0 0">
-            <Grid >
-                <Button x:Name="btnSubmit"
-                        Content="Xác nhận đặt món"
-                        FontSize="16"
-                        Width="200"
-                        Height="35"
-                        HorizontalAlignment="Right"
-                        Margin="0 0 60 0" Click="btnSubmit_Click"/>
-            </Grid>
-        </Border>
+        <Button Grid.Row="2" HorizontalAlignment="Left" x:Name="btnViewHistory" Background="Transparent" BorderThickness="0" Cursor="Hand" MouseMove="btnViewHistory_MouseMove" MouseLeave="btnViewHistory_MouseLeave" Click="btnViewHistory_Click" >
+            <StackPanel Orientation="Horizontal">
+                <materialDesign:PackIcon x:Name="iconHistory" Kind="RestoreClock" Foreground="Gray" />
+                <TextBlock x:Name="tbHistory" Margin="6 0 0 0" Text="Xem lịch sử đặt món" Foreground="Gray"/>
+            </StackPanel>
+        </Button>
     </Grid>
 </Page>

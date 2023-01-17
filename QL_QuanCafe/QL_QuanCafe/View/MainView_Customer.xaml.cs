@@ -32,7 +32,7 @@ namespace QL_QuanCafe.View
         {
             CustomerViewModel customer = new CustomerViewModel();
             string userName = Properties.Settings.Default ["user"].ToString();
-            MainContent.Content = new HomeCustomerView();
+            MainContent.Navigate( new HomeCustomerView() );
         }
 
         [DllImport("user32.dll")]
@@ -77,38 +77,44 @@ namespace QL_QuanCafe.View
 
         private void btnPersonal_Click( object sender, RoutedEventArgs e )
         {
-            MainContent.Content = new HomeCustomerView();
+            MainContent.Navigate( new HomeCustomerView() );
         }
 
         private void btnHotFood_Click( object sender, RoutedEventArgs e )
         {
-            MainContent.Content = new HotFoodView();
+            MainContent.Navigate( new HotFoodView(MainContent) );
         }
 
         private void btnOrderTable_Click( object sender, RoutedEventArgs e )
         {
-            MainContent.Content = new OrderTableView();
+            MainContent.Navigate( new OrderTableView() );
         }
 
         private void btnOrderFood_Click( object sender, RoutedEventArgs e )
         {
-            MainContent.Content = new OrderFoodView();
+            MainContent.Navigate( new OrderFoodView() );
         }
 
         private void btnAccPoint_Click( object sender, RoutedEventArgs e )
         {
-            MainContent.Content = new AccumlatorPointView();
+            MainContent.Navigate( new AccumlatorPointView() );
         }
 
         private void btnRespone_Click( object sender, RoutedEventArgs e )
         {
-            MainContent.Content = new ResponseView();
+            MainContent.Navigate( new ResponseView() );
         }
 
         private void btnSecurity_Click( object sender, RoutedEventArgs e )
         {
             SecurityView security = new SecurityView();
             security.Show();
+        }
+
+        private void btnRestart_Click( object sender, RoutedEventArgs e )
+        {
+            System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+            Application.Current.Shutdown();
         }
     }
 }

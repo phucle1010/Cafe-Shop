@@ -23,7 +23,6 @@ namespace QL_QuanCafe.View
     public partial class ManageOrderTableView : Page
     {
         ManageOrderTableViewModel mnOrderTbVM = new ManageOrderTableViewModel();
-        string tableId; 
         public ManageOrderTableView()
         {
             InitializeComponent();

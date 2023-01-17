@@ -3,9 +3,9 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:QL_QuanCafe.View" xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+      xmlns:local="clr-namespace:QL_QuanCafe.View" xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="800" d:DesignWidth="1200"
       Title="HotFoodView">
 
     <Grid>
@@ -64,6 +64,208 @@
 
 
             </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="450"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Orientation="Horizontal">
+                <Border CornerRadius="50"
+                        Width="300"
+                        Grid.Column="0"
+                        Margin="100 65">
+                    <Image x:Name="top1Image" 
+                           Margin="0 10 0 0"
+                           Source="/Image/area-1.jpg"
+                           Stretch="Fill">
+                        <Image.Clip>
+                            <RectangleGeometry RadiusX="10"
+                                           RadiusY="10"
+                                           Rect="0,0,300,300"/>
+                        </Image.Clip>
+                    </Image>
+                </Border>
+                <StackPanel VerticalAlignment="Center" Margin="100 0 0 0">
+                    <TextBlock Text="TOP 1" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
+                    <StackPanel Orientation="Horizontal" Margin="0 10">
+                        <TextBlock Text="Tên món ăn: " FontSize="20" Margin="0 0 20 0" FontWeight="DemiBold"/>
+                        <TextBlock x:Name="top1Name" Text="Cà phê sữa" FontSize="20" FontWeight="Light"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 10">
+                        <TextBlock Text="Giá tiền: " FontSize="20" Margin="0 0 20 0" FontWeight="DemiBold"/>
+                        <TextBlock x:Name="top1Price" Text="40.000 đ" FontSize="20" FontWeight="Light"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 10">
+                        <TextBlock Text="Số lượng đã đặt món: " FontSize="20" Margin="0 0 20 0" FontWeight="DemiBold"/>
+                        <TextBlock x:Name="top1Quantity" Text="50" FontSize="20" FontWeight="Light"/>
+                    </StackPanel>
+
+                    <Button x:Name="btnView"
+                            BorderThickness="0"
+                            Content="Xem ngay"
+                            Foreground="White"
+                            FontSize="14"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            Grid.Column="2"
+                            Margin="200,20,0,0"
+                            HorizontalAlignment="Right" Click="btnView_Click">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Background" Value="#478778"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#2AAA8A"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Width="120" Height="36"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+
+            <Grid Grid.Row="1" Margin="0 0 0 20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <materialDesign:Card Width="200">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="140" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Image  x:Name="top2Image"
+                                Source="/Image/area-1.jpg"
+                                Height="140"
+                                Width="196"
+                                Stretch="UniformToFill" />
+                        <Button
+                                Grid.Row="0"
+                                Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Bottom"
+                                Background="#478778"
+                                BorderBrush="#478778"
+                                Margin="0 0 16 -20" Click="btnView_Click">
+                            <materialDesign:PackIcon Kind="ArrowRightDropCircleOutline" Width="20" Height="20" Foreground="White"/>
+                        </Button>
+                        <StackPanel
+                                    Grid.Row="1"
+                                    Margin="8 24 8 0">
+                            <TextBlock  x:Name="top2Name"
+                                        FontWeight="Bold" Text="Sinh tố cà rốt" FontSize="15"/>
+                            <StackPanel Orientation="Horizontal" Margin="0 20 0 5">
+                                <TextBlock Text="Giá tiền: " FontSize="13" Margin="0 0 10 0" FontWeight="DemiBold"/>
+                                <TextBlock x:Name="top2Price" Text="50.000 đ" FontSize="13" FontWeight="Light"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0 10">
+                                <TextBlock Text="Số lượng đã đặt món: " FontSize="13" Margin="0 0 10 0" FontWeight="DemiBold"/>
+                                <TextBlock x:Name="top2Quantity" Text="50" FontSize="13" FontWeight="Light"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </materialDesign:Card>
+
+                <materialDesign:Card Width="200" Grid.Column="1">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="140" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Image  x:Name="top3Image"
+                                Source="/Image/area-1.jpg"
+                                Height="140"
+                                Width="196"
+                                Stretch="UniformToFill" />
+                        <Button
+                                Grid.Row="0"
+                                Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Bottom"
+                                Background="#478778"
+                                BorderBrush="#478778"
+                                Margin="0 0 16 -20" Click="btnView_Click">
+                            <materialDesign:PackIcon Kind="ArrowRightDropCircleOutline" Width="20" Height="20" Foreground="White"/>
+                        </Button>
+                        <StackPanel
+                                    Grid.Row="1"
+                                    Margin="8 24 8 0">
+                            <TextBlock  x:Name="top3Name"
+                                        FontWeight="Bold" Text="Sinh tố cà rốt" FontSize="15"/>
+                            <StackPanel Orientation="Horizontal" Margin="0 20 0 5">
+                                <TextBlock Text="Giá tiền: " FontSize="13" Margin="0 0 10 0" FontWeight="DemiBold"/>
+                                <TextBlock x:Name="top3Price" Text="50.000 đ" FontSize="13" FontWeight="Light"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0 10">
+                                <TextBlock Text="Số lượng đã đặt món: " FontSize="13" Margin="0 0 10 0" FontWeight="DemiBold"/>
+                                <TextBlock x:Name="top3Quantity" Text="50" FontSize="13" FontWeight="Light"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </materialDesign:Card>
+
+                <materialDesign:Card Width="200" Grid.Column="2">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="140" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Image  x:Name="top4Image"
+                                Source="/Image/area-1.jpg"
+                                Height="140"
+                                Width="196"
+                                Stretch="UniformToFill" />
+                        <Button
+                                Grid.Row="0"
+                                Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Bottom"
+                                Background="#478778"
+                                BorderBrush="#478778"
+                                Margin="0 0 16 -20" Click="btnView_Click">
+                            <materialDesign:PackIcon Kind="ArrowRightDropCircleOutline" Width="20" Height="20" Foreground="White"/>
+                        </Button>
+                        <StackPanel
+                                    Grid.Row="1"
+                                    Margin="8 24 8 0">
+                            <TextBlock  x:Name="top4Name"
+                                        FontWeight="Bold" Text="Sinh tố cà rốt" FontSize="15"/>
+                            <StackPanel Orientation="Horizontal" Margin="0 20 0 5">
+                                <TextBlock Text="Giá tiền: " FontSize="13" Margin="0 0 10 0" FontWeight="DemiBold"/>
+                                <TextBlock x:Name="top4Price" Text="50.000 đ" FontSize="13" FontWeight="Light"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0 10">
+                                <TextBlock Text="Số lượng đã đặt món: " FontSize="13" Margin="0 0 10 0" FontWeight="DemiBold"/>
+                                <TextBlock x:Name="top4Quantity" Text="50" FontSize="13" FontWeight="Light"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </materialDesign:Card>
+            </Grid>
         </Grid>
     </Grid>
 </Page>

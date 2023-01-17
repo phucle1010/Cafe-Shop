@@ -113,5 +113,11 @@ namespace QL_QuanCafe.View
             this.Visibility = Visibility.Hidden;
             loginLayout.Show();
         }
+
+        private void btnRestart_Click( object sender, RoutedEventArgs e )
+        {
+            System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+            Application.Current.Shutdown();
+        }
     }
 }

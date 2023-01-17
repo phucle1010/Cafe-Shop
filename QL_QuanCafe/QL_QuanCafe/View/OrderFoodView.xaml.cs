@@ -2,10 +2,12 @@
 using QL_QuanCafe.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Drawing;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
+using System.Windows.Media;
 
 namespace QL_QuanCafe.View
 {
@@ -23,12 +25,28 @@ namespace QL_QuanCafe.View
             InitializeComponent();
             LoadData();
             LoadFoodList();
+            ((INotifyCollectionChanged) lvOrderChosedFood.Items).CollectionChanged += OrderFoodView_CollectionChanged;
         }
+
+        private void OrderFoodView_CollectionChanged( object sender, NotifyCollectionChangedEventArgs e )
+        {
+            if (lvOrderChosedFood.Items.Count > 0)
+            {
+                btnSubmit.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                btnSubmit.Visibility = Visibility.Hidden;
+            } 
+                
+        }
+
         void LoadData()
         {
             CustomerViewModel customer = new CustomerViewModel();
             tbUserName.Text = customer.getCustomerName(userName);
             customerId = orderFoodVM.GetCustomerId(userName);
+            btnSubmit.Visibility = Visibility.Hidden;
         }
 
         void LoadFoodList()
@@ -36,7 +54,7 @@ namespace QL_QuanCafe.View
             List<SANPHAM> sp = orderFoodVM.GetAllFood();
             foreach (var item in sp)
             {
-                OrderFoodInfoListView foodDetailInfo = new OrderFoodInfoListView(orderDetailList, item.MaSP, item.HinhAnh, item.TenSP, (int)item.GiaSP);
+                OrderFoodInfoListView foodDetailInfo = new OrderFoodInfoListView(lvOrderChosedFood, orderDetailList, item.MaSP, item.HinhAnh, item.TenSP, (int)item.GiaSP);
                 navigationFoodList.Children.Add(foodDetailInfo);
             }
         }
@@ -85,12 +103,32 @@ namespace QL_QuanCafe.View
                 if ( InsertBillDetail(billId) == true )
                 {
                     MessageBox.Show("Đặt món thành công!!!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                    lvOrderChosedFood.Items.Clear();
+                    orderDetailList.Clear();
                 }
                 else
                 {
                     MessageBox.Show("Đặt món thất bại!!!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
+        }
+
+        private void btnViewHistory_MouseMove( object sender, System.Windows.Input.MouseEventArgs e )
+        {
+            iconHistory.Foreground = new SolidColorBrush(Colors.LightGray);
+            tbHistory.Foreground = new SolidColorBrush(Colors.LightGray);
+        }
+
+        private void btnViewHistory_MouseLeave( object sender, System.Windows.Input.MouseEventArgs e )
+        {
+            iconHistory.Foreground = new SolidColorBrush(Colors.Gray);
+            tbHistory.Foreground = new SolidColorBrush(Colors.Gray);
+        }
+
+        private void btnViewHistory_Click( object sender, RoutedEventArgs e )
+        {
+            OrderTableHistoryView orderTableHistory = new OrderTableHistoryView();
+            orderTableHistory.Show();
         }
     }
 }

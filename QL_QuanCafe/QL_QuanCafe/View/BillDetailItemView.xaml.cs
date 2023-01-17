@@ -43,8 +43,7 @@ namespace QL_QuanCafe.View
             lbFoodName.Content = billDetailItemVM.GetFoodInfo((int) billDetail.MaSP).TenSP;
             lbQuantity.Content = billDetail.SoLuong;
             int price = (int) billDetailItemVM.GetFoodInfo((int) billDetail.MaSP).GiaSP;
-            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
-            lbTotal.Content = double.Parse((price * billDetail.SoLuong).ToString()).ToString("#,###", cul.NumberFormat); 
+            lbTotal.Content = String.Format("{0:C0}", price * billDetail.SoLuong); 
         }
     }
 }

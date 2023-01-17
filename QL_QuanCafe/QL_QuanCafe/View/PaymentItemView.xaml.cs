@@ -37,12 +37,9 @@ namespace QL_QuanCafe.View
 
             string tableId = paymentVM.GetTableId(orderTableId);
             lbTableName.Content = paymentVM.GetTableName(tableId);
-
             lbCustomerName.Content = customerName;
-            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
-            lbTotal.Content = double.Parse(total.ToString()).ToString("#,###", cul.NumberFormat);
+            lbTotal.Content = String.Format("{0:C0}", total);
             this.payment = payment;
-
             this.billId = billId;
         }
 

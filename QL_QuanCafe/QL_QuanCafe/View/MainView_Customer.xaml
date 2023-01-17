@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
          xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
-        xmlns:local="clr-namespace:QL_QuanCafe.View"
+        xmlns:local="clr-namespace:QL_QuanCafe.View" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="MainView_Customer" Height="800" Width="1400"
         WindowStartupLocation="CenterScreen"
@@ -122,15 +122,15 @@
                         </StackPanel>
                     </RadioButton>
 
-                    <!--<RadioButton Style="{StaticResource menuButton}"
-                                 Tag="{StaticResource color8}"
-                                 Command="{Binding ShowCustomerViewCommand}">
+                    <RadioButton Style="{StaticResource menuButton}"
+                                 Tag="#A0522D"
+                                 Command="{Binding ShowCustomerViewCommand}" 
+                                 Margin="0 160 0 0" Click="btnRestart_Click">
                         <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="ChartLine" Style="{StaticResource menuButtonIcon}"/>
-                            <TextBlock Text="Báo cáo" Style="{StaticResource menuButtonText}"/>
+                            <materialDesign:PackIcon Kind="Restart" Width="25" Height="25" Margin="22 0 20 0"/>
+                            <TextBlock Text="Làm mới" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
-                    </RadioButton>-->
-
+                    </RadioButton>
                 </StackPanel>
 
             </Border>
@@ -184,11 +184,6 @@
                         Grid.Row="1"
                         NavigationUIVisibility="Hidden"/>
 
-
-                    <!--Content section/ Child views-->
-                    <!--<Frame x:Name="MainContent"
-                            Grid.Row="2"
-                            Margin="25"/>-->
                 </Grid>
             </Border>
         </Grid>

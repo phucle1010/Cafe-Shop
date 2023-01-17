@@ -1,5 +1,7 @@
 ﻿using LiveCharts;
+using LiveCharts.Helpers;
 using LiveCharts.Wpf;
+using QL_QuanCafe.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,17 +24,39 @@ namespace QL_QuanCafe.View
     /// </summary>
     public partial class HomeCustomerDetailView : Page
     {
+        CustomerViewModel customerVM = new CustomerViewModel();
+        public string [] FoodTitles { get; set; }
+        public int [] Values { get; set; }
+        int customerId;
+
         public HomeCustomerDetailView()
         {
             InitializeComponent();
-
-            PointLabel = chartPoint =>
-                string.Format("{0} ({1:P})", chartPoint.Y, chartPoint.Participation);
-
+            customerId = customerVM.getCustomerId(Properties.Settings.Default ["user"].ToString());
+            LoadUIData();
+            LoadFavoriteFood();
             DataContext = this;
         }
 
-        public Func<ChartPoint, string> PointLabel { get; set; }
+        private void LoadUIData()
+        {
+            tbOrderedQuantity.Text = customerVM.GetOrderedQuantityOfCustomer(customerId).ToString();
+        }
+
+        private void LoadFavoriteFood()
+        {
+            FoodTitles = customerVM.GetAllNameByFood(customerId).Select(x => x).ToArray();
+            Values = customerVM.GetAllQuantityByFood(customerId).Select(x => x).ToArray();
+
+            firstFoodSeries.Title = FoodTitles [0];
+            firstFoodSeries.Values = new ChartValues<int> { Values [0] };
+
+            secondFoodSeries.Title = FoodTitles [1];
+            secondFoodSeries.Values = new ChartValues<int> { Values [1] };
+
+            thirdFoodSeries.Title = FoodTitles [2];
+            thirdFoodSeries.Values = new ChartValues<int> { Values [2] };
+        }
 
         private void Chart_OnDataClick( object sender, ChartPoint chartpoint )
         {

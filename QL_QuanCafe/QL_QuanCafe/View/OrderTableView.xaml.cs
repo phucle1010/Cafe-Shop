@@ -38,7 +38,7 @@ namespace QL_QuanCafe.View
             tbUserName.Text = customer.getCustomerName(this.userName);
             txtCusomerName.Text = customer.getCustomerName(this.userName);
             txtPhone.Text = table.GetPhoneNumber(this.userName);
-            this.customerId = customer.getCustomerId(this.userName);
+            this.customerId = customer.getCustomerId(this.userName).ToString();
             LoadTable();
         }
 

@@ -190,6 +190,7 @@
     <Compile Include="ViewModel\FoodViewModel.cs" />
     <Compile Include="ViewModel\ForgotPasswordViewModel.cs" />
     <Compile Include="ViewModel\HomeAdminViewModel.cs" />
+    <Compile Include="ViewModel\HotFoodViewModel.cs" />
     <Compile Include="ViewModel\ImportMaterialViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />

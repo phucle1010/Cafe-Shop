@@ -32,13 +32,14 @@ namespace QL_QuanCafe.View
         int price;
         int currentValue;
         List<CT_HOADON> orderDetailList;
+        ListView lvOrderChosedFood;
         public OrderFoodInfoListView()
         {
             InitializeComponent();
             currentValue = 0;
         }
 
-        public OrderFoodInfoListView(List<CT_HOADON> orderDetailList, int foodId, string imagePath, string name, int price)
+        public OrderFoodInfoListView(ListView lvOrderChosedFood, List<CT_HOADON> orderDetailList, int foodId, string imagePath, string name, int price)
         {
             InitializeComponent();
             customerId = orderFoodInfoListVM.GetCustomerId(userName);
@@ -48,6 +49,7 @@ namespace QL_QuanCafe.View
             this.price = price;
             this.currentValue = 0;
             this.orderDetailList = orderDetailList;
+            this.lvOrderChosedFood = lvOrderChosedFood;
             LoadData();
         }
 
@@ -56,8 +58,7 @@ namespace QL_QuanCafe.View
             ImageSource imageSource = new BitmapImage(new Uri(imagePath));
             foodImage.Source = imageSource;
             foodName.Text = name;
-            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
-            foodPrice.Text = double.Parse(price.ToString()).ToString("#,###", cul.NumberFormat);
+            foodPrice.Text = String.Format("{0:C0}", price);
         }
 
         private void btnDownValue_Click( object sender, RoutedEventArgs e )
@@ -109,7 +110,10 @@ namespace QL_QuanCafe.View
                 int numberOfMaterial = orderFoodInfoListVM.NumberOfMaterialForFood(foodId);
                 if (IsFullQuantity(numberOfMaterial))
                 {
-                    MessageBox.Show($"Bạn vừa chọn {foodName.Text} vào danh sách đặt món", "Thông báo");
+                    if ( !lvOrderChosedFood.Items.Contains(name) )
+                    {
+                        lvOrderChosedFood.Items.Add(name);
+                    } 
                 } 
                 else
                 {
