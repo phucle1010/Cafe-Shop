@@ -133,5 +133,27 @@ namespace QL_QuanCafe.View
                 }
             }
         }
+
+        private void btnChangeTable_Click(object sender, RoutedEventArgs e)
+        {
+            string tableId = "";
+            if(cbChangedTable.Text == "")
+            {
+                MessageBox.Show("Bạn chưa chọn bàn muốn chuyển, vui lòng chọn lại!");
+            }else if (cbChangeTableName.Text == "")
+            {
+                MessageBox.Show("Bạn chưa chọn bàn chuyển đến, vui lòng lại!");
+            }
+            else
+            {
+                
+                tableId = orderTableVM.GetTableId(cbChangeTableName.SelectedItem.ToString());
+                MessageBox.Show(tableId);
+                int orderTableId = orderTableVM.GetOrderTableIdByTableName(cbChangedTable.Text.ToString(), customerId);
+                MessageBox.Show(orderTableId.ToString());
+                orderTableVM.MoveTable(tableId, orderTableId);
+                MessageBox.Show("Bạn đã chuyển bàn thành công");
+            }
+        }
     }
 }

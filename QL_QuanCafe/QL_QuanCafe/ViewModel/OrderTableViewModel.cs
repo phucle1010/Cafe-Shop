@@ -141,5 +141,15 @@ namespace QL_QuanCafe.ViewModel
             }
             return 1;
         }
+
+        public int getCountOrder(int orderTableId)
+        {
+            return DataProvider.Ins.DB.HOADONs.SqlQuery($"SELECT * FROM HOADON WHERE MaDatBan={orderTableId}").Count();
+        }
+
+        public void MoveTable( string tableIdMoveTo, int orderTableId)
+        {
+            DataProvider.Ins.DB.Database.ExecuteSqlCommand($"UPDATE DATBAN SET MaBan = N'{tableIdMoveTo}' WHERE MaDatBan = {orderTableId}");
+        }
     }
 }

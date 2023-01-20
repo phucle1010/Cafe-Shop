@@ -47,7 +47,14 @@ namespace QL_QuanCafe.View
             tbTableName.Text = orderTableVM.GetTableName(orderTable.MaBan);
             tbCustomerName.Text = orderTableVM.GetCustomerName((int) orderTable.MaKH);
             CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
-            tbTotal.Text = double.Parse(orderTableVM.GetCurrentTotalOfTable(orderTable.MaDatBan).ToString()).ToString("#,###", cul.NumberFormat);
+            if (orderTableVM.getCountOrder(orderTable.MaDatBan) == 0)
+            {
+                tbTotal.Text = "0";
+            }
+            else
+            {
+                tbTotal.Text = double.Parse(orderTableVM.GetCurrentTotalOfTable(orderTable.MaDatBan).ToString()).ToString("#,###", cul.NumberFormat);
+            }
             if ((bool) orderTable.TrangThaiDatMon)
             {
                 cbMergeTable.Visibility = Visibility.Hidden;
