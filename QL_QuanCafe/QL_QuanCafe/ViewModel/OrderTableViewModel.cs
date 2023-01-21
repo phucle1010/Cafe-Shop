@@ -141,5 +141,25 @@ namespace QL_QuanCafe.ViewModel
             }
             return 1;
         }
+
+        public int GetCountOrder( int orderTableId )
+        {
+            return DataProvider.Ins.DB.HOADONs.SqlQuery($"SELECT * FROM HOADON WHERE MaDatBan={orderTableId}").Count();
+        }
+
+        public void MoveTable( string tableIdMoveTo, int orderTableId )
+        {
+            DataProvider.Ins.DB.Database.ExecuteSqlCommand($"UPDATE DATBAN SET MaBan = N'{tableIdMoveTo}' WHERE MaDatBan = {orderTableId}");
+        }
+
+        public bool GetStateOrderTable( int orderTable )
+        {
+            return DataProvider.Ins.DB.DATBANs.SqlQuery($"select * from datban where MaDatBan = {orderTable}").ElementAt(0).TrangThai.Value;
+        }
+
+        public void UpdateTable( string tableId, int State )
+        {
+            DataProvider.Ins.DB.Database.ExecuteSqlCommand($"UPDATE BAN SET TrangThai = {State} WHERE MaBan = N'{tableId}'");
+        }
     }
 }

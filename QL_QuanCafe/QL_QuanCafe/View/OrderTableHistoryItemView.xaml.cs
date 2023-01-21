@@ -47,6 +47,7 @@ namespace QL_QuanCafe.View
             tbTableName.Text = orderTableVM.GetTableName(orderTable.MaBan);
             tbCustomerName.Text = orderTableVM.GetCustomerName((int) orderTable.MaKH);
             tbTotal.Text = String.Format("{0:C0}", orderTableVM.GetCurrentTotalOfTable(orderTable.MaDatBan));
+            LoadTotalPrice();
             if ((bool) orderTable.TrangThaiDatMon)
             {
                 cbMergeTable.Visibility = Visibility.Hidden;
@@ -57,6 +58,18 @@ namespace QL_QuanCafe.View
                 tbStatus.Text = "Chưa thanh toán";
             }
             LoadTimeOfOrder();
+        }
+
+        private void LoadTotalPrice()
+        {
+            if ( orderTableVM.GetCountOrder(orderTable.MaDatBan) == 0 )
+            {
+                tbTotal.Text = "0";
+            }
+            else
+            {
+                tbTotal.Text = String.Format("{0:C0}", orderTableVM.GetCurrentTotalOfTable(orderTable.MaDatBan));
+            }
         }
 
         private void LoadTimeOfOrder()

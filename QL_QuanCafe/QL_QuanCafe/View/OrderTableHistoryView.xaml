@@ -109,7 +109,7 @@
                                               materialDesign:HintAssist.HintOpacity=".26"
                                               Margin="20 10">
                                     </ComboBox>
-                                    <Button x:Name="btnChangeTable"  Width="120" Content="Chuyển bàn" Margin="0 10 10 20" HorizontalAlignment="Right"/>
+                                    <Button x:Name="btnChangeTable"  Width="120" Content="Chuyển bàn" Margin="0 10 10 20" HorizontalAlignment="Right" Click="btnChangeTable_Click"/>
                                 </StackPanel>
                             </Border>
                         </Grid>
