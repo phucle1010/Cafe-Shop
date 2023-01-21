@@ -106,12 +106,13 @@ namespace QL_QuanCafe.View
 
                 string materialId = foodMaterialVM.GetProductId(materialName, materialTypeId);
 
-                foodMaterialVM.InsertMaterialData(this.foodId, Int32.Parse(materialId), Int32.Parse(tbQuantity.Text));
-
-                tbUnit.Text = "";
-                tbQuantity.Text = "";
-                //cbMaterialType.Items.Clear();
-                //cbMaterialName.Items.Clear();
+                if (foodMaterialVM.InsertMaterialData(this.foodId, Int32.Parse(materialId), Int32.Parse(tbQuantity.Text)) == 1)
+                {
+                    MessageBox.Show("Thêm nguyên liệu thành công", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                    this.Close();
+                    tbUnit.Text = "";
+                    tbQuantity.Text = "";
+                }
             }
         }
 

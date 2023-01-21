@@ -23,9 +23,17 @@ namespace QL_QuanCafe.View
     public partial class ManageOrderTableView : Page
     {
         ManageOrderTableViewModel mnOrderTbVM = new ManageOrderTableViewModel();
+        Frame MainContent;
         public ManageOrderTableView()
         {
             InitializeComponent();
+            LoadData();
+            LoadOrderTableListData();
+        }
+        public ManageOrderTableView(Frame MainContent)
+        {
+            InitializeComponent();
+            this.MainContent = MainContent;
             LoadData();
             LoadOrderTableListData();
         }
@@ -40,7 +48,7 @@ namespace QL_QuanCafe.View
         {
             foreach ( var item in mnOrderTbVM.GetOrderTableList() )
             {
-                ManageOrderTableItemView tbItem = new ManageOrderTableItemView(item.MaDatBan, item.MaBan, (int) item.MaKH,(bool) item.TrangThai);
+                ManageOrderTableItemView tbItem = new ManageOrderTableItemView(item.MaDatBan, item.MaBan, (int) item.MaKH,(bool) item.TrangThai, MainContent);
                 orderTableList.Children.Add(tbItem);
             }
         }

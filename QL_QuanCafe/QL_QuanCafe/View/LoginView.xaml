@@ -173,13 +173,6 @@
                                VerticalContentAlignment="Center"
                                Margin="0,5,0,0"
                                Padding="30,0,0,0">
-
-                        <TextBox.Background>
-                            <ImageBrush ImageSource="/Image/user.png"                               
-                                        Stretch="Uniform"
-                                        AlignmentX="Left"/>
-                        </TextBox.Background>
-
                     </TextBox>
 
                     <TextBlock Text="Mật khẩu"
@@ -201,12 +194,6 @@
                                VerticalContentAlignment="Center"
                                Margin="0,5,0,0"
                                Padding="30,0,0,0">
-
-                        <PasswordBox.Background>
-                            <ImageBrush ImageSource="/Image/pass.png"                               
-                                        Stretch="Uniform"
-                                        AlignmentX="Left"/>
-                        </PasswordBox.Background>
                     </PasswordBox>
 
                     <Button x:Name="btnLogin"

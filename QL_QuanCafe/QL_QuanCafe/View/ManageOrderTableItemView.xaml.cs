@@ -22,14 +22,16 @@ namespace QL_QuanCafe.View
     public partial class ManageOrderTableItemView : UserControl
     {
         ManageOrderTableItemViewModel mnOrderTableItemVM = new ManageOrderTableItemViewModel();
+        Frame MainContent;
         public ManageOrderTableItemView( int maDatBan )
         {
             InitializeComponent();
         }
 
-        public ManageOrderTableItemView( int orderTableId, string tableId, int customerId, bool status )
+        public ManageOrderTableItemView( int orderTableId, string tableId, int customerId, bool status, Frame MainContent )
         {
             InitializeComponent();
+            this.MainContent = MainContent;
             tbOrderTableId.Text = orderTableId.ToString();
             tbTableId.Text = tableId;
             tbCustomerId.Text = customerId.ToString();
@@ -51,7 +53,11 @@ namespace QL_QuanCafe.View
                 MessageBox.Show("Bàn đã được xác nhận trước đó. Vui lòng chọn bàn đặt khác!!!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
             } else
             {
-                mnOrderTableItemVM.SubmitOrderTable(Int32.Parse(tbOrderTableId.Text), tbTableId.Text);
+                if (mnOrderTableItemVM.SubmitOrderTable(Int32.Parse(tbOrderTableId.Text), tbTableId.Text) == 1)
+                {
+                    MessageBox.Show($"Xác nhận đặt bàn thành công!!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MainContent.Navigate(new ManageOrderTableView(MainContent));
+                }
             }
         }
     }

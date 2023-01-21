@@ -26,15 +26,17 @@ namespace QL_QuanCafe.View
     {
         UpdateFoodViewModel updFoodVM = new UpdateFoodViewModel();
         int foodId;
+        Frame MainContent;
         public UpdateFoodView()
         {
             InitializeComponent();
         }
 
-        public UpdateFoodView( int foodId)
+        public UpdateFoodView( int foodId, Frame MainContent)
         {
             InitializeComponent();
             this.foodId = foodId;
+            this.MainContent = MainContent;
             LoadData();
         }
 
@@ -91,8 +93,7 @@ namespace QL_QuanCafe.View
                     if(updFoodVM.UpdateFoodData(foodId, price, status) == 1)
                     {
                         this.Close();
-                        System.Windows.Forms.Application.Restart();
-                        Environment.Exit(0);
+                        MainContent.Navigate(new FoodView(MainContent));
                     }
                 }
             }

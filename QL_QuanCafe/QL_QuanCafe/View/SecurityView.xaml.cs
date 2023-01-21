@@ -24,9 +24,16 @@ namespace QL_QuanCafe.View
     {
         string username = Properties.Settings.Default ["user"].ToString();
         string role = Properties.Settings.Default ["role"].ToString();
+        Frame MainContent;
         public SecurityView()
         {
             InitializeComponent();
+        }
+
+        public SecurityView(Frame MainContent)
+        {
+            InitializeComponent();
+            this.MainContent = MainContent;
         }
         [DllImport("user32.dll")]
         public static extern IntPtr SendMessage( IntPtr hWnd, int wMsg, int wParam, int lParam );
@@ -81,6 +88,14 @@ namespace QL_QuanCafe.View
                         txtpass.Clear();
                         txtnewpass.Clear();
                         txtrenewpass.Clear();
+                        if (role == "0")
+                        {
+                            MainContent.Navigate(new HomeCustomerView());
+                        }
+                        else
+                        {
+                            MainContent.Navigate(new HomeAdminView());
+                        }
                     }
                 }
             }

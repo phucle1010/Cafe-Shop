@@ -21,9 +21,16 @@ namespace QL_QuanCafe.View
     /// </summary>
     public partial class EmployeeView : Page
     {
+        Frame NavContent;
         public EmployeeView()
         {
             InitializeComponent();
+            LoadData();
+        }
+        public EmployeeView(Frame MainContent)
+        {
+            InitializeComponent();
+            this.NavContent = MainContent;
             LoadData();
         }
         void LoadData()
@@ -31,7 +38,7 @@ namespace QL_QuanCafe.View
             AdminViewModel admin = new AdminViewModel();
             string userName = Properties.Settings.Default ["user"].ToString();
             tbUserName.Text = admin.getAdminName(userName);
-            MainContent.Content = new EmployeeListView(MainContent);
+            MainContent.Content = new EmployeeListView(MainContent, NavContent);
         }
     }
 }

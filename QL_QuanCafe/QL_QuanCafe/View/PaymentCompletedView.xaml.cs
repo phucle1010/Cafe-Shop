@@ -21,26 +21,26 @@ namespace QL_QuanCafe.View
     /// </summary>
     public partial class PaymentCompletedView : UserControl
     {
-        Page payment;
+        Frame MainContent;
         public PaymentCompletedView()
         {
             InitializeComponent();
         }
 
-        public PaymentCompletedView( int billId, string customerName, int total , Page payment )
+        public PaymentCompletedView( int billId, string customerName, int total , Frame MainContent )
         {
             InitializeComponent();
             lbBillId.Content = billId.ToString();
             lbCustomerName.Content = customerName;
             lbTotal.Content = String.Format("{0:C0}", total);
-            this.payment = payment;
+            this.MainContent = MainContent;
         }
 
         private void btnViewDetail_Click( object sender, RoutedEventArgs e )
         {
             int billId = Int32.Parse(lbBillId.Content.ToString());
             int billDetailStatus = 1;
-            BillDetailView billDetail = new BillDetailView(billId, payment, billDetailStatus, lbCustomerName.Content.ToString());
+            BillDetailView billDetail = new BillDetailView(billId, MainContent, billDetailStatus, lbCustomerName.Content.ToString());
             billDetail.Show();  
         }
     }

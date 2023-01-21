@@ -27,6 +27,7 @@ namespace QL_QuanCafe.View
             LoadData();
             MainContent.Content = new HomeCustomerDetailView();
         }
+
         void LoadData()
         {
             CustomerViewModel customer = new CustomerViewModel();

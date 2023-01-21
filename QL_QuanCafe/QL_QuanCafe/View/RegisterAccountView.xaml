@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QL_QuanCafe.View"
         mc:Ignorable="d"
-        Title="RegisterAccountView" Height="800" Width="500"
+        Title="RegisterAccountView" Height="760" Width="500"
         WindowStyle="none"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
@@ -172,14 +172,7 @@
                                Margin="0,5,0,0"
                                Padding="30,0,0,0">
 
-                        <TextBox.Background>
-                            <ImageBrush ImageSource="/Image/name.png"                               
-                                        Stretch="Uniform"
-                                        AlignmentX="Left"/>
-                        </TextBox.Background>
                     </TextBox>
-
-
 
                     <TextBlock Text="Tên đăng nhập"
                                Foreground="DarkGray"
@@ -200,13 +193,6 @@
                                VerticalContentAlignment="Center"
                                Margin="0,5,0,0"
                                Padding="30,0,0,0">
-
-                        <TextBox.Background>
-                            <ImageBrush ImageSource="/Image/user.png"                               
-                                        Stretch="Uniform"
-                                        AlignmentX="Left"/>
-                        </TextBox.Background>
-
                     </TextBox>
 
                     <TextBlock Text="Mật khẩu"
@@ -228,13 +214,8 @@
                                VerticalContentAlignment="Center"
                                Margin="0,5,0,0"
                                Padding="30,0,0,0">
-
-                        <PasswordBox.Background>
-                            <ImageBrush ImageSource="/Image/pass.png"                               
-                                        Stretch="Uniform"
-                                        AlignmentX="Left"/>
-                        </PasswordBox.Background>
                     </PasswordBox>
+                    
                     <TextBlock Text="Nhập lại mật khẩu"
                                Foreground="DarkGray"
                                FontSize="12"
@@ -254,15 +235,7 @@
                                VerticalContentAlignment="Center"
                                Margin="0,5,0,0"
                                Padding="30,0,0,0">
-
-                        <PasswordBox.Background>
-                            <ImageBrush ImageSource="/Image/reset-password.png"                               
-                                        Stretch="Uniform"
-                                        AlignmentX="Left"/>
-                        </PasswordBox.Background>
                     </PasswordBox>
-
-
 
                     <TextBlock Text="Địa chỉ"
                                Foreground="DarkGray"
@@ -283,13 +256,6 @@
                                VerticalContentAlignment="Center"
                                Margin="0,5,0,0"
                                Padding="30,0,0,0">
-
-                        <TextBox.Background>
-                            <ImageBrush ImageSource="/Image/address.png"                               
-                                        Stretch="Uniform"
-                                        AlignmentX="Left"/>
-                        </TextBox.Background>
-
                     </TextBox>
 
                     <TextBlock Text="Email"
@@ -311,12 +277,6 @@
                                VerticalContentAlignment="Center"
                                Margin="0,5,0,0"
                                Padding="30,0,0,0">
-
-                        <TextBox.Background>
-                            <ImageBrush ImageSource="/Image/email.png"                               
-                                        Stretch="Uniform"
-                                        AlignmentX="Left"/>
-                        </TextBox.Background>
                     </TextBox>
 
                     <TextBlock Text="SĐT"
@@ -338,14 +298,8 @@
                                VerticalContentAlignment="Center"
                                Margin="0,5,0,0"
                                Padding="30,0,0,0">
-
-                        <TextBox.Background>
-                            <ImageBrush ImageSource="/Image/phone.png"                               
-                                        Stretch="Uniform"
-                                        AlignmentX="Left"/>
-                        </TextBox.Background>
-
                     </TextBox>
+                    
                     <Button x:Name="btnRegister"
                              BorderThickness="0"
                              Content="Đăng ký"

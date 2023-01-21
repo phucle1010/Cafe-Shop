@@ -28,9 +28,17 @@ namespace QL_QuanCafe.View
         FoodViewModel foodVM = new FoodViewModel();
 
         int chosedFoodIndex = -1;
+        Frame MainContent;
         public FoodView()
         {
             InitializeComponent();
+            LoadData();
+        }
+
+        public FoodView(Frame MainContent)
+        {
+            InitializeComponent();
+            this.MainContent = MainContent;
             LoadData();
         }
         void LoadData()
@@ -69,7 +77,7 @@ namespace QL_QuanCafe.View
 
         private void btnAddFood_Click( object sender, RoutedEventArgs e )
         {
-            AddNewFoodView addNewFood = new AddNewFoodView();
+            AddNewFoodView addNewFood = new AddNewFoodView(MainContent);
             addNewFood.Show();
         }
 
@@ -80,7 +88,7 @@ namespace QL_QuanCafe.View
                 MessageBox.Show("Vui lòng chọn món ăn cần cập nhật");
             } else
             {
-                UpdateFoodView updFood = new UpdateFoodView(chosedFoodIndex);
+                UpdateFoodView updFood = new UpdateFoodView(chosedFoodIndex, MainContent);
                 updFood.Show();
             }
         }
@@ -105,7 +113,7 @@ namespace QL_QuanCafe.View
             }
             else
             {
-                UpdateFoodDetailView updFoodDetail = new UpdateFoodDetailView(chosedFoodIndex);
+                UpdateFoodDetailView updFoodDetail = new UpdateFoodDetailView(chosedFoodIndex, MainContent);
                 updFoodDetail.Show();
             }
         }

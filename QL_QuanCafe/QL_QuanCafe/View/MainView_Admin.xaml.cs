@@ -65,32 +65,32 @@ namespace QL_QuanCafe.View
 
         private void btnCustomer_Click( object sender, RoutedEventArgs e )
         {
-            MainContent.Navigate(new CustomerView());
+            MainContent.Navigate(new CustomerView(MainContent));
         }
 
         private void btnEmployee_Click( object sender, RoutedEventArgs e )
         {
-            MainContent.Navigate(new EmployeeView());
+            MainContent.Navigate(new EmployeeView(MainContent));
         }
 
         private void btnFood_Click( object sender, RoutedEventArgs e )
         {
-            MainContent.Navigate(new FoodView());
+            MainContent.Navigate(new FoodView(MainContent));
         }
 
         private void btnMaterial_Click( object sender, RoutedEventArgs e )
         {
-            MainContent.Navigate(new ImportMaterialView());
+            MainContent.Navigate(new ImportMaterialView(MainContent));
         }
 
         private void btnManageOrderTable_Click( object sender, RoutedEventArgs e )
         {
-            MainContent.Navigate(new ManageOrderTableView());
+            MainContent.Navigate(new ManageOrderTableView(MainContent));
         }
 
         private void btnPayment_Click( object sender, RoutedEventArgs e )
         {
-            MainContent.Navigate(new PaymentView());
+            MainContent.Navigate(new PaymentView(MainContent));
         }
 
         private void btnReport_Click( object sender, RoutedEventArgs e )
@@ -100,7 +100,7 @@ namespace QL_QuanCafe.View
 
         private void btnSecurity_Click( object sender, RoutedEventArgs e )
         {
-            SecurityView security = new SecurityView();
+            SecurityView security = new SecurityView(MainContent);
             security.Show();
         }
 

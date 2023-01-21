@@ -87,7 +87,7 @@ namespace QL_QuanCafe.View
 
         private void btnOrderTable_Click( object sender, RoutedEventArgs e )
         {
-            MainContent.Navigate( new OrderTableView() );
+            MainContent.Navigate( new OrderTableView(MainContent) );
         }
 
         private void btnOrderFood_Click( object sender, RoutedEventArgs e )
@@ -108,7 +108,7 @@ namespace QL_QuanCafe.View
 
         private void btnSecurity_Click( object sender, RoutedEventArgs e )
         {
-            SecurityView security = new SecurityView();
+            SecurityView security = new SecurityView(MainContent);
             security.Show();
         }
 

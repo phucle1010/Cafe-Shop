@@ -25,15 +25,17 @@ namespace QL_QuanCafe.View
     {
         ChangeWorkShiftViewModel changeWorkShiftVM = new ChangeWorkShiftViewModel();
         int employeeId;
+        Frame MainContent;
         public ChangeWorkShiftView()
         {
             InitializeComponent();
         }
 
-        public ChangeWorkShiftView(int id)
+        public ChangeWorkShiftView(int id, Frame MainContent)
         {
             InitializeComponent();
             this.employeeId = id;
+            this.MainContent = MainContent;
             LoadData();
         }
 
@@ -106,8 +108,7 @@ namespace QL_QuanCafe.View
             }
             changeWorkShiftVM.UpdateWorkShift(employeeId, wsId);
             this.Close();
-            System.Windows.Forms.Application.Restart();
-            Environment.Exit(0);
+            MainContent.Navigate(new EmployeeView(MainContent));
         }
     }
 }

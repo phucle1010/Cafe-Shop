@@ -23,7 +23,7 @@ namespace QL_QuanCafe.View
     /// </summary>
     public partial class BillDetailView : System.Windows.Window
     {
-        System.Windows.Controls.Page payment;
+        System.Windows.Controls.Frame MainContent;
         List<CT_HOADON> billDetailList = new List<CT_HOADON>();
         System.Data.DataTable billDetailData; 
         BillDetailViewModel billDetailVM = new BillDetailViewModel();
@@ -35,11 +35,11 @@ namespace QL_QuanCafe.View
         {
             InitializeComponent();
         }
-        public BillDetailView(int billId, System.Windows.Controls.Page payment, int billDetailStatus, string customer )
+        public BillDetailView(int billId, System.Windows.Controls.Frame MainContent, int billDetailStatus, string customer )
         {
             InitializeComponent();
             this.billId = billId;
-            this.payment = payment;
+            this.MainContent = MainContent;
             this.billDetailStatus = billDetailStatus;
             this.customer = customer;
             this.billDetailData = new System.Data.DataTable(); 
@@ -105,7 +105,7 @@ namespace QL_QuanCafe.View
                     if ( notice == MessageBoxResult.OK )
                     {
                         this.Close();
-                        payment.DataContext = null;
+                        MainContent.Navigate(new PaymentView(MainContent));
                     }
                 }
             } 

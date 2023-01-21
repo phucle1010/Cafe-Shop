@@ -145,35 +145,37 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <TextBlock
-                        Grid.Row="0"
-                        TextWrapping="Wrap"
-                        FontSize="20"
-                        Foreground="White"
-                        Text="Khôi phục tài khoản"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center" 
-                        Grid.Column="1" 
-                        Margin="121.9,38,161.4,38"/>
+                            Grid.Row="0"
+                            TextWrapping="Wrap"
+                            FontSize="20"
+                            Foreground="White"
+                            Text="Khôi phục tài khoản"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center" 
+                            Grid.Column="1" 
+                            Margin="121.9,38,161.4,38"/>
                     <TextBox
-                        Grid.Row="1"
-                        materialDesign:HintAssist.Hint="OTP"
-                        x:Name="txt_OTP"
-                        materialDesign:TransitionAssist.DisableTransitions="True" 
-                        Height="28"
-                        Width="400"
-                        Background="White" 
-                        Grid.Column="1" 
-                        Margin="9.9,36,49.4,36"/>
+                            Grid.Row="1"
+                            materialDesign:HintAssist.Hint="OTP"
+                            x:Name="txt_OTP"
+                            materialDesign:TransitionAssist.DisableTransitions="True" 
+                            Height="28"
+                            Width="400"
+                            Grid.Column="1" 
+                            Foreground="White"
+                            BorderThickness="0 0 0 1"
+                            BorderBrush="White"
+                            Margin="9.9,36,49.4,36"/>
                     <TextBlock
-                        Grid.Row="2"
-                        TextWrapping="Wrap"
-                        FontSize="14"
-                        Foreground="White"
-                        Text="Hệ thống đã gửi mã OTP xác nhận vào Email của bạn. Vui lòng kiểm tra và xác nhận để tiếp tục"
-                        VerticalAlignment="Top"
-                        HorizontalAlignment="Center" 
-                        Grid.ColumnSpan="2" 
-                        Margin="26,0,26.4,0"/>
+                            Grid.Row="2"
+                            TextWrapping="Wrap"
+                            FontSize="14"
+                            Foreground="White"
+                            Text="Hệ thống đã gửi mã OTP xác nhận vào Email của bạn. Vui lòng kiểm tra và xác nhận để tiếp tục"
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Center" 
+                            Grid.ColumnSpan="2" 
+                            Margin="26,0,26.4,0"/>
                 </Grid>
                 
                 <Grid Grid.Row="2">

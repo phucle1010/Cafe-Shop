@@ -87,17 +87,18 @@ namespace QL_QuanCafe.ViewModel
             return DataProvider.Ins.DB.DATBANs.SqlQuery($"SELECT * FROM DATBAN WHERE MaDatBan={orderTableId}").ElementAt(0).GioDat.ToString();
         }
 
-        public void InsertOrderTableData(string tableId, string customerId, string note, DateTime bookTime)
+        public int InsertOrderTableData(string tableId, string customerId, string note, DateTime bookTime)
         {
             try
             {
                 DataProvider.Ins.DB.Database.ExecuteSqlCommand($"INSERT INTO DATBAN (MaBan, TrangThai, MaKH, GioDat, GhiChu, TrangThaiDatMon) values ('{tableId}', 0, {customerId}, '{bookTime.ToString("yyyy/MM/dd")}', '{note}', 0)");
-                MessageBox.Show("Bạn đã đặt bàn, vui lòng chờ nhân viên xác nhận đặt bàn!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.ToString(), "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                return 0;
             }
+            return 1;
         }
 
         public List<DATBAN> GetAllOrderTableDataOfUser(int customerId)

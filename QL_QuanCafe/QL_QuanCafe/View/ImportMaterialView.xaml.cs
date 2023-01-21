@@ -21,9 +21,17 @@ namespace QL_QuanCafe.View
     /// </summary>
     public partial class ImportMaterialView : Page
     {
+        Frame MainContent;
         public ImportMaterialView()
         {
             InitializeComponent();
+            LoadData();
+        }
+
+        public ImportMaterialView(Frame MainContent)
+        {
+            InitializeComponent();
+            this.MainContent = MainContent;
             LoadData();
         }
         void LoadData()
@@ -31,7 +39,7 @@ namespace QL_QuanCafe.View
             AdminViewModel admin = new AdminViewModel();
             string userName = Properties.Settings.Default ["user"].ToString();
             tbUserName.Text = admin.getAdminName(userName);
-            CategoryMaterialType.Content = new MaterialTypeListView(CategoryMaterialType);
+            CategoryMaterialType.Content = new MaterialTypeListView(CategoryMaterialType, MainContent);
         }
     }
 }

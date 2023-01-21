@@ -27,9 +27,16 @@ namespace QL_QuanCafe.View
         int area = 0;
         CustomerViewModel customer = new CustomerViewModel();
         OrderTableViewModel table = new OrderTableViewModel();
+        Frame MainContent;
         public OrderTableView()
         {
             InitializeComponent();
+        }
+
+        public OrderTableView(Frame MainContent )
+        {
+            InitializeComponent();
+            this.MainContent = MainContent;
             LoadData();
         }
 
@@ -74,7 +81,11 @@ namespace QL_QuanCafe.View
                     MessageBox.Show("Bạn chưa chọn bàn!", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
                 else
                 {
-                    table.InsertOrderTableData(tableId, customerId, note, time);
+                    if (table.InsertOrderTableData(tableId, customerId, note, time) == 1)
+                    {
+                        MessageBox.Show("Bạn đã đặt bàn, vui lòng chờ nhân viên xác nhận đặt bàn!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                        MainContent.Navigate(new OrderTableView());
+                    }
                 }
             }
         }

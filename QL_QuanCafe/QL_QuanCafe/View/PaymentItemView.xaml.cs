@@ -24,14 +24,14 @@ namespace QL_QuanCafe.View
     public partial class PaymentItemView : UserControl
     {
         PaymentViewModel paymentVM = new PaymentViewModel();
-        Page payment;
+        Frame MainContent;
         private int billId;
         public PaymentItemView()
         {
             InitializeComponent();
         }
 
-        public PaymentItemView(int orderTableId, string customerName, int total, Page payment, int billId)
+        public PaymentItemView(int orderTableId, string customerName, int total, Page payment, int billId, Frame MainContent)
         {
             InitializeComponent();
 
@@ -39,14 +39,14 @@ namespace QL_QuanCafe.View
             lbTableName.Content = paymentVM.GetTableName(tableId);
             lbCustomerName.Content = customerName;
             lbTotal.Content = String.Format("{0:C0}", total);
-            this.payment = payment;
+            this.MainContent = MainContent;
             this.billId = billId;
         }
 
         private void btnSubmit_Click( object sender, RoutedEventArgs e )
         {
             int billDetailStatus = 0;
-            BillDetailView billDetail = new BillDetailView(billId, payment, billDetailStatus, lbCustomerName.Content.ToString());
+            BillDetailView billDetail = new BillDetailView(billId, MainContent, billDetailStatus, lbCustomerName.Content.ToString());
             billDetail.Show();
         }
     }

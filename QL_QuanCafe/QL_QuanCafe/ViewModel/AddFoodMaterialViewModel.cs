@@ -43,17 +43,18 @@ namespace QL_QuanCafe.ViewModel
             return DataProvider.Ins.DB.HANGHOAs.SqlQuery($"SELECT * FROM HANGHOA WHERE TenHH=N'{name}'").ElementAt(0).DonVi.ToString();
         }
 
-        public void InsertMaterialData(string foodId, int materialId, int quantity)
+        public int InsertMaterialData(string foodId, int materialId, int quantity)
         {
             try
             {
                 DataProvider.Ins.DB.Database.ExecuteSqlCommand($"INSERT INTO CT_SANPHAM (MaSP, MaHH, SoLuong) VALUES (${foodId}, ${materialId}, ${quantity})");
-                MessageBox.Show("Thêm nguyên liệu thành công", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             catch (Exception e)
             {
                 MessageBox.Show($"Lỗi {e}");
+                return 0;
             }
+            return 1;
         }
 
        

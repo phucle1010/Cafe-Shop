@@ -97,12 +97,11 @@ namespace QL_QuanCafe.ViewModel
             return id;
         }
 
-        public void InsertEmployeeData( string fullname, string phone, string email, string address, string workShiftName, string position, int gender )
+        public int InsertEmployeeData( string fullname, string phone, string email, string address, string workShiftName, string position, int gender )
         {
             int pass = RandomPass();
             string employeeId = this.CreateIdStaff();
             string workShiftId = getWorkShiftId(workShiftName);
-            MessageBox.Show(workShiftId);
             string passHash = this.ComputeSha256Hash(pass.ToString()); 
             try
             {
@@ -113,7 +112,9 @@ namespace QL_QuanCafe.ViewModel
             catch (Exception e)
             {
                 MessageBox.Show(e.ToString());
+                return 0;
             }
+            return 1;
         }
 
         public string ComputeSha256Hash( string rawData )

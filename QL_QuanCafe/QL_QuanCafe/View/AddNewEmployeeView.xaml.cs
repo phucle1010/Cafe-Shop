@@ -22,9 +22,16 @@ namespace QL_QuanCafe.View
     /// </summary>
     public partial class AddNewEmployeeView : Window
     {
+        Frame MainContent;
         public AddNewEmployeeView()
         {
             InitializeComponent();
+        }
+
+        public AddNewEmployeeView(Frame MainContent)
+        {
+            InitializeComponent();
+            this.MainContent = MainContent;
         }
 
         [DllImport("user32.dll")]
@@ -71,11 +78,15 @@ namespace QL_QuanCafe.View
             else
             {
                 RegisterAccountViewModel register = new RegisterAccountViewModel();
-                register.InsertEmployeeData(name, phone, email, address, workShiftName, position, sex);
-                txtName.Clear();
-                txtAddress.Clear();
-                txtEmail.Clear();
-                txtPhonenumber.Clear();
+                if ( register.InsertEmployeeData(name, phone, email, address, workShiftName, position, sex) == 1 )
+                {
+                    txtName.Clear();
+                    txtAddress.Clear();
+                    txtEmail.Clear();
+                    txtPhonenumber.Clear();
+                    MainContent.Navigate(new EmployeeView(MainContent));
+                }
+                
             }
         }
         public int getSex()

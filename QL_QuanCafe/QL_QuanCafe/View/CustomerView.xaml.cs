@@ -24,9 +24,18 @@ namespace QL_QuanCafe.View
     public partial class CustomerView : Page
     {
         CustomerViewModel customerVM = new CustomerViewModel();
+        Frame MainContent;
         public CustomerView()
         {
             InitializeComponent();
+            LoadData();
+            LoadCustomerData();
+        }
+
+        public CustomerView(Frame MainContent)
+        {
+            InitializeComponent();
+            this.MainContent = MainContent;
             LoadData();
             LoadCustomerData();
         }

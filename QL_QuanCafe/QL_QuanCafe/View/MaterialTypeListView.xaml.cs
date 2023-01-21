@@ -22,16 +22,17 @@ namespace QL_QuanCafe.View
     public partial class MaterialTypeListView : Page
     {
         MaterialTypeListViewModel materialList = new MaterialTypeListViewModel();
-        Frame CurrentContent;
+        Frame CurrentContent, MainContent;
         string employeeId = Properties.Settings.Default ["user"].ToString();
         public MaterialTypeListView()
         {
             InitializeComponent();
         }
-        public MaterialTypeListView(Frame MaterialContent)
+        public MaterialTypeListView(Frame MaterialContent, Frame MainContent)
         {
             InitializeComponent();
             MaterialContent.Content = this;
+            this.MainContent = MainContent;
             this.CurrentContent = MaterialContent;
         }
 
@@ -46,49 +47,49 @@ namespace QL_QuanCafe.View
         {
             InsertMaterialImportData();
             Properties.Settings.Default ["materialType"] = "01";
-            CurrentContent.Content = new MaterialTypeItemView();
+            CurrentContent.Content = new MaterialTypeItemView(MainContent);
         }
 
         private void btnIce_Click( object sender, RoutedEventArgs e )
         {
             InsertMaterialImportData();
             Properties.Settings.Default ["materialType"] = "02";
-            CurrentContent.Content = new MaterialTypeItemView();
+            CurrentContent.Content = new MaterialTypeItemView(MainContent);
         }
 
         private void btnSmoothie_Click( object sender, RoutedEventArgs e )
         {
             InsertMaterialImportData();
             Properties.Settings.Default ["materialType"] = "03";
-            CurrentContent.Content = new MaterialTypeItemView();
+            CurrentContent.Content = new MaterialTypeItemView(MainContent);
         }
 
         private void btnIceCream_Click( object sender, RoutedEventArgs e )
         {
             InsertMaterialImportData();
             Properties.Settings.Default ["materialType"] = "04";
-            CurrentContent.Content = new MaterialTypeItemView();
+            CurrentContent.Content = new MaterialTypeItemView(MainContent);
         }
 
         private void btnMachineCf_Click( object sender, RoutedEventArgs e )
         {
             InsertMaterialImportData();
             Properties.Settings.Default ["materialType"] = "05";
-            CurrentContent.Content = new MaterialTypeItemView();
+            CurrentContent.Content = new MaterialTypeItemView(MainContent);
         }
 
         private void btnJuice_Click( object sender, RoutedEventArgs e )
         {
             InsertMaterialImportData();
             Properties.Settings.Default ["materialType"] = "06";
-            CurrentContent.Content = new MaterialTypeItemView();
+            CurrentContent.Content = new MaterialTypeItemView(MainContent);
         }
 
         private void btnTea_Click( object sender, RoutedEventArgs e )
         {
             InsertMaterialImportData();
             Properties.Settings.Default ["materialType"] = "07";
-            CurrentContent.Content = new MaterialTypeItemView();
+            CurrentContent.Content = new MaterialTypeItemView(MainContent);
         }
     }
 }

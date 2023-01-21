@@ -27,9 +27,19 @@ namespace QL_QuanCafe.View
         string _materialName;
         string importId = Properties.Settings.Default ["importId"].ToString();
         string _materialTypeId = Properties.Settings.Default ["materialType"].ToString();
+        Frame MainContent;
         public MaterialTypeItemView()
         {
             InitializeComponent();
+            LoadMaterialImage();
+            LoadMaterialTypeData();
+            LoadMaterialNameList();
+        }
+
+        public MaterialTypeItemView(Frame MainContent)
+        {
+            InitializeComponent();
+            this.MainContent = MainContent;
             LoadMaterialImage();
             LoadMaterialTypeData();
             LoadMaterialNameList();
@@ -116,6 +126,7 @@ namespace QL_QuanCafe.View
                     materialTypeItem.updateAvailableMaterialQuantity(_materialName, Int32.Parse(quantityInputValue.Text));
                     materialTypeItem.updateCurrentTotalPrice(Int32.Parse(importId), total);
                     quantityInputValue.Text = "";
+                    MainContent.Navigate(new ImportMaterialView(MainContent));
                 }
             }
         }

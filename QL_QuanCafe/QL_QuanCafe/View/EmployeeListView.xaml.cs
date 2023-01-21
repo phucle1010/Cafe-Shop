@@ -24,6 +24,7 @@ namespace QL_QuanCafe.View
     public partial class EmployeeListView : Page
     {
         Frame MainContent;
+        Frame NavContent;
         EmployeeListViewModel employeeListVM = new EmployeeListViewModel();
         int chosedFoodIndex = -1;
 
@@ -32,10 +33,12 @@ namespace QL_QuanCafe.View
             InitializeComponent();
         }
 
-        public EmployeeListView(Frame CurrentLayout)
+
+        public EmployeeListView(Frame CurrentLayout, Frame NavContent)
         {
             InitializeComponent();
             this.MainContent = CurrentLayout;
+            this.NavContent = NavContent;
             LoadEmployeeListData();
         }
         void LoadEmployeeListData()
@@ -74,14 +77,14 @@ namespace QL_QuanCafe.View
             }
             else
             {
-                UpdateEmployeeView updEmployee = new UpdateEmployeeView(chosedFoodIndex);
+                UpdateEmployeeView updEmployee = new UpdateEmployeeView(chosedFoodIndex, NavContent);
                 updEmployee.Show();
             }
         }
 
         private void btnAddEmplyee_Click( object sender, RoutedEventArgs e )
         {
-            AddNewEmployeeView newEmployee = new AddNewEmployeeView();
+            AddNewEmployeeView newEmployee = new AddNewEmployeeView(NavContent);
             newEmployee.Show();
         }
 
@@ -105,7 +108,7 @@ namespace QL_QuanCafe.View
             }
             else
             {
-                ChangeWorkShiftView workShift = new ChangeWorkShiftView(chosedFoodIndex);
+                ChangeWorkShiftView workShift = new ChangeWorkShiftView(chosedFoodIndex, NavContent);
                 workShift.Show();
             }
         }

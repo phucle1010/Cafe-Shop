@@ -23,10 +23,19 @@ namespace QL_QuanCafe.View
     public partial class PaymentView : Page
     {
         PaymentViewModel paymentVM = new PaymentViewModel();
-
+        Frame MainContent;
         public PaymentView()
         {
             InitializeComponent();
+            LoadData();
+            LoadPaymentUnCompleteItem();
+            LoadPaymentCompleteItem();
+        }
+
+        public PaymentView(Frame MainContent)
+        {
+            InitializeComponent();
+            this.MainContent = MainContent;
             LoadData();
             LoadPaymentUnCompleteItem();
             LoadPaymentCompleteItem();
@@ -43,7 +52,7 @@ namespace QL_QuanCafe.View
             List<HOADON> unPayedBillList = paymentVM.billListNotPayments();
             foreach(var item in unPayedBillList)
             {
-                PaymentItemView paymentItem = new PaymentItemView((int) item.MaDatBan, paymentVM.GetCustomerName((int) item.MaKH), (int) item.TongTien, this, (int) item.MaHD);
+                PaymentItemView paymentItem = new PaymentItemView((int) item.MaDatBan, paymentVM.GetCustomerName((int) item.MaKH), (int) item.TongTien, this, (int) item.MaHD, MainContent);
                 unPayedList.Children.Add(paymentItem);
             }
         }
@@ -52,7 +61,7 @@ namespace QL_QuanCafe.View
             List<HOADON> payedBillList = paymentVM.billListHasPayments();
             foreach ( var item in payedBillList )
             {
-                PaymentCompletedView paymentItem = new PaymentCompletedView((int) item.MaHD, paymentVM.GetCustomerName((int) item.MaKH), (int) item.TongTien, this);
+                PaymentCompletedView paymentItem = new PaymentCompletedView((int) item.MaHD, paymentVM.GetCustomerName((int) item.MaKH), (int) item.TongTien, MainContent);
                 PayedList.Children.Add(paymentItem);
             }
         }

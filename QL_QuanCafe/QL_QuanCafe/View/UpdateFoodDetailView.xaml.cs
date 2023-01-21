@@ -26,15 +26,17 @@ namespace QL_QuanCafe.View
         UpdateFoodViewModel updFoodVM = new UpdateFoodViewModel();
         private int foodId;
         private int materialId;
+        Frame MainContent;
         public UpdateFoodDetailView()
         {
             InitializeComponent();
         }
 
-        public UpdateFoodDetailView(int foodId)
+        public UpdateFoodDetailView(int foodId, Frame MainContent)
         {
             InitializeComponent();
             this.foodId = foodId;
+            this.MainContent = MainContent;
             LoadData();
         }
 
@@ -85,6 +87,8 @@ namespace QL_QuanCafe.View
             if ( updFoodVM.UpdateNewNeededQuantityForFod(materialId, foodId, tbQuantity.Text.Replace(",", ".")) == 1 )
             {
                 MessageBox.Show("Cập nhật công thức thành công");
+                this.Close();
+                MainContent.Navigate(new FoodView(MainContent));
             }
         }
     }

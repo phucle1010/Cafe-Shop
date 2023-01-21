@@ -30,10 +30,17 @@ namespace QL_QuanCafe.View
         List<CT_SANPHAM> foodDetailLst = new List<CT_SANPHAM>();
         AddNewFoodViewModel newFoodVM = new AddNewFoodViewModel();
         string selectedFileName;
+        Frame MainContent;
         public AddNewFoodView()
         {
             InitializeComponent();
             LoadData();
+        }
+        public AddNewFoodView(Frame MainContent)
+        {
+            InitializeComponent();
+            LoadData();
+            this.MainContent = MainContent;
         }
         [DllImport("user32.dll")]
         public static extern IntPtr SendMessage( IntPtr hWnd, int wMsg, int wParam, int lParam );
@@ -102,6 +109,7 @@ namespace QL_QuanCafe.View
                     AddFoodMaterialView addMaterialView = new AddFoodMaterialView(foodId, typeId);
                     addMaterialView.Show();
                     this.Close();
+                    MainContent.Navigate(new FoodView(MainContent));
                 }
             }
         }

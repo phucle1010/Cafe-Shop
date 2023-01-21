@@ -25,16 +25,18 @@ namespace QL_QuanCafe.View
     {
         UpdateEmployeeViewModel updEmployeeVM = new UpdateEmployeeViewModel();
         int employeeId;
+        Frame MainContent;
         public UpdateEmployeeView()
         {
             InitializeComponent();
         }
 
-        public UpdateEmployeeView(int employeeId)
+        public UpdateEmployeeView(int employeeId, Frame mainContent )
         {
             InitializeComponent();
             this.employeeId = employeeId;
             LoadData();
+            MainContent = mainContent;
         }
 
         [DllImport("user32.dll")]
@@ -112,42 +114,18 @@ namespace QL_QuanCafe.View
                         if (updEmployeeVM.UpdateEmployeeData(this.employeeId, tbName.Text, tbPhonenumber.Text, tbEmail.Text, tbAddress.Text, "1") == 1)
                         {
                             this.Close();
-                            System.Windows.Forms.Application.Restart();
-                            Environment.Exit(0);
+                            MainContent.Navigate(new EmployeeView());
                         }
                     } else
                     {
                         if ( updEmployeeVM.UpdateEmployeeData(this.employeeId, tbName.Text, tbPhonenumber.Text, tbEmail.Text, tbAddress.Text, "0") == 1 )
                         {
                             this.Close();
-                            System.Windows.Forms.Application.Restart();
-                            Environment.Exit(0);
+                            MainContent.Navigate(new EmployeeView(MainContent));
                         }
                     }
                 }
             }
-            //if ( String.IsNullOrEmpty(tbFoodPrice.Text) || cbFoodStatus.Text == "" )
-            //{
-            //    MessageBox.Show("Vui lòng kiểm tra lại thông tin món ăn", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
-            //}
-            //else
-            //{
-            //    if ( !IsValidNumber(tbFoodPrice.Text) )
-            //    {
-            //        System.Windows.MessageBox.Show("Giá tiền không hợp lệ. Vui lòng kiểm tra lại", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Warning);
-            //    }
-            //    else
-            //    {
-            //        int price = Int32.Parse(tbFoodPrice.Text);
-            //        int status = cbFoodStatus.Text == "Còn sẵn" ? 1 : 0;
-            //        if ( updFoodVM.UpdateFoodData(foodId, price, status) == 1 )
-            //        {
-            //            this.Close();
-            //            System.Windows.Forms.Application.Restart();
-            //            Environment.Exit(0);
-            //        }
-            //    }
-            //}
         }
     }
 }
