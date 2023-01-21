@@ -136,8 +136,9 @@ namespace QL_QuanCafe.View
 
         private void btnChangeTable_Click(object sender, RoutedEventArgs e)
         {
-            string tableId = "";
-            if(cbChangedTable.Text == "")
+            string tableToMoveId = "";
+            string tableMoveToId = "";
+            if (cbChangedTable.Text == "")
             {
                 MessageBox.Show("Bạn chưa chọn bàn muốn chuyển, vui lòng chọn lại!");
             }else if (cbChangeTableName.Text == "")
@@ -146,12 +147,28 @@ namespace QL_QuanCafe.View
             }
             else
             {
-                
-                tableId = orderTableVM.GetTableId(cbChangeTableName.SelectedItem.ToString());
-                MessageBox.Show(tableId);
                 int orderTableId = orderTableVM.GetOrderTableIdByTableName(cbChangedTable.Text.ToString(), customerId);
-                MessageBox.Show(orderTableId.ToString());
-                orderTableVM.MoveTable(tableId, orderTableId);
+                
+                tableToMoveId = orderTableVM.GetTableId(cbChangedTable.SelectedItem.ToString());
+
+                tableMoveToId = orderTableVM.GetTableId(cbChangeTableName.SelectedItem.ToString());
+               //MessageBox.Show(orderTableVM.getStateOrderTable(orderTableId).ToString());
+                if ((bool)orderTableVM.getStateOrderTable(orderTableId))
+                {
+                    //MessageBox.Show(tableMoveToId);
+                    orderTableVM.MoveTable(tableMoveToId, orderTableId);
+                    int stateTable = 1;
+                    //MessageBox.Show(tableToMoveId);
+                    orderTableVM.updateTable(tableToMoveId, stateTable);
+                    stateTable = 0;
+                    //MessageBox.Show(tableMoveToId);
+                    orderTableVM.updateTable(tableMoveToId, stateTable);
+                }
+                else
+                {
+                    //MessageBox.Show(tableMoveToId);
+                    orderTableVM.MoveTable(tableMoveToId, orderTableId);
+                }
                 MessageBox.Show("Bạn đã chuyển bàn thành công");
             }
         }

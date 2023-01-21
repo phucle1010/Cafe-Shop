@@ -151,5 +151,15 @@ namespace QL_QuanCafe.ViewModel
         {
             DataProvider.Ins.DB.Database.ExecuteSqlCommand($"UPDATE DATBAN SET MaBan = N'{tableIdMoveTo}' WHERE MaDatBan = {orderTableId}");
         }
+
+        public bool getStateOrderTable(int orderTable)
+        {
+            return DataProvider.Ins.DB.DATBANs.SqlQuery($"select * from datban where MaDatBan = {orderTable}").ElementAt(0).TrangThai.Value;
+        }
+
+        public void updateTable(string tableId, int State)
+        {
+            DataProvider.Ins.DB.Database.ExecuteSqlCommand($"UPDATE BAN SET TrangThai = {State} WHERE MaBan = N'{tableId}'");
+        }
     }
 }
