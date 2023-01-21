@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:QL_QuanCafe.View" xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="ResponseView" Height="580" Width="550"
+        Title="ResponseView" Height="565" Width="550"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None">
     <Grid>
@@ -39,7 +39,7 @@
         </StackPanel>
 
 
-        <Grid Grid.Row="1" Margin="30 0 0 0">
+        <Grid Grid.Row="1" Margin="30 0 30 0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
@@ -89,7 +89,6 @@
                         
                         <TextBox
                             x:Name="tb_feedBackMessage"
-                            Margin="0,0,0,0"
                             VerticalAlignment="Top"
                             Height="150"
                             AcceptsReturn="True"
@@ -110,7 +109,7 @@
                                     x:Name="btn_Cancel"
                                     Style="{StaticResource MaterialDesignRaisedLightButton}"
                                     Width="100"
-                                    Margin="20 0 10 0"
+                                    Margin="20 0 0 0"
                                     ToolTip="Resource name: MaterialDesignRaisedLightButton" Click="btn_Cancel_Click">
                                 Hủy
                             </Button>

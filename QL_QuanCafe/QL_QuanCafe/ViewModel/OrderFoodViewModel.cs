@@ -34,7 +34,7 @@ namespace QL_QuanCafe.ViewModel
         {
             try
             {
-                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"INSERT INTO HOADON (MaKH, MaDatBan, TongTien, TrangThaiThanhToan) VALUES ({customerId}, {orderTableId}, 0, 0)");
+                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"INSERT INTO HOADON (MaKH, MaDatBan, TongTien, TrangThaiThanhToan, NgayHD) VALUES ({customerId}, {orderTableId}, 0, 0, '{DateTime.Now.ToString("yyyy/MM/dd")}')");
             }
             catch (Exception e)
             {
@@ -88,6 +88,17 @@ namespace QL_QuanCafe.ViewModel
             {
                 MessageBox.Show($"Lỗi {e}");
             }
+        }
+
+        public List<CT_HOADON> GetOrderDetailOfCustomer(int orderTableId)
+        {
+            var billId = DataProvider.Ins.DB.HOADONs.Where(hd => hd.MaDatBan == orderTableId).Select(x => new { x.MaHD }).First().MaHD;
+            return DataProvider.Ins.DB.CT_HOADON.Where(ct => ct.MaHD == billId).Select(x => x).ToList();
+        }
+
+        public string GetFoodName(int foodId) 
+        {
+            return DataProvider.Ins.DB.SANPHAMs.Where(food => food.MaSP == foodId).Select(food => new { food.TenSP }).First().TenSP;
         }
     }
 }

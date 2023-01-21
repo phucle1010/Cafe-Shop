@@ -41,6 +41,7 @@ namespace QL_QuanCafe.View
         private void LoadUIData()
         {
             tbOrderedQuantity.Text = customerVM.GetOrderedQuantityOfCustomer(customerId).ToString();
+            tbAccPoint.Text = customerVM.GetAccumlatorPointOfCustomer(customerId).ToString();
         }
 
         private void LoadFavoriteFood()

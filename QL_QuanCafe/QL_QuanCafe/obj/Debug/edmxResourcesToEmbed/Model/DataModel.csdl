@@ -254,7 +254,6 @@
     <Property Name="SDT" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
     <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="DiemTichLuy" Type="Int16" />
     <Property Name="TenDN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="MatKhau" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
     <Property Name="AnhDaiDien" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
@@ -350,6 +349,7 @@
     <Property Name="HinhAnh" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
     <Property Name="GiaSP" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="TrangThai" Type="Boolean" />
+    <Property Name="DiemTichLuy" Type="Int16" />
     <NavigationProperty Name="CT_HOADON" Relationship="CafeShopModel.FK__CT_HOADON__MaSP__4D5F7D71" FromRole="SANPHAM" ToRole="CT_HOADON" />
     <NavigationProperty Name="CT_SANPHAM" Relationship="CafeShopModel.FK__CT_SANPHAM__MaSP__1AD3FDA4" FromRole="SANPHAM" ToRole="CT_SANPHAM" />
     <NavigationProperty Name="LOAISANPHAM" Relationship="CafeShopModel.FK__SANPHAM__MaLoaiS__17F790F9" FromRole="SANPHAM" ToRole="LOAISANPHAM" />

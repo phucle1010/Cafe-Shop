@@ -13,5 +13,6 @@ namespace QL_QuanCafe.ViewModel
         {
             return DataProvider.Ins.DB.SANPHAMs.SqlQuery("SELECT * FROM SANPHAM").ToList<SANPHAM>();
         }
+
     }
 }

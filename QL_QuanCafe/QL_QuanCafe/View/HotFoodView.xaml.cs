@@ -98,7 +98,7 @@ namespace QL_QuanCafe.View
 
         private void btnView_Click( object sender, RoutedEventArgs e )
         {
-            MainContent.Navigate(new OrderFoodView());
+            MainContent.Navigate(new OrderFoodView(MainContent));
         }
 
     }

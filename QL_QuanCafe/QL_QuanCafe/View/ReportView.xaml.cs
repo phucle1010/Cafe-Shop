@@ -58,30 +58,120 @@ namespace QL_QuanCafe.View
 
         private void LoadSaleChart()
         {
-            SaleCollection = new SeriesCollection
-            {
-                new ColumnSeries
-                {
-                    Title = "Doanh thu",
-                    Values = new ChartValues<double> { 10, 50, 39, 50, 32, 35, 51, 64, 42, 27, 50, 48 }
-                },
-                new ColumnSeries
-                {
-                    Title = "Tiền lãi",
-                    Values = new ChartValues<double> { 11, 56, 42, 48, 22, 29, 41, 34, 36, 21, 44, 40 }
-                }
-            };
-            //adding series will update and animate the chart automatically
-
             var months = new List<string>();
             for(int i = 1; i <= 12; i++)
             {
                 months.Add(i.ToString());
             }
 
-            //Labels = new string [] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" };
             SaleLabels = months.Select(x => x.ToString()).ToArray();
             SaleFormatter = value => String.Format("{0:C0}", value);
+
+            SaleCollection = new SeriesCollection
+            {
+                new ColumnSeries
+                {
+                    Title = "Doanh thu",
+                },
+                new ColumnSeries
+                {
+                    Title = "Tiền nhập hàng",
+                },
+                new ColumnSeries
+                {
+                    Title = "Tiền lãi",
+                }
+
+            };
+
+            var year = DateTime.Now.Year - 1;
+
+            List<SaleOfYear> saleOfYear = reportVM.GetSaleOfYear(year);
+            List<SaleOfYear> finalSale = SetSaleOfYear(saleOfYear);
+            SaleCollection [0].Values = finalSale.Select(x => x.SaleTotal).ToArray().AsChartValues<int>();
+
+            List<ImportOfYear> importOfYear = reportVM.GetImportOfYear(year);
+            List<ImportOfYear> finalImport = SetImportOfYear(importOfYear);
+            SaleCollection [1].Values = finalImport.Select(x => x.ImportTotal).ToArray().AsChartValues<int>();
+
+            List<int> benefits = new List<int>();
+            var monthLoops = finalImport.Count > finalSale.Count ? finalImport.Count : finalSale.Count;
+            SetBenefitsOfYear(monthLoops, benefits, finalSale, finalImport);
+            SaleCollection [2].Values = benefits.Select(x => x).ToArray().AsChartValues<int>();
+
+        }
+
+        private List<SaleOfYear> SetSaleOfYear(List<SaleOfYear> sales)
+        {
+            List<SaleOfYear> filterSale = new List<SaleOfYear>();
+            if (sales.Count > 0)
+            {
+                var minMonth = sales [0].Month;
+                if (minMonth > 1)
+                {
+                    for (int i = 1; i < minMonth; i++)
+                    {
+                        filterSale.Add(new SaleOfYear
+                        {
+                            Month = i,
+                            SaleTotal = 0
+                        });
+                    }
+                }
+                foreach (var sale in sales)
+                {
+                    filterSale.Add(sale);
+                }
+            }
+            return filterSale;
+        }
+
+        private List<ImportOfYear> SetImportOfYear( List<ImportOfYear> imports )
+        {
+            List<ImportOfYear> filterImport = new List<ImportOfYear>();
+            if (imports.Count > 0)
+            {
+                var minMonth = imports [0].Month;
+                if ( minMonth > 1 )
+                {
+                    for ( int i = 1; i < minMonth; i++ )
+                    {
+                        filterImport.Add(new ImportOfYear
+                        {
+                            Month = i,
+                            ImportTotal = 0
+                        });
+                    }
+                }
+                foreach ( var import in imports )
+                {
+                    filterImport.Add(import);
+                }
+            }
+            return filterImport;
+        }
+
+        private List<int> SetBenefitsOfYear(int monthLoops, List<int> benefits, List<SaleOfYear> finalSale, List<ImportOfYear> finalImport)
+        {
+            for ( int i = 0; i < monthLoops; i++ )
+            {
+                if ( i < finalImport.Count - 1 && i < finalSale.Count )
+                {
+                    benefits.Add(finalSale [i].SaleTotal - finalImport [i].ImportTotal);
+                }
+                else
+                {
+                    if ( i > finalSale.Count - 1 )
+                    {
+                        benefits.Add(0 - finalImport [i].ImportTotal);
+                    }
+                    else if ( i > finalSale.Count - 1 )
+                    {
+                        benefits.Add(finalSale [i].SaleTotal - 0);
+                    }
+                }
+            }
+            return benefits;
         }
 
         private void LoadFoodTrendChart()

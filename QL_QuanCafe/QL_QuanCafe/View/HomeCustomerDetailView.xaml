@@ -49,7 +49,7 @@
                                     <ColumnDefinition />
                                 </Grid.ColumnDefinitions>
 
-                                <TextBlock x:Name="txtEmployees"
+                                <TextBlock x:Name="tbAccPoint"
                                             Grid.Column="0"
                                             Text="50"
                                             FontSize="60"

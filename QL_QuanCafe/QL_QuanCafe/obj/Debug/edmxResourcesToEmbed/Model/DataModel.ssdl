@@ -197,6 +197,7 @@
     <Property Name="HinhAnh" Type="nvarchar" MaxLength="300" />
     <Property Name="GiaSP" Type="money" />
     <Property Name="TrangThai" Type="bit" />
+    <Property Name="DiemTichLuy" Type="smallint" />
   </EntityType>
   <EntityType Name="TAIKHOANDANGSUDUNG">
     <Key>

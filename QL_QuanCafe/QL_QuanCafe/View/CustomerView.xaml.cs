@@ -51,12 +51,10 @@ namespace QL_QuanCafe.View
             dt.Columns.Add(dc);
             dc = new DataColumn("Địa chỉ");
             dt.Columns.Add(dc);
-            dc = new DataColumn("Điểm tích lũy");
-            dt.Columns.Add(dc);
          
             foreach ( var item in customerVM.getCustomerList() )
             {
-                dt.Rows.Add(item.MaKH, item.TenKH, item.SDT, item.Email, item.DiaChi, item.DiemTichLuy);
+                dt.Rows.Add(item.MaKH, item.TenKH, item.SDT, item.Email, item.DiaChi);
             }
 
             dtCustomer.ItemsSource = dt.DefaultView;

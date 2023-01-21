@@ -21,16 +21,36 @@ namespace QL_QuanCafe.View
     /// </summary>
     public partial class AccumlatorPointView : Page
     {
-        public AccumlatorPointView()
+        private int currentPoint;
+        private int customerId;
+        CustomerViewModel customerVM = new CustomerViewModel();
+        FoodViewModel foodVM = new FoodViewModel();
+        Frame MainContent;
+
+
+        public AccumlatorPointView(Frame MainContent )
         {
             InitializeComponent();
             LoadData();
+            this.MainContent= MainContent;
+            this.customerId = customerVM.getCustomerId(Properties.Settings.Default ["user"].ToString());
+            this.currentPoint = customerVM.GetAccumlatorPointOfCustomer(customerId);
+            LoadFood();
         }
-        void LoadData()
+        private void LoadData()
         {
             CustomerViewModel customer = new CustomerViewModel();
             string userName = Properties.Settings.Default ["user"].ToString();
             tbUserName.Text = customer.getCustomerName(userName);
+        }
+
+        private void LoadFood()
+        {
+            var foodList = foodVM.GetAllFood();
+            foreach(var food in foodList)
+            {
+                plFood.Children.Add(new AccumlatorPointItemView(food, this.currentPoint, customerId, MainContent));
+            }
         }
 
     }

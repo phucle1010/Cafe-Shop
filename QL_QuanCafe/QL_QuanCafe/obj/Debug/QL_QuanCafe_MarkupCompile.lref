@@ -27,6 +27,10 @@ FE:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_Qua
 FE:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\View\ManageOrderTableView.xaml;;
 FE:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\View\MaterialTypeItemView.xaml;;
 FE:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\View\MaterialTypeListView.xaml;;
+FE:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\View\OrderFoodHistoryDetailItemView.xaml;;
+FE:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\View\OrderFoodHistoryDetailView.xaml;;
+FE:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\View\OrderFoodHistoryItemView.xaml;;
+FE:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\View\OrderFoodHistoryView.xaml;;
 FE:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\View\OrderFoodInfoListView.xaml;;
 FE:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\View\OrderTableHistoryItemView.xaml;;
 FE:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\View\OrderTableHistoryView.xaml;;
@@ -43,4 +47,5 @@ FE:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_Qua
 FE:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\View\UpdateEmployeeView.xaml;;
 FE:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\View\UpdateFoodDetailView.xaml;;
 FE:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\View\UpdateFoodView.xaml;;
+FE:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\View\AccumlatorPointItemView.xaml;;
 

@@ -7,8 +7,46 @@ using System.Threading.Tasks;
 
 namespace QL_QuanCafe.ViewModel
 {
+    public class SaleOfYear
+    {
+        public int Month { get; set; }
+        public int SaleTotal { get; set; }
+    }
+
+    public class ImportOfYear
+    {
+        public int Month { get; set; }
+        public int ImportTotal { get; set; }
+    }
+
     public class ReportViewModel : ViewModelBase
     {
+        public List<SaleOfYear> GetSaleOfYear(int year)
+        {
+            return DataProvider.Ins.DB.HOADONs
+                                                  .Where(bill => bill.NgayHD.Value.Year == year)
+                                                  .GroupBy(bill => bill.NgayHD.Value.Month)
+                                                  .Select(bill => new SaleOfYear
+                                                  {
+                                                      Month = bill.Key,
+                                                      SaleTotal = (int) bill.Sum(x => x.TongTien)
+                                                  })
+                                                  .ToList();
+        }
+
+        public List<ImportOfYear> GetImportOfYear( int year )
+        {
+            return DataProvider.Ins.DB.NHAPHANGs
+                                                  .Where(import => import.NgayNH.Value.Year == year)
+                                                  .GroupBy(import => import.NgayNH.Value.Month)
+                                                  .Select(import => new ImportOfYear
+                                                  {
+                                                      Month = import.Key,
+                                                      ImportTotal = (int) import.Sum(x => x.TongTienNH)
+                                                  })
+                                                  .ToList();
+        }
+
         public List<string> GetAllMaterialNeetToImport()
         {
             return DataProvider.Ins.DB.HANGHOAs

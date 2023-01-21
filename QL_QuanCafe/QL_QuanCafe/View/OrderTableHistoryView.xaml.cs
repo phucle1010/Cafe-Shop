@@ -46,20 +46,20 @@ namespace QL_QuanCafe.View
             }
         }
 
-        private void OrderTableHistoryView_CollectionChanged( object sender, NotifyCollectionChangedEventArgs e )
-        {
-            if (lvMergedChosedTableList.Items.Count > 0)
-            {
-                grTableOption.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                grTableOption.Visibility = Visibility.Hidden;
-            }
-        }
 
         [DllImport("user32.dll")]
         public static extern IntPtr SendMessage( IntPtr hWnd, int wMsg, int wParam, int lParam );
+
+        private void pnlControlBar_MouseLeftButtonDown( object sender, MouseButtonEventArgs e )
+        {
+            WindowInteropHelper helper = new WindowInteropHelper(this);
+            SendMessage(helper.Handle, 161, 2, 0);
+        }
+
+        private void pnlControlBar_MouseEnter( object sender, System.Windows.Input.MouseEventArgs e )
+        {
+            this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
+        }
 
         private void btnMinimize_Click( object sender, RoutedEventArgs e )
         {
@@ -71,15 +71,16 @@ namespace QL_QuanCafe.View
             this.Close();
         }
 
-        private void pnlControlBar_MouseLeftButtonDown( object sender, MouseButtonEventArgs e )
+        private void OrderTableHistoryView_CollectionChanged( object sender, NotifyCollectionChangedEventArgs e )
         {
-            WindowInteropHelper helper = new WindowInteropHelper(this);
-            SendMessage(helper.Handle, 161, 2, 0);
-        }
-
-        private void pnlControlBar_MouseEnter( object sender, System.Windows.Input.MouseEventArgs e )
-        {
-            this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
+            if (lvMergedChosedTableList.Items.Count > 0)
+            {
+                grTableOption.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                grTableOption.Visibility = Visibility.Hidden;
+            }
         }
 
         private void LoadOrderTableListOfUser() 

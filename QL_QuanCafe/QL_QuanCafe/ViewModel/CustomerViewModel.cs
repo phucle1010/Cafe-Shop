@@ -113,5 +113,24 @@ namespace QL_QuanCafe.ViewModel
                                               .ToList()
                                               .Sum(x => x.SoLuong);
         }
+
+        public int GetAccumlatorPointOfCustomer(int customerId)
+        {
+            return (int) DataProvider.Ins.DB.THETICHDIEMs.Where(customer => customer.MaKH == customerId).Select(customer => customer.DiemTichLuy).First();
+        }
+
+        public int ExchangePoints(int customerId, int point)
+        {
+            try
+            {
+                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"UPDATE THETICHDIEM SET DiemTichLuy -= {point} WHERE MaKH={customerId}");
+            }
+            catch
+            {
+                return 0;
+            }
+            return 1;
+        }
+
     }
 }

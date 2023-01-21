@@ -20,9 +20,11 @@ namespace QL_QuanCafe.View
         List<CT_HOADON> orderDetailList = new List<CT_HOADON>();
         string userName = Properties.Settings.Default ["user"].ToString();
         int customerId;
-        public OrderFoodView()
+        Frame MainContent;
+        public OrderFoodView(Frame MainContent )
         {
             InitializeComponent();
+            this.MainContent = MainContent;
             LoadData();
             LoadFoodList();
             ((INotifyCollectionChanged) lvOrderChosedFood.Items).CollectionChanged += OrderFoodView_CollectionChanged;
@@ -103,8 +105,7 @@ namespace QL_QuanCafe.View
                 if ( InsertBillDetail(billId) == true )
                 {
                     MessageBox.Show("Đặt món thành công!!!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
-                    lvOrderChosedFood.Items.Clear();
-                    orderDetailList.Clear();
+                    MainContent.Navigate(new OrderFoodView(MainContent));
                 }
                 else
                 {
@@ -127,8 +128,8 @@ namespace QL_QuanCafe.View
 
         private void btnViewHistory_Click( object sender, RoutedEventArgs e )
         {
-            OrderTableHistoryView orderTableHistory = new OrderTableHistoryView();
-            orderTableHistory.Show();
+            OrderFoodHistoryView orderFoodHistory = new OrderFoodHistoryView();
+            orderFoodHistory.Show();
         }
     }
 }

@@ -69,6 +69,7 @@ namespace QL_QuanCafe.ViewModel
             try
             {
                 DataProvider.Ins.DB.Database.ExecuteSqlCommand($"INSERT INTO KHACHHANG VALUES ('{customerId}', N'{fullname}', '{customerType}','{phone}','{email}',N'{address}',{accumPoint},N'{username}','{passHash}')");
+                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"INSERT INTO THETICHDIEM (MaKH, DiemTichLuy) VALUES ({customerId}, 0)");
             }
             catch 
             {

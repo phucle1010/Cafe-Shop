@@ -68,16 +68,8 @@ namespace QL_QuanCafe.ViewModel
 
         public string GetAccumlatorPoint( string user )
         {
-            string str = "";
-            try
-            {
-                str = DataProvider.Ins.DB.KHACHHANGs.SqlQuery($"SELECT * FROM KHACHHANG WHERE TenDN = '{user}'").ElementAt(0).DiemTichLuy.ToString();
-            }
-            catch
-            {
-
-            }
-            return str;
+            var customerId = DataProvider.Ins.DB.KHACHHANGs.Where(customer => customer.TenDN == user).Select(customer => customer.MaKH).FirstOrDefault();
+            return DataProvider.Ins.DB.THETICHDIEMs.Where(customer => customer.MaKH == customerId).Select(customer => customer.DiemTichLuy).First().ToString();
         }
 
         public string GetCustomerType( string user )

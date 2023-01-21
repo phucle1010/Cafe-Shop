@@ -126,7 +126,6 @@
           <ScalarProperty Name="AnhDaiDien" ColumnName="AnhDaiDien" />
           <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
           <ScalarProperty Name="TenDN" ColumnName="TenDN" />
-          <ScalarProperty Name="DiemTichLuy" ColumnName="DiemTichLuy" />
           <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="SDT" ColumnName="SDT" />
@@ -210,6 +209,7 @@
     <EntitySetMapping Name="SANPHAMs">
       <EntityTypeMapping TypeName="CafeShopModel.SANPHAM">
         <MappingFragment StoreEntitySet="SANPHAM">
+          <ScalarProperty Name="DiemTichLuy" ColumnName="DiemTichLuy" />
           <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
           <ScalarProperty Name="GiaSP" ColumnName="GiaSP" />
           <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />

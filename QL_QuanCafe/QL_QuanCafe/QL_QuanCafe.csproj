@@ -18,7 +18,7 @@
     </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -209,6 +209,9 @@
     <Compile Include="ViewModel\UpdateEmployeeViewModel.cs" />
     <Compile Include="ViewModel\UpdateFoodViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="View\AccumlatorPointItemView.xaml.cs">
+      <DependentUpon>AccumlatorPointItemView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\AccumlatorPointView.xaml.cs">
       <DependentUpon>AccumlatorPointView.xaml</DependentUpon>
     </Compile>
@@ -297,6 +300,18 @@
     <Compile Include="View\MaterialTypeListView.xaml.cs">
       <DependentUpon>MaterialTypeListView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\OrderFoodHistoryDetailItemView.xaml.cs">
+      <DependentUpon>OrderFoodHistoryDetailItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OrderFoodHistoryDetailView.xaml.cs">
+      <DependentUpon>OrderFoodHistoryDetailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OrderFoodHistoryItemView.xaml.cs">
+      <DependentUpon>OrderFoodHistoryItemView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OrderFoodHistoryView.xaml.cs">
+      <DependentUpon>OrderFoodHistoryView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\OrderFoodInfoListView.xaml.cs">
       <DependentUpon>OrderFoodInfoListView.xaml</DependentUpon>
     </Compile>
@@ -353,6 +368,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\UIColors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AccumlatorPointItemView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -465,6 +484,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\MaterialTypeListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OrderFoodHistoryDetailItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OrderFoodHistoryDetailView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OrderFoodHistoryItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OrderFoodHistoryView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

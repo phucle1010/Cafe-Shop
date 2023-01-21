@@ -30,6 +30,7 @@ namespace QL_QuanCafe.View
         private int billId;
         private int billDetailStatus;
         private string customer;
+        private int total;
         public BillDetailView()
         {
             InitializeComponent();
@@ -67,12 +68,12 @@ namespace QL_QuanCafe.View
             billDetailList = billDetailVM.GetBillDetailList(billId);
             foreach(var item in billDetailList )
             {
-                totalPrice += (int) billDetailVM.GetFoodInfo((int) item.MaSP).GiaSP;
+                totalPrice += (int) billDetailVM.GetFoodInfo((int) item.MaSP).GiaSP * (int) item.SoLuong;
                 BillDetailItemView billDetailItem = new BillDetailItemView(item);
                 detailList.Children.Add(billDetailItem);
             }
-            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
-            lbTotal.Content = "Tổng tiền: " + double.Parse(totalPrice.ToString()).ToString("#,###", cul.NumberFormat);
+            this.total = totalPrice;
+            lbTotal.Content = "Tổng tiền: " + String.Format("{0:C0}", totalPrice);
             LoadOptions();
         }
 
@@ -97,7 +98,8 @@ namespace QL_QuanCafe.View
 
                 string username = Properties.Settings.Default ["user"].ToString();
                 int employeeId = billDetailVM.GetEmplyeeId(username);
-                if ( billDetailVM.UpdateBill(billId, orderTableId, tableId, employeeId) == 1)
+
+                if ( billDetailVM.UpdateBill(billId, orderTableId, tableId, employeeId, total) == 1)
                 {
                     MessageBoxResult notice = System.Windows.MessageBox.Show("Thanh toán thành công hóa đơn!!!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
                     if ( notice == MessageBoxResult.OK )
@@ -127,8 +129,8 @@ namespace QL_QuanCafe.View
                 string foodName = billDetailVM.GetFoodInfo(foodId).TenSP;
                 int quantity = (int) item.SoLuong;
                 int price = (int) billDetailVM.GetFoodInfo(foodId).GiaSP;
-                CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
-                string totalPrice = double.Parse((price * quantity).ToString()).ToString("#,###", cul.NumberFormat);
+
+                string totalPrice = String.Format("{0:C0}", price * quantity);
 
                 var values = new object [] { billId, customer, foodName, quantity, totalPrice };
                 dataTable.Rows.Add(values);
@@ -139,7 +141,6 @@ namespace QL_QuanCafe.View
         private void btnExport_Click( object sender, RoutedEventArgs e )
         {
             billDetailData = ConvertDataToDataTable(billDetailList);
-
             DataSet dataSet = new DataSet();
             dataSet.Tables.Add(billDetailData);
 
@@ -168,15 +169,19 @@ namespace QL_QuanCafe.View
                         excelWorkSheet.Cells [j + 2, k + 1] = table.Rows [j].ItemArray [k].ToString();
                     }
                 }
+
+                excelWorkSheet.Cells [table.Rows.Count + 3, table.Columns.Count - 1] = "Ngày hóa đơn";
+                excelWorkSheet.Cells [table.Rows.Count + 3, table.Columns.Count] = billDetailVM.GetBillDate(billId);
+
+                excelWorkSheet.Cells [table.Rows.Count + 4, table.Columns.Count - 1] = "Tổng tiền";
+                excelWorkSheet.Cells [table.Rows.Count + 4, table.Columns.Count] = String.Format("{0:C0}", this.total);
             }
-  
+
             string fileName = $"{customer}-{billId}.xlsx";
-            string path = "D:" + "\\" + fileName;
+            string path = "F:" + "\\" + fileName;
             excelWorkBook.Saved = true;
             excelWorkBook.SaveCopyAs(path);
-            excelWorkBook.Close(true, path, Type.Missing);
-            //excelWorkBook.SaveAs(path); // -> this will do the custom  
-            //excelWorkBook.Close();
+            excelWorkBook.Close();
             excelApp.Quit();
             System.Windows.MessageBox.Show("In hoá đơn thành công!!", "Thông báo");
         }

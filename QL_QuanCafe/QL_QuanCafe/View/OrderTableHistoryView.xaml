@@ -9,7 +9,6 @@
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         Title="OrderTableHistory" Height="600" Width="800">
-    <Grid>
         <Grid>
             <Grid.RowDefinitions>
                 <!--Control bar-->
@@ -119,5 +118,4 @@
 
             </Border>
         </Grid>
-    </Grid>
 </Window>

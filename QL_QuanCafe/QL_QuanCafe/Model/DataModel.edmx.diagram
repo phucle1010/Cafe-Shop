@@ -24,7 +24,7 @@
         <EntityTypeShape EntityType="CafeShopModel.NHACUNGCAP" Width="1.5" PointX="3" PointY="3" />
         <EntityTypeShape EntityType="CafeShopModel.NHANVIEN" Width="1.5" PointX="3" PointY="5.875" />
         <EntityTypeShape EntityType="CafeShopModel.NHAPHANG" Width="1.5" PointX="5.25" PointY="6.5" />
-        <EntityTypeShape EntityType="CafeShopModel.SANPHAM" Width="1.5" PointX="8.25" PointY="2.5" />
+        <EntityTypeShape EntityType="CafeShopModel.SANPHAM" Width="1.5" PointX="8.25" PointY="2.375" />
         <EntityTypeShape EntityType="CafeShopModel.TAIKHOANDANGSUDUNG" Width="1.5" PointX="0.75" PointY="10.875" />
         <EntityTypeShape EntityType="CafeShopModel.THAMSO" Width="1.5" PointX="2.75" PointY="10.875" />
         <EntityTypeShape EntityType="CafeShopModel.THETICHDIEM" Width="1.5" PointX="6" PointY="23.375" />

@@ -92,12 +92,12 @@ namespace QL_QuanCafe.View
 
         private void btnOrderFood_Click( object sender, RoutedEventArgs e )
         {
-            MainContent.Navigate( new OrderFoodView() );
+            MainContent.Navigate( new OrderFoodView(MainContent) );
         }
 
         private void btnAccPoint_Click( object sender, RoutedEventArgs e )
         {
-            MainContent.Navigate( new AccumlatorPointView() );
+            MainContent.Navigate( new AccumlatorPointView(MainContent) );
         }
 
         private void btnRespone_Click( object sender, RoutedEventArgs e )

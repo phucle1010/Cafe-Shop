@@ -35,20 +35,29 @@ namespace QL_QuanCafe.ViewModel
             return DataProvider.Ins.DB.NHANVIENs.SqlQuery($"SELECT * FROM NHANVIEN WHERE MaNV={username}").ElementAt(0).MaNV;
         }
 
-        public int UpdateBill(int billId, int orderTableId, string tableId, int employeeId)
+        public int UpdateBill(int billId, int orderTableId, string tableId, int employeeId, int total)
         {
             try
             {
-                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"UPDATE HOADON SET TrangThaiThanhToan=1, MaNV={employeeId}, NgayHD='{DateTime.Now.ToString("yyyy/MM/dd")}' WHERE MaHD={billId}");
+                var customerId = DataProvider.Ins.DB.HOADONs.Where(x => x.MaHD == billId).Select(x => x.MaKH).First();
+                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"UPDATE HOADON SET TrangThaiThanhToan=1, MaNV={employeeId} WHERE MaHD={billId}");
                 DataProvider.Ins.DB.Database.ExecuteSqlCommand($"UPDATE DATBAN SET TrangThaiDatMon=1 WHERE MaDatBan={orderTableId}");
                 DataProvider.Ins.DB.Database.ExecuteSqlCommand($"UPDATE BAN SET TrangThai=1 WHERE MaBan='{tableId}'");
-                return 1;
+                int accPoint = total / 1000;
+                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"UPDATE THETICHDIEM SET DiemTichLuy += {accPoint} WHERE MaKH={customerId}");
             }
             catch (Exception e)
             {
                 MessageBox.Show($"Lỗi: {e}");
+                return 0;
             }
-            return 0;
+            return 1;
+        }
+
+        public DateTime GetBillDate(int billId)
+        {
+            var date = DataProvider.Ins.DB.HOADONs.Where(bill => bill.MaHD == billId).Select(bill => bill.NgayHD).First();
+            return DateTime.Parse(date.ToString());
         }
     }
 }

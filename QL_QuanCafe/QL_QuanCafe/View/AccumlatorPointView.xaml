@@ -62,8 +62,32 @@
                     </Ellipse.Fill>
                 </Ellipse>
 
-
             </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="0 10 0 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid Margin="0 0 20 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Tên món ăn" FontSize="13" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Text="Hình ảnh" Grid.Column="1"  FontSize="13" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Text="Số điềm yêu cầu" Grid.Column="2"  FontSize="13" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Text="Số lượng thỏa mãn" Grid.Column="3"  FontSize="13" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Text="Lựa chọn" Grid.Column="4"  FontSize="13" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+            <ScrollViewer Margin="0 10 0 0" Grid.Row="1">
+                <StackPanel x:Name="plFood"/>
+            </ScrollViewer>
         </Grid>
     </Grid>
 </Page>

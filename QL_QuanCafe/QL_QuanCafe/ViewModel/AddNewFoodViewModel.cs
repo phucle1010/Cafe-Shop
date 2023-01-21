@@ -24,7 +24,7 @@ namespace QL_QuanCafe.ViewModel
         {
             try
             {
-                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"INSERT INTO SANPHAM (TenSP, MaLoaiSP, GiaSP, TrangThai, HinhAnh) VALUES (N'{name}', '{typeId}', {price}, 1, N'{pathImage}')");
+                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"INSERT INTO SANPHAM (TenSP, MaLoaiSP, GiaSP, TrangThai, HinhAnh, DiemTichLuy) VALUES (N'{name}', '{typeId}', {price}, 1, N'{pathImage}', {Int32.Parse(price) / 100})");
                 MessageBox.Show("Thêm món ăn mới thành công", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             catch (Exception e) 
