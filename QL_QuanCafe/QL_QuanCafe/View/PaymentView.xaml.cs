@@ -23,19 +23,14 @@ namespace QL_QuanCafe.View
     public partial class PaymentView : Page
     {
         PaymentViewModel paymentVM = new PaymentViewModel();
+        CafeShopEntities entity = new CafeShopEntities();
         Frame MainContent;
-        public PaymentView()
-        {
-            InitializeComponent();
-            LoadData();
-            LoadPaymentUnCompleteItem();
-            LoadPaymentCompleteItem();
-        }
-
-        public PaymentView(Frame MainContent)
+        string type;
+        public PaymentView(Frame MainContent, string type)
         {
             InitializeComponent();
             this.MainContent = MainContent;
+            this.type = type;
             LoadData();
             LoadPaymentUnCompleteItem();
             LoadPaymentCompleteItem();
@@ -43,13 +38,21 @@ namespace QL_QuanCafe.View
         void LoadData()
         {
             AdminViewModel admin = new AdminViewModel();
-            string userName = Properties.Settings.Default ["user"].ToString();
+            string userName = Properties.Settings.Default.user;
             tbUserName.Text = admin.getAdminName(userName);          
         }
 
         void LoadPaymentUnCompleteItem()
         {
-            List<HOADON> unPayedBillList = paymentVM.billListNotPayments();
+            List<HOADON> unPayedBillList;
+            if (type == "update")
+            {
+                unPayedBillList = entity.HOADONs.Where(bill => bill.TrangThaiThanhToan == false).ToList();
+            }
+            else
+            {
+                unPayedBillList = paymentVM.billListNotPayments();
+            }
             foreach(var item in unPayedBillList)
             {
                 PaymentItemView paymentItem = new PaymentItemView((int) item.MaDatBan, paymentVM.GetCustomerName((int) item.MaKH), (int) item.TongTien, this, (int) item.MaHD, MainContent);
@@ -58,7 +61,15 @@ namespace QL_QuanCafe.View
         }
         void LoadPaymentCompleteItem()
         {
-            List<HOADON> payedBillList = paymentVM.billListHasPayments();
+            List<HOADON> payedBillList; 
+            if ( type == "update" )
+            {
+                payedBillList = entity.HOADONs.Where(bill => bill.TrangThaiThanhToan == true).ToList();
+            }
+            else
+            {
+                payedBillList = paymentVM.billListHasPayments();
+            }
             foreach ( var item in payedBillList )
             {
                 PaymentCompletedView paymentItem = new PaymentCompletedView((int) item.MaHD, paymentVM.GetCustomerName((int) item.MaKH), (int) item.TongTien, MainContent);

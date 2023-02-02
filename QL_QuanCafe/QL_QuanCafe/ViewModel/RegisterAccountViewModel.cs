@@ -29,25 +29,6 @@ namespace QL_QuanCafe.ViewModel
             return id;
         }
 
-        public string CreateIdStaff()
-        {
-            string ID = "000000";
-            int nAcount = 0;
-            int maxId = 0;
-            string id = "000001";
-            nAcount = DataProvider.Ins.DB.NHANVIENs.SqlQuery("SELECT * FROM NHANVIEN").Count();
-            if ( nAcount > 0 )
-            {
-                maxId = Int32.Parse(DataProvider.Ins.DB.NHANVIENs.SqlQuery("SELECT * FROM NHANVIEN ORDER  BY MaNV DESC").ElementAt(0).MaNV.ToString());
-                int nextId = ++maxId;
-                int lNextId = nextId.ToString().Length;
-                string subId = ID.Substring(0, 6 - lNextId);
-                id = string.Concat(subId, nextId);
-
-            }
-            return id;
-        }
-
         public bool IsExistedUsername( string username )
         {
             int nDataRows = 0;
@@ -99,13 +80,12 @@ namespace QL_QuanCafe.ViewModel
 
         public int InsertEmployeeData( string fullname, string phone, string email, string address, string workShiftName, string position, int gender )
         {
-            int pass = RandomPass();
-            string employeeId = this.CreateIdStaff();
+            string pass = "123456";
             string workShiftId = getWorkShiftId(workShiftName);
-            string passHash = this.ComputeSha256Hash(pass.ToString()); 
+            string passHash = this.ComputeSha256Hash(pass); 
             try
             {
-                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"INSERT INTO NHANVIEN VALUES ('{employeeId}', '{passHash}', N'{fullname}', '{phone}', '{email}', N'{address}', '{position}', '{DateTime.Now.ToString("yyyy/MM/dd")}', {gender}, '{workShiftId}')");
+                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"INSERT INTO NHANVIEN (MatKhau, TenNV, SDT, Email, DiaChi, ChucVu, NgayVaoLam, GioiTinh, MaCaLV) VALUES ('{passHash}', N'{fullname}', '{phone}', '{email}', N'{address}', '{position}', '{DateTime.Now.ToString("yyyy/MM/dd")}', {gender}, '{workShiftId}')");
                 MessageBox.Show("Thêm nhân viên mới thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
                 MessageBox.Show($"Mật khẩu của tài khoản: {pass}");
             }

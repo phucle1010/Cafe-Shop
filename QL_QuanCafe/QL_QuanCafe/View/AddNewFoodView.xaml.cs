@@ -109,7 +109,6 @@ namespace QL_QuanCafe.View
                     AddFoodMaterialView addMaterialView = new AddFoodMaterialView(foodId, typeId);
                     addMaterialView.Show();
                     this.Close();
-                    MainContent.Navigate(new FoodView(MainContent));
                 }
             }
         }

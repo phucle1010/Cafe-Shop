@@ -1,4 +1,5 @@
-﻿using QL_QuanCafe.ViewModel;
+﻿using QL_QuanCafe.Model;
+using QL_QuanCafe.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,24 +22,62 @@ namespace QL_QuanCafe.View
     /// </summary>
     public partial class EmployeeView : Page
     {
-        Frame NavContent;
-        public EmployeeView()
+        Frame MainContent;
+        EmployeeViewModel employeeVM = new EmployeeViewModel();
+        CafeShopEntities entity = new CafeShopEntities();
+        List<NHANVIEN> employees;
+        string type;
+        public EmployeeView(Frame MainContent, string type)
         {
             InitializeComponent();
-            LoadData();
-        }
-        public EmployeeView(Frame MainContent)
-        {
-            InitializeComponent();
-            this.NavContent = MainContent;
+            DataContext = employeeVM;
+            this.MainContent = MainContent;
+            this.type = type;
             LoadData();
         }
         void LoadData()
         {
-            AdminViewModel admin = new AdminViewModel();
-            string userName = Properties.Settings.Default ["user"].ToString();
-            tbUserName.Text = admin.getAdminName(userName);
-            MainContent.Content = new EmployeeListView(MainContent, NavContent);
+            if ( type == "update" )
+            {
+                string userName = Properties.Settings.Default ["user"].ToString();
+                tbUserName.Text = entity.NHANVIENs.Where(employee => employee.MaNV.ToString() == userName).FirstOrDefault().TenNV;
+
+            }
+            else
+            {
+                string userName = Properties.Settings.Default ["user"].ToString();
+                AdminViewModel admin = new AdminViewModel();
+                tbUserName.Text = admin.getAdminName(userName);
+            }
+            LoadEmployee();
+        }
+
+        private void LoadEmployee()
+        {
+            if (type == "update")
+            {
+                employees = entity.NHANVIENs.ToList();
+            }
+            else
+            {
+                employees = employeeVM.GetEmployeeList();
+            }
+            foreach(var employee in employees)
+            {
+                plEmployee.Children.Add(new EmployeeItemView(MainContent, employee));
+            }
+        }
+
+        private void btnAddEmplyee_Click( object sender, RoutedEventArgs e )
+        {
+            AddNewEmployeeView newEmployee = new AddNewEmployeeView(MainContent);
+            newEmployee.Show();
+            newEmployee.Closed += NewEmployee_Closed;
+        }
+
+        private void NewEmployee_Closed( object sender, EventArgs e )
+        {
+            MainContent.Navigate(new EmployeeView(MainContent, null));
         }
     }
 }

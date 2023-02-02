@@ -10,66 +10,17 @@ namespace QL_QuanCafe.ViewModel
 {
     public class CustomerProfileViewModel : ViewModelBase
     {
-        public string GetName(string user)
+        public KHACHHANG GetCustomerInfo(string userName)
         {
-            string str = "";
-            try
-            {
-                str = DataProvider.Ins.DB.KHACHHANGs.SqlQuery($"SELECT * FROM KHACHHANG WHERE TenDN = '{user}'").ElementAt(0).TenKH.ToString();
-            }
-            catch
-            {
-
-            }
-            return str;
-        }
-
-        public string GetEmail( string user )
-        {
-            string str = "";
-            try
-            {
-                str = DataProvider.Ins.DB.KHACHHANGs.SqlQuery($"SELECT * FROM KHACHHANG WHERE TenDN = '{user}'").ElementAt(0).Email.ToString();
-            }
-            catch
-            {
-
-            }
-            return str;
-        }
-
-        public string GetPhone( string user )
-        {
-            string str = "";
-            try
-            {
-                str = DataProvider.Ins.DB.KHACHHANGs.SqlQuery($"SELECT * FROM KHACHHANG WHERE TenDN = '{user}'").ElementAt(0).SDT.ToString();
-            }
-            catch
-            {
-
-            }
-            return str;
-        }
-
-        public string GetAddress( string user )
-        {
-            string str = "";
-            try
-            {
-                str = DataProvider.Ins.DB.KHACHHANGs.SqlQuery($"SELECT * FROM KHACHHANG WHERE TenDN = '{user}'").ElementAt(0).DiaChi.ToString();
-            }
-            catch
-            {
-
-            }
-            return str;
+            CafeShopEntities entity = new CafeShopEntities();
+            return entity.KHACHHANGs.Where(customer => customer.TenDN == userName).FirstOrDefault();
         }
 
         public string GetAccumlatorPoint( string user )
         {
+            CafeShopEntities entity = new CafeShopEntities();
             var customerId = DataProvider.Ins.DB.KHACHHANGs.Where(customer => customer.TenDN == user).Select(customer => customer.MaKH).FirstOrDefault();
-            return DataProvider.Ins.DB.THETICHDIEMs.Where(customer => customer.MaKH == customerId).Select(customer => customer.DiemTichLuy).First().ToString();
+            return entity.THETICHDIEMs.Where(customer => customer.MaKH == customerId).Select(customer => customer.DiemTichLuy).First().ToString();
         }
 
         public string GetCustomerType( string user )
@@ -88,18 +39,18 @@ namespace QL_QuanCafe.ViewModel
             return str;
         }
 
-        public void UpdateProfile( string name, string phone, string address, string email )
+        public int UpdateProfile(string userName, string name, string phone, string address, string email, string avt )
         {
-            string username = Properties.Settings.Default ["user"].ToString();
             try
             {
-                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"UPDATE KHACHHANG SET TenKH = N'{name}', SDT = '{phone}', DiaChi = '{address}', Email = '{email}' WHERE TenDN = '{username}'");
-                MessageBox.Show("Bạn đã cập nhật thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"UPDATE KHACHHANG SET TenKH = N'{name}', SDT = '{phone}', DiaChi = N'{address}', Email = '{email}', AnhDaiDien='{avt}' WHERE TenDN = '{userName}'");
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.ToString(), "Lỗi");
+                return 0;
             }
+            return 1;
         }
     }
 }

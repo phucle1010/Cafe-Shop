@@ -8,7 +8,9 @@
         mc:Ignorable="d"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
-        Title="ChangeWorkShiftView" Height="350" Width="500">
+        Title="ChangeWorkShiftView" 
+        Height="350" 
+        Width="500">
     <Grid>
         <Grid.RowDefinitions>
             <!--Control bar-->
@@ -66,15 +68,6 @@
                              x:Name="tbEmployeeId"
                              materialDesign:HintAssist.Hint="Mã nhân viên"
                              IsReadOnly="True">
-                        <TextBox.Text>
-                            <Binding
-                                  Path="Mã nhân viên"
-                                  UpdateSourceTrigger="PropertyChanged">
-                                <Binding.ValidationRules>
-
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </TextBox.Text>
                     </TextBox>
                 </Grid>
                 <Grid Grid.Row="2" >
@@ -82,15 +75,6 @@
                              x:Name="tbName"
                              materialDesign:HintAssist.Hint="Tên nhân viên"
                              IsReadOnly="True">
-                        <TextBox.Text>
-                            <Binding
-                                  Path="Tên nhân viên"
-                                  UpdateSourceTrigger="PropertyChanged">
-                                <Binding.ValidationRules>
-
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </TextBox.Text>
                     </TextBox>
                 </Grid>
                 <Grid Grid.Row="3">

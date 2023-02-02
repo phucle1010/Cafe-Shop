@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Drawing;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
@@ -18,7 +19,7 @@ namespace QL_QuanCafe.View
     {
         OrderFoodViewModel orderFoodVM = new OrderFoodViewModel();
         List<CT_HOADON> orderDetailList = new List<CT_HOADON>();
-        string userName = Properties.Settings.Default ["user"].ToString();
+        string userName = Properties.Settings.Default.user;
         int customerId;
         Frame MainContent;
         public OrderFoodView(Frame MainContent )
@@ -46,7 +47,8 @@ namespace QL_QuanCafe.View
         void LoadData()
         {
             CustomerViewModel customer = new CustomerViewModel();
-            tbUserName.Text = customer.getCustomerName(userName);
+            CafeShopEntities entity = new CafeShopEntities();   
+            tbUserName.Text = entity.KHACHHANGs.Where(client => client.TenDN == this.userName).First().TenKH; 
             customerId = orderFoodVM.GetCustomerId(userName);
             btnSubmit.Visibility = Visibility.Hidden;
         }

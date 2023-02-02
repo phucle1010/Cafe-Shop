@@ -24,26 +24,31 @@ namespace QL_QuanCafe.View
     public partial class CustomerView : Page
     {
         CustomerViewModel customerVM = new CustomerViewModel();
+        CafeShopEntities entity = new CafeShopEntities();
+        string type;
         Frame MainContent;
-        public CustomerView()
-        {
-            InitializeComponent();
-            LoadData();
-            LoadCustomerData();
-        }
-
-        public CustomerView(Frame MainContent)
+        public CustomerView(Frame MainContent, string type)
         {
             InitializeComponent();
             this.MainContent = MainContent;
+            this.type = type;
             LoadData();
             LoadCustomerData();
         }
         void LoadData()
         {
-            AdminViewModel admin = new AdminViewModel();
-            string userName = Properties.Settings.Default ["user"].ToString();
-            tbUserName.Text = admin.getAdminName(userName);
+            if ( type == "update" )
+            {
+                string userName = Properties.Settings.Default.user;
+                tbUserName.Text = entity.NHANVIENs.Where(employee => employee.MaNV.ToString() == userName).FirstOrDefault().TenNV;
+
+            }
+            else
+            {
+                string userName = Properties.Settings.Default.user;
+                AdminViewModel admin = new AdminViewModel();
+                tbUserName.Text = admin.getAdminName(userName);
+            }
         }
         void LoadCustomerData()
         {

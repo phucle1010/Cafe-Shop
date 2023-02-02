@@ -2,6 +2,7 @@
 using QL_QuanCafe.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -24,19 +25,15 @@ namespace QL_QuanCafe.View
     public partial class ChangeWorkShiftView : Window
     {
         ChangeWorkShiftViewModel changeWorkShiftVM = new ChangeWorkShiftViewModel();
-        int employeeId;
+        NHANVIEN employee;
         Frame MainContent;
-        public ChangeWorkShiftView()
-        {
-            InitializeComponent();
-        }
 
-        public ChangeWorkShiftView(int id, Frame MainContent)
+        public ChangeWorkShiftView( NHANVIEN employee, Frame MainContent )
         {
             InitializeComponent();
-            this.employeeId = id;
-            this.MainContent = MainContent;
+            this.employee = employee;
             LoadData();
+            this.MainContent = MainContent;
         }
 
         [DllImport("user32.dll")]
@@ -65,13 +62,11 @@ namespace QL_QuanCafe.View
 
         public void LoadData()
         {
-            MessageBox.Show(employeeId.ToString());
-            NHANVIEN v = changeWorkShiftVM.GetEmployeeInfo(this.employeeId);
-            if (v != null)
+            if ( employee != null )
             {
-                tbEmployeeId.Text = v.MaNV.ToString();
-                tbName.Text = v.TenNV.ToString();
-                switch ( v.MaCaLV )
+                tbEmployeeId.Text = employee.MaNV.ToString();
+                tbName.Text = employee.TenNV;
+                switch ( employee.MaCaLV )
                 {
                     case 1:
                         cbWorkShift.Text = "Ca sáng";
@@ -85,7 +80,6 @@ namespace QL_QuanCafe.View
                     default:
                         break;
                 }
-                
             }
         }
 
@@ -106,9 +100,13 @@ namespace QL_QuanCafe.View
                 default:
                     break;
             }
-            changeWorkShiftVM.UpdateWorkShift(employeeId, wsId);
-            this.Close();
-            MainContent.Navigate(new EmployeeView(MainContent));
+            if ( changeWorkShiftVM.UpdateWorkShift(employee.MaNV, wsId) == 1 )
+            {
+                MessageBox.Show("Chuyển ca làm cho nhân viên thành công", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                this.Close();
+                MainContent.Navigate(new EmployeeView(MainContent, "update"));
+            }
         }
+
     }
 }

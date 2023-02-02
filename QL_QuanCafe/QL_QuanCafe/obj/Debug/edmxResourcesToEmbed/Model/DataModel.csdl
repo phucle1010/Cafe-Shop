@@ -315,7 +315,7 @@
     <Property Name="TenNV" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
     <Property Name="SDT" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
     <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="ChucVu" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
     <Property Name="NgayVaoLam" Type="DateTime" Precision="0" />
     <Property Name="GioiTinh" Type="Boolean" />

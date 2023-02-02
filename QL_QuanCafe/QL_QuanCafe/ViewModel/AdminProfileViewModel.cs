@@ -17,7 +17,7 @@ namespace QL_QuanCafe.ViewModel
             string username = Properties.Settings.Default ["user"].ToString();
             try
             {
-                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"UPDATE NHANVIEN SET TenNV = N'{name}', SDT = '{phone}', DiaChi = '{address}', Email = '{email}', AnhDaiDien=N'{path}' WHERE MaNV = {username}");
+                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"UPDATE NHANVIEN SET TenNV = N'{name}', SDT = '{phone}', DiaChi = N'{address}', Email = '{email}', AnhDaiDien=N'{path}' WHERE MaNV = {username}");
                 status = 1;
                 MessageBox.Show("Bạn đã cập nhật thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
             }
@@ -30,18 +30,8 @@ namespace QL_QuanCafe.ViewModel
 
         public NHANVIEN EmployeeInfo( string user )
         {
-            NHANVIEN e = new NHANVIEN();
-            try
-            {
-                var result = DataProvider.Ins.DB.NHANVIENs.SqlQuery($"SELECT * FROM NHANVIEN WHERE MaNV = {user}").ToList<NHANVIEN>();
-                e = result [0];
-                return e;
-            }
-            catch ( Exception err )
-            {
-                MessageBox.Show(err.ToString(), "Lỗi");
-            }
-            return null;
+            CafeShopEntities entity = new CafeShopEntities();
+            return entity.NHANVIENs.Where(employee => employee.MaNV.ToString() == user).First();
         }
     }
 }

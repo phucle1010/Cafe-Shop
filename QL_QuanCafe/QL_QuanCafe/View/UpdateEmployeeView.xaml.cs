@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -24,17 +23,13 @@ namespace QL_QuanCafe.View
     public partial class UpdateEmployeeView : Window
     {
         UpdateEmployeeViewModel updEmployeeVM = new UpdateEmployeeViewModel();
-        int employeeId;
+        NHANVIEN employee;
         Frame MainContent;
-        public UpdateEmployeeView()
-        {
-            InitializeComponent();
-        }
 
-        public UpdateEmployeeView(int employeeId, Frame mainContent )
+        public UpdateEmployeeView(NHANVIEN employee, Frame mainContent )
         {
             InitializeComponent();
-            this.employeeId = employeeId;
+            this.employee = employee;
             LoadData();
             MainContent = mainContent;
         }
@@ -65,15 +60,15 @@ namespace QL_QuanCafe.View
 
         public void LoadData()
         {
-            MessageBox.Show(this.employeeId.ToString());
-            tbEmployeeId.Text = this.employeeId.ToString();
-
-            NHANVIEN v = updEmployeeVM.GetEmployeeData(this.employeeId);
-            tbName.Text = v.TenNV.ToString();
-            tbPhonenumber.Text = v.SDT.ToString();
-            tbEmail.Text = v.Email.ToString();
-            tbAddress.Text = v.DiaChi.ToString();
-            cbPosition.Text = v.ChucVu.ToString() == "1" ? "Quản lý" : "Nhân viên";
+            if (employee != null )
+            {
+                tbEmployeeId.Text = employee.MaNV.ToString();
+                tbName.Text = employee.TenNV;
+                tbPhonenumber.Text = employee.SDT;
+                tbEmail.Text = employee.Email;
+                tbAddress.Text = employee.DiaChi;
+                cbPosition.Text = employee.ChucVu == "1" ? "Quản lý" : "Nhân viên";
+            }
         }
 
         bool IsValidEmail( string email )
@@ -111,17 +106,17 @@ namespace QL_QuanCafe.View
                 {
                     if (cbPosition.Text == "Quản lý")
                     {
-                        if (updEmployeeVM.UpdateEmployeeData(this.employeeId, tbName.Text, tbPhonenumber.Text, tbEmail.Text, tbAddress.Text, "1") == 1)
+                        if (updEmployeeVM.UpdateEmployeeData(employee.MaNV, tbName.Text, tbPhonenumber.Text, tbEmail.Text, tbAddress.Text, "1") == 1)
                         {
                             this.Close();
-                            MainContent.Navigate(new EmployeeView());
+                            MainContent.Navigate(new EmployeeView(MainContent, "update"));
                         }
                     } else
                     {
-                        if ( updEmployeeVM.UpdateEmployeeData(this.employeeId, tbName.Text, tbPhonenumber.Text, tbEmail.Text, tbAddress.Text, "0") == 1 )
+                        if ( updEmployeeVM.UpdateEmployeeData(employee.MaNV, tbName.Text, tbPhonenumber.Text, tbEmail.Text, tbAddress.Text, "0") == 1 )
                         {
                             this.Close();
-                            MainContent.Navigate(new EmployeeView(MainContent));
+                            MainContent.Navigate(new EmployeeView(MainContent, "update"));
                         }
                     }
                 }

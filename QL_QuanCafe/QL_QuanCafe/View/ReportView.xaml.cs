@@ -21,6 +21,7 @@ using System.Windows.Forms;
 using System.Reflection.Emit;
 using System.Diagnostics;
 using LiveCharts.Helpers;
+using QL_QuanCafe.Model;
 
 namespace QL_QuanCafe.View
 {
@@ -29,6 +30,7 @@ namespace QL_QuanCafe.View
     /// </summary>
     public partial class ReportView : Page
     {
+        ReportViewModel reportVM = new ReportViewModel();
         public SeriesCollection SaleCollection { get; set; }
         public string [] SaleLabels { get; set; }
         public Func<double, string> SaleFormatter { get; set; }
@@ -38,22 +40,25 @@ namespace QL_QuanCafe.View
         public SeriesCollection ImportMaterialCollection { get; set; }
         public string [] ImportMaterialLabels { get; set; }
         public Func<double, string> ImportMaterialFormatter { get; set; }
-        ReportViewModel reportVM = new ReportViewModel();
         public ReportView()
         {
             InitializeComponent();
             LoadData();
+            this.Loaded += ReportView_Loaded;
+        }
+
+        private void ReportView_Loaded( object sender, RoutedEventArgs e )
+        {
             LoadSaleChart();
             LoadFoodTrendChart();
             LoadImportMaterialChart();
-            DataContext = this;
         }
 
         private void LoadData()
         {
-            AdminViewModel admin = new AdminViewModel();
-            string userName = Properties.Settings.Default ["user"].ToString();
-            tbUserName.Text = admin.getAdminName(userName);
+            CafeShopEntities entity = new CafeShopEntities();
+            string userName = Properties.Settings.Default.user;
+            tbUserName.Text = entity.NHANVIENs.Where(employee => employee.MaNV.ToString() == userName).FirstOrDefault().TenNV;
         }
 
         private void LoadSaleChart()
@@ -84,7 +89,7 @@ namespace QL_QuanCafe.View
 
             };
 
-            var year = DateTime.Now.Year - 1;
+            var year = DateTime.Now.Year;
 
             List<SaleOfYear> saleOfYear = reportVM.GetSaleOfYear(year);
             List<SaleOfYear> finalSale = SetSaleOfYear(saleOfYear);
@@ -98,7 +103,6 @@ namespace QL_QuanCafe.View
             var monthLoops = finalImport.Count > finalSale.Count ? finalImport.Count : finalSale.Count;
             SetBenefitsOfYear(monthLoops, benefits, finalSale, finalImport);
             SaleCollection [2].Values = benefits.Select(x => x).ToArray().AsChartValues<int>();
-
         }
 
         private List<SaleOfYear> SetSaleOfYear(List<SaleOfYear> sales)
@@ -189,7 +193,6 @@ namespace QL_QuanCafe.View
             };
 
             FoodTrendCollection [0].Values = quantityOfEachTrendFoods.ToArray().AsChartValues<int>();
-
         }
         private void LoadImportMaterialChart()
         {
@@ -211,7 +214,6 @@ namespace QL_QuanCafe.View
                 }
             };
             ImportMaterialCollection [0].Values = quantityOfMaterials.ToArray().AsChartValues<double>();
-
         }
     }
 }

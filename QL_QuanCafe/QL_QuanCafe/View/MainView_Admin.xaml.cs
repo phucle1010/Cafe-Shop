@@ -65,32 +65,32 @@ namespace QL_QuanCafe.View
 
         private void btnCustomer_Click( object sender, RoutedEventArgs e )
         {
-            MainContent.Navigate(new CustomerView(MainContent));
+            MainContent.Navigate(new CustomerView(MainContent, "update"));
         }
 
         private void btnEmployee_Click( object sender, RoutedEventArgs e )
         {
-            MainContent.Navigate(new EmployeeView(MainContent));
+            MainContent.Navigate(new EmployeeView(MainContent, "update"));
         }
 
         private void btnFood_Click( object sender, RoutedEventArgs e )
         {
-            MainContent.Navigate(new FoodView(MainContent));
+            MainContent.Navigate(new FoodView(MainContent, "update"));
         }
 
         private void btnMaterial_Click( object sender, RoutedEventArgs e )
         {
-            MainContent.Navigate(new ImportMaterialView(MainContent));
+            MainContent.Navigate(new ImportMaterialView(MainContent, "update"));
         }
 
         private void btnManageOrderTable_Click( object sender, RoutedEventArgs e )
         {
-            MainContent.Navigate(new ManageOrderTableView(MainContent));
+            MainContent.Navigate(new ManageOrderTableView(MainContent, "update"));
         }
 
         private void btnPayment_Click( object sender, RoutedEventArgs e )
         {
-            MainContent.Navigate(new PaymentView(MainContent));
+            MainContent.Navigate(new PaymentView(MainContent, "update"));
         }
 
         private void btnReport_Click( object sender, RoutedEventArgs e )

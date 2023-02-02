@@ -1,6 +1,7 @@
 ﻿using LiveCharts;
 using LiveCharts.Helpers;
 using LiveCharts.Wpf;
+using QL_QuanCafe.Model;
 using QL_QuanCafe.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -40,8 +41,9 @@ namespace QL_QuanCafe.View
 
         private void LoadUIData()
         {
-            tbOrderedQuantity.Text = customerVM.GetOrderedQuantityOfCustomer(customerId).ToString();
-            tbAccPoint.Text = customerVM.GetAccumlatorPointOfCustomer(customerId).ToString();
+            CafeShopEntities entity = new CafeShopEntities();
+            tbOrderedQuantity.Text = customerVM.GetOrderedQuantityOfCustomer(customerId, entity).ToString();
+            tbAccPoint.Text = customerVM.GetAccumlatorPointOfCustomer(customerId, entity).ToString();
         }
 
         private void LoadFavoriteFood()

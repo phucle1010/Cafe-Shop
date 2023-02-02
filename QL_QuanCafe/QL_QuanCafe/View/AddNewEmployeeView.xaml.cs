@@ -84,7 +84,8 @@ namespace QL_QuanCafe.View
                     txtAddress.Clear();
                     txtEmail.Clear();
                     txtPhonenumber.Clear();
-                    MainContent.Navigate(new EmployeeView(MainContent));
+                    this.Close();
+                    MainContent.Navigate(new EmployeeView(MainContent, null));
                 }
                 
             }

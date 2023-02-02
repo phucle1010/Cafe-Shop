@@ -37,7 +37,8 @@ namespace QL_QuanCafe.View
 
         private void txtProfile_Click( object sender, MouseButtonEventArgs e )
         {
-            MainContent.Content = new CustomerProfileView();
+            CustomerProfileView customer = new CustomerProfileView();
+            customer.Show();
         }
     }
 }

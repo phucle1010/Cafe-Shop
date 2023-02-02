@@ -22,7 +22,8 @@ namespace QL_QuanCafe.ViewModel
 
         public List<SANPHAM> GetAllFood()
         {
-            return DataProvider.Ins.DB.SANPHAMs.SqlQuery("SELECT * FROM SANPHAM").ToList<SANPHAM>();
+            CafeShopEntities entity = new CafeShopEntities();
+            return entity.SANPHAMs.SqlQuery("SELECT * FROM SANPHAM").ToList<SANPHAM>();
         }
 
         public bool IsOrdering(int customerId)

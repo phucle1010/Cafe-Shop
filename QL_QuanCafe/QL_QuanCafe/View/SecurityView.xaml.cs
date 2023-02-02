@@ -1,4 +1,5 @@
-﻿using QL_QuanCafe.ViewModel;
+﻿using QL_QuanCafe.Model;
+using QL_QuanCafe.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;

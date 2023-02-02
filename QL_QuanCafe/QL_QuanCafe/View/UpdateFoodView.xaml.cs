@@ -66,12 +66,11 @@ namespace QL_QuanCafe.View
 
         public void LoadData()
         {
-            MessageBox.Show(foodId.ToString());
             tbFoodId.Text = this.foodId.ToString();
 
             SANPHAM s = updFoodVM.GetFoodData(foodId);
             tbFoodName.Text = s.TenSP;
-            tbFoodPrice.Text = String.Format("{0:C0}", s.GiaSP); 
+            tbFoodPrice.Text = ((int) s.GiaSP.Value).ToString();
             cbFoodStatus.Text = Boolean.Parse(s.TrangThai.Value.ToString()) == true ? "Còn sẵn" : "Hết hàng"; 
         }
 
@@ -93,7 +92,6 @@ namespace QL_QuanCafe.View
                     if(updFoodVM.UpdateFoodData(foodId, price, status) == 1)
                     {
                         this.Close();
-                        MainContent.Navigate(new FoodView(MainContent));
                     }
                 }
             }

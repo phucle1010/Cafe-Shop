@@ -38,7 +38,7 @@ namespace QL_QuanCafe.ViewModel
 
         public int getCustomerId( string user )
         {
-            return DataProvider.Ins.DB.KHACHHANGs.SqlQuery($"SELECT * FROM KHACHHANG WHERE TenDN = '{user}'").ElementAt(0).MaKH;
+            return DataProvider.Ins.DB.KHACHHANGs.Where(client => client.TenDN == user).First().MaKH;
         }
 
         public string getCustomerEmail( string user )
@@ -64,10 +64,10 @@ namespace QL_QuanCafe.ViewModel
 
         public void LoadFavoriteFoodOfCustomer(int customerId)
         {
-            var DataBase = DataProvider.Ins.DB;
-            var foods = DataBase.HOADONs
+            CafeShopEntities entity = new CafeShopEntities();
+            var foods = entity.HOADONs
                                          .Where(h => h.MaKH == customerId)
-                                         .Join(DataBase.CT_HOADON,
+                                         .Join(entity.CT_HOADON,
                                                h => h.MaHD,
                                                ct => ct.MaHD,
                                                ( h, ct ) => new { ct.MaSP, ct.SoLuong }).ToList();
@@ -102,21 +102,20 @@ namespace QL_QuanCafe.ViewModel
             return names;
         }
 
-        public int GetOrderedQuantityOfCustomer(int customerId)
+        public int GetOrderedQuantityOfCustomer(int customerId, CafeShopEntities entity)
         {
-            return (int) DataProvider.Ins.DB.HOADONs
-                                              .Where(hd => hd.MaKH == customerId)
-                                              .Join(DataProvider.Ins.DB.CT_HOADON,
-                                                    hd => hd.MaHD,
-                                                    ct => ct.MaHD,
-                                                    ( hd, ct ) => new { ct.SoLuong })
-                                              .ToList()
-                                              .Sum(x => x.SoLuong);
+            return (int) entity.HOADONs.Where(hd => hd.MaKH == customerId)
+                                       .Join(entity.CT_HOADON,
+                                           hd => hd.MaHD,
+                                           ct => ct.MaHD,
+                                           ( hd, ct ) => new { ct.SoLuong })
+                                       .ToList()
+                                       .Sum(x => x.SoLuong);
         }
 
-        public int GetAccumlatorPointOfCustomer(int customerId)
+        public int GetAccumlatorPointOfCustomer(int customerId, CafeShopEntities entity)
         {
-            return (int) DataProvider.Ins.DB.THETICHDIEMs.Where(customer => customer.MaKH == customerId).Select(customer => customer.DiemTichLuy).First();
+            return (int) entity.THETICHDIEMs.Where(customer => customer.MaKH == customerId).Select(customer => customer.DiemTichLuy).First();
         }
 
         public int ExchangePoints(int customerId, int point)

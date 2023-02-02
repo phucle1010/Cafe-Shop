@@ -12,6 +12,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="35"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
@@ -65,11 +66,16 @@
             </StackPanel>
         </Grid>
 
-        <Frame Grid.Row="1"
-               x:Name="MainContent"
-               NavigationUIVisibility="Hidden">
-            
-        </Frame>
+        <ScrollViewer Grid.Row="1" Margin="0 10 0 0">
+            <StackPanel x:Name="plEmployee"/>
+        </ScrollViewer >
 
+        <Button Grid.Row="2"
+                x:Name="btnAddEmplyee"
+                Content="Thêm nhân viên"
+                Width="150"
+                HorizontalAlignment="Right"
+                Margin="0 0 20 0"
+                Click="btnAddEmplyee_Click"/>
     </Grid>
 </Page>

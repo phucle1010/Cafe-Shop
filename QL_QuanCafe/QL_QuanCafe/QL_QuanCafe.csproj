@@ -185,7 +185,6 @@
     <Compile Include="ViewModel\CreateNewPasswordViewModel.cs" />
     <Compile Include="ViewModel\CustomerProfileViewModel.cs" />
     <Compile Include="ViewModel\CustomerViewModel.cs" />
-    <Compile Include="ViewModel\EmployeeListViewModel.cs" />
     <Compile Include="ViewModel\EmployeeViewModel.cs" />
     <Compile Include="ViewModel\FoodViewModel.cs" />
     <Compile Include="ViewModel\ForgotPasswordViewModel.cs" />
@@ -245,11 +244,14 @@
     <Compile Include="View\CustomerView.xaml.cs">
       <DependentUpon>CustomerView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\EmployeeListView.xaml.cs">
-      <DependentUpon>EmployeeListView.xaml</DependentUpon>
+    <Compile Include="View\EmployeeItemView.xaml.cs">
+      <DependentUpon>EmployeeItemView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\EmployeeView.xaml.cs">
       <DependentUpon>EmployeeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FoodItemView.xaml.cs">
+      <DependentUpon>FoodItemView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\FoodView.xaml.cs">
       <DependentUpon>FoodView.xaml</DependentUpon>
@@ -419,11 +421,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\EmployeeListView.xaml">
+    <Page Include="View\EmployeeItemView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\EmployeeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FoodItemView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

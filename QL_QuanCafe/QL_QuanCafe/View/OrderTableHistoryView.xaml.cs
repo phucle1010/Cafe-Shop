@@ -166,7 +166,14 @@ namespace QL_QuanCafe.View
                 {
                     orderTableVM.MoveTable(tableMoveToId, orderTableId);
                 }
-                MessageBox.Show("Bạn đã chuyển bàn thành công");
+                MessageBoxResult result = MessageBox.Show("Bạn đã chuyển bàn thành công", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                if ( result == MessageBoxResult.OK )
+                {
+                    plOrderTableList.Children.Clear();
+                    LoadOrderTableListOfUser();
+                    lvMergedChosedTableList.Items.Clear();
+                    LoadInitUI();
+                }
             }
         }
     }

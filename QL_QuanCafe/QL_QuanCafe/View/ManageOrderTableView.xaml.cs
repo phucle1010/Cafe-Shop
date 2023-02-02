@@ -1,4 +1,5 @@
-﻿using QL_QuanCafe.ViewModel;
+﻿using QL_QuanCafe.Model;
+using QL_QuanCafe.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -23,25 +24,32 @@ namespace QL_QuanCafe.View
     public partial class ManageOrderTableView : Page
     {
         ManageOrderTableViewModel mnOrderTbVM = new ManageOrderTableViewModel();
+        CafeShopEntities entity = new CafeShopEntities();
+        string type;
         Frame MainContent;
-        public ManageOrderTableView()
-        {
-            InitializeComponent();
-            LoadData();
-            LoadOrderTableListData();
-        }
-        public ManageOrderTableView(Frame MainContent)
+
+        public ManageOrderTableView(Frame MainContent, string type )
         {
             InitializeComponent();
             this.MainContent = MainContent;
             LoadData();
             LoadOrderTableListData();
+            this.type = type;
         }
         void LoadData()
         {
-            AdminViewModel admin = new AdminViewModel();
-            string userName = Properties.Settings.Default ["user"].ToString();
-            tbUserName.Text = admin.getAdminName(userName);
+            if ( type == "update" )
+            {
+                string userName = Properties.Settings.Default ["user"].ToString();
+                tbUserName.Text = entity.NHANVIENs.Where(employee => employee.MaNV.ToString() == userName).FirstOrDefault().TenNV;
+
+            }
+            else
+            {
+                string userName = Properties.Settings.Default ["user"].ToString();
+                AdminViewModel admin = new AdminViewModel();
+                tbUserName.Text = admin.getAdminName(userName);
+            }
         }
 
         void LoadOrderTableListData()

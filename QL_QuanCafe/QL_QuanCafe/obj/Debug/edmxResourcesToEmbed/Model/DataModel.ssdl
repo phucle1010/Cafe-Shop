@@ -118,7 +118,6 @@
     <Property Name="SDT" Type="char" MaxLength="10" />
     <Property Name="Email" Type="varchar" MaxLength="50" />
     <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
-    <Property Name="DiemTichLuy" Type="smallint" />
     <Property Name="TenDN" Type="varchar" MaxLength="30" />
     <Property Name="MatKhau" Type="varchar" MaxLength="64" />
     <Property Name="AnhDaiDien" Type="nvarchar" MaxLength="300" />
@@ -170,7 +169,7 @@
     <Property Name="TenNV" Type="nvarchar" MaxLength="60" />
     <Property Name="SDT" Type="char" MaxLength="10" />
     <Property Name="Email" Type="varchar" MaxLength="50" />
-    <Property Name="DiaChi" Type="varchar" MaxLength="100" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="100" />
     <Property Name="ChucVu" Type="char" MaxLength="1" />
     <Property Name="NgayVaoLam" Type="date" />
     <Property Name="GioiTinh" Type="bit" />

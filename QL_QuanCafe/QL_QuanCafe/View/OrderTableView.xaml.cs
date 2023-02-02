@@ -1,4 +1,5 @@
-﻿using QL_QuanCafe.ViewModel;
+﻿using QL_QuanCafe.Model;
+using QL_QuanCafe.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,18 +22,15 @@ namespace QL_QuanCafe.View
     /// </summary>
     public partial class OrderTableView : Page
     {
-        string userName = Properties.Settings.Default ["user"].ToString();
+        string userName = Properties.Settings.Default.user;
         string tableId;
         string customerId;
         int area = 0;
         CustomerViewModel customer = new CustomerViewModel();
         OrderTableViewModel table = new OrderTableViewModel();
+        CafeShopEntities entity = new CafeShopEntities();
         Frame MainContent;
-        public OrderTableView()
-        {
-            InitializeComponent();
-        }
-
+       
         public OrderTableView(Frame MainContent )
         {
             InitializeComponent();
@@ -42,8 +40,8 @@ namespace QL_QuanCafe.View
 
         void LoadData()
         {
-            tbUserName.Text = customer.getCustomerName(this.userName);
-            txtCusomerName.Text = customer.getCustomerName(this.userName);
+            tbUserName.Text = entity.KHACHHANGs.Where(client => client.TenDN == this.userName).First().TenKH;
+            txtCusomerName.Text = tbUserName.Text;
             txtPhone.Text = table.GetPhoneNumber(this.userName);
             this.customerId = customer.getCustomerId(this.userName).ToString();
             LoadTable();
@@ -84,7 +82,7 @@ namespace QL_QuanCafe.View
                     if (table.InsertOrderTableData(tableId, customerId, note, time) == 1)
                     {
                         MessageBox.Show("Bạn đã đặt bàn, vui lòng chờ nhân viên xác nhận đặt bàn!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
-                        MainContent.Navigate(new OrderTableView());
+                        MainContent.Navigate(new OrderTableView(MainContent));
                     }
                 }
             }

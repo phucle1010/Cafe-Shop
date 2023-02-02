@@ -9,7 +9,7 @@
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         Background="Transparent"
-        AllowsTransparency="true"
+        AllowsTransparency="True"
         MouseDown="Window_MouseDown">
 
     <Border CornerRadius="12">
@@ -165,14 +165,12 @@
                                FontWeight="Medium"
                                FontFamily="Montserrat"                               
                                Foreground="White"
-                            
                                CaretBrush="LightGray"
                                BorderBrush="White"
                                BorderThickness="0,0,0,1" 
                                Height="28"
                                VerticalContentAlignment="Center"
-                               Margin="0,5,0,0"
-                               Padding="30,0,0,0">
+                               Margin="0,5,0,0">
                     </TextBox>
 
                     <TextBlock Text="Mật khẩu"
@@ -186,14 +184,12 @@
                                FontWeight="Medium"
                                FontFamily="Montserrat"                               
                                Foreground="White"
-                            
                                CaretBrush="LightGray"
                                BorderBrush="White"
                                BorderThickness="0,0,0,1" 
                                Height="28"
                                VerticalContentAlignment="Center"
-                               Margin="0,5,0,0"
-                               Padding="30,0,0,0">
+                               Margin="0,5,0,0">
                     </PasswordBox>
 
                     <Button x:Name="btnLogin"

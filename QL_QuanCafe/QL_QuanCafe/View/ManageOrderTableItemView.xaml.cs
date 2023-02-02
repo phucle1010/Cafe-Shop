@@ -56,7 +56,7 @@ namespace QL_QuanCafe.View
                 if (mnOrderTableItemVM.SubmitOrderTable(Int32.Parse(tbOrderTableId.Text), tbTableId.Text) == 1)
                 {
                     MessageBox.Show($"Xác nhận đặt bàn thành công!!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
-                    MainContent.Navigate(new ManageOrderTableView(MainContent));
+                    MainContent.Navigate(new ManageOrderTableView(MainContent, "update"));
                 }
             }
         }

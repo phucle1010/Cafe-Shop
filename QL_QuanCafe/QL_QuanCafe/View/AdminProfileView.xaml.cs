@@ -27,7 +27,7 @@ namespace QL_QuanCafe.View
     public partial class AdminProfileView : Window
     {
         AdminProfileViewModel adminProfile = new AdminProfileViewModel();
-        string username = Properties.Settings.Default ["user"].ToString();
+        string username = Properties.Settings.Default.user;
         string selectedFileName;
         public AdminProfileView()
         {
@@ -64,25 +64,6 @@ namespace QL_QuanCafe.View
             this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
         }
 
-        private byte [] converImgToByte()
-        {
-            FileStream fs;
-            fs = new FileStream(selectedFileName, FileMode.Open, FileAccess.Read);
-            byte [] picbyte = new byte [fs.Length];
-            fs.Read(picbyte, 0, System.Convert.ToInt32(fs.Length));
-            fs.Close();
-            return picbyte;
-        }
-
-        private Image ByteToImg( string byteString )
-        {
-            byte [] imgBytes = Convert.FromBase64String(byteString);
-            MemoryStream ms = new MemoryStream(imgBytes, 0, imgBytes.Length);
-            ms.Write(imgBytes, 0, imgBytes.Length);
-            //Image image = Image.FromStream(ms, true);
-            return new Image();
-        }
-
         private void btnAddImage_Click( object sender, RoutedEventArgs e )
         {
             OpenFileDialog dlg = new OpenFileDialog();
@@ -103,8 +84,6 @@ namespace QL_QuanCafe.View
             if ( adminProfile.UpdateProfile(txtName.Text, txtEmail.Text, txtPhone.Text, txtAddress.Text, selectedFileName) == 1 )
             {
                 this.Close();
-                System.Windows.Forms.Application.Restart();
-                Environment.Exit(0);
             }
         }
 
@@ -118,16 +97,15 @@ namespace QL_QuanCafe.View
             txtEmail.Text = e.Email.ToString();
             txtPhone.Text = e.SDT.ToString();
             txtAddress.Text = e.DiaChi.ToString();
-            txtEntryDay.Text = e.NgayVaoLam.ToString();
-            txtWorkshift.Text = e.MaCaLV.ToString();
+            DateTime entryDay = (DateTime) e.NgayVaoLam;
+            txtEntryDay.Text = $"{entryDay.Day}/{entryDay.Month}/{entryDay.Year}";
 
             if (e.AnhDaiDien != "")
             {
                 ImageSource imageSource = new BitmapImage(new Uri(e.AnhDaiDien));
                 ImageViewer.Source = imageSource;
+                selectedFileName = e.AnhDaiDien;
             }
         }
-
-        
     }
 }

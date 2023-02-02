@@ -58,7 +58,7 @@ namespace QL_QuanCafe.View
 
         private void LoadOrderFoodData()
         {
-            customerId = Int32.Parse(orderTableVM.GetCustomerId(Properties.Settings.Default ["user"].ToString()));
+            customerId = Int32.Parse(orderTableVM.GetCustomerId(Properties.Settings.Default.user));
             orderTableList = orderTableVM.GetAllOrderTableDataOfUser(customerId);
             foreach ( var item in orderTableList )
             {

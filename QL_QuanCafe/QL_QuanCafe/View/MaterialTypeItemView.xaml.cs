@@ -28,18 +28,14 @@ namespace QL_QuanCafe.View
         string importId = Properties.Settings.Default ["importId"].ToString();
         string _materialTypeId = Properties.Settings.Default ["materialType"].ToString();
         Frame MainContent;
-        public MaterialTypeItemView()
-        {
-            InitializeComponent();
-            LoadMaterialImage();
-            LoadMaterialTypeData();
-            LoadMaterialNameList();
-        }
+        string type;
+        CafeShopEntities entity = new CafeShopEntities();
 
-        public MaterialTypeItemView(Frame MainContent)
+        public MaterialTypeItemView(Frame MainContent, string type)
         {
             InitializeComponent();
             this.MainContent = MainContent;
+            this.type = type;
             LoadMaterialImage();
             LoadMaterialTypeData();
             LoadMaterialNameList();
@@ -95,7 +91,7 @@ namespace QL_QuanCafe.View
         {
             _materialName = (sender as ComboBox).SelectedItem as string;
             materialIdValue.Text = materialTypeItem.getMaterialId(_materialTypeId, _materialName).ToString();
-            availableMaterialQuantityValue.Text = materialTypeItem.getAvailableMaterialQuantity(_materialName) + " " + materialTypeItem.getMaterialUnit(_materialTypeId, _materialName);
+            availableMaterialQuantityValue.Text = entity.HANGHOAs.Where(parcel => parcel.TenHH == _materialName).First().SoLuongConSan + " " + materialTypeItem.getMaterialUnit(_materialTypeId, _materialName);
             materialPriceValue.Text = materialTypeItem.getMaterialPrice(_materialTypeId, _materialName) + " VNĐ";
         }
 
@@ -126,7 +122,7 @@ namespace QL_QuanCafe.View
                     materialTypeItem.updateAvailableMaterialQuantity(_materialName, Int32.Parse(quantityInputValue.Text));
                     materialTypeItem.updateCurrentTotalPrice(Int32.Parse(importId), total);
                     quantityInputValue.Text = "";
-                    MainContent.Navigate(new ImportMaterialView(MainContent));
+                    MainContent.Navigate(new MaterialTypeItemView(MainContent, "update"));
                 }
             }
         }

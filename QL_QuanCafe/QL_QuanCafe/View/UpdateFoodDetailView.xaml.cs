@@ -88,7 +88,6 @@ namespace QL_QuanCafe.View
             {
                 MessageBox.Show("Cập nhật công thức thành công");
                 this.Close();
-                MainContent.Navigate(new FoodView(MainContent));
             }
         }
     }

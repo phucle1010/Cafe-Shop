@@ -105,7 +105,7 @@ namespace QL_QuanCafe.View
                     if ( notice == MessageBoxResult.OK )
                     {
                         this.Close();
-                        MainContent.Navigate(new PaymentView(MainContent));
+                        MainContent.Navigate(new PaymentView(MainContent, "update"));
                     }
                 }
             } 

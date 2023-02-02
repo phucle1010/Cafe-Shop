@@ -1,4 +1,5 @@
-﻿using QL_QuanCafe.ViewModel;
+﻿using QL_QuanCafe.Model;
+using QL_QuanCafe.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,24 +23,31 @@ namespace QL_QuanCafe.View
     public partial class ImportMaterialView : Page
     {
         Frame MainContent;
-        public ImportMaterialView()
-        {
-            InitializeComponent();
-            LoadData();
-        }
+        CafeShopEntities entity = new CafeShopEntities();
+        string type;
 
-        public ImportMaterialView(Frame MainContent)
+        public ImportMaterialView(Frame MainContent, string type )
         {
             InitializeComponent();
             this.MainContent = MainContent;
             LoadData();
+            this.type = type;
         }
         void LoadData()
         {
-            AdminViewModel admin = new AdminViewModel();
-            string userName = Properties.Settings.Default ["user"].ToString();
-            tbUserName.Text = admin.getAdminName(userName);
-            CategoryMaterialType.Content = new MaterialTypeListView(CategoryMaterialType, MainContent);
+            if ( type == "update" )
+            {
+                string userName = Properties.Settings.Default ["user"].ToString();
+                tbUserName.Text = entity.NHANVIENs.Where(employee => employee.MaNV.ToString() == userName).FirstOrDefault().TenNV;
+
+            }
+            else
+            {
+                string userName = Properties.Settings.Default ["user"].ToString();
+                AdminViewModel admin = new AdminViewModel();
+                tbUserName.Text = admin.getAdminName(userName);
+            }
+            CategoryMaterialType.Navigate(new MaterialTypeListView(CategoryMaterialType, MainContent));
         }
     }
 }

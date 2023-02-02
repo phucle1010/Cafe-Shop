@@ -14,10 +14,10 @@ namespace QL_QuanCafe.ViewModel
         public bool isLoginWithAdminRole( string user, string pass )
         {
             LoginViewModel login = new LoginViewModel();
-            
+            var hashPass = login.ComputeSha256Hash(pass);
             try
             {
-                return DataProvider.Ins.DB.NHANVIENs.SqlQuery($"SELECT * FROM NHANVIEN WHERE MaNV = {user} AND MatKhau = '{login.ComputeSha256Hash(pass)}'").Count() > 0;
+                return DataProvider.Ins.DB.NHANVIENs.Where(employee => employee.MaNV.ToString() == user && employee.MatKhau == hashPass).Count() > 0;
             }
             catch ( Exception e )
             {
@@ -25,18 +25,10 @@ namespace QL_QuanCafe.ViewModel
             }
             return false;
         }
-        public string getAdminName( string user )
+        public string getAdminName( string userName )  
         {
-            string name = "";
-            try
-            {
-                name = DataProvider.Ins.DB.NHANVIENs.SqlQuery($"SELECT * FROM NHANVIEN WHERE MaNV = {user}").ElementAt(0).TenNV.ToString();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString(), "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            return name;
+            CafeShopEntities entity = new CafeShopEntities();   
+            return entity.NHANVIENs.Where(employee => employee.MaNV.ToString() == userName).First().TenNV;
         }
 
         public int getTheNumberOfEmployee()

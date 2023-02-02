@@ -7,13 +7,13 @@
       xmlns:local="clr-namespace:QL_QuanCafe.View" xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
-      d:DesignHeight="700" d:DesignWidth="1000"
+      d:DesignHeight="700" d:DesignWidth="1100"
       Title="HomeAdminDetailView">
 
     <Grid Grid.Row="1" Margin="20">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="600"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="320"/>
         </Grid.ColumnDefinitions>
 
         <Grid Grid.Column="0">
@@ -146,7 +146,7 @@
             </Border>
         </Grid>
 
-        <Grid Grid.Column="1" Margin="30 0 0 0">
+        <Grid Grid.Column="1" Margin="10 0 0 0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="200"/>
                 <RowDefinition Height="200"/>

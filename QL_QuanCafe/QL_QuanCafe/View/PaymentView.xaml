@@ -103,10 +103,9 @@
                 
                 <ScrollViewer Grid.Row="2" 
                               Margin="0 6">
-                    <WrapPanel x:Name="unPayedList" 
-                               ItemWidth="520">
+                    <StackPanel x:Name="unPayedList">
                         <!--<PageContent x:Name="mainContent"/>-->
-                    </WrapPanel>
+                    </StackPanel>
                 </ScrollViewer>
             </Grid>
 
@@ -145,10 +144,9 @@
                 <ScrollViewer x:Name="payedList"
                               Grid.Row="2"
                               Margin="0 6">
-                    <WrapPanel x:Name="PayedList" 
-                               ItemWidth="520">
+                    <StackPanel x:Name="PayedList" >
                         <!--<PageContent x:Name="mainContent"/>-->
-                    </WrapPanel>
+                    </StackPanel>
                 </ScrollViewer>
             </Grid>
         </Grid>

@@ -1,4 +1,5 @@
-﻿using QL_QuanCafe.ViewModel;
+﻿using QL_QuanCafe.Model;
+using QL_QuanCafe.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,25 +24,24 @@ namespace QL_QuanCafe.View
     {
         private int currentPoint;
         private int customerId;
+        private string userName = Properties.Settings.Default.user;
         CustomerViewModel customerVM = new CustomerViewModel();
         FoodViewModel foodVM = new FoodViewModel();
         Frame MainContent;
 
-
         public AccumlatorPointView(Frame MainContent )
         {
             InitializeComponent();
-            LoadData();
             this.MainContent= MainContent;
-            this.customerId = customerVM.getCustomerId(Properties.Settings.Default ["user"].ToString());
-            this.currentPoint = customerVM.GetAccumlatorPointOfCustomer(customerId);
+            this.customerId = customerVM.getCustomerId(userName);
+            LoadData();
             LoadFood();
         }
         private void LoadData()
         {
-            CustomerViewModel customer = new CustomerViewModel();
-            string userName = Properties.Settings.Default ["user"].ToString();
-            tbUserName.Text = customer.getCustomerName(userName);
+            CafeShopEntities entity = new CafeShopEntities();
+            this.currentPoint = customerVM.GetAccumlatorPointOfCustomer(this.customerId, entity);
+            tbUserName.Text = entity.KHACHHANGs.Where(client => client.TenDN == this.userName).First().TenKH;
         }
 
         private void LoadFood()
@@ -52,6 +52,5 @@ namespace QL_QuanCafe.View
                 plFood.Children.Add(new AccumlatorPointItemView(food, this.currentPoint, customerId, MainContent));
             }
         }
-
     }
 }

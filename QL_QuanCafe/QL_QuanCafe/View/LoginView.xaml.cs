@@ -101,14 +101,13 @@ namespace QL_QuanCafe.View
                 {
                     SaveAccount(user, 0);
                     MainView_Customer customerLayout = new MainView_Customer();
-                    this.Hide();
+                    this.Close();
                     customerLayout.Show();
                 } else if ( admin.isLoginWithAdminRole(user, pass) )
                 {
-
                     SaveAccount(user, 1);
                     MainView_Admin adminLayout = new MainView_Admin();
-                    this.Hide();
+                    this.Close();
                     adminLayout.Show();
                 }
                 else
@@ -121,15 +120,15 @@ namespace QL_QuanCafe.View
         private void tbCreateNewAccount_PreviewMouseDown( object sender, MouseButtonEventArgs e )
         {
             RegisterAccountView registerLayout = new RegisterAccountView();
-            this.Visibility = Visibility.Hidden;
-            registerLayout.Show();
+            registerLayout.ShowDialog();
+            this.Close();
         }
 
         private void tbForgotPassword_PreviewMouseDown( object sender, MouseButtonEventArgs e )
         {
             ForgotPasswordView forgotPassLayout = new ForgotPasswordView();
-            this.Visibility = Visibility.Hidden;
-            forgotPassLayout.Show();
+            forgotPassLayout.ShowDialog();
+            this.Close();
         }
     }
 }

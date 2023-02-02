@@ -1,0 +1,100 @@
+﻿<UserControl x:Class="QL_QuanCafe.View.FoodItemView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QL_QuanCafe.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="800">
+    <Grid Height="100">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <TextBlock x:Name="tbFoodName" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Border CornerRadius="50"
+                        Width="80"
+                        Grid.Column="1">
+            <Image x:Name="foodImage" 
+                   Source="/Image/area-1.jpg"
+                   Margin="0 10"
+                   Stretch="Fill">
+                <Image.Clip>
+                    <RectangleGeometry RadiusX="10"
+                                       RadiusY="10"
+                                       Rect="0,0,80,80"/>
+                </Image.Clip>
+            </Image>
+        </Border>
+        <TextBlock x:Name="tbFoodPrice" Grid.Column="2" FontSize="14" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <Button x:Name="btnUpdateFood" 
+                Grid.Column="3"
+                BorderThickness="0"
+                Content="Cập nhật món ăn"
+                Foreground="White"
+                FontSize="13"
+                FontFamily="Montserrat"
+                Cursor="Hand"
+                Padding="0" Click="btnUpdateFood_Click">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#478778"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#2AAA8A"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="120" Height="30"
+                                        CornerRadius="15"
+                                        Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        
+        <Button x:Name="btnUpdateTip" 
+                Grid.Column="4"
+                BorderThickness="0"
+                Content="Cập nhật công thức"
+                Foreground="White"
+                FontSize="13"
+                FontFamily="Montserrat"
+                Cursor="Hand"
+                Padding="0" Click="btnUpdateTip_Click">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#478778"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#2AAA8A"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="130" Height="30"
+                                        CornerRadius="15"
+                                        Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+    </Grid>
+</UserControl>

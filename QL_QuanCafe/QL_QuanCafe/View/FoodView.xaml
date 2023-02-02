@@ -12,7 +12,9 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="35"></RowDefinition>
+            <RowDefinition Height="35"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
@@ -66,49 +68,21 @@
             </StackPanel>
         </Grid>
 
-        <Grid Grid.Row="1" Margin="10 0 10 0" Background="{StaticResource whiteColor}">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="620"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-
-            <Border Grid.Row="0" 
-                Margin="10"
-                BorderThickness="1" 
-                BorderBrush="{StaticResource primaryTextColor}">
-                
-                <DataGrid x:Name="dtFood"
-                          Padding="0 0 0 30"
-                          CanUserResizeRows="False" 
-                          ColumnWidth="*"
-                          CanUserAddRows="False" 
-                          CanUserDeleteRows="False" 
-                          IsReadOnly="True" 
-                          Background="White" MouseDoubleClick="dtFood_MouseDoubleClick"></DataGrid>
-            </Border>
-            
-            <Grid Grid.Row="1" Background="{StaticResource whiteColor}">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-
-                <Button Grid.Column="0"
-                    x:Name="btnAddFood"
-                    Content="Thêm món ăn"
-                    Width="150" Click="btnAddFood_Click"/>
-                <Button Grid.Column="1"
-                        x:Name="btnUpdateFoodDetail"
-                        Content="Cập nhật công thức"
-                        Width="160" Click="btnUpdateFoodDetail_Click"/>
-
-                <Button Grid.Column="2"
-                    x:Name="btnUpdateFood"
-                    Content="Cập nhật món ăn"
-                    Width="170" Click="btnUpdateFood_Click"/>
-            </Grid>
+        <Grid Grid.Row="1">
+            <TextBlock Text="DANH SÁCH CÁC MÓN ĂN" FontSize="16" FontWeight="Bold" Foreground="LightGray" VerticalAlignment="Center" Margin="20 0 0 0"/>
         </Grid>
+        
+        <ScrollViewer Grid.Row="2" Margin="10 0 10 0" Background="{StaticResource whiteColor}">
+            <StackPanel x:Name="plFoodList"/>
+        </ScrollViewer>
+
+        <Button Grid.Row="3"
+                x:Name="btnAddFood"
+                Content="Thêm món ăn"
+                Width="150" 
+                Click="btnAddFood_Click"
+                HorizontalAlignment="Right"
+                Margin="0 0 20 0"/>
     </Grid>
 
 </Page>

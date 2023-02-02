@@ -66,15 +66,6 @@
                              x:Name="tbFoodId"
                              materialDesign:HintAssist.Hint="Mã món ăn"
                              IsReadOnly="True">
-                        <TextBox.Text>
-                            <Binding
-                                  Path="Mã món ăn"
-                                  UpdateSourceTrigger="PropertyChanged">
-                                <Binding.ValidationRules>
-
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </TextBox.Text>
                     </TextBox>
                 </Grid>
                 <Grid Grid.Row="2" >
@@ -82,30 +73,12 @@
                              x:Name="tbFoodName"
                              materialDesign:HintAssist.Hint="Tên món ăn"
                              IsReadOnly="True">
-                        <TextBox.Text>
-                            <Binding
-                                  Path="Tên món ăn"
-                                  UpdateSourceTrigger="PropertyChanged">
-                                <Binding.ValidationRules>
-
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </TextBox.Text>
                     </TextBox>
                 </Grid>
                 <Grid Grid.Row="3">
                     <TextBox Margin="20 15"
                              x:Name="tbFoodPrice"
                              materialDesign:HintAssist.Hint="Đơn giá">
-                        <TextBox.Text>
-                            <Binding
-                                  Path="Đơn giá"
-                                  UpdateSourceTrigger="PropertyChanged">
-                                <Binding.ValidationRules>
-
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </TextBox.Text>
                     </TextBox>
                 </Grid>
                 <Grid Grid.Row="4">

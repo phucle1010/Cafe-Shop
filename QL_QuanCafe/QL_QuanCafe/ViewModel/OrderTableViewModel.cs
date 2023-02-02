@@ -26,12 +26,13 @@ namespace QL_QuanCafe.ViewModel
 
         public ComboBox LoadTableData(ComboBox combo, int area)
         {
+            CafeShopEntities entity = new CafeShopEntities();
             int count = DataProvider.Ins.DB.BANs.SqlQuery($"SELECT * FROM BAN WHERE MaKV='{area}'").Count();
             try
             {
                 for ( int i = 0; i < count; i++ )
                 {
-                    string a = DataProvider.Ins.DB.BANs.SqlQuery($"SELECT * FROM BAN WHERE TrangThai = 1 AND MaKV='{area}'").ElementAt(i).TenBan.ToString();
+                    string a = entity.BANs.SqlQuery($"SELECT * FROM BAN WHERE TrangThai = 1 AND MaKV='{area}'").ElementAt(i).TenBan.ToString();
                     combo.Items.Add(a);
                 }
             }
@@ -79,7 +80,8 @@ namespace QL_QuanCafe.ViewModel
 
         public int GetCurrentTotalOfTable(int orderTableId)
         {
-            return (int) DataProvider.Ins.DB.HOADONs.SqlQuery($"SELECT * FROM HOADON WHERE MaDatBan={orderTableId}").ElementAt(0).TongTien;
+            CafeShopEntities entity = new CafeShopEntities();
+            return (int) entity.HOADONs.SqlQuery($"SELECT * FROM HOADON WHERE MaDatBan={orderTableId}").ElementAt(0).TongTien;
         }
 
         public string GetTimeOfOrder(int orderTableId)
@@ -103,12 +105,14 @@ namespace QL_QuanCafe.ViewModel
 
         public List<DATBAN> GetAllOrderTableDataOfUser(int customerId)
         {
-            return DataProvider.Ins.DB.DATBANs.SqlQuery($"SELECT * FROM DATBAN WHERE MaKH={customerId}").ToList<DATBAN>();
+            CafeShopEntities entity = new CafeShopEntities();
+            return entity.DATBANs.SqlQuery($"SELECT * FROM DATBAN WHERE MaKH={customerId}").ToList<DATBAN>();
         }
 
         public List<BAN> GetAllEmptyTable()
         {
-            return DataProvider.Ins.DB.BANs.SqlQuery("SELECT * FROM BAN WHERE TrangThai=1").ToList<BAN>();
+            CafeShopEntities entity = new CafeShopEntities();
+            return entity.BANs.SqlQuery("SELECT * FROM BAN WHERE TrangThai=1").ToList<BAN>();
         }
 
         public int GetOrderTableIdByTableName(string tableName, int customerId)

@@ -25,97 +25,63 @@ namespace QL_QuanCafe.View
     public partial class FoodView : Page
     {
         AdminViewModel customer = new AdminViewModel();
+        CafeShopEntities entity = new CafeShopEntities();
         FoodViewModel foodVM = new FoodViewModel();
-
-        int chosedFoodIndex = -1;
+        List<SANPHAM> foods;
         Frame MainContent;
-        public FoodView()
-        {
-            InitializeComponent();
-            LoadData();
-        }
+        string type;
 
-        public FoodView(Frame MainContent)
+        public FoodView(Frame MainContent, string type)
         {
             InitializeComponent();
+            this.type = type;
             this.MainContent = MainContent;
             LoadData();
         }
+
         void LoadData()
         {
-            string userName = Properties.Settings.Default ["user"].ToString();
-            tbUserName.Text = customer.getAdminName(userName);
-
-            DataTable dt = new DataTable();
-
-            DataColumn dc;
-            dc = new DataColumn("Mã món ăn");
-            dt.Columns.Add(dc);
-            dc = new DataColumn("Tên món ăn");
-            dt.Columns.Add(dc);
-            dc = new DataColumn("Giá món ăn");
-            dt.Columns.Add(dc);
-            dc = new DataColumn("Trạng thái");
-            dt.Columns.Add(dc);
-
-
-            foodVM.GetAllFood().ForEach(f =>
+            if ( type == "update" )
             {
-                if ( Boolean.Parse(f.TrangThai.Value.ToString()) )
-                {
-                    dt.Rows.Add(f.MaSP, f.TenSP, f.GiaSP, "Còn sẵn");
-                }
-                else
-                {
-                    dt.Rows.Add(f.MaSP, f.TenSP, f.GiaSP, "Đã hết");
-                }
-            });
+                string userName = Properties.Settings.Default ["user"].ToString();
+                tbUserName.Text = entity.NHANVIENs.Where(employee => employee.MaNV.ToString() == userName).FirstOrDefault().TenNV;
 
-            dtFood.ItemsSource = dt.DefaultView;
+            }
+            else
+            {
+                string userName = Properties.Settings.Default ["user"].ToString();
+                AdminViewModel admin = new AdminViewModel();
+                tbUserName.Text = admin.getAdminName(userName);
+            }
+            LoadFood();
+        }
 
+        private void LoadFood()
+        {
+            if (type == "update")
+            {
+                foods = entity.SANPHAMs.ToList();
+            }
+            else
+            {
+                foods = foodVM.GetAllFood();
+            }
+            foreach(var food in foods)
+            {
+                plFoodList.Children.Add(new FoodItemView(MainContent, food));
+            }
         }
 
         private void btnAddFood_Click( object sender, RoutedEventArgs e )
         {
             AddNewFoodView addNewFood = new AddNewFoodView(MainContent);
             addNewFood.Show();
+            addNewFood.Closed += AddNewFood_Closed;
         }
 
-        private void btnUpdateFood_Click( object sender, RoutedEventArgs e )
+        private void AddNewFood_Closed( object sender, EventArgs e )
         {
-            if (chosedFoodIndex == -1)
-            {
-                MessageBox.Show("Vui lòng chọn món ăn cần cập nhật");
-            } else
-            {
-                UpdateFoodView updFood = new UpdateFoodView(chosedFoodIndex, MainContent);
-                updFood.Show();
-            }
-        }
-
-        private void dtFood_MouseDoubleClick( object sender, MouseButtonEventArgs e )
-        {
-            foreach ( DataRowView row in dtFood.SelectedItems )
-            {
-                System.Data.DataRow MyRow = row.Row;
-                string id = MyRow ["Mã món ăn"].ToString();
-                string foodName = MyRow ["Tên món ăn"].ToString();
-                MessageBox.Show($"Bạn vừa chọn món {foodName}");
-                chosedFoodIndex = Int32.Parse(id);
-            }
-        }
-
-        private void btnUpdateFoodDetail_Click( object sender, RoutedEventArgs e )
-        {
-            if ( chosedFoodIndex == -1 )
-            {
-                MessageBox.Show("Vui lòng chọn món ăn cần cập nhật");
-            }
-            else
-            {
-                UpdateFoodDetailView updFoodDetail = new UpdateFoodDetailView(chosedFoodIndex, MainContent);
-                updFoodDetail.Show();
-            }
+            MainContent.Navigate(new FoodView(MainContent, null));
         }
     }
 }

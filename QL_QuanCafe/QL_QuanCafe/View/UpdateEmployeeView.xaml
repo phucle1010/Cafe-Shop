@@ -68,75 +68,30 @@
                              x:Name="tbEmployeeId"
                              materialDesign:HintAssist.Hint="Mã nhân viên"
                              IsReadOnly="True">
-                        <TextBox.Text>
-                            <Binding
-                                  Path="Mã nhân viên"
-                                  UpdateSourceTrigger="PropertyChanged">
-                                <Binding.ValidationRules>
-
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </TextBox.Text>
                     </TextBox>
                 </Grid>
                 <Grid Grid.Row="2" >
                     <TextBox Margin="20 15"
                              x:Name="tbName"
                              materialDesign:HintAssist.Hint="Tên nhân viên">
-                        <TextBox.Text>
-                            <Binding
-                                  Path="Tên nhân viên"
-                                  UpdateSourceTrigger="PropertyChanged">
-                                <Binding.ValidationRules>
-
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </TextBox.Text>
                     </TextBox>
                 </Grid>
                 <Grid Grid.Row="3">
                     <TextBox Margin="20 15"
                              x:Name="tbPhonenumber"
                              materialDesign:HintAssist.Hint="Số điện thoại">
-                        <TextBox.Text>
-                            <Binding
-                                  Path="Số điện thoại"
-                                  UpdateSourceTrigger="PropertyChanged">
-                                <Binding.ValidationRules>
-
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </TextBox.Text>
                     </TextBox>
                 </Grid>
                 <Grid Grid.Row="4">
                     <TextBox Margin="20 15"
                              x:Name="tbEmail"
                              materialDesign:HintAssist.Hint="Email">
-                        <TextBox.Text>
-                            <Binding
-                                  Path="Email"
-                                  UpdateSourceTrigger="PropertyChanged">
-                                <Binding.ValidationRules>
-
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </TextBox.Text>
                     </TextBox>
                 </Grid>
                 <Grid Grid.Row="5">
                     <TextBox Margin="20 15"
                              x:Name="tbAddress"
                              materialDesign:HintAssist.Hint="Địa chỉ">
-                        <TextBox.Text>
-                            <Binding
-                                  Path="Địa chỉ"
-                                  UpdateSourceTrigger="PropertyChanged">
-                                <Binding.ValidationRules>
-
-                                </Binding.ValidationRules>
-                            </Binding>
-                        </TextBox.Text>
                     </TextBox>
                 </Grid>
                 <Grid Grid.Row="6">
