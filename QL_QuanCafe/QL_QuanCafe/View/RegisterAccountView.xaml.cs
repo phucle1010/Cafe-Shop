@@ -79,8 +79,10 @@ namespace QL_QuanCafe.View
                     }
                     else
                     {
-                        registerViewModel.InsertCustomerData(fullname, "0", phone, email, address, 1, user, pass);
-                        MessageBox.Show("Đăng ký thành công !!!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                        if ( registerViewModel.InsertCustomerData(fullname, "0", phone, email, address, user, pass) == 1 )
+                        {
+                            MessageBox.Show("Đăng ký thành công !!!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                        }
                         txtName.Clear();
                         txtUser.Clear();
                         txtPass.Clear();
@@ -88,8 +90,8 @@ namespace QL_QuanCafe.View
                         txtAddress.Clear();
                         txtPhonenumber.Clear();
                         LoginView loginLayout = new LoginView();
-                        this.Visibility = Visibility.Hidden;
                         loginLayout.Show();
+                        this.Close();
                     }
                 }
             }

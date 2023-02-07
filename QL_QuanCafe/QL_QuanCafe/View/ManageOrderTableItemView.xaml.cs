@@ -53,7 +53,7 @@ namespace QL_QuanCafe.View
                 MessageBox.Show("Bàn đã được xác nhận trước đó. Vui lòng chọn bàn đặt khác!!!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
             } else
             {
-                if (mnOrderTableItemVM.SubmitOrderTable(Int32.Parse(tbOrderTableId.Text), tbTableId.Text) == 1)
+                if (mnOrderTableItemVM.SubmitOrderTable(Int32.Parse(tbCustomerId.Text), Int32.Parse(tbOrderTableId.Text), tbTableId.Text) == 1)
                 {
                     MessageBox.Show($"Xác nhận đặt bàn thành công!!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
                     MainContent.Navigate(new ManageOrderTableView(MainContent, "update"));

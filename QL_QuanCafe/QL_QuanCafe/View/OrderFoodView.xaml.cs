@@ -18,15 +18,19 @@ namespace QL_QuanCafe.View
     public partial class OrderFoodView : Page
     {
         OrderFoodViewModel orderFoodVM = new OrderFoodViewModel();
+        CafeShopEntities entity = new CafeShopEntities();
         List<CT_HOADON> orderDetailList = new List<CT_HOADON>();
         string userName = Properties.Settings.Default.user;
         int customerId;
+        string tableName;
         Frame MainContent;
         public OrderFoodView(Frame MainContent )
         {
             InitializeComponent();
             this.MainContent = MainContent;
+            this.tableName = "";
             LoadData();
+            LoadOrderTable();
             LoadFoodList();
             ((INotifyCollectionChanged) lvOrderChosedFood.Items).CollectionChanged += OrderFoodView_CollectionChanged;
         }
@@ -41,16 +45,24 @@ namespace QL_QuanCafe.View
             {
                 btnSubmit.Visibility = Visibility.Hidden;
             } 
-                
         }
 
         void LoadData()
         {
             CustomerViewModel customer = new CustomerViewModel();
-            CafeShopEntities entity = new CafeShopEntities();   
             tbUserName.Text = entity.KHACHHANGs.Where(client => client.TenDN == this.userName).First().TenKH; 
             customerId = orderFoodVM.GetCustomerId(userName);
             btnSubmit.Visibility = Visibility.Hidden;
+            tbTableName.Visibility = Visibility.Hidden;
+        }
+
+        void LoadOrderTable()
+        {
+            List<DATBAN> orderedTable = entity.DATBANs.Where(table => table.MaKH == customerId && (bool) table.TrangThaiDatMon == false).ToList();
+            foreach (DATBAN orderedItem in orderedTable)
+            {
+                lvOrderedTable.Items.Add(entity.BANs.Where(table => table.MaBan == orderedItem.MaBan).First().TenBan);
+            }
         }
 
         void LoadFoodList()
@@ -95,24 +107,26 @@ namespace QL_QuanCafe.View
                 MessageBox.Show("Số lượng món đã đặt là 0. Vui lòng chọn món để đặt trước khi xác nhận đặt món", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
             } else
             {
-                DATBAN orderTable = orderFoodVM.GetOrderTabeleInfo(customerId);
-                int orderTableId = orderTable.MaDatBan;
-                
-                if ( !orderFoodVM.IsOrdering(customerId) )
+                if (tableName == "")
                 {
-                    orderFoodVM.InsertDataToBill(customerId, orderTableId);
-                }
-
-                int billId = orderFoodVM.GetBillId(customerId);
-                if ( InsertBillDetail(billId) == true )
-                {
-                    MessageBox.Show("Đặt món thành công!!!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
-                    MainContent.Navigate(new OrderFoodView(MainContent));
+                    MessageBox.Show("Vui lòng chọn bàn muốn đặt món!!!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Warning);
                 }
                 else
                 {
-                    MessageBox.Show("Đặt món thất bại!!!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
-                }
+                    string tableId = entity.BANs.Where(table => table.TenBan == tableName).FirstOrDefault().MaBan;
+                    int orderTableId = entity.DATBANs.Where(table => table.MaBan == tableId).FirstOrDefault().MaDatBan;
+
+                    int billId = orderFoodVM.GetBillId(orderTableId);
+                    if ( InsertBillDetail(billId) == true )
+                    {
+                        MessageBox.Show("Đặt món thành công!!!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                        MainContent.Navigate(new OrderFoodView(MainContent));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đặt món thất bại!!!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                }    
             }
         }
 
@@ -132,6 +146,20 @@ namespace QL_QuanCafe.View
         {
             OrderFoodHistoryView orderFoodHistory = new OrderFoodHistoryView();
             orderFoodHistory.Show();
+        }
+
+        private void lvOrderedTable_SelectionChanged( object sender, SelectionChangedEventArgs e )
+        {
+            if (lvOrderedTable.SelectedIndex == -1)
+            {
+                tbTableName.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                tbTableName.Visibility = Visibility.Visible;
+                tableName = lvOrderedTable.SelectedValue.ToString();
+                tbTableName.Text = $"Bàn được chọn: {lvOrderedTable.SelectedValue}";
+            }
         }
     }
 }

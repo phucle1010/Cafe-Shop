@@ -43,9 +43,9 @@ namespace QL_QuanCafe.ViewModel
             }
         }
 
-        public int GetBillId(int customerId)
+        public int GetBillId(int orderTableId)
         {
-            return DataProvider.Ins.DB.HOADONs.SqlQuery($"SELECT * FROM HOADON hd, DATBAN db WHERE hd.MaDatBan = db.MaDatBan AND hd.MaKH={customerId} AND db.TrangThaiDatMon=0 AND db.TrangThai=1").ElementAt(0).MaHD;
+            return DataProvider.Ins.DB.HOADONs.Where(bill => bill.MaDatBan == orderTableId).First().MaHD;
         }
 
         public int GetFoodPrice(int foodId)

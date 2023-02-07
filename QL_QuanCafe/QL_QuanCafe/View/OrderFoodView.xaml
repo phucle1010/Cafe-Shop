@@ -80,20 +80,26 @@
             </ScrollViewer>
 
             <Border Grid.Column="1" BorderThickness="2 0 0 0" BorderBrush="{StaticResource color12}">
-                <StackPanel Grid.Column="1">
-                    <TextBlock Text="Danh sách các món đã chọn" FontSize="16" FontWeight="Bold" Foreground="Gray" Margin="10 0 0 0"/>
-                    <ListView x:Name="lvOrderChosedFood"/>
-                    <Button x:Name="btnSubmit"
-                            Content="Xác nhận đặt món"
-                            FontSize="16"
-                            Width="200"
-                            Height="35"
-                            HorizontalAlignment="Right"
-                            Margin="0 10 20 0" 
-                            Background="#988558"
-                            BorderThickness="0"
-                            Click="btnSubmit_Click"/>
-                </StackPanel>
+                <ScrollViewer>
+                    <StackPanel>
+                        <TextBlock Text="Danh sách các món đã chọn" FontSize="16" FontWeight="Bold" Foreground="Gray" Margin="10 0 0 0"/>
+                        <ListView x:Name="lvOrderChosedFood" BorderThickness="0 0 0 1" BorderBrush="LightGray"/>
+                        <TextBlock Text="Danh sách các bàn đã đặt" FontSize="16" FontWeight="Bold" Foreground="Gray" Margin="10 30 0 0"/>
+                        <ListView x:Name="lvOrderedTable" BorderThickness="0 0 0 1" BorderBrush="LightGray" SelectionChanged="lvOrderedTable_SelectionChanged"/>
+                        <TextBlock x:Name="tbTableName" Text="Danh sách các bàn đã đặt" FontSize="16" FontWeight="ExtraLight" Foreground="Gray" Margin="10 30 0 20"/>
+                        
+                        <Button x:Name="btnSubmit"
+                                Content="Xác nhận đặt món"
+                                FontSize="16"
+                                Width="200"
+                                Height="35"
+                                HorizontalAlignment="Right"
+                                Margin="0 10 20 0" 
+                                Background="#988558"
+                                BorderThickness="0"
+                                Click="btnSubmit_Click"/>
+                    </StackPanel>
+                </ScrollViewer>
             </Border>
         </Grid>
 

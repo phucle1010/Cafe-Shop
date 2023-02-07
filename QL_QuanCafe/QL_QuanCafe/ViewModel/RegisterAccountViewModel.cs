@@ -43,19 +43,21 @@ namespace QL_QuanCafe.ViewModel
             return nDataRows > 0;
         }
 
-        public void InsertCustomerData( string fullname, string customerType, string phone, string email, string address, int accumPoint, string username, string pass )
+        public int InsertCustomerData( string fullname, string customerType, string phone, string email, string address, string username, string pass )
         {
-            string customerId = this.CreateIdCustommer();
             string passHash = this.ComputeSha256Hash(pass);
             try
             {
-                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"INSERT INTO KHACHHANG VALUES ('{customerId}', N'{fullname}', '{customerType}','{phone}','{email}',N'{address}',{accumPoint},N'{username}','{passHash}')");
+                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"INSERT INTO KHACHHANG (TenKH, MaLoaiKH, SDT, Email, DiaChi, TenDN, MatKhau) VALUES (N'{fullname}', '{customerType}','{phone}','{email}',N'{address}',N'{username}','{passHash}')");
+                int customerId = DataProvider.Ins.DB.KHACHHANGs.Where(user => user.TenDN == username).First().MaKH;
                 DataProvider.Ins.DB.Database.ExecuteSqlCommand($"INSERT INTO THETICHDIEM (MaKH, DiemTichLuy) VALUES ({customerId}, 0)");
             }
             catch 
             {
                 MessageBox.Show("Lỗi đăng ký thành viên. Hệ thống đang xử lý", "Lỗi", MessageBoxButton.OK, MessageBoxImage.Error);
+                return 0;
             }
+            return 1;
         }
 
         public int RandomPass()

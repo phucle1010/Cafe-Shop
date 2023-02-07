@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Release\
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\obj\Release\
 QL_QuanCafe
 none
 false
 TRACE
-D:\Năm 3\PhanMemChuyenSau\Đồ án\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\App.xaml
-8-1229330455
+E:\Projects\Công nghệ phần mềm chuyên sâu\Cafe-Shop\QL_QuanCafe\QL_QuanCafe\App.xaml
+55-1725110990
+2353732275
+1201164000995
+26-1497077422
+Styles\ButtonStyles.xaml;Styles\UIColors.xaml;View\AccumlatorPointItemView.xaml;View\AccumlatorPointView.xaml;View\AddFoodMaterialView.xaml;View\AddNewEmployeeView.xaml;View\AddNewFoodView.xaml;View\AdminProfileView.xaml;View\BillDetailItemView.xaml;View\BillDetailView.xaml;View\ChangeWorkShiftView.xaml;View\CreateNewPasswordView.xaml;View\CustomerItemView.xaml;View\CustomerProfileView.xaml;View\CustomerView.xaml;View\EmployeeItemView.xaml;View\EmployeeView.xaml;View\FoodItemView.xaml;View\FoodView.xaml;View\ForgotPasswordView.xaml;View\HomeAdminDetailView.xaml;View\HomeAdminView.xaml;View\HomeCustomerDetailView.xaml;View\HomeCustomerView.xaml;View\HotFoodView.xaml;View\ImportMaterialView.xaml;View\LoginView.xaml;View\MainView_Admin.xaml;View\MainView_Customer.xaml;View\ManageOrderTableItemView.xaml;View\ManageOrderTableView.xaml;View\MaterialTypeItemView.xaml;View\MaterialTypeListView.xaml;View\OrderFoodHistoryDetailItemView.xaml;View\OrderFoodHistoryDetailView.xaml;View\OrderFoodHistoryItemInHomeView.xaml;View\OrderFoodHistoryItemView.xaml;View\OrderFoodHistoryView.xaml;View\OrderFoodInfoListView.xaml;View\OrderFoodView.xaml;View\OrderTableHistoryItemView.xaml;View\OrderTableHistoryView.xaml;View\OrderTableView.xaml;View\OTPView.xaml;View\PaymentCompletedView.xaml;View\PaymentItemView.xaml;View\PaymentView.xaml;View\ProductView.xaml;View\RegisterAccountView.xaml;View\ReportView.xaml;View\ResponseView.xaml;View\SecurityView.xaml;View\UpdateEmployeeView.xaml;View\UpdateFoodDetailView.xaml;View\UpdateFoodView.xaml;
 
-14254289795
-17-1633965853
-Styles\ButtonStyles.xaml;Styles\UIColors.xaml;View\HomeView.xaml;View\LoginView.xaml;View\MainView_Admin.xaml;View\MainView_Customer.xaml;View\ProductView.xaml;View\RegisterAccount.xaml;
-
-True
+False
 

@@ -12,7 +12,8 @@ namespace QL_QuanCafe.ViewModel
     {
         public List<DATBAN> GetOrderTableList()
         {
-            return DataProvider.Ins.DB.DATBANs.SqlQuery($"SELECT * FROM DATBAN").ToList<DATBAN>();
+            CafeShopEntities entity = new CafeShopEntities();
+            return entity.DATBANs.SqlQuery($"SELECT * FROM DATBAN").ToList<DATBAN>();
         }
     }
 }

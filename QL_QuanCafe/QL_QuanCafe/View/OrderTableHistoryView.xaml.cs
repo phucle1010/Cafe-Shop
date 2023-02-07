@@ -94,10 +94,13 @@ namespace QL_QuanCafe.View
         }
         private void lvMergedChosedTableList_SelectionChanged( object sender, SelectionChangedEventArgs e )
         {
-            plMergedTable.Visibility = Visibility.Visible;
-            btnMergeTable.Visibility = Visibility.Visible;
-            var item = lvMergedChosedTableList.SelectedValue;
-            tbMergedTableName.Text = item.ToString();
+            if (lvMergedChosedTableList.Items.Count > 0)
+            {
+                plMergedTable.Visibility = Visibility.Visible;
+                btnMergeTable.Visibility = Visibility.Visible;
+                var item = lvMergedChosedTableList.SelectedValue;
+                tbMergedTableName.Text = item.ToString();
+            }
         }
 
         private void btnMergeTable_Click( object sender, RoutedEventArgs e )

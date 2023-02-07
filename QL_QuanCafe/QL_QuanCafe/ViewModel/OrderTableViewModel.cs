@@ -27,7 +27,7 @@ namespace QL_QuanCafe.ViewModel
         public ComboBox LoadTableData(ComboBox combo, int area)
         {
             CafeShopEntities entity = new CafeShopEntities();
-            int count = DataProvider.Ins.DB.BANs.SqlQuery($"SELECT * FROM BAN WHERE MaKV='{area}'").Count();
+            int count = entity.BANs.SqlQuery($"SELECT * FROM BAN WHERE MaKV='{area}'").Count();
             try
             {
                 for ( int i = 0; i < count; i++ )
@@ -81,7 +81,15 @@ namespace QL_QuanCafe.ViewModel
         public int GetCurrentTotalOfTable(int orderTableId)
         {
             CafeShopEntities entity = new CafeShopEntities();
-            return (int) entity.HOADONs.SqlQuery($"SELECT * FROM HOADON WHERE MaDatBan={orderTableId}").ElementAt(0).TongTien;
+            try
+            {
+                return (int) entity.HOADONs.SqlQuery($"SELECT * FROM HOADON WHERE MaDatBan={orderTableId}").ElementAt(0).TongTien;
+            }
+            catch
+            {
+
+            }
+            return 0;
         }
 
         public string GetTimeOfOrder(int orderTableId)

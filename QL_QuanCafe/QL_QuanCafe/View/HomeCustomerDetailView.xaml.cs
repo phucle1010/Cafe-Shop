@@ -57,17 +57,31 @@ namespace QL_QuanCafe.View
 
         private void LoadFavoriteFood()
         {
-            FoodTitles = customerVM.GetAllNameByFood(customerId).Select(x => x).ToArray();
-            Values = customerVM.GetAllQuantityByFood(customerId).Select(x => x).ToArray();
+            if ( customerVM.GetAllNameByFood(customerId).Select(x => x).ToArray().Length > 0)
+            {
+                FoodTitles = customerVM.GetAllNameByFood(customerId).Select(x => x).ToArray();
+                Values = customerVM.GetAllQuantityByFood(customerId).Select(x => x).ToArray();
 
-            firstFoodSeries.Title = FoodTitles [0];
-            firstFoodSeries.Values = new ChartValues<int> { Values [0] };
+                firstFoodSeries.Title = FoodTitles [0];
+                firstFoodSeries.Values = new ChartValues<int> { Values [0] };
 
-            secondFoodSeries.Title = FoodTitles [1];
-            secondFoodSeries.Values = new ChartValues<int> { Values [1] };
+                secondFoodSeries.Title = FoodTitles [1];
+                secondFoodSeries.Values = new ChartValues<int> { Values [1] };
 
-            thirdFoodSeries.Title = FoodTitles [2];
-            thirdFoodSeries.Values = new ChartValues<int> { Values [2] };
+                thirdFoodSeries.Title = FoodTitles [2];
+                thirdFoodSeries.Values = new ChartValues<int> { Values [2] };
+            }
+            else
+            {
+                firstFoodSeries.Title = "Trống";
+                firstFoodSeries.Values = new ChartValues<int> { 0 };
+
+                secondFoodSeries.Title = "Trống";
+                secondFoodSeries.Values = new ChartValues<int> { 0 };
+
+                thirdFoodSeries.Title = "Trống";
+                thirdFoodSeries.Values = new ChartValues<int> { 0 };
+            }
         }
 
         private void Chart_OnDataClick( object sender, ChartPoint chartpoint )
