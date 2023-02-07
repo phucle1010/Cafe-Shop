@@ -113,8 +113,6 @@ namespace QL_QuanCafe.View
 
         private System.Data.DataTable ConvertDataToDataTable(List<CT_HOADON> billDetail)
         {
-            // creating a data table instance and typed it as our incoming model   
-            // as I make it generic, if you want, you can make it the model typed you want.  
             System.Data.DataTable dataTable = new System.Data.DataTable();
             dataTable.Columns.Add("Mã hóa đơn");
             dataTable.Columns.Add("Tên khách hàng");

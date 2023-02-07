@@ -101,5 +101,10 @@ namespace QL_QuanCafe.ViewModel
         {
             return DataProvider.Ins.DB.SANPHAMs.Where(food => food.MaSP == foodId).Select(food => new { food.TenSP }).First().TenSP;
         }
+
+        public List<HOADON> GetAllOrderHistory()
+        {
+            return DataProvider.Ins.DB.HOADONs.ToList();
+        }
     }
 }

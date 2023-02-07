@@ -47,7 +47,7 @@ namespace QL_QuanCafe.ViewModel
                                                   .ToList();
         }
 
-        public List<string> GetAllMaterialNeetToImport()
+        public List<string> GetAllMaterialNeedToImport()
         {
             return DataProvider.Ins.DB.HANGHOAs
                                                .Where(x => x.SoLuongConSan <= 2)

@@ -146,11 +146,32 @@
         <Border Grid.Column="1"
                 Background="#FFBCB4ED"
                 CornerRadius="10"
-                Margin="10 10 10 0">
-            <TextBlock Text="Lịch sử thanh toán"
-                       FontSize="20"
-                       FontStyle="Italic"
-                       Margin="20 10 0 0"/>
+                Margin="10 10 10 0"
+                Padding="20">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Lịch sử đặt món"
+                                   FontSize="16"
+                                   FontStyle="Italic"
+                                   Foreground="White"/>
+                <Grid Grid.Row="1" Margin="0 0 20 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Ngày hóa đơn" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="14"/>
+                    <TextBlock Grid.Column="1" Text="Tổng tiền" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="14"/>
+                </Grid>
+
+                <ScrollViewer Grid.Row="2">
+                    <StackPanel x:Name="plOrderFoodHistory"/>
+                </ScrollViewer>
+            </Grid>
         </Border>
     </Grid>
 </Page>

@@ -35,8 +35,6 @@ namespace QL_QuanCafe.View
             InitializeComponent();
             customerId = customerVM.getCustomerId(Properties.Settings.Default ["user"].ToString());
             LoadUIData();
-            LoadFavoriteFood();
-            DataContext = this;
         }
 
         private void LoadUIData()
@@ -44,6 +42,17 @@ namespace QL_QuanCafe.View
             CafeShopEntities entity = new CafeShopEntities();
             tbOrderedQuantity.Text = customerVM.GetOrderedQuantityOfCustomer(customerId, entity).ToString();
             tbAccPoint.Text = customerVM.GetAccumlatorPointOfCustomer(customerId, entity).ToString();
+            LoadOrderFoodHistory();
+            LoadFavoriteFood();
+        }
+
+        private void LoadOrderFoodHistory()
+        {
+            OrderFoodViewModel orderFoodVM = new OrderFoodViewModel();
+            foreach ( var order in orderFoodVM.GetAllOrderHistory().Where(order => order.MaKH == customerId).ToList() )
+            {
+                plOrderFoodHistory.Children.Add(new OrderFoodHistoryItemInHomeView((DateTime) order.NgayHD, (int) order.TongTien));
+            }
         }
 
         private void LoadFavoriteFood()

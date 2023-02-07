@@ -52,26 +52,10 @@ namespace QL_QuanCafe.View
         }
         void LoadCustomerData()
         {
-            DataTable dt = new DataTable();
-
-            DataColumn dc;
-            dc = new DataColumn("Mã khách hàng");
-            dt.Columns.Add(dc);
-            dc = new DataColumn("Tên khách hàng");
-            dt.Columns.Add(dc);
-            dc = new DataColumn("Số điện thoại");
-            dt.Columns.Add(dc);
-            dc = new DataColumn("Email");
-            dt.Columns.Add(dc);
-            dc = new DataColumn("Địa chỉ");
-            dt.Columns.Add(dc);
-         
-            foreach ( var item in customerVM.getCustomerList() )
+            foreach ( var customer in customerVM.getCustomerList() )
             {
-                dt.Rows.Add(item.MaKH, item.TenKH, item.SDT, item.Email, item.DiaChi);
+                plCustomer.Children.Add(new CustomerItemView(customer));
             }
-
-            dtCustomer.ItemsSource = dt.DefaultView;
         }
     }
 }

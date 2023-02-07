@@ -238,6 +238,9 @@
     <Compile Include="View\CreateNewPasswordView.xaml.cs">
       <DependentUpon>CreateNewPasswordView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\CustomerItemView.xaml.cs">
+      <DependentUpon>CustomerItemView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\CustomerProfileView.xaml.cs">
       <DependentUpon>CustomerProfileView.xaml</DependentUpon>
     </Compile>
@@ -307,6 +310,9 @@
     </Compile>
     <Compile Include="View\OrderFoodHistoryDetailView.xaml.cs">
       <DependentUpon>OrderFoodHistoryDetailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\OrderFoodHistoryItemInHomeView.xaml.cs">
+      <DependentUpon>OrderFoodHistoryItemInHomeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\OrderFoodHistoryItemView.xaml.cs">
       <DependentUpon>OrderFoodHistoryItemView.xaml</DependentUpon>
@@ -413,6 +419,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\CustomerItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\CustomerProfileView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -498,6 +508,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\OrderFoodHistoryDetailView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\OrderFoodHistoryItemInHomeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -617,9 +631,6 @@
     <Resource Include="Image\background.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image\user.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Image\pass.png" />
   </ItemGroup>
   <ItemGroup>
@@ -648,6 +659,9 @@
     <Resource Include="Image\area-0.jpg" />
     <Resource Include="Image\area-1.jpg" />
     <Resource Include="Image\area-2.jpg" />
+    <Resource Include="Image\user-female.png" />
+    <Resource Include="Image\user-male.png" />
+    <Resource Include="Image\user.png" />
     <Content Include="Model\DataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DataModel.Context.cs</LastGenOutput>

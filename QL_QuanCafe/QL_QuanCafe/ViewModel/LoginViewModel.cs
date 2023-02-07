@@ -43,42 +43,15 @@ namespace QL_QuanCafe.ViewModel
         }
         public bool haveUserIsUsing()
         {
-            int nDataRows = 0;
-            try
-            {
-                nDataRows = DataProvider.Ins.DB.TAIKHOANDANGSUDUNGs.SqlQuery("SELECT * FROM TAIKHOANDANGSUDUNG").Count();
-            }
-            catch ( Exception e )
-            {
-                MessageBox.Show(e.ToString());
-            }
-            return nDataRows > 0;
+            return DataProvider.Ins.DB.TAIKHOANDANGSUDUNGs.Count() > 0;
         }
         public bool isAdmin()
         {
-            bool role = false;
-            try
-            {
-                role = Boolean.Parse( DataProvider.Ins.DB.TAIKHOANDANGSUDUNGs.SqlQuery("SELECT * FROM TAIKHOANDANGSUDUNG").ElementAt(0).PhanQuyen.ToString() );
-            }
-            catch ( Exception e )
-            {
-                MessageBox.Show(e.ToString());
-            }
-            return role;
+            return (bool) DataProvider.Ins.DB.TAIKHOANDANGSUDUNGs.ToList() [0].PhanQuyen;
         }
         public string getUserNameOfUser()
         {
-            string userName = "";
-            try
-            {
-                userName = DataProvider.Ins.DB.TAIKHOANDANGSUDUNGs.SqlQuery("SELECT * FROM TAIKHOANDANGSUDUNG").ElementAt(0).TaiKhoan.ToString();
-            }
-            catch ( Exception e )
-            {
-                MessageBox.Show(e.ToString());
-            }
-            return userName;
+            return DataProvider.Ins.DB.TAIKHOANDANGSUDUNGs.ToList() [0].TaiKhoan;
         }
         public string ComputeSha256Hash( string rawData )
         {

@@ -3,12 +3,11 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:QL_QuanCafe.View" xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp" xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
-      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:QL_QuanCafe.View" xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
       mc:Ignorable="d" 
-      d:DesignHeight="650" d:DesignWidth="800"
-      Title="ReportView"
-      DataContext="ReportViewModel">
+      d:DesignHeight="700" d:DesignWidth="1000"
+      Title="ReportView">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -78,8 +77,7 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <TextBlock Text="THỐNG KÊ DOANH THU TRONG NĂM" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
+                <TextBlock x:Name="tbSaleTitle" Text="THỐNG KÊ DOANH THU TRONG NĂM" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <lvc:CartesianChart Grid.Row="1" Series="{Binding SaleCollection}" LegendLocation="Top">
                     <lvc:CartesianChart.AxisX>
                         <lvc:Axis Title="Tháng" Labels="{Binding SaleLabels}"></lvc:Axis>
@@ -89,7 +87,7 @@
                     </lvc:CartesianChart.AxisY>
                 </lvc:CartesianChart>
             </Grid>
-            
+
             <Grid Grid.Row="1" Margin="0 6 0 0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -104,7 +102,6 @@
                     </Grid.RowDefinitions>
 
                     <TextBlock Text="THỐNG KÊ XU HƯỚNG MÓN ĂN" FontSize="16" FontWeight="Bold" VerticalAlignment="Center" Margin="10 0 0 0"/>
-                    
                     <lvc:CartesianChart Grid.Row="1" Series="{Binding FoodTrendCollection}" LegendLocation="Bottom">
                         <lvc:CartesianChart.AxisX>
                             <lvc:Axis Title="Số lượng đặt món" LabelFormatter="{Binding FoodTrendFormatter}"></lvc:Axis>
@@ -116,6 +113,7 @@
                             <lvc:DefaultTooltip SelectionMode="SharedYValues"></lvc:DefaultTooltip>
                         </lvc:CartesianChart.DataTooltip>
                     </lvc:CartesianChart>
+
 
                 </Grid>
 
@@ -141,7 +139,7 @@
         </Grid>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
-            <ComboBox
+            <ComboBox x:Name="cbExportType"
                       FontSize="14"
                       materialDesign:HintAssist.Hint="Loại báo cáo muốn in"
                       IsEditable="True"
@@ -159,7 +157,7 @@
                     Nguyên liệu cần nhập
                 </ComboBoxItem>
             </ComboBox>
-            <Button x:Name="btnExport" Width="120" Content="Xuất File" Grid.Row="2" HorizontalAlignment="Right" Margin="20 0 20 6" Background="#097969" BorderThickness="0"/>
+            <Button x:Name="btnExport" Width="120" Content="Xuất File" Grid.Row="2" HorizontalAlignment="Right" Margin="20 0 20 6" Background="#097969" BorderThickness="0" Click="btnExport_Click"/>
         </StackPanel>
     </Grid>
 </Page>

@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:QL_QuanCafe.View" xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="CustomerView">
+      Title="CustomerView"
+      Background="White">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -64,23 +65,10 @@
 
             </StackPanel>
         </Grid>
-
-        <Border Grid.Row="1" 
-                Margin="10"
-                BorderThickness="1" 
-                BorderBrush="{StaticResource primaryTextColor}">
-            
-            <Grid >
-                <DataGrid x:Name="dtCustomer" 
-                          ColumnWidth="*" 
-                          CanUserAddRows="False" 
-                          CanUserDeleteRows="False" 
-                          IsReadOnly="True" 
-                          Background="White"
-                          >
-                </DataGrid>
-            </Grid>
-        </Border>
+        
+        <ScrollViewer Grid.Row="1" Margin="0 10 0 0">
+            <StackPanel x:Name="plCustomer"/>
+        </ScrollViewer>
     </Grid>
 
 </Page>

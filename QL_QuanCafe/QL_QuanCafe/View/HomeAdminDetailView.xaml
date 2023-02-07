@@ -218,18 +218,18 @@
                         </Grid.ColumnDefinitions>
 
                         <TextBlock x:Name="txtFoods"
-                                       Grid.Column="0"
-                                       Text="25"
-                                       FontSize="60"
-                                       Foreground="White"
-                                       HorizontalAlignment="Center"
-                                       Margin="0 -20 0 0"/>
+                                   Grid.Column="0"
+                                   Text="25"
+                                   FontSize="60"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"
+                                   Margin="0 -20 0 0"/>
                         <fa:IconImage Grid.Column="1" 
-                                          Icon="BowlFood"
-                                          Foreground="White"
-                                          Width="100"
-                                          Height="100"
-                                          Margin="0 -80 0 0"/>
+                                       Icon="BowlFood"
+                                       Foreground="White"
+                                       Width="100"
+                                       Height="100"
+                                       Margin="0 -80 0 0"/>
                     </Grid>
                 </Grid>
             </Border>
@@ -241,10 +241,30 @@
                     Background="#FF659C75"
                     Padding="20 10 20 10"
                 >
-                <TextBlock Text="Lịch sử đặt món"
-                               FontSize="16"
-                               FontStyle="Italic"
-                               Foreground="White"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    
+                    <TextBlock Text="Lịch sử đặt món"
+                                   FontSize="16"
+                                   FontStyle="Italic"
+                                   Foreground="White"/>
+                    <Grid Grid.Row="1" Margin="0 0 20 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Ngày hóa đơn" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="14"/>
+                        <TextBlock Grid.Column="1" Text="Tổng tiền" FontWeight="SemiBold" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontSize="14"/>
+                    </Grid>
+
+                    <ScrollViewer Grid.Row="2">
+                        <StackPanel x:Name="plOrderFoodHistory"/>
+                    </ScrollViewer>
+                </Grid>
             </Border>
         </Grid>
     </Grid>

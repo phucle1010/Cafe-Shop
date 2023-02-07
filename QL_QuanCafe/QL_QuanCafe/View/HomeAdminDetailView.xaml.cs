@@ -32,14 +32,17 @@ namespace QL_QuanCafe.View
 
         void LoadData()
         {
+            FoodViewModel foodVM = new FoodViewModel();
             txtEmployees.Text = home.getTheNumberOfEmployee().ToString();
             txtCustomers.Text = home.getTheNumberOfCustomer().ToString();
+            txtFoods.Text = foodVM.GetAllFood().Count.ToString();
 
             standardSeries.Values = new ChartValues<int> { Int32.Parse(home.getTheNumberOfStandardCustomer().ToString()) };
             loyalSeries.Values = new ChartValues<int> { Int32.Parse(home.getTheNumberOfLoyalCustomer().ToString()) };
             vipstandardSeries.Values = new ChartValues<int> { Int32.Parse(home.getTheNumberOfVIPCustomer().ToString()) };
 
             dpToday.Text = DateTime.Now.ToString();
+            LoadOrderHistory();
         }
 
         private void Chart_OnDataClick( object sender, ChartPoint chartpoint )
@@ -52,6 +55,15 @@ namespace QL_QuanCafe.View
 
             var selectedSeries = (PieSeries) chartpoint.SeriesView;
             selectedSeries.PushOut = 8;
+        }
+
+        private void LoadOrderHistory()
+        {
+            OrderFoodViewModel orderFoodVM = new OrderFoodViewModel();
+            foreach(var order in orderFoodVM.GetAllOrderHistory())
+            {
+                plOrderFoodHistory.Children.Add(new OrderFoodHistoryItemInHomeView((DateTime)order.NgayHD, (int)order.TongTien));
+            }
         }
     }
 }

@@ -34,11 +34,30 @@ namespace QL_QuanCafe.View
 
         private void LoadData()
         {
-            tbEmployeeId.Text = employee.MaNV.ToString();
+            LoadAvatar();
             tbEmployeeName.Text = employee.TenNV;
             tbAddress.Text = employee.DiaChi;
             tbPhone.Text = employee.SDT;
             tbEntryDate.Text = employee.NgayVaoLam.Value.ToString("dd/MM/yyyy");
+        }
+
+        private void LoadAvatar()
+        {
+            if ( employee.AnhDaiDien != null )
+            {
+                ImageViewer.Source = new BitmapImage(new Uri(employee.AnhDaiDien));
+            }
+            else
+            {
+                if ( (bool) employee.GioiTinh )
+                {
+                    ImageViewer.Source = new BitmapImage(new Uri("E:\\Projects\\Công nghệ phần mềm chuyên sâu\\Cafe-Shop\\QL_QuanCafe\\QL_QuanCafe\\Image\\user-male.png"));
+                }
+                else
+                {
+                    ImageViewer.Source = new BitmapImage(new Uri("E:\\Projects\\Công nghệ phần mềm chuyên sâu\\Cafe-Shop\\QL_QuanCafe\\QL_QuanCafe\\Image\\user-female.png"));
+                }
+            }
         }
 
         private void btnChangeShift_Click( object sender, RoutedEventArgs e )

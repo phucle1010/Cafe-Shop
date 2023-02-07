@@ -19,7 +19,7 @@ namespace QL_QuanCafe.ViewModel
         {
             try
             {
-                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"UPDATE NHANVIEN SET TenNV=N'{name}', SDT='{phone}', Email='{email}', DiaChi='{address}', ChucVu='{position}' WHERE MaNV={employeeId}");
+                DataProvider.Ins.DB.Database.ExecuteSqlCommand($"UPDATE NHANVIEN SET TenNV=N'{name}', SDT='{phone}', Email='{email}', DiaChi=N'{address}', ChucVu='{position}' WHERE MaNV={employeeId}");
                 MessageBox.Show("Cập nhật thông tin nhân viên thành công!!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
                 return 1;
             }catch(Exception e)
